@@ -32,7 +32,6 @@ namespace EditorTerrainModel
     public enum DropDownSelectType
     {
         Layout,
-        Object,
         BrushStyle,
     }
 
@@ -45,7 +44,6 @@ namespace EditorTerrainModel
     {
         Terrain,
         Vegetation,
-        Object,
     }
 
     public class TerrainEditorModel
@@ -89,7 +87,6 @@ namespace EditorTerrainModel
         {
             "地形",
             "草皮",
-            "物件",
         };
 
         private static List<VegetationData> allVegetationElements;

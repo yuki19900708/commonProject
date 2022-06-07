@@ -42,7 +42,7 @@ public class TerrainEditorContentEditorInterface : MonoBehaviour
         brushStyleDropDown.options = TerrainEditorModel.GetTerrainEditorDropDownOptionData(TerrainEditorModel.brushStyleElements);
         brushStyleDropDown.value = 0;
 
-        objectSelectDropDown.onValueChanged.AddListener(ObjectSelectDropDownValueChange);
+//	        objectSelectDropDown.onValueChanged.AddListener(ObjectSelectDropDownValueChange);
         //objectSelectDropDown.options = TerrainEditorModel.GetTerrainEditorDropDownOptionData(TerrainEditorModel.PurificationElements);
         objectSelectDropDown.value = 0;
 
@@ -56,7 +56,6 @@ public class TerrainEditorContentEditorInterface : MonoBehaviour
         selectVegetationGameObject.SetActive(false);
 
         selectGameObject.SetActive(true);
-        objectContent.Event_OnCreateWrapContentItem += EventOnCreateWrapContentItem;
         objectContent.Event_OnRefreshWrapContentItem += EventOnRefreshWrapContentItem;
         objectContent.RefreshWrapContent(EditorTerrainModel.TerrainEditorModel.AllOjbectElements.Count);
         selectGameObject.SetActive(false);
@@ -104,19 +103,6 @@ public class TerrainEditorContentEditorInterface : MonoBehaviour
         }
     }
 
-    private void EventOnCreateWrapContentItem(GameObject obj)
-    {
-        obj.GetComponent<TerrainEditorSelectItem>().Event_SelectObject += EventObjectSelect;
-    }
-
-    private void EventObjectSelect(TerrainEditorSelectItem item)
-    {
-        Debug.Log("选中了" + item.nameText.text);
-        if (Event_SelectObjectItem != null)
-        {
-            Event_SelectObjectItem(DropDownSelectType.Object, item);
-        }
-    }
 
     private void OnSaveButtonClick()
     {
@@ -125,14 +111,7 @@ public class TerrainEditorContentEditorInterface : MonoBehaviour
             Event_SaveEditor();
         }
     }
-
-    private void ObjectSelectDropDownValueChange(int arg0)
-    {
-        if (Event_BrushStyleChange != null)
-        {
-            Event_BrushStyleChange(DropDownSelectType.Object, objectSelectDropDown.captionText.text);
-        }
-    }
+		
 
     private void BrushStyleDropDownValueChange(int index)
     {

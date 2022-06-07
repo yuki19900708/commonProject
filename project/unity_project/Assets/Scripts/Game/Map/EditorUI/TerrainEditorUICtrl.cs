@@ -636,46 +636,11 @@ public class TerrainEditorUICtrl : MonoBehaviour
                     continue;
                 }
             }
-            if (vegetationMap.GetTileAt(offsetPoint) == null && currentScriptableTile != null)
-            {
-                switch (layoutType)
-                {
-                    case EditoryLayoutType.Object:
-                        if (isShowTip == false)
-                        {
-                            ShowTipText("空位置不可以放置物件");
-                        }
-                        return;
-                }
-            }
-
+        
           
             int index = offsetPoint.y + offsetPoint.x * mapHeight;
             switch (layoutType)
             {
-                case EditoryLayoutType.Object:
-                    if (tmpTile != null)
-                    {
-                        mapDataList[offsetPoint.y + offsetPoint.x * mapHeight].entityId = int.Parse(tmpTile.Name.Remove(0, 4));
-                    }
-                    else
-                    {
-                        mapDataList[offsetPoint.y + offsetPoint.x * mapHeight].entityId = 0;
-                    }
-
-                    if (currentSelectObjectItem != null)
-                    {
-                        int[] area = currentSelectObjectItem.Data.area;
-
-                        for (int x = 0; x < area[0]; x++)
-                        {
-                            for (int j = 0; j < area[1]; j++)
-                            {
-                                //objectRenderer.ChangeTileMap(offsetPoint.x + x, offsetPoint.y + j, objectRenderer.GetTileGameObject(offsetPoint));
-                            }
-                        }
-                    }
-                    break;
                 case EditoryLayoutType.Vegetation:
                     terrainMap.SetTileAndUpdateNeighbours(offsetPoint.x, offsetPoint.y, tmpTile != null ? terrainTile : null);
                     if (tmpTile == null)
@@ -822,11 +787,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
         if (arg0)
         {
             FingerMgr.Instance.fingerMgrOperation = FingerMgrOperation.OperationObject;
-            if (layoutType == EditoryLayoutType.Object)
-            {
-                editInterface.EnableObjectSelect();
-            }
-            else if (layoutType == EditoryLayoutType.Vegetation)
+            if (layoutType == EditoryLayoutType.Vegetation)
             {
                 editInterface.EnableVegetationSelect();
             }
@@ -834,11 +795,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
         else
         {
             FingerMgr.Instance.fingerMgrOperation = FingerMgrOperation.None;
-            if (layoutType == EditoryLayoutType.Object)
-            {
-                editInterface.DisableObjectSelect();
-            }
-            else if (layoutType == EditoryLayoutType.Vegetation)
+          	if (layoutType == EditoryLayoutType.Vegetation)
             {
                 editInterface.DisableVegetationSelect();
             }
