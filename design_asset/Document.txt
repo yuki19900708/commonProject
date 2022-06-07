@@ -1,0 +1,9 @@
+1：使用using I2.Loc命名空间
+2：通用text 只用添加组件，设置term即可；
+3：Resources 文件夹下面的I2Languages是全局的，如果自己建立的prefab使用Languagesource,不能使用相
+4：
+字符串格式化,继承LocalizationParamsManager类 ，SetParameterValue动态更新；如果是全局的，添加LocalizationParamsManager进行更新；
+localmanager.SetParameterValue("WINNER", System.DateTime.Now.ToString());
+5.LocalizationManager  中可控制全局语言的选择；
+6.LolizeDropdown 下拉列表  点击查看term的内容
+7.SetLanguageDropdown  下拉列表  选中按钮可更换语言
