@@ -42,7 +42,6 @@ namespace EditorTerrainModel
 
     public enum EditoryLayoutType
     {
-        Terrain,
         Vegetation,
     }
 
@@ -85,7 +84,6 @@ namespace EditorTerrainModel
 
         public static string[] editoryLayouts = new string[]
         {
-            "地形",
             "草皮",
         };
 

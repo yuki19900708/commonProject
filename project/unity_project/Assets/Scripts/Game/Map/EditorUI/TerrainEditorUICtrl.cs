@@ -34,9 +34,9 @@ public class TerrainEditorUICtrl : MonoBehaviour
     public TerrainEditorContentEditorInterface editInterface;
 
 
-    public TileMap terrainMap;
-    public ScriptableTile terrainTile;
-    public TileGameObjectRenderer terrainRenderer;
+//    public TileMap terrainMap;
+//    public ScriptableTile terrainTile;
+//    public TileGameObjectRenderer terrainRenderer;
 
     public TileMap vegetationMap;
     public ScriptableTile vegetationTile;
@@ -58,9 +58,9 @@ public class TerrainEditorUICtrl : MonoBehaviour
     public Button settingExitButton;
     public Button settingOkButton;
 
-    public GameObject showSettingObject;
-    public Toggle showTerrainToggle;
-    public Toggle showVegetionToggle;
+//    public GameObject showSettingObject;
+//    public Toggle showTerrainToggle;
+//    public Toggle showVegetionToggle;
 
     public Material spriteHSVMat;
 
@@ -75,14 +75,14 @@ public class TerrainEditorUICtrl : MonoBehaviour
     private TileMap currentSelectTileMap;
     private ScriptableTile currentScriptableTile;
     private EditorType editorType = EditorType.Level;
-    private EditoryLayoutType layoutType = EditoryLayoutType.Terrain;
+    private EditoryLayoutType layoutType = EditoryLayoutType.Vegetation;
     private BrushStyle brushStyle = BrushStyle.None;
     private bool isBoxUp = false;
     private List<Point> region = new List<Point>();
     private List<MapGridGameData> mapDataList = new List<MapGridGameData>();
     private bool isShowTip = false;
-    private int mapWidth = 35;
-    private int mapHeight = 35;
+    private int mapWidth = 100;
+	private int mapHeight = 100;
 #if UNITY_EDITOR
     private string textPath = "";
     private string checktextPath = "";
@@ -136,10 +136,10 @@ public class TerrainEditorUICtrl : MonoBehaviour
         settingExitButton.onClick.AddListener(OnSettingExitButtonClick);
         settingOkButton.onClick.AddListener(OnSettingOKButtonClick);
 
-        showTerrainToggle.onValueChanged.AddListener(ShowTerrainToggleValuechange);
-        showVegetionToggle.onValueChanged.AddListener(ShowVegetionToggleValuechange);
+//        showTerrainToggle.onValueChanged.AddListener(ShowTerrainToggleValuechange);
+//        showVegetionToggle.onValueChanged.AddListener(ShowVegetionToggleValuechange);
 
-        terrainRenderer.OnRenderTile += OnTerrainRederTile;
+//        terrainRenderer.OnRenderTile += OnTerrainRederTile;
         vegetationRenderer.OnRenderTile += OnVegetationRederTile;
 
         foreach (UGUISpriteAtlas a in atlas)
@@ -168,7 +168,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
             pointList.Add(point.DownRight);
             for (int i = 0; i < pointList.Count; i++)
             {
-                if (terrainMap.IsInBounds(pointList[i]))
+                if (vegetationMap.IsInBounds(pointList[i]))
                 {
                     int index = pointList[i].y + pointList[i].x * mapHeight;
 
@@ -219,26 +219,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
         }
     }
 
-    private void OnTerrainRederTile(int x, int y, GameObject go)
-    {
-        if (go != null)
-        {
-            MapObject mapObject = go.GetComponent<MapObject>();
-            mapObject.IsTerrain = true;
-            Renderer[] rendererList = go.GetComponentsInChildren<Renderer>(true);
-            foreach (Renderer renderer in rendererList)
-            {
-                renderer.sharedMaterial = spriteHSVMat;
-            }
-        }
-        if (isBrush == false) return;
-        int index = y + x * mapHeight;
-        if (layoutType == EditoryLayoutType.Terrain)
-        {
-            mapDataList[index].hasTerrain = 2;
-        }
-    }
-
     private void Update()
     {
 
@@ -253,11 +233,11 @@ public class TerrainEditorUICtrl : MonoBehaviour
             return;
         }
 
-        Point tmpGridPoint = terrainMap.WorldPosition2Coordinate(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        Point tmpGridPoint = vegetationMap.WorldPosition2Coordinate(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         if (lineGridPoint != tmpGridPoint)
         {
-            MapUtil.Instance.tran.position = terrainMap.Coordinate2WorldPosition(tmpGridPoint);
-            if (terrainMap.IsInBounds(tmpGridPoint) && mapDataList.Count > 0)
+			MapUtil.Instance.tran.position = vegetationMap.Coordinate2WorldPosition(tmpGridPoint);
+			if (vegetationMap.IsInBounds(tmpGridPoint) && mapDataList.Count > 0)
             {
                 MapGridGameData data = mapDataList[tmpGridPoint.y + tmpGridPoint.x * mapHeight];
                 mousePosText.text = string.Format("坐标: {0},{1}", tmpGridPoint.x, tmpGridPoint.y);
@@ -333,32 +313,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
     }
 
 
-    private void ShowVegetionToggleValuechange(bool isOn)
-    {
-        if (isOn)
-        {
-            vegetationMap.gameObject.SetActive(true);
-        }
-        else
-        {
-            vegetationMap.gameObject.SetActive(false);
-        }
-    }
-
-    private void ShowTerrainToggleValuechange(bool isOn)
-    {
-        if (isOn)
-        {
-            terrainMap.gameObject.SetActive(true);
-        }
-        else
-        {
-            terrainMap.gameObject.SetActive(false);
-        }
-    }
-
-
-     private void OnSettingOKButtonClick()
+    private void OnSettingOKButtonClick()
     {
         if (sizeXInputFiled.text != null && sizeYInputFiled.text != null)
         {
@@ -423,7 +378,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
                 }
             }
 
-            terrainMap.ResizeMap(x, y);
+//            terrainMap.ResizeMap(x, y);
             vegetationMap.ResizeMap(x, y);
             //objectMap.ResizeMap(x, y);
             MapUtil.Instance.DrawMapGridLine(x, y);
@@ -456,25 +411,25 @@ public class TerrainEditorUICtrl : MonoBehaviour
         exitButton.gameObject.SetActive(!exitButton.gameObject.activeSelf);
         isEditorToggle.gameObject.SetActive(!isEditorToggle.gameObject.activeSelf);
         settingButton.gameObject.SetActive(!settingButton.gameObject.activeSelf);
-        showSettingObject.gameObject.SetActive(!showSettingObject.gameObject.activeSelf);
+//        showSettingObject.gameObject.SetActive(!showSettingObject.gameObject.activeSelf);
 
         isEditorToggle.isOn = false;
         if (editInterface.gameObject.activeSelf)
         {
             MapUtil.Instance.EnableDraw();
 
-           terrainMap.gameObject.SetActive(tileMapActiveSelfDict[terrainMap]);
+//           terrainMap.gameObject.SetActive(tileMapActiveSelfDict[terrainMap]);
             vegetationMap.gameObject.SetActive(tileMapActiveSelfDict[vegetationMap]);
             //objectMap.gameObject.SetActive(tileMapActiveSelfDict[objectMap]);
         }
         else
         {
             tileMapActiveSelfDict.Clear();
-            tileMapActiveSelfDict.Add(terrainMap, terrainMap.gameObject.activeSelf);
+//            tileMapActiveSelfDict.Add(terrainMap, terrainMap.gameObject.activeSelf);
             tileMapActiveSelfDict.Add(vegetationMap, vegetationMap.gameObject.activeSelf);
             //tileMapActiveSelfDict.Add(objectMap, objectMap.gameObject.activeSelf);
 
-            terrainMap.gameObject.SetActive(true);
+//            terrainMap.gameObject.SetActive(true);
             vegetationMap.gameObject.SetActive(true);
             //objectMap.gameObject.SetActive(true);
 
@@ -533,14 +488,14 @@ public class TerrainEditorUICtrl : MonoBehaviour
 
     private void OnExitButtonClick()
     {
-        terrainMap.gameObject.SetActive(true);
+//        terrainMap.gameObject.SetActive(true);
         vegetationMap.gameObject.SetActive(true);
 
-        terrainMap.CompleteReset();
+//        terrainMap.CompleteReset();
         vegetationMap.CompleteReset();
         editorTypeSelectDropDown.value = 0;
 
-        terrainMap.gameObject.SetActive(false);
+//        terrainMap.gameObject.SetActive(false);
         vegetationMap.gameObject.SetActive(false);
 
         ExitEditor();
@@ -556,7 +511,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
 
         if (brushStyle == BrushStyle.BoxUp)
         {
-            startPoint = terrainMap.WorldPosition2Coordinate(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+			startPoint = vegetationMap.WorldPosition2Coordinate(Camera.main.ScreenToWorldPoint(Input.mousePosition));
             isBoxUp = Input.GetMouseButton(1) ? true : false;
         }
     }
@@ -567,7 +522,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
         if (lineGridPoint != curPoint)
         {
             lineGridPoint = curPoint;
-            MapUtil.Instance.tran.position = terrainMap.Coordinate2WorldPosition(curPoint);
+			MapUtil.Instance.tran.position = vegetationMap.Coordinate2WorldPosition(curPoint);
 
             if (currentSelectTileMap && brushStyle == BrushStyle.None)
             {
@@ -617,32 +572,17 @@ public class TerrainEditorUICtrl : MonoBehaviour
         for (int i = 0; i < region.Count; i++)
         {
             Point offsetPoint = region[i];
-            if (terrainMap.IsInBounds(offsetPoint) == false)
+			if (vegetationMap.IsInBounds(offsetPoint) == false)
             {
                 continue;
             }
-            if (layoutType == EditoryLayoutType.Terrain)
-            {
-                if (terrainRenderer.GetTileGameObject(offsetPoint.x, offsetPoint.y) != null)
-                {
-                    if (isShowTip == false && currentScriptableTile != null)
-                    {
-                        ShowTipText("桥只能放置在空地上");
-                    }
-                    else
-                    {
-                        ShowTipText("无法对地形进行操作，只能通过草皮进行地形变更");
-                    }
-                    continue;
-                }
-            }
+         
         
           
             int index = offsetPoint.y + offsetPoint.x * mapHeight;
             switch (layoutType)
             {
                 case EditoryLayoutType.Vegetation:
-                    terrainMap.SetTileAndUpdateNeighbours(offsetPoint.x, offsetPoint.y, tmpTile != null ? terrainTile : null);
                     if (tmpTile == null)
                     {
                         //objectMap.gameObject.SetActive(true);
@@ -746,22 +686,14 @@ public class TerrainEditorUICtrl : MonoBehaviour
                 MapUtil.Instance.DrawGridHightLight(new int[] { 1, 1 });
                 switch (name)
                 {
-                    case "地形":
-                        currentSelectTileMap = terrainMap;
-                        layoutType = EditoryLayoutType.Terrain;
-                        terrainMap.gameObject.SetActive(true);
-                        showTerrainToggle.isOn = true;
-                        vegetationMap.gameObject.SetActive(false);
-                        showVegetionToggle.isOn = false;
-                        break;
                     case "草皮":
                         layoutType = EditoryLayoutType.Vegetation;
                         currentSelectTileMap = vegetationMap;
                         currentScriptableTile = vegetationTile;
-                        terrainMap.gameObject.SetActive(true);
-                        showTerrainToggle.isOn = true;
+//                        terrainMap.gameObject.SetActive(true);
+//                        showTerrainToggle.isOn = true;
                         vegetationMap.gameObject.SetActive(true);
-                        showVegetionToggle.isOn = true;
+//                        showVegetionToggle.isOn = true;
                         break;
                 }
                 break;
@@ -813,9 +745,9 @@ public class TerrainEditorUICtrl : MonoBehaviour
         editInterface.gameObject.SetActive(false);
         previewButton.gameObject.SetActive(false);
         settingButton.gameObject.SetActive(false);
-        showSettingObject.gameObject.SetActive(false);
+//        showSettingObject.gameObject.SetActive(false);
 
-        terrainMap.gameObject.SetActive(true);
+//        terrainMap.gameObject.SetActive(true);
         vegetationMap.gameObject.SetActive(false);
     }
 
@@ -829,9 +761,9 @@ public class TerrainEditorUICtrl : MonoBehaviour
         editInterface.gameObject.SetActive(true);
         previewButton.gameObject.SetActive(true);
         settingButton.gameObject.SetActive(true);
-        showSettingObject.gameObject.SetActive(true);
+//        showSettingObject.gameObject.SetActive(true);
 
-        terrainMap.gameObject.SetActive(true);
+//        terrainMap.gameObject.SetActive(true);
         vegetationMap.gameObject.SetActive(true);
         brushStyle = BrushStyle.None;
 
@@ -880,7 +812,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
             mapHeight = saveEditor.height;
         }
 
-        terrainMap.ResizeMap(mapWidth, mapHeight);
+//        terrainMap.ResizeMap(mapWidth, mapHeight);
         vegetationMap.ResizeMap(mapWidth, mapHeight);
         MapUtil.Instance.DrawMapGridLine(mapWidth, mapHeight);
 
@@ -893,76 +825,18 @@ public class TerrainEditorUICtrl : MonoBehaviour
 
     private void LoadMapObject()
     {
-
-        foreach (MapGridGameData info in mapDataList)
-        {
-            if (info.hasTerrain != 0)
-            {
-                //shadowMap.SetTileAndUpdateNeighbours(info.x, info.y, shadowTile);
-                terrainMap.SetTileAndUpdateNeighbours(info.x, info.y, terrainTile);
-            }
-        }
-
         foreach (MapGridGameData info in mapDataList)
         {
             if (info.hasVegetation == 1)
             {
                 Debug.LogError(string.Format("有草皮的值不太对x:{0} y:{1} = {2}", info.x, info.y, info.hasVegetation));
             }
+			Debug.LogError (info.hasVegetation);
             if (info.hasVegetation != 0)
             {
                 vegetationMap.SetTileAndUpdateNeighbours(info.x, info.y, vegetationTile);
             }
         }
-
-        //Timer.AddDelayFunc(1, () =>
-        //{
-        //foreach (MapGridGameData info in mapDataList)
-        //{
-                //        DeadLandData deadLandData = TableDataMgr.GetSingleDeadLandData(info.purificationLevel);
-                //GameObject gameObject = objectRenderer.GetTileGameObject(info.x, info.y);
-                //MapObject mapObject;
-                //        if (gameObject != null)
-                //        {
-                //            mapObject = gameObject.GetComponent<MapObject>();
-                //            if (deadLandData == null)
-                //            {
-                //                mapObject.DisplayAsUnLockAndCured();
-                //            }
-                //            else
-                //            {
-                //                mapObject.DisplayAsUnlockButDead(deadLandData);
-                //            }
-                //        }
-
-        //        GameObject gameObject = terrainRenderer.GetTileGameObject(info.x, info.y);
-        //if (gameObject != null)
-        //{
-        //    mapObject = gameObject.GetComponent<MapObject>();
-        //    if (deadLandData == null)
-        //    {
-        //        mapObject.DisplayAsUnLockAndCured();
-        //    }
-        //    else
-        //    {
-        //        mapObject.DisplayAsUnlockButDead(deadLandData);
-        //    }
-                //        }
-
-                //        if (info.hasVegetation > 0)
-                //        {
-                //            mapObject = vegetationRenderer.GetTileGameObject(info.x, info.y).GetComponent<MapObject>();
-                //            if (deadLandData == null)
-                //            {
-                //                mapObject.DisplayAsUnLockAndCured();
-                //            }
-                //            else
-                //            {
-                //                mapObject.DisplayAsUnlockButDead(deadLandData, true);
-                //            }
-                //        }
-            //}
-        //});
     }
 
     private void ShowTipText(string txt)
@@ -1141,8 +1015,8 @@ public class TerrainEditorUICtrl : MonoBehaviour
             camp_data.Grid.Add(grid_data);
         }
         Map_size size = new Map_size();
-        size.Width = (uint)terrainMap.MapWidth;
-        size.Height = (uint)terrainMap.MapHeight;
+        size.Width = (uint)vegetationMap.MapWidth;
+		size.Height = (uint)vegetationMap.MapHeight;
         camp_data.MapSize = size;
 
         byte[] protobufData = camp_data.ToByteArray();
