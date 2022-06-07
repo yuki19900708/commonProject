@@ -1,0 +1,17 @@
+ext {
+    unity_app_name = "monsterworld"
+    android_project_name = "the_barbarous_age"
+    output_path = "${projectDir}/../output"
+    
+    unity_project_path = "${projectDir}/../project/unity_project"   
+    
+    android_project_path = "${projectDir}/../project/android_project"
+    android_studio_project_path = "${android_project_path}/${android_project_name}"
+    unity_export_project_path = "${output_path}/android/${unity_app_name}"
+    android_studio_manifest = "${android_studio_project_path}/src/main/AndroidManifest.xml"
+    android_apk_output_path = "${output_path}/android/app"
+    android_studio_project_output_path = "${android_studio_project_path}/build/outputs/apk/release"
+
+    ios_xcode_project_path = "${projectDir}/../project/ios_project"
+    ios_xcode_project_temp_path = "${output_path}/ios/unity_xcode_project"
+}

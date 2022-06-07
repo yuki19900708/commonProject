@@ -1,0 +1,179 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+#update_fastlane
+
+fastlane_require 'xcodeproj'
+
+default_platform(:android)
+
+platform :android do
+  desc "Generate APK"
+  lane :genAPK do |options|
+    #获得命令行传入的参数，config_mode，该参数决定了游戏内容是开发版还是发布版
+    config_mode = options[:config_mode]
+    #获得命令行传入的参数，skip_unity_export，该参数决定了是否需要Unity重新导出工程
+    #有时候我们的改动仅在Native工程这边，Unity中没有改动，做版本便不需要Unity重新导出
+    skip_unity_export = options[:skip_unity_export]
+
+    puts("config_mode : #{config_mode}")
+    puts("skip_unity_export : #{skip_unity_export}")
+
+    gradle(task: "genAPK",
+           properties: {
+             "config_mode" => "#{config_mode}",
+             "skip_unity_export" => "#{skip_unity_export}"
+           })
+  end
+end
+
+platform :ios do
+  desc "Generate IPA"
+  lane :genIPA do |options|
+    #获得命令行传入的参数，config_mode，该参数决定了Build时使用的配置选项
+    config_mode = options[:config_mode]
+    #获得命令行传入的参数，skip_unity_export，该参数决定了是否需要Unity重新导出工程
+    #有时候我们的改动仅在Native工程这边，Unity中没有改动，做版本便不需要Unity重新导出
+    skip_unity_export = options[:skip_unity_export]
+
+    puts("config_mode : #{config_mode}")
+    puts("skip_unity_export : #{skip_unity_export}")
+
+    #xcode工程路径
+    xcode_project_path = ENV["xcode_project_path"]
+    #xcode工程路径，实际内容和上面变量一样，但是相对路径写法不同
+    xcode_project_path_for_xcodeproj = ENV["xcode_project_path_for_xcodeproj"]
+    #xcode工程对象,用来自动处理文件增删到xcode工程中
+    project = Xcodeproj::Project.open(xcode_project_path_for_xcodeproj)
+    #xcode解决方案路径
+    xcode_workspace_path = ENV["xcode_workspace_path"]
+    #当前应用所属的开发者账号用户名
+    apple_id_username = ENV["apple_id_username"]
+    #ipa的包名
+    ipa_bundle_id = ENV["ipa_bundle_id"]
+    #是否为主包，备份包没有stickers，因此不需要处理stickers的证书与签名
+    isMainPackage = ipa_bundle_id == "com.miao.island"
+    #ipa输出路径
+    ipa_output_path = ENV["ipa_output_path"]
+    #cert与sign工具下载的证书与签名文件的存放地
+    certificates_path = ENV["certificates_path"]
+
+    if skip_unity_export == false then
+        #调用gradle做生成ipa之前的准备
+        gradle(task: "prepareForGenIPA",
+               properties: {
+                 "config_mode" => "#{config_mode}",
+                 "skip_unity_export" => "#{skip_unity_export}"
+               })
+    end
+
+    # 使用xcodeproj库读取xcode工程配置文件
+    target = project.targets.first
+    #找到Native文件夹
+    nativeGroup = project.main_group.find_subpath(File.join('Classes','Native'), true)
+    #设置路径模式为 Relative to Group
+    nativeGroup.set_source_tree('<group>')
+
+    #整一个数组储存要删除的无效引用（文件不存在了）
+    willDeleteFile = Array.new
+
+    #遍历查找文件已经不正在的引用，移除
+    nativeGroup.files.each do |file|
+        if(!File.exist?(file.real_path)) then
+            willDeleteFile.push(file)
+            puts "File Reference Removed :" + file.real_path.to_s
+            # 从target的BuildPhase中移除
+            target.source_build_phase.remove_file_reference(file)
+        end
+    end
+
+    #从group中移除文件引用，
+    #之所以不能在前一个循环中删除，是因为使用替代器的循环中都不能改变循环体的内容
+    willDeleteFile.each do |deleteFile|
+        deleteFile.remove_from_project
+    end
+
+    #遍历Native文件夹下的所有cpp，找出还没有引用的，添加进来
+    Dir.entries(nativeGroup.real_path).sort.each do |entry|
+        filePath = File.join(nativeGroup.real_path, entry)
+        if !File.directory?(filePath) &&
+            entry != ".DS_Store" &&
+            entry.to_s.end_with?(".cpp") then
+
+            fileExist = false
+
+            nativeGroup.files.each do |file|
+                if(file.real_path.to_s.eql?(filePath.to_s)) then
+                    fileExist = true
+                    break
+                end
+            end
+
+            if !fileExist then
+                puts "File Reference Added :" + filePath
+                fileReference = nativeGroup.new_reference(filePath)
+                target.source_build_phase.add_file_reference(fileReference, true)
+            end
+        end
+    end
+
+    #保存xcode工程
+    project.save
+
+    #升级build号，使用的当前时间，格式为：年月日.时分秒
+    currentTime = Time.new.strftime("%Y%m%d.%H%M%S")
+    increment_build_number(build_number: "#{currentTime}",
+                           xcodeproj: xcode_project_path)
+    #获取版本号
+    version_number = get_version_number(xcodeproj: xcode_project_path,
+                                        target: ENV["xcode_target_name"])
+    #获得build号
+    build_number = get_build_number(xcodeproj: xcode_project_path)
+    #判断是不是开发版，只要config_mode不是release（完全匹配），就算开发版
+    isDev = config_mode != "release"
+    #生成最终输出的ipa名字
+    output_app_name = ENV["output_app_name"]
+    outputName = "#{output_app_name}_#{config_mode}_v#{version_number}(#{build_number}).ipa"
+
+    puts("final outputName : #{outputName}")
+
+    #---------------------暂时不用，因为工作不正常-------------------
+    #保证证书的正确
+    # cert(development: isDev,
+    #      username: apple_id_username,
+    #      output_path: certificates_path)
+    #保证签名的正确，要注意，此处sign工具的development参数要与gym工具的export_method对应
+    #此处development填true, 则export_method要填development
+    #此处development填false, 则export_method要填app-store
+    # sigh(development: isDev,
+    #      app_identifier: ipa_bundle_id,
+    #      username: apple_id_username,
+    #      output_path: certificates_path)
+    #只有主包才需要处理stickers的证书与签名
+    # if isMainPackage then
+    #   stickers_bundle_id = ipa_bundle_id + ".stickers"
+    #   sigh(development: isDev,
+    #        app_identifier: stickers_bundle_id,
+    #        username: apple_id_username,
+    #        output_path: certificates_path)
+    # end
+    #---------------------暂时不用，因为工作不正常-------------------
+
+    # 生成ipa
+    gym(project: xcode_project_path,
+        scheme: ENV["xcode_scheme_name"],
+        configuration: isDev ? "Debug" : "Release",
+        export_method: isDev ? "development" : "app-store",
+        silent: isDev ? false : true,
+        clean: true,
+        output_directory: ipa_output_path,
+        output_name: outputName)
+
+  end
+end

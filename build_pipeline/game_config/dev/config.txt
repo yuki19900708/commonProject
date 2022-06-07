@@ -1,0 +1,10 @@
+{
+    "BuildTimestamp" : "1803071626",
+    "TalkingDataAppKey" : "40CAE06FA3204CB3A736821B79A0AECB",
+    "TalkingDataChannelID" : "Dev",
+    "DebugEnabled" : true,
+    "LogEnabled" : true,
+    "IsPublish" : false,
+    "InternationalVersion" : true
+    "TestFlight" : false,
+}

@@ -1,0 +1,4 @@
+ext {
+	unity_exe_path =  "/Applications/Unity5.6.5p3/Unity5.6.5p3.app/Contents/MacOS/Unity"
+	texture_packer_exe_path = "D:/Software/CodeAndWeb/TexturePacker/bin/TexturePacker.exe"
+}

@@ -1,0 +1,275 @@
+apply from: "properties.gradle"
+apply from: "tool_path.gradle"
+
+def target = project.properties.target_server
+if (target != null)
+{
+    apply from: "data_${target}.gradle"
+}
+
+def config = project.properties.config_mode
+def skipUnityExportValue = project.properties.skip_unity_export
+def skipUnityExport = skipUnityExportValue ? skipUnityExportValue.toBoolean() : false
+
+//内部任务区
+task clean(type: GradleBuild) {
+    description "清理Android工程，准备build"
+    buildFile = "${android_studio_project_path}/build.gradle"
+    tasks = ['clean']
+}
+
+task copyConfig(type: Copy) {
+    description "复制配置文件到Unity工程目录"
+    from "./game_config/${config}/"
+    into "${unity_project_path}/Assets/Resources"
+}
+
+task updateBuildVersion(type: Exec) {
+    description "更新Unity工程的build号"
+    executable unity_exe_path
+    
+    def argv = [
+        "-batchMode",
+        "-quit",
+        "-projectPath", unity_project_path,
+        "-executeMethod", "CommandBuild.UpdateBuildTimestamp",
+        "-logFile", "${projectDir}/../output/unity_build.log"
+    ]
+    
+    args argv
+}
+
+task exportAndroidNativeProject(type: Exec) {
+    description "调用Unity导出Android平台的工程"
+    executable unity_exe_path
+    
+    def argv = [
+        "-batchMode",
+        "-quit",
+        "-projectPath", unity_project_path,
+        "-executeMethod", "CommandBuild.BuildAndroidStudioProject",
+        "-logFile", "${projectDir}/../output/unity_build.log"
+    ]
+    
+    args argv
+}
+
+task exportIOSNativeProject(type: Exec) {
+    description "调用Unity导出iOS平台的工程"
+    executable unity_exe_path
+    
+    def argv = [
+        "-batchMode",
+        "-quit",
+        "-projectPath", unity_project_path,
+        "-executeMethod", "CommandBuild.BuildiOSXcodeProject",
+        "-logFile", "${projectDir}/../output/unity_build.log"
+    ]
+    
+    args argv
+}
+
+task buildAndroidApp(type: GradleBuild) {
+    description "编译Android工程得到APK"
+    dir = "${android_studio_project_path}"
+    buildFile = "${android_studio_project_path}/build.gradle"
+    tasks = ['assembleRelease']
+}
+
+task mergeAndroidProject() << {
+    description "将Unity导出的Android工程合并到最终的Android工程中"
+    def assetsDestPath = "${android_studio_project_path}/src/main/assets/"
+    def assetsSourcePath = "${unity_export_project_path}/src/main/assets/"
+    delete assetsDestPath
+    copy {
+        from assetsSourcePath
+        into assetsDestPath
+    }
+    
+    def jniDestPath = "${android_studio_project_path}/src/main/jniLibs/"
+    def jniSourcePath = "${unity_export_project_path}/src/main/jniLibs/"
+    copy {
+        from jniSourcePath
+        into jniDestPath
+    }
+    
+    def libDestPath = "${android_studio_project_path}/libs/"
+    def libSourcePath = "${unity_export_project_path}/libs/"
+    copy {
+        from libSourcePath
+        into libDestPath
+        //很多SDK的Unity插件会在Unity的Plugins/Android下生成这些库，与Android的gradle配置中引用的库会产生重复，因此这些库不复制
+        exclude 'com.android.support.support*', 'com.google.android.gms.play-services*', 'play-services-basement*', 'com.android.support.customtabs-25.3.1.aar'
+    }
+}
+
+task mergeIOSProject() << {
+    description "将Unity导出的iOS工程合并到最终的iOS工程中"
+    def dataDestPath = "${ios_xcode_project_path}/Data"
+    def dataSourcePath = "${ios_xcode_project_temp_path}/Data"
+    delete dataDestPath
+    copy {
+        from dataSourcePath
+        into dataDestPath
+    }
+
+    def libraryDestPath = "${ios_xcode_project_path}/Libraries"
+    def librarySourcePath = "${ios_xcode_project_temp_path}/Libraries"
+    delete libraryDestPath
+    copy {
+        from librarySourcePath
+        into libraryDestPath
+    }
+
+    def nativeDestPath = "${ios_xcode_project_path}/Classes/Native"
+    def nativeSourcePath = "${ios_xcode_project_temp_path}/Classes/Native"
+    delete nativeDestPath
+    copy {
+        from nativeSourcePath
+        into nativeDestPath
+    }
+}
+
+task restoreConfig(type: Copy) {
+    description "还原配置文件到Unity工程目录"
+    from "./game_config/dev/"
+    into "${unity_project_path}/Assets/Resources"
+}
+
+task prepareForGenAPK() {
+    description "生成APK之前的准备工作"
+
+    dependsOn clean
+    dependsOn copyConfig
+    dependsOn updateBuildVersion
+    dependsOn exportAndroidNativeProject
+    dependsOn restoreConfig
+    dependsOn mergeAndroidProject
+        
+    copyConfig.mustRunAfter clean
+    updateBuildVersion.mustRunAfter copyConfig
+    exportAndroidNativeProject.mustRunAfter updateBuildVersion
+    restoreConfig.mustRunAfter exportAndroidNativeProject
+    mergeAndroidProject.mustRunAfter restoreConfig
+}
+
+task generatePVRTCAssetBundle() << {
+    description "更生成iOS A8 CPU之下的设备使用的AssetBundle"
+    
+    //先将所有图集以正方形重新导出
+    FileTree tree = fileTree(dir: '../art_asset', include: '*.tps')
+    tree.each {File file ->   
+        def argv = [
+            file,
+            "--smart-update",
+            "--force-squared"
+        ]
+        exec 
+        {
+            executable texture_packer_exe_path
+            args argv
+        }
+    }
+
+    //直接修改.meta文件的内容来完成压缩格式的修改，可以避免打开Unity先以原格式改入资源的大把时间
+    def atlasPath = "${unity_project_path}/Assets/ResourcesRaw/Atlas"
+    tree = fileTree(dir: atlasPath, include: '*.meta')
+    tree.each {File file ->   
+        println (file.getName()) 
+        String contents = file.getText( 'UTF-8' )
+        contents = contents.replaceAll( 'textureFormat: 54', 'textureFormat: 33' )
+        contents = contents.replaceAll( 'compressionQuality: 0', 'compressionQuality: 100' )
+        file.write( contents, 'UTF-8' )
+    }
+    
+    //直接命令行生成AssetBundle
+    def argv1 = [
+        "-batchMode",
+        "-quit",
+        "-projectPath", unity_project_path,
+        "-executeMethod", "CommandBuild.BuildPVRTCAssetBundle",
+        "-logFile", "${projectDir}/../output/unity_build.log"
+    ]
+    exec 
+    {
+        executable unity_exe_path
+        args argv1
+    }
+}
+
+//对外任务区
+task genAPK() {
+    description "生成APK"
+
+    if (skipUnityExport)
+    {
+        dependsOn clean
+        dependsOn buildAndroidApp
+        
+        buildAndroidApp.mustRunAfter clean
+    }
+    else
+    {
+        dependsOn prepareForGenAPK
+        dependsOn buildAndroidApp
+        
+        buildAndroidApp.mustRunAfter prepareForGenAPK
+    }
+    
+    doLast {
+        def androidManifest = new XmlSlurper().parse(android_studio_manifest)
+        def versionName = androidManifest['@android:versionName']
+        def versionCode = new Date().format('yyMMddHHmm')
+        
+        delete android_apk_output_path
+        copy {
+            from android_studio_project_output_path
+            into android_apk_output_path
+            include "*.apk"
+            rename { String fileName -> 
+                fileName = "${unity_app_name}_${config}_v${versionName}(${versionCode}).apk"
+            }
+        }
+    }
+}
+
+task prepareForGenIPA() {
+    description "生成IPA之前的准备工作"
+    
+    dependsOn copyConfig
+    dependsOn updateBuildVersion
+    dependsOn exportIOSNativeProject
+    dependsOn restoreConfig
+    dependsOn mergeIOSProject
+
+    updateBuildVersion.mustRunAfter copyConfig
+    exportIOSNativeProject.mustRunAfter updateBuildVersion
+    restoreConfig.mustRunAfter exportIOSNativeProject
+    mergeIOSProject.mustRunAfter restoreConfig
+}
+
+task buildDataTable(type: Exec) {
+    description "同时更新客户端和服务端的游戏数据表"
+    executable unity_exe_path
+    
+    def argv = [
+        "-batchMode",
+        "-quit",
+        "-projectPath", unity_project_path,
+        "-executeMethod", "CommandBuild.AntBuildData",
+        "-logFile", "${projectDir}/../output/unity_build.log",
+
+        "data_source_folder", "../../data/策划原始表/",
+        "data_build_config", "../../data/数据导出配置表.xlsx",
+        "mysql_sever", project.properties.mysql_server,
+        "mysql_port", project.properties.mysql_port,
+        "mysql_user", project.properties.mysql_user,
+        "mysql_password", project.properties.mysql_password,
+        "mysql_database", project.properties.mysql_database,
+        "game_server_ip", project.properties.game_server_ip,
+        "game_server_port", project.properties.game_server_port,
+        "target_server", project.properties.target_server,
+    ]
+    
+    args argv
+}
