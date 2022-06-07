@@ -1,0 +1,916 @@
+﻿syntax = "proto3";
+
+package GameProto;
+
+import "google/protobuf/any.proto";
+
+message Login_data                                            //登陆时用户数据
+{
+    uint32                  data_save_index              = 1; //服务端已经保存的消息索引
+    uint32                  alliance_id                  = 2; //联盟ID
+    Game_data               game_data                    = 3; //游戏数据
+    Essential_data          essential_data               = 4; //重要数据
+    Player_data             player_data                  = 5; //用户基本数据
+    Plunder_army_data       army_data                    = 6; //阵容数据
+    Plunder_data            plunder_data                 = 7; //防守历史数据
+    Vip_data                vip_data                     = 8; //vip的需要存储的数据
+    uint32                  cost_diamond_total           = 9; //消费钻石总数
+}
+
+message Game_data       //用户游戏数据, 只能填入用户请求修改的数据
+{
+    Camp_data               camp_data                    = 1; //大本营数据
+    repeated Chapter_data   chapter_data                 = 2; //关卡数据
+    AP_data                 ap_data                      = 3; //体力数据
+    repeated Monster_id_data monster_list                = 4; //怪物数据
+    Plunder_history_list    attack_data                  = 5; //掠夺主动攻击的数据
+    repeated Sign_data      sign_data                    = 6; //解锁的图鉴
+    Treasure_data           treasure_data                = 7; //宝箱数据
+    Shop_data               shop_data                    = 8; //商店数据
+    uint32                  limit_money                  = 9; //建筑影响金币上限 和石块要不要放到一起?
+    uint32                  limit_stone                  = 10; //建筑影响石块上限
+    Avatar_data             avatar_data                  = 11; //头像和头像框数据统计
+    Vip_data                vip_data                     = 12; //vip的需要存储的数据
+    Price_pool              price_pool_data              = 13; //奖池要
+    string                  tutorial_data                = 14; //新手引导数据
+    uint32                  cost_diamond_total           = 15; //消费钻石总数
+}
+
+message Sign_data
+{
+    uint32                  id                           = 1; //图鉴id
+    bool                    is_view                      = 2; //是否查看过
+}
+
+message Player_data                                           //用户基本数据
+{
+    string name                                          = 1; //用户名称
+    string url_icon                                      = 2; //头像链接
+    uint32 icon                                          = 3; //头像及头像框
+    uint32 vip_level                                     = 4; //VIP等级
+    uint32 alliance_id                                   = 5; //联盟ID需要显示VIP等级的进度
+    uint32 vip_score                                     = 6; //vip积分:需要显示VIP等级的进度
+    uint32 change_name_count                             = 7; //修改名称的次数，需要来判断修改昵称是否收费
+    //TODO 逻辑未实现协议等具体待定
+    float recharge_count                                 = 8; //充值数量
+    Monthly_card_data monthly_data                       = 9; //月卡数据
+}
+
+message Essential_data                                        //重要数据
+{
+    uint64 coin                                          = 1; //金币
+    uint64 stone                                         = 2; //石砖
+    uint64 diamond                                       = 3; //钻石
+    uint64 exp                                           = 4; //经验值
+    uint32 level                                         = 5; //等级
+    uint32 trophy                                        = 6; //竞技奖杯数
+    uint64 offline_time                                  = 7; //下线时间
+}
+//地圖大小
+message Map_size
+{
+    uint32                      width                    = 1;
+    uint32                      height                   = 2;
+}
+
+message Camp_data                                             //大本营数据
+{
+    repeated Grid_data          grid                     = 1; //地图格子数据
+    repeated Task_data          task_data                = 2; //任务目标（星星）
+    uint32                      star                     = 3; //已经获得的星星数（完成的任务数量）
+    uint64                      score                    = 4; //分数
+    repeated Map_object_data    floating                 = 5; //浮空物数据[不含蒲公英，龙] 位置服务端不存储
+    Map_size                    map_size                 = 6; //地图數據
+}
+
+enum Chapter_state                                         //关卡状态
+{
+    CHAPTER_STATE_LOCK                                   = 0; //未解锁
+    CHAPTER_STATE_UNLOCK                                 = 1; //已解锁且未开始
+    CHAPTER_STATE_FINISH                                 = 2; //已完成
+    CHAPTER_STATE_TRYING                                 = 3; //尝试中[完成和尝试状态会不停切换]
+}
+
+message Chapter_info
+{
+    uint32              finish_count                     = 1; //完成次数
+    uint32              star_count                       = 2; //获得星数
+    uint32              fastest_time                     = 3; //最快时间
+    uint32              highest_score                    = 4; //最高积分
+//卢洋说是策划的口头
+    uint32              box_stage                        = 5;
+    uint32              stage_count                      = 6;
+//服务端需要的数据 计算进入该关卡之后的数据的累积
+    uint32              finish_mission_count             = 7;
+    uint32              get_diamond_count                = 8;
+}
+
+message Chapter_data                                          //关卡数据
+{
+    uint32                      level                    = 1;
+    Chapter_info                info                     = 2;
+}
+
+message AP_data                                               //体力数据
+{
+    uint32 ap                                            = 1; //用户体力（酒杯）
+    uint64 next_ap_time                                  = 2; //下一次恢复体力的时间（时间点）
+}
+
+enum Monster_state                                         //怪兽状态
+{
+    MONSTER_STATE_SLEEPPING                              = 0; //正在休息
+    MONSTER_STATE_WAKING                                 = 1; //正在苏醒过程中
+    MONSTER_STATE_WAKED                                  = 2; //已经苏醒
+}
+
+message Monster_data                                          //怪物数据
+{
+    Monster_identity_data   identity                      = 1; //怪物的唯一标识数据
+    string                  name                          = 2; //怪物名字
+    uint32                  ap                            = 3; //剩余行动点数
+    uint32                  mount_id                      = 4; //生物头顶的物品
+}
+
+//龙的唯一标识数据
+message Monster_identity_data
+{
+    uint32                  only_id                      = 1; //唯一id
+    uint32                  monster_id                   = 2; //怪物id
+}
+
+//当前id龙数据
+message Monster_id_data
+{
+    uint32                  monster_id                   = 1; //monster_id
+    repeated Monster_data   list                         = 2; //当前ID所有的龙
+}
+//申请数据
+message Apply_data
+{
+    uint32                  apply_user_id                = 1; //申请id
+    uint64                  apply_time                   = 2; //申请时间
+}
+//申请列表
+message Apply_list
+{
+    repeated Apply_data list                             = 1;
+}
+//条件类型
+enum Condition_type
+{
+    CONDITION_TYPE_NIL                                   = 0; //无条件
+    CONDITION_TYPE_FORBID                                = 1; //禁止加入
+    CONDITION_TYPE_TROPHY                                = 2; //奖杯数
+}
+//加入条件
+message Join_condition
+{
+    Condition_type          type                         = 1; //条件类型
+    uint32                  value                        = 2; //限定值
+}
+//联盟基础数据
+message Alliance_base_data
+{
+    uint32                  alliance_id                  = 1; //联盟id
+    string                  alliance_name                = 2; //联盟名称
+    string                  language                     = 3; //语言
+    uint32                  alliance_icon                = 4; //联盟icon
+    Join_condition          condition                    = 5; //加入条件
+    string                  notice                       = 6; //公告
+    uint32                  leader_id                    = 7; //盟主
+    uint32                  member_count                 = 8; //成员数量
+}
+//黑科技类型
+enum Black_tech_type
+{
+    BLACK_TECH_TYPE_NIL                                  = 0;
+    BLACK_TECH_TYPE_ATTACK                               = 1; //攻击类型
+    BLACK_TECH_TYPE_HP                                   = 2; //生命类型
+}
+//捐献数据
+message Donate_data
+{
+    Black_tech_type         type                         = 1; //黑科技类型
+    uint64                  count                        = 2; //捐献数量
+}
+//捐献列表
+message Donate_data_list
+{
+    repeated Donate_data    list                         = 1; //列表
+}
+//联盟成员数据/DB使用
+message Alliance_member_data
+{
+    uint32                  user_id                      = 1; //玩家id
+    Donate_data_list        donate_list                  = 2; //捐献列表
+}
+//联盟成员列表/redis使用
+message Alliance_member_list
+{
+    repeated Alliance_member_data list                   = 1; //成员列表
+}
+
+//黑科技数据
+message Black_tech_data
+{
+    Black_tech_type         type                         = 1; //科技类型
+    uint64                  count                        = 2; //捐献总数
+    uint32                  level                        = 3; //科技等级
+}
+
+//联盟黑科技
+message Alliance_black_tech
+{
+    repeated Black_tech_data list                        = 1; //黑科技列表
+}
+
+//联盟数据缓存/DB存盘使用
+message Alliance_data
+{
+    Apply_list              apply_list                   = 1; //申请列表
+    Alliance_black_tech     black_tech                   = 2; //联盟黑科技
+    Alliance_member_list    member_list                  = 3; //联盟成员
+}
+//联盟内玩家详细数据
+message Alliance_user_data
+{
+    uint32              user_id                          = 1; //玩家id
+    Player_data         player                           = 2; //玩家基础数据
+    Essential_data      essential                        = 3; //玩家重要数据
+    Donate_data_list    donate_list                      = 4; //捐献列表（计算捐献值)
+}
+
+enum Platform_type
+{
+    PLATFORM_TYPE_GUEST_ANDRIOD = 0;                //安卓游客登录
+    PLATFORM_TYPE_GUEST_PAD = 1;                    //安卓PAD
+    PLATFORM_TYPE_GUEST_IPHONE = 2;                 //IPHONE游客登录
+    PLATFORM_TYPE_GUEST_IPAD = 3;                   //IPAD游客登录
+
+    PLATFORM_TYPE_FACEBOOK = 20;                    //facebbok
+    PLATFORM_TYPE_TWITTER = 21;                     //twitter
+    PLATFORM_TYPE_WECHAT = 22;                      //微信
+    PLATFORM_TYPE_WEIBO = 23;                       //微博
+    PLATFORM_TYPE_QQ = 24;                          //腾讯QQ
+
+    //--- 是否增加其他平台
+    PLATFORM_TYPE_ACCOUNT = 50;                     //账号密码登录
+}
+
+//反馈数据
+message Contact_us_data
+{
+    uint32              user_id                          = 1; //玩家id
+    uint64              time                             = 2; //时间 
+    string              title                            = 3; //标题
+    string              content                          = 4; //内容
+    string              contact_way                      = 5; //联系方式 
+    Platform_type       type                             = 6; //类型
+    string              version                          = 7; //版本 
+    uint32              state                            = 8; //状态 
+    string              device_model                     = 9; //设备型号 
+}
+
+//公告数据
+message Notice_data
+{
+    string               title                      = 1; //标题
+    string               content                    = 2; //内容
+    string               des                        = 3; //描述
+    string               icon                       = 4; //图标
+    uint64               begin_time                 = 5; //公告时间
+}
+
+//公告列表
+message Notice_list
+{
+    repeated Notice_data        list                = 1;
+}
+
+//公告缓冲数据
+message Notice_data_redis
+{
+    string               title_cn                      = 1; //标题cn
+    string               title_en                      = 2; //标题en
+    string               content_cn                    = 3; //内容cn
+    string               content_en                    = 4; //内容en
+    string               des_cn                        = 5; //描述cn
+    string               des_en                        = 6; //描述en
+    string               icon                          = 7; //图标
+    uint64               begin_time                    = 8; //公告时间
+    uint64               end_time                      = 9; //公告结束显示的时间
+}
+
+//邮件的类型
+enum MAIL_TYPE
+{
+    MAIL_TYPE_GENERAL                                   = 0;                      //系统邮件
+    MAIL_TYPE_MONTHLYCARD                               = 1;                      //月卡邮件
+    MAIL_TYPE_ACTIVITY                                  = 2;                      //活动邮件
+}
+
+//邮件所处的状态
+enum MAIL_STATUS
+{
+    MAIL_STATUS_NOT_READ                                = 0;                       //未读
+    MAIL_STATUS_READ                                    = 1;                       //已读
+    MAIL_STATUS_NOT_RECEIVED                            = 2;                       //未领取
+    MAIL_STATUS_RECEIVED                                = 3;                       //已领取
+    MAIL_STATUS_DELETE                                  = 4;                       //删除
+}
+
+//邮件级别
+enum MAIL_LEVEL
+{
+    MAIL_LEVEL_COMMON                                   = 0;    //普通的邮件(除月卡外)
+    MAIL_LEVEL_SPECIAL                                  = 1;    //特殊的邮件(月卡)
+}
+
+message Mail_identity
+{
+    uint32                  only_id                 = 1;    //唯一id
+    MAIL_LEVEL              level                   = 2;    //邮件级别
+}
+
+//邮件数据data
+message Mail_data
+{
+    Mail_identity           identity                = 1;    //邮件身份id 
+    MAIL_TYPE               type                    = 2;    //邮件类型
+    uint64                  time                    = 3;    //邮件发送时间
+    uint64                  title_id                = 4;    //邮件标题id 
+    string                  title_cn                = 5;    //标题cn
+    string                  title_en                = 6;    //标题en
+    uint64                  content_id              = 7;    //邮件内容id
+    string                  content_cn              = 8;    //邮件内容cn
+    string                  content_en              = 9;    //邮件内容en
+    MAIL_STATUS             status                  = 10;   //邮件的状态
+    repeated Common_item    reward_list             = 11;   //奖励列表
+
+    //特殊邮件(比如月卡）会一次生成30份邮件，每天下发一份，通过下发时间来判断是否下发给客户端
+    uint64                  display_time            = 12;   //下发客户端的时间
+    //后台发送的个人邮件需要查看具体状态
+    Write_mail_type         write_type              = 13;   //写邮件的类型
+
+    //---expire_time此字段作废---
+    // 因为涉及到续月卡问题，导致计算剩余时间错误，Month_mail_record来计算
+    uint64                  expire_time             = 14;   //月卡的过期时间【用于客户端计算剩余多少天】
+
+    uint32                  month_card_id           = 15;   //月卡类型id
+    google.protobuf.Any     contact_us              = 16;   //联系我们数据
+    uint32                  vip_level               = 17;   //vip等级（发送邮件时的vip等级）
+}
+
+//邮件列表
+message Mail_data_list
+{
+    repeated Mail_data      list                    = 1;
+}
+
+//特殊邮件
+message Month_mail_record
+{
+    uint32                  month_card_id           = 1;    //月卡id
+    uint64                  expire_time             = 2;    //过期时间
+    //repeated Mail_data      list                    = 3;    //具体写的邮件内容
+}
+
+//邮件缓冲列表db和redis使用
+message Mail_cache
+{
+    Mail_data_list                  common_list             = 1;    //普通邮件（数量限定）
+    Mail_data_list                  special_list            = 2;    //特殊邮件
+    repeated Month_mail_record      month_record            = 3;    //月卡记录
+}
+
+//common请求添加邮件注意：
+//level:(默认0)  需要[type] [title_id] [content_id] [reward_list] 
+message Write_mail
+{
+    uint32                  user_id                 = 1;    //玩家id
+    Mail_data               mail                    = 2;    //邮件
+}
+
+enum Write_mail_type
+{
+    WRITE_MAIL_TYPE_PERSONAL                        = 0;    //个人邮件
+    WRITE_MAIL_TYPE_BACKSTAGE_PERSONAL              = 1;    //后台个人邮件
+    WRITE_MAIL_TYPE_BACKSTAGE_GROUP                 = 4;    //后台群发邮件(所有活跃用户)
+    WRITE_MAIL_TYPE_BACKSTAGE_CONDITION             = 8;    //后台条件邮件(所有活跃用户)
+}
+
+message Backstage_condition
+{
+    uint32 min_trophy           = 1;        //最小奖杯数
+    uint32 max_trophy           = 2;        //最大奖杯数
+    uint32 min_recharge         = 3;        //最小充值数
+    uint32 max_recharge         = 4;        //最大充值数
+    uint32 min_level            = 5;        //最小等级
+    uint32 max_level            = 6;        //最大等级
+    uint32 min_pass             = 7;        //最小关卡
+    uint32 max_pass             = 8;        //最大关卡
+    uint32 min_sign             = 9;        //最小图鉴
+    uint32 max_sign             = 10;       //最大图鉴
+    uint32 min_vip_level        = 11;       //最小VIP等级
+    uint32 max_vip_level        = 12;       //最大VIP等级
+}
+
+//服务器请求写邮件
+message Write_mail_request
+{
+    repeated Write_mail     list                    = 1;    //玩家邮件列表
+
+    //后台使用
+    Write_mail_type         write_type              = 2;    //写邮件的类型
+    Backstage_condition     condition               = 3;    //条件邮件的条件
+    //后台群发邮件和条件邮件需要统计数据
+    Statistics_data         statistics              = 4;    //统计数据
+}
+
+message Statistics_data 
+{
+    uint32 active_count                             = 1;    //活跃玩家数
+    uint32 send_count                               = 2;    //成功发送玩家数
+}
+
+
+message Plunder_data                                          //掠夺数据
+{
+    uint64                      shield_break_time        = 1; //保护失效时间（时间点）
+    Plunder_rank_data           rank_data                = 2; //排名数据
+    Plunder_history_list        history_list             = 3; //历史记录
+    repeated Coord              coord_list               = 4; //掠夺被封印的土地
+    uint64                      dorp_segment_time        = 5; //上一次的掉段处理的时间
+    uint64                      refresh_time             = 6; //上次免费刷新时间
+    uint32                      free_count               = 7; //免费次数
+}
+
+message Plunder_history_list                                  //历史记录(进攻和防守公用一个)
+{
+    repeated Plunder_history    history_info             = 1; //掠夺记录
+}
+
+//宝箱状态
+enum Treasure_box_status
+{
+    TREASURE_BOX_STATUS_NIL                              = 0; //废弃
+    TREASURE_BOX_STATUS_LOCK                             = 1; //锁定 关卡宝箱获得之后即为该状态
+    TREASURE_BOX_STATUS_WAIT                             = 2; //玩家点击了解锁
+    TREASURE_BOX_STATUS_FINISH                           = 3; //完成状态 用户点击可以打开
+}
+
+//单个宝箱信息
+message Treasure_box_info
+{
+    uint32              box_id                           = 1; //宝箱唯一id 服务端会对客户端关卡带回来的宝箱id进行验证
+    uint32              config_index                     = 2; //各种宝箱在配置表中的index
+    Treasure_box_status status                           = 3; //宝箱状态 每日宝箱创建时便是WAIT状态
+//只有staus 为 wait时，finish_time有意义,会被赋值,其他状态,finish_time会被清理掉
+    uint64              finish_time                      = 4;
+    bool                is_empty                         = 5; //是否空闲 标志该宝箱已经被打开
+}
+
+//关卡宝箱数据，初始为三个宝箱，会随着VIP等级变化而变化
+message Level_treasure_box_info
+{
+    repeated Treasure_box_info box_list                  = 1; //账号
+    uint32 box_count                                     = 2; //当前宝箱数量
+    uint32 max_box_count                                 = 3; //允许可存储的宝箱数量
+}
+
+//玩家所有宝箱数据
+message Treasure_data
+{
+    Treasure_box_info daily_box                          = 1; //每日宝箱
+    Level_treasure_box_info level_box                    = 2; //关卡宝箱
+}
+
+message Plunder_history
+{
+    uint32              enemy_id                         = 1; //敌方id
+    uint32              trophy                           = 3; //敌方奖杯数(战斗之前)
+    bool                win_flag                         = 4; //是否胜利              //true 胜利
+    int32               trophy_change                    = 5; //我方奖杯数据变更数量
+    uint64              start_time                       = 6; //掠夺开始的时间
+    Player_data         player_data                      = 7; //基本数据
+    bool                AI_flag                          = 8; //是否为AI              //true是ai
+    bool                show_flag                        = 9; //是否已经被展示过了    //true被展示过
+    Plunder_army_data   army_data                        = 10;//敌方阵容 (显示的是敌方的阵容)
+    uint32              level                            = 11;//敌方等级
+}
+
+message Map_data                                              //地图数据
+{
+    repeated Grid_data grid                              = 1; //地图格子数据
+}
+
+enum Grid_state                                            //地图格子状态
+{
+    GRID_STATE_LOCKED                                    = 0; //未解锁
+    GRID_STATE_UNLOCK_AND_DEAD                           = 1; //解锁未治愈（包括彻底死地）
+    GRID_STATE_UNLOCK_AND_CURED                          = 2; //解锁并治愈
+    GRID_STATE_PAID_UNLOCK                               = 3; //付费解锁[高端区的默认状态]
+}
+
+message Coord                                                 //坐标
+{
+    uint32 x                                             = 1; //x坐标
+    uint32 y                                             = 2; //y坐标
+}
+
+message Grid_data                                             //地图格子数据
+{
+    Coord                           coord                = 1; //坐标
+    Grid_state                      state                = 2; //格子状态
+    uint32                          dead_level           = 3; //死地等级
+    uint32                          cure_count           = 4; //已经治愈的数值
+    Map_object_data                 terrain              = 5; //地形
+    Map_object_data                 entity               = 6; //地面物件
+    uint32                          seallock_id          = 7; //锁定ID
+    /*uint32                          plunder_flag       = 7; //掠夺标记*/
+    /*Map_object_data                 floating           = 7; //飘浮物*/
+}
+
+enum MAP_OBJECT_STATUS                                         //物品的状态
+{
+    MAP_OBJECT_STATUS_NULL                                = 0; //无状态
+    MAP_OBJECT_STATUS_NORMAl                              = 1; //正常状态
+    MAP_OBJECT_STATUS_LOCK                                = 2; //宝箱等类的物品被锁住
+}
+
+message Map_object_data                                       //地图物体数据
+{
+    uint32                      id                       = 1; //物件表ID
+    string                      name                     = 2; //名字（单对于龙）
+    uint32                      hp                       = 3; //剩余生命值（可摧毁物品才有）
+    int32                       left_tap_count           = 4; //剩余可点击次数（目前没有无限，但以防万一，还是用有符号整理，可点击物品才有）
+    int32                       tap_max_mount            = 5; //最大可点击次数（目前没有无限，但以防万一，还是用有符号整理，可点击物品才有）
+    int32                       left_collect_count       = 6; //剩余可采集次数（-1表示无限次，可采集物品才有）
+    int32                       collect_max_count        = 7; //最大采集次数（-1表示无限次，可采集物品才有）
+    int32                       left_spawn_count         = 8; //剩余自动产出次数（-1表示无限次，可衍生物品才有）
+    int32                       spawn_max_count          = 9; //最大自动产出次数（-1表示无限次，可衍生物品才有）
+    uint32                      remain_amount            = 10; //剩余数量（溢出的金币或石砖，可点击物品有动态数量属性才有该值）
+    uint32                      shop_id                  = 11; //建筑商店商品ID（地基特有属性）
+    repeated Map_object_data    include_objects          = 12; //战利品球包含的物品;
+    Resting_building_data       building_data            = 13; //休息建筑数据
+    MAP_OBJECT_STATUS           status                   = 14; //物体的状态
+    uint64                      delete_time              = 15; //删除时间
+    uint32                      dead_time                = 16; //消亡时间
+}
+
+message Resting_building_data                                 //休眠建筑数据
+{
+    int64                                timestamp       = 1; //时间戳
+    repeated Monster_identity_data       monster_list    = 2; //建筑中休息的龙
+}
+
+//任务数据
+message Task_data
+{
+    uint32  id                                           = 1; //任务id
+    bool    is_completed                                 = 2; //是否完成
+    uint32  finish_count                                 = 3; //任务完成进度
+    uint32  reward                                       = 4; //任务的奖励
+}
+
+message Plunder_army_data
+{
+    repeated  Monster_data   attack_army                 = 1; //进攻阵容
+    repeated  Monster_data   defense_army                = 2; //防守阵容
+    uint32                   attack_power                = 3; //进攻战力
+    uint32                   defen_power                 = 4; //防守战力
+}
+
+message Plunder_rank_data                                     //玩家掠夺排名数据
+{
+    uint32  daily_rank                                   = 1; //日赛排名
+    uint32  daily_rank_pnge                              = 2; //日赛排名变化
+    uint32  weekly_rank                                  = 3; //周赛排名
+    uint32  weekly_rank_change                           = 4; //周赛排名变化
+    uint32  trophy                                       = 5; //只用在返回的数据中, 在GameData中是0
+}
+
+//# 商店数据
+message Shop_data
+{
+    repeated Shop_list_data     list_data                = 1; //商店列表
+}
+
+//列表信息
+message Shop_list_data
+{
+    repeated Shop_item_data     shop_item                = 1; //商店数据
+    Shop_type                   type                     = 2; //商店种类
+}
+//商品数据
+message Shop_item_data
+{
+    uint32              id                               = 1; //id
+    uint32              buy_count                        = 2; //购买次数
+    Shop_item_state     state                            = 3; //商品状态
+    uint32              limit_count                      = 4; //限购次数
+    uint64              limit_time                       = 5; //过期时间
+    uint32              object_id                        = 6; //物件ID
+}
+//商品状态
+enum Shop_item_state
+{
+    ITEM_STATE_LOCKED                                    = 0; //未解锁
+    ITEM_STATE_UNLOCK_BUT_NO_DISPLAY                     = 1; //解锁未展示
+    ITEM_STATE_DISPLAY                                   = 2; //展示
+    ITEM_STATE_SOLD_OUT                                  = 3; //卖光了
+}
+//商店类型
+enum Shop_type
+{
+    DEFAULT_SHOP                                         = 0; //默认枚举 (不发送Shop_type的时候就使用这一条)
+    CHEST_SHOP                                           = 1; //宝箱商店
+    EGGS_SHOP                                            = 2; //蛋商店
+    BUILDING_SHOP                                        = 3; //建筑商店
+    TIMED_SHOP                                           = 4; //限时商店
+    LEVEL_SHOP                                           = 5; //关卡商店
+    DIAMOND_SHOP                                         = 6; //钻石商店
+}
+
+//物资类型
+enum MATERIAL_TYPE
+{
+    MATERIAL_DEFAULT                                     = 0; //默认类型
+    MATERIAL_MONEY                                       = 1; //金币
+    MATERIAL_STONE                                       = 2; //石头
+    MATERIAL_DIAMOND                                     = 3; //钻石
+    MATERIAL_EXP                                         = 4; //经验
+}
+
+//头像和头像框数据统计
+message Avatar_data
+{
+    repeated Icon_data      index_data                   = 1; //头像数据
+    repeated Icon_data      frame_data                   = 2; //头像框数据
+}
+
+message Icon_data
+{
+    uint32      id                                       = 1; //id
+    uint32      count                                    = 2; //数量
+    bool        finish_flag                              = 3; //完成标记
+}
+
+message Vip_reward_data
+{
+    repeated Common_item    list                        = 1; //vip奖励
+}
+
+//通用的物品id和数量结构
+message Common_item
+{
+    uint32      id                                      = 1;    //id
+    uint32      count                                   = 2;    //数量
+}
+
+
+//商店数据
+message Vip_shop_data
+{ 
+    uint64                  refresh_time                = 1;    //商店刷新的时间
+    repeated Vip_shop_info  list                        = 2;    //商店列表数据
+    uint32                  refresh_mount               = 3;    //当前玩家刷新的次数(出一次史诗商品后归零)
+    uint32                  use_diamond_cardinal_mount  = 4;    //刷新钻石的基数（在玩家免费刷新一次以后）
+    uint32                  refresh_all_mount           = 5;    //当前玩家刷新的次数(10次刷新计时)
+    uint32                  lock_animation_start_index  = 6;    //解锁动画开始的索引
+}
+
+//Vip商店 (商店列表单个数据)
+message Vip_shop_info
+{ 
+    uint32                  id                          = 1;    //随机商店商品编号
+    bool                    sell_flag                   = 2;    //卖出情况
+}
+
+//vip的需要存储的数据
+message Vip_data 
+{
+    Vip_reward_data         reward_data                  = 1;   //VIP奖励            
+    Vip_shop_data           shop_data                    = 2;   //VIP商店数据
+}
+
+//所有活动的类型
+enum ACTIVITY_TYPE
+{
+    ACTIVITY_NULL                                                = 0;
+    ACTIVITY_SHARE                                               = 1;//分享活动
+    ACTIVITY_MAIL                                                = 2;//绑定邮箱活动
+    ACTIVITY_OUTSIDE                                             = 3;//周边活动
+    ACTIVITY_PLUNDER                                             = 4;//掠夺活动
+    ACTIVITY_MERGR_MONSTER                                       = 5;//合成生物
+    ACTIVITY_MERGR_ARTICLE                                       = 6;//合成物品
+    ACTIVITY_TIME_LIMITED_LEVEL                                  = 7;//限时挑战关卡
+    ACTIVITY_BUY_ITEM                                            = 8;//购买游戏内物品(包括宝石不包括生物
+    ACTIVITY_BUY_MONTHLY_CARD                                    = 9;//购买商店月卡
+    ACTIVITY_BUY_MONSTER                                         = 10;//购买生物
+    ACTIVITY_BUY_RECHARGE_AREA                                   = 11;//购买充值区
+    ACTIVITY_PRIZE_POOL                                          = 12;//奖池活动
+    ACTIVITY_SELL_PACKAGED_MONSTER                               = 13;//生物打包出售活动
+}
+
+message Price_pool 
+{
+    ACTIVITY_PRIZE_POOL_TYPE prizepool_type                   = 1;  //奖池类型
+    uint32                   finish_count                     = 2;  //完成次数
+    repeated Common_item     reward_data_list                 = 3;  //奖励数据
+}
+    
+//活动的基础数据
+message Activity_base_data
+{
+    uint32                        only_id                        = 1;//活动的唯一性
+    ACTIVITY_TYPE                 activity_type                  = 2;//活动类型
+    string                        name_cn                        = 3;//名称CN
+    string                        name_en                        = 4;//名称EN
+    string                        des_cn                         = 5;//描述CN
+    string                        des_en                         = 6;//描述EN
+    uint64                        end_time                       = 7;//结束时间
+    uint64                        start_time                     = 8;//开始时间
+    string                        recharge_code                  = 9;//充值码
+    float                         discount                       = 10;//折扣
+    uint32                        max_count                      = 12;//活动参与的最大数量
+    uint32                        vip_exp                        = 13;//增加的vip经验值
+    string                        url                            = 14;//外部调用链接
+    uint32                        step_id                        = 15;//高端区ID
+    repeated Common_item          reward_data_list               = 16;//活动奖励列表
+    Activity_prize_pool_data      prizepool_data                 = 17;//奖池活动数据
+    Activity_rand_biology_sell    rand_biology_sell              = 18;//随机生物出售活动数据
+    //Activity_merge_article_data   merge_article_data           = 19;//合成物品活动数据
+    //Activity_plunder_data         plunder_data                 = 20;//掠夺活动数据
+    float                         price_cn                       = 22;//中文价格
+    float                         price_en                       = 23;//英文价格
+    bool                          status                         = 24;//状态(true 开启，false 关闭）
+
+
+    uint32                        price                          = 25;
+    uint32                        count                          = 26;
+
+}
+
+message Activity_data_list 
+{
+    repeated Activity_base_data list = 1;
+}
+
+//奖池活动的任务类型
+enum ACTIVITY_PRIZE_POOL_TYPE
+{
+    ACTIVITY_PRIZE_POOL_NULL              = 0;
+    ACTIVITY_PRIZE_POOL_PLUNDER_WIN       = 1;//掠夺胜利
+    ACTIVITY_PRIZE_POOL_MERGR_LEVEL       = 2;//合成x级物品或者生物
+    ACTIVITY_PRIZE_POOL_MERGR_ID          = 3;//合成物品id
+    ACTIVITY_PRIZE_POOL_GET_GEM           = 4;//获得宝石
+    ACTIVITY_PRIZE_POOL_CHALLENGE_SUCCESS = 5;//挑战关卡成功
+}
+
+message Activity_rand_biology_sell     
+{
+    uint32                      level                     = 1;//生物等级
+    uint32                      count                     = 2;//生物数量
+}
+
+//奖池活动基础数据
+message Activity_prize_pool_data
+{
+    ACTIVITY_PRIZE_POOL_TYPE prizepool_type                   = 1;  //奖池类型
+    uint32                   save_times                       = 2;  //填充次数上限
+    uint32                   finish_count                     = 3;  //实际完成的数量
+    uint32                   merge_article_level              = 4;  //合成物体的等级
+    uint32                   merge_article_id                 = 5;  //合成物体的id
+    uint32                   merge_article_count              = 6;  //合成物体的数量
+    uint64                   pause_time                       = 7;  //奖池收集有效的截至时间
+}
+
+//合成生物活动行为类型（本阶段不做）
+enum ACTIVITY_MERGE_MONSTER_TYPE
+{
+    ACTIVITY_MERGR_MONSTER_NULL    = 0;
+    ACTIVITY_MERGR_MONSTER_ALL     = 1;//合成任意种类生物
+    ACTIVITY_MERGR_MONSTER_ATTACK  = 2;//合成攻击类生物
+    ACTIVITY_MERGR_MONSTER_DEFENSE = 3;//合成防守型生物
+    ACTIVITY_MERGR_MONSTER_COLLECT = 4;//合成采集类生物
+    ACTIVITY_MERGR_MONSTER_BUILD   = 5;//合成建造类生物
+}
+
+//合成生物基础数据（本阶段不做）
+message Activity_merge_monster_data
+{
+    ACTIVITY_MERGE_MONSTER_TYPE type                      = 1;//合成龙的类型
+    uint32                      level                     = 2;//合成龙的等级
+    uint32                      mount                     = 3;//合成龙的数量
+    uint32                      currentmount              = 4;//当前完成的数量
+}
+
+//合成物品基础数据（本阶段不做）
+message Activity_merge_article_data
+{
+    uint32 id = 1;//合成物品的id
+}
+
+//掠夺活动行为类型（本阶段不做）
+enum ACTIVITY_PLUNDER_TYPE
+{
+    ACTIVITY_PLUNDER_NULL            = 0;
+    ACTIVITY_PLUNDER_GET_STAR_MOUNT  = 1;//掠夺获得的星星数量
+    ACTIVITY_PLUNDER_DESTORY_ARTICLE = 2;//掠夺摧毁物体的数量
+    ACTIVITY_PLUNDER_SEAL_PLANE      = 3;//掠夺摧毁物体的数量
+    ACTIVITY_PLUNDER_KILL_MONSTER    = 4;//掠夺杀死的龙的数量
+    ACTIVITY_PLUNDER_WIN_MOUNT       = 5;//掠夺胜利的次数
+    ACTIVITY_PLUNDER_ARTICLE         = 6;//掠夺物品
+}
+
+//掠夺活动基础数据（本阶段不做）
+message Activity_plunder_data
+{
+    ACTIVITY_PLUNDER_TYPE type                      = 1;//掠夺活动类型
+    uint32                mount                     = 2;//掠夺参与次数
+    uint32                star_mount                = 3;//掠夺获得的星星数量
+    uint32                destory_mount             = 4;//掠夺的摧毁物体的数量
+    uint32                seal_mount                = 5;//掠夺封印土地的数量
+    uint32                kill_mount                = 6;//掠夺杀死生物的数量
+    uint32                win_mount                 = 7;//掠夺胜利的次数
+    uint32                plunder_article_mount     = 8;//掠夺物品的数量
+    uint32                plunder_article_id        = 9;//掠夺物品的id
+}
+
+//签到活动
+
+//新手福利奖励数据
+message Sign_in_common_data
+{
+    bool                            receive_flag         = 1;       //领取状态
+    repeated Common_item            reward               = 2;       //允许配置多个奖励
+    uint32                          count                = 3;       //仅针对阶段性奖励
+}
+
+//新手福利数据
+message Novice_welfare_data
+{
+    repeated Sign_in_common_data     reward_list          = 1;        //新手福利的数据列表
+    uint64                           timestamp            = 2;        //账号脱离新手的时间戳
+}
+
+//每日签到数据
+message Daily_check_data
+{
+    repeated Sign_in_common_data     reward_list         = 1;       //奖励数据
+    uint32                           supplement_count    = 2;       //剩余补充签到数量
+    uint32                           day_of_week         = 3;       //第一天是星期几 
+    uint64                           timestamp           = 4;       //刷新时间戳
+}
+
+//每日签到奖励数据
+message Daily_check_reward
+{
+    bool receive_flag       = 1;       //领取标志
+    Common_item reward      = 2;       //奖励
+}
+
+//签到阶段性奖励数据
+message Daily_check_stage_data
+{
+    repeated Sign_in_common_data     reward_list        = 1;        //阶段奖励数据
+    uint32                           grand_total        = 2;        //当前签到累计天数
+}
+
+//签到阶段性奖励
+message Daily_check_stage_reward
+{
+    uint32       day                                    = 1;        //领取需要累计天数
+    bool         receive_flag                           = 2;        //领取标识
+    Common_item  reward                                 = 3;        //奖励物品
+}
+
+//每日时间阶段性数据
+message Daily_time_stage_data
+{
+    repeated Sign_in_common_data    reward_list         = 1;        //奖励列表
+    uint64                          timestamp           = 2;        //下一个奖励领取的时间戳
+}
+
+//每日时间阶段性奖励
+message Daily_time_stage_reward
+{
+    bool                            receive_flag         = 1;       //领取标识
+    repeated Common_item            rewards              = 2;       //奖励
+}
+
+//月卡数据
+message Monthly_card_data
+{   
+    repeated Monthly_card_info      card_info           = 1;        //月卡数据
+}
+
+message Monthly_card_info 
+{
+    uint32                          id                  = 1;        //ID
+    uint64                          end_time            = 2;        //结束时间
+}
+
+

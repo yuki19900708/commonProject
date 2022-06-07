@@ -1,0 +1,3 @@
+[submodule "proto"]
+	path = proto
+	url = git@gitee.com:appcpigame/the_barbarous_age_proto.git
