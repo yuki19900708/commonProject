@@ -36,11 +36,10 @@ public class TerrainEditorUICtrl : MonoBehaviour
 
     public TileMap terrainMap;
     public ScriptableTile terrainTile;
-    public ScriptableTile bridgeTile;
     public TileGameObjectRenderer terrainRenderer;
+
     public TileMap vegetationMap;
     public ScriptableTile vegetationTile;
-    public ScriptableTile sandyLandTile;
     public TileGameObjectRenderer vegetationRenderer;
    
     public Toggle isEditorToggle;
@@ -70,8 +69,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
     public Text terrainText;
     public Text vegetationText;
     public Text entityText;
-    public Text deadText;
-    public Text lockText;
     #endregion
     private TerrainEditorVegetation currentSelectVegetationItem;
     private TerrainEditorSelectItem currentSelectObjectItem;
@@ -303,36 +300,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
                     entityText.text = string.Format("物体: {0}", "没有物体");
                 }
 
-                if (data.purificationLevel != 0)
-                {
-                    DeadLandData deadData = TableDataMgr.GetSingleDeadLandData(data.purificationLevel);
-                    deadText.text = string.Format("死地: {0} (净化所需:{1})", data.purificationLevel, deadData.pureNeed1);
-
-                    if (deadData == null)
-                    {
-                        Debug.LogError("这里有一个致命错误----格子上的死地ID不存在表里");
-                    }
-                }
-                else
-                {
-                    deadText.text = string.Format("死地: {0}", "没有死地");
-                }
-
-                if (data.sealLockId != 0)
-                {
-                    MapUnlockData lockData = TableDataMgr.GetSingleMapUnlockData(data.sealLockId);
-                    lockText.text = string.Format("锁定: {0}(局龙之力:{1})", data.sealLockId, lockData.count);
-
-                    if (lockData == null)
-                    {
-                        Debug.LogError("这里有一个致命错误----格子上的锁定ID不存在表里");
-                    }
-                }
-                else
-                {
-
-                    lockText.text = string.Format("锁定: {0}", "没有锁定");
-                }
             }
 
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
@@ -816,7 +783,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
                 {
                     case "地形":
                         currentSelectTileMap = terrainMap;
-                        currentScriptableTile = bridgeTile;
                         layoutType = EditoryLayoutType.Terrain;
                         terrainMap.gameObject.SetActive(true);
                         showTerrainToggle.isOn = true;

@@ -560,7 +560,7 @@ public class CameraGestureMgr : MonoBehaviour
                 float scale = 1;
                 if (Input.GetKey(KeyCode.LeftShift))
                 {
-                    scale = 10;
+                    scale = 20;
                 }
                 gameCamera.orthographicSize -= gesture.Delta * PixelToOrthographicSizeRatio * pinchSpeed * scale;
 
