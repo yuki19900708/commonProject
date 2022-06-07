@@ -1,0 +1,1300 @@
+fileFormatVersion: 2
+guid: b57e74674a1c2f74dbade4dc68af6759
+timeCreated: 1546422265
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: button_backward
+    21300002: button_L
+    21300004: button_M
+    21300006: button_S
+    21300008: button_XL
+    21300010: close_button
+    21300012: handbook_kind_1
+    21300014: handbook_kind_2
+    21300016: handbook_kind_3
+    21300018: handbook_kind_4
+    21300020: handbook_kind_5
+    21300022: handbook_kind_6
+    21300024: handbook_kind_bg
+    21300026: icon_dragon_power
+    21300028: icon_fighting_power
+    21300030: icon_warning
+    21300032: monster_bg
+    21300034: monster_detail_bg_decoration
+    21300036: monster_display_bg
+    21300038: monster_name_input_bg
+    21300040: monster_power
+    21300042: monster_power_bg
+    21300044: monster_property_split_line
+    21300046: monster_tag
+    21300048: monster_type_all
+    21300050: monster_type_attacker
+    21300052: monster_type_balance
+    21300054: monster_type_bg
+    21300056: monster_type_builder
+    21300058: monster_type_collecter
+    21300060: monster_type_defenser
+    21300062: monster_type_warrior
+    21300064: my_monster_entrance
+    21300066: my_monster_tip_bg
+    21300068: tab_button_active
+    21300070: tab_button_inactive
+    21300072: type_slot_bg
+    21300074: type_slot_decoration
+    21300076: universal_rect
+    21300078: tag_bg
+    21300080: next_level_arrow
+    21300082: ring
+    21300084: type_slot_content_bg
+    21300086: type_slot_decoration_glow
+    21300088: type_slot_bg_lock
+    21300090: filter_arrow
+    21300092: tab_button_lock
+    21300094: type_slot_bg_special
+    21300096: universal_round_rect
+    21300098: filter_power
+    21300100: Unlock_00
+    21300102: Unlock_01
+    21300104: Unlock_02
+    21300106: Unlock_03
+    21300108: Unlock_04
+    21300110: Unlock_05
+    21300112: Unlock_06
+    21300114: Unlock_07
+    21300116: handbook_bg_1
+    21300118: handbook_bg_2
+    21300120: handbook_bg_3
+    21300122: handbook_bg_4
+    21300124: handbook_bg_5
+    21300126: handbook_bg_6
+    21300128: handbook_fingue_11
+    21300130: handbook_fingue_12
+    21300132: handbook_fingue_21
+    21300134: handbook_fingue_22
+    21300136: handbook_fingue_31
+    21300138: handbook_fingue_32
+    21300140: handbook_fingue_41
+    21300142: handbook_fingue_42
+    21300144: handbook_fingue_51
+    21300146: handbook_fingue_52
+    21300148: handbook_fingue_61
+    21300150: handbook_fingue_62
+    21300152: handbook_tag
+    21300154: handbook_text_bg
+    21300156: icon_handbook_power
+    21300158: icon_unlock
+    21300160: locked_bg
+    21300162: shadow_locked
+    21300164: shadow_unlocked
+    21300166: handbook_tag_locked
+    21300168: handbook_tag_unlocked
+    21300170: content_bg
+    21300172: icon_locked
+    21300174: icon_help
+    21300176: rank_choose
+    21300178: rank_unchoose
+    21300180: splite_line_h
+    21300182: splite_line_v
+    21300184: hand_book_bg
+    21300186: hand_book_frame
+    21300188: hand_book_tap
+    21300190: hand_book_tap1
+    21300192: tab_button_active_long
+    21300194: tab_button_inactive_long
+    21300196: input_box
+    21300198: mapobject_item_bg
+    21300200: rectangle_icon
+    21300202: rectangle_icon2
+    21300204: skip_button
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: 54
+    textureCompression: 1
+    compressionQuality: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: 54
+    textureCompression: 1
+    compressionQuality: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: button_backward
+      rect:
+        serializedVersion: 2
+        x: 1965
+        y: 1941
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_L
+      rect:
+        serializedVersion: 2
+        x: 1828
+        y: 722
+        width: 199
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_M
+      rect:
+        serializedVersion: 2
+        x: 1881
+        y: 1185
+        width: 152
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_S
+      rect:
+        serializedVersion: 2
+        x: 1943
+        y: 1643
+        width: 84
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_XL
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 1302
+        width: 261
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: close_button
+      rect:
+        serializedVersion: 2
+        x: 1965
+        y: 1992
+        width: 53
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: filter_arrow
+      rect:
+        serializedVersion: 2
+        x: 2020
+        y: 2029
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: filter_power
+      rect:
+        serializedVersion: 2
+        x: 1881
+        y: 1587
+        width: 40
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hand_book_bg
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 1383
+        width: 235
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hand_book_frame
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 856
+        width: 229
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hand_book_tap
+      rect:
+        serializedVersion: 2
+        x: 1828
+        y: 963
+        width: 210
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: hand_book_tap1
+      rect:
+        serializedVersion: 2
+        x: 1828
+        y: 919
+        width: 210
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_bg_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1102
+        width: 288
+        height: 471
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_bg_2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1575
+        width: 288
+        height: 472
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_bg_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 629
+        width: 288
+        height: 471
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_bg_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 156
+        width: 288
+        height: 471
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_bg_5
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1081
+        width: 288
+        height: 471
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_bg_6
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 1081
+        width: 288
+        height: 471
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_fingue_11
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 1827
+        width: 326
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_fingue_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 7
+        width: 298
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_fingue_21
+      rect:
+        serializedVersion: 2
+        x: 1637
+        y: 1869
+        width: 326
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_fingue_22
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 1492
+        width: 298
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_fingue_31
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 1690
+        width: 326
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_fingue_32
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 1343
+        width: 298
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_fingue_41
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1790
+        width: 326
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_fingue_42
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 1194
+        width: 298
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_fingue_51
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 1790
+        width: 326
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_fingue_52
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1641
+        width: 298
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_fingue_61
+      rect:
+        serializedVersion: 2
+        x: 1285
+        y: 1648
+        width: 326
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_fingue_62
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 1641
+        width: 298
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_kind_1
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 1618
+        width: 189
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_kind_2
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 1796
+        width: 196
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_kind_3
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 892
+        width: 171
+        height: 187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_kind_4
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 733
+        width: 220
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_kind_5
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 3
+        width: 173
+        height: 163
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_kind_6
+      rect:
+        serializedVersion: 2
+        x: 1881
+        y: 1320
+        width: 160
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_kind_bg
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 1240
+        width: 252
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_tag_locked
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1554
+        width: 298
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_tag_unlocked
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 1554
+        width: 298
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: handbook_text_bg
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 2006
+        width: 348
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_dragon_power
+      rect:
+        serializedVersion: 2
+        x: 2020
+        y: 1999
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_handbook_power
+      rect:
+        serializedVersion: 2
+        x: 2013
+        y: 1850
+        width: 28
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_help
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 1669
+        width: 37
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_locked
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 1932
+        width: 107
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_unlock
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1
+        width: 151
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_warning
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 1909
+        width: 28
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: input_box
+      rect:
+        serializedVersion: 2
+        x: 1940
+        y: 1578
+        width: 45
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 10, z: 10, w: 10}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: locked_bg
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 724
+        width: 288
+        height: 471
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mapobject_item_bg
+      rect:
+        serializedVersion: 2
+        x: 1828
+        y: 1013
+        width: 219
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_bg
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 1009
+        width: 235
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_detail_bg_decoration
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 162
+        width: 220
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_display_bg
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 1197
+        width: 301
+        height: 449
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_power
+      rect:
+        serializedVersion: 2
+        x: 1943
+        y: 1724
+        width: 96
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_power_bg
+      rect:
+        serializedVersion: 2
+        x: 1613
+        y: 1641
+        width: 325
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_property_split_line
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2
+        width: 428
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_type_all
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 1709
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_type_attacker
+      rect:
+        serializedVersion: 2
+        x: 1965
+        y: 1904
+        width: 48
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_type_balance
+      rect:
+        serializedVersion: 2
+        x: 1987
+        y: 1614
+        width: 44
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_type_bg
+      rect:
+        serializedVersion: 2
+        x: 1881
+        y: 1519
+        width: 162
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_type_builder
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 1945
+        width: 29
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_type_collecter
+      rect:
+        serializedVersion: 2
+        x: 1987
+        y: 1575
+        width: 43
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_type_defenser
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 1674
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_type_warrior
+      rect:
+        serializedVersion: 2
+        x: 1965
+        y: 1869
+        width: 46
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: my_monster_entrance
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 1714
+        width: 106
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: my_monster_tip_bg
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 1636
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: next_level_arrow
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 1621
+        width: 38
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: rank_choose
+      rect:
+        serializedVersion: 2
+        x: 1828
+        y: 861
+        width: 208
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: rank_unchoose
+      rect:
+        serializedVersion: 2
+        x: 1828
+        y: 803
+        width: 208
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: rectangle_icon
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 1752
+        width: 42
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: rectangle_icon2
+      rect:
+        serializedVersion: 2
+        x: 2015
+        y: 1875
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ring
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 1984
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: shadow_locked
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 722
+        width: 288
+        height: 470
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: shadow_unlocked
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 250
+        width: 288
+        height: 470
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: skip_button
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 1669
+        width: 37
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: splite_line_h
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 2045
+        width: 14
+        height: 2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: splite_line_v
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 2033
+        width: 2
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tab_button_active
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 168
+        width: 226
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 108, y: 0, z: 104, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tab_button_active_long
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1969
+        width: 426
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tab_button_inactive
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 814
+        width: 226
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 108, y: 0, z: 104, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tab_button_inactive_long
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 1969
+        width: 426
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tab_button_lock
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 736
+        width: 226
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tag_bg
+      rect:
+        serializedVersion: 2
+        x: 1881
+        y: 1266
+        width: 157
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: type_slot_decoration
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 1810
+        width: 106
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: universal_rect
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 2042
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 2, z: 2, w: 2}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: universal_round_rect
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 2032
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: handbook
+  assetBundleVariant: 

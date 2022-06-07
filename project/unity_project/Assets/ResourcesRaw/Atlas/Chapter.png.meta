@@ -1,0 +1,1744 @@
+fileFormatVersion: 2
+guid: ceb8213dd1c955044b7aab75d524b6cf
+timeCreated: 1551518764
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: bg_part1
+    21300002: bg_part2
+    21300004: button_1
+    21300006: button_2
+    21300008: button_backward
+    21300010: button_L
+    21300012: button_M
+    21300014: button_S
+    21300016: button_XL
+    21300018: chapter_failed
+    21300020: chapter_item_bg
+    21300022: chapter_reward_progress_bg
+    21300024: chapter_reward_progress_fg
+    21300026: chapter_succeed
+    21300028: close_button
+    21300030: icon_ap
+    21300032: icon_backward
+    21300034: icon_basecamp
+    21300036: icon_challenge_win_1
+    21300038: icon_challenge_win_2
+    21300040: icon_challenge_win_3
+    21300042: icon_chapter_choose
+    21300044: icon_chapter_property
+    21300046: icon_chapter_star_empty
+    21300048: icon_chapter_star_filled
+    21300050: icon_chapter_task
+    21300052: icon_chest
+    21300054: icon_collaspe
+    21300056: icon_hourglass
+    21300058: icon_hourglass_1
+    21300060: icon_reset
+    21300062: icon_reward
+    21300064: icon_score
+    21300066: icon_score_1
+    21300068: icon_score_2
+    21300070: icon_star
+    21300072: icon_warning
+    21300074: reward_selected_bg
+    21300076: reward_unselected_bg
+    21300078: tag_bg
+    21300080: icon_next
+    21300082: progress_bg
+    21300084: progress_fg
+    21300086: icon_diamond
+    21300088: icon_resource_plus
+    21300090: option_bg_1
+    21300092: option_bg_2
+    21300094: number_bg
+    21300096: icon_coin
+    21300098: icon_stone
+    21300100: icon_shop
+    21300102: content_bg_14
+    21300104: icon_Illustration
+    21300106: icon_delete
+    21300108: chapte_select_tag
+    21300110: icon_chapter_chest
+    21300112: map_object_detail_bg
+    21300114: universal_rect
+    21300116: icon_star_1_empty
+    21300118: icon_star_1_filled
+    21300120: icon_star_2_empty
+    21300122: icon_star_2_filled
+    21300124: icon_star_3_empty
+    21300126: icon_star_3_filled
+    21300128: start_info_bg
+    21300130: start_info_bg_decoration_1
+    21300132: start_info_bg_decoration_2
+    21300134: universal_round_rect
+    21300136: start_info_bg_decoration_3
+    21300138: icon_chapter_chest_hole_idle
+    21300140: icon_chapter_chest_hole_unlocking
+    21300142: icon_chapter_chest_vip_hole
+    21300144: icon_chapter_chest_vip_hole_idle
+    21300146: icon_chapter_chest_vip_hole_unlocking
+    21300148: icon_chapter_chest_slot_idle
+    21300150: icon_chapter_chest_slot_unlocking
+    21300152: icon_chapter_chest_vip_slot_empty
+    21300154: icon_chapter_chest_vip_slot_idle
+    21300156: icon_chapter_chest_vip_slot_unlocking
+    21300158: chapter_item_bg_locked
+    21300160: progress_bg_1
+    21300162: progress_fg_1
+    21300164: chapter_item_outline
+    21300166: chapter_item_bg_locked_logo
+    21300168: chapter_bg
+    21300170: chapter_bg_des
+    21300172: seting_line4
+    21300174: chapter_wheatears
+    21300176: wheat_ears
+    21300178: icon_chapter_ap
+    21300180: chapter_des_huawen
+    21300182: chapter_banner
+    21300184: chapter_item_bg1
+    21300186: chapter_sword_left
+    21300188: chapter_sword_right
+    21300190: progress_bg_2
+    21300192: progress_fg_2
+    21300194: chapter_slider_background
+    21300196: chapter_slider_line1
+    21300198: chapter_slider_line2
+    21300200: chapter_slider_value
+    21300202: chapter_challge_kuang1
+    21300204: chapter_challge_kuang2
+    21300206: chapter_challge_kuang3
+    21300208: chapter_icon_time
+    21300210: chapter_bell
+    21300212: chapter_pointer
+    21300214: chapter_pass_item_des
+    21300216: chapter_pass_item_diamondbuy_logo
+    21300218: chapter_pass_item_egg_logo
+    21300220: chapter_pass_item_free_logo
+    21300222: chapter_pass_item_unlockbg
+    21300224: chapter_pass_range_arrow
+    21300226: chapter_pass_range_bg
+    21300228: chapter_pass_range_kuang
+    21300230: chapter_pass_button_continue
+    21300232: skip_bg
+    21300234: BG
+    21300236: chapter_light
+    21300238: chapter_tag1
+    21300240: chapter_tag2
+    21300242: chapter_tag3
+    21300244: cricle_pattern
+    21300246: chapter_button_bg
+    21300248: decoration_1
+    21300250: texture_1
+    21300252: texture_2
+    21300254: splite_line_h
+    21300256: dividing_line
+    21300258: dividingline3
+    21300260: panel_title
+    21300262: slider_new
+    21300264: slider_new2
+    21300266: "\u5C0F\u5E95\u677F\u5207\u56FE"
+    21300268: "\u7EB9\u6837\u5207\u56FE"
+    21300270: BG_1
+    21300272: BG_2
+    21300274: chapter_pass_itme_bg_back
+    21300276: chapter_pass_itme_bg_back_grey
+    21300278: chapter_pass_itme_bg_front
+    21300280: chapter_pass_itme_bg_front_grey
+    21300282: chapter_pass_range_bg_icon
+    21300284: chapter_pass_buy_diamond_bg
+    21300286: chapter_pass_buy_egg_bg
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: 54
+    textureCompression: 1
+    compressionQuality: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: 54
+    textureCompression: 1
+    compressionQuality: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BG
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1320
+        width: 767
+        height: 727
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: BG_1
+      rect:
+        serializedVersion: 2
+        x: 1985
+        y: 1603
+        width: 51
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 26, y: 29, z: 20, w: 34}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: BG_2
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 289
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 32, y: 22, z: 13, w: 26}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bg_part1
+      rect:
+        serializedVersion: 2
+        x: 2041
+        y: 1891
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 5, z: 2, w: 5}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bg_part2
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 208
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 21, y: 12, z: 26, w: 15}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_1
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 188
+        width: 85
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_2
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 2
+        width: 97
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_backward
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 238
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_L
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 40
+        width: 199
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_M
+      rect:
+        serializedVersion: 2
+        x: 1883
+        y: 488
+        width: 152
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_S
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 96
+        width: 84
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_XL
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 30
+        width: 261
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 125, y: 0, z: 123, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_banner
+      rect:
+        serializedVersion: 2
+        x: 1571
+        y: 1553
+        width: 412
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_bell
+      rect:
+        serializedVersion: 2
+        x: 2041
+        y: 1880
+        width: 4
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_bg_des
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1504
+        width: 799
+        height: 543
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_button_bg
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 174
+        width: 228
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_challge_kuang1
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 271
+        width: 218
+        height: 301
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_challge_kuang2
+      rect:
+        serializedVersion: 2
+        x: 1663
+        y: 369
+        width: 218
+        height: 388
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_challge_kuang3
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 1021
+        width: 218
+        height: 475
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_des_huawen
+      rect:
+        serializedVersion: 2
+        x: 1817
+        y: 778
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_failed
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 523
+        width: 612
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_item_bg
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 574
+        width: 385
+        height: 637
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_item_bg1
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 574
+        width: 385
+        height: 637
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_item_bg_locked
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 859
+        width: 385
+        height: 637
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_item_bg_locked_logo
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 83
+        width: 172
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_item_outline
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 750
+        width: 413
+        height: 666
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_light
+      rect:
+        serializedVersion: 2
+        x: 1571
+        y: 1671
+        width: 376
+        height: 376
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_pass_buy_diamond_bg
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 897
+        width: 188
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_pass_buy_egg_bg
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 346
+        width: 272
+        height: 411
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_pass_item_des
+      rect:
+        serializedVersion: 2
+        x: 1965
+        y: 574
+        width: 77
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_pass_item_egg_logo
+      rect:
+        serializedVersion: 2
+        x: 1949
+        y: 1696
+        width: 97
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_pass_item_free_logo
+      rect:
+        serializedVersion: 2
+        x: 1915
+        y: 1225
+        width: 110
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_pass_itme_bg_back
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 111
+        width: 222
+        height: 281
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_pass_itme_bg_back_grey
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 240
+        width: 222
+        height: 281
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_pass_itme_bg_front
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 240
+        width: 222
+        height: 281
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 102, y: 65, z: 114, w: 214}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_pass_itme_bg_front_grey
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 63
+        width: 222
+        height: 281
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_pass_range_arrow
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 180
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_pass_range_bg_icon
+      rect:
+        serializedVersion: 2
+        x: 1663
+        y: 46
+        width: 316
+        height: 321
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_pass_range_kuang
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 177
+        width: 474
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_pointer
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1187
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_reward_progress_bg
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 121
+        width: 389
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_reward_progress_fg
+      rect:
+        serializedVersion: 2
+        x: 1571
+        y: 1505
+        width: 381
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_slider_background
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 357
+        width: 125
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_slider_line1
+      rect:
+        serializedVersion: 2
+        x: 2041
+        y: 1904
+        width: 2
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_slider_line2
+      rect:
+        serializedVersion: 2
+        x: 2041
+        y: 1904
+        width: 2
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_slider_value
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 24
+        width: 119
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_succeed
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 394
+        width: 512
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_sword_left
+      rect:
+        serializedVersion: 2
+        x: 1996
+        y: 1117
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_sword_right
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 77
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_tag1
+      rect:
+        serializedVersion: 2
+        x: 1883
+        y: 434
+        width: 124
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_tag2
+      rect:
+        serializedVersion: 2
+        x: 1883
+        y: 380
+        width: 124
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_tag3
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 67
+        width: 124
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chapter_wheatears
+      rect:
+        serializedVersion: 2
+        x: 1949
+        y: 1920
+        width: 96
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: close_button
+      rect:
+        serializedVersion: 2
+        x: 1981
+        y: 203
+        width: 53
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: decoration_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1213
+        width: 883
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dividing_line
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1498
+        width: 959
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dividingline3
+      rect:
+        serializedVersion: 2
+        x: 1731
+        y: 1500
+        width: 261
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_backward
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 257
+        width: 60
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_basecamp
+      rect:
+        serializedVersion: 2
+        x: 1493
+        y: 47
+        width: 75
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_challenge_win_1
+      rect:
+        serializedVersion: 2
+        x: 1949
+        y: 1806
+        width: 90
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_challenge_win_2
+      rect:
+        serializedVersion: 2
+        x: 1883
+        y: 651
+        width: 133
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_challenge_win_3
+      rect:
+        serializedVersion: 2
+        x: 1915
+        y: 1343
+        width: 124
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_chapter_ap
+      rect:
+        serializedVersion: 2
+        x: 1981
+        y: 320
+        width: 63
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_chapter_chest
+      rect:
+        serializedVersion: 2
+        x: 1915
+        y: 1023
+        width: 118
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_chapter_chest_slot_idle
+      rect:
+        serializedVersion: 2
+        x: 1999
+        y: 1674
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_chapter_chest_slot_unlocking
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 341
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_chapter_chest_vip_slot_empty
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 1327
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_chapter_chest_vip_slot_idle
+      rect:
+        serializedVersion: 2
+        x: 1949
+        y: 1672
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_chapter_chest_vip_slot_unlocking
+      rect:
+        serializedVersion: 2
+        x: 1974
+        y: 1672
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_chapter_choose
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 49
+        width: 84
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_chapter_property
+      rect:
+        serializedVersion: 2
+        x: 1883
+        y: 569
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_chapter_star_empty
+      rect:
+        serializedVersion: 2
+        x: 2009
+        y: 380
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_chapter_star_filled
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 7
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_chapter_task
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 265
+        width: 69
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_chest
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 857
+        width: 86
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_coin
+      rect:
+        serializedVersion: 2
+        x: 1981
+        y: 38
+        width: 50
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_collaspe
+      rect:
+        serializedVersion: 2
+        x: 1996
+        y: 1164
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_delete
+      rect:
+        serializedVersion: 2
+        x: 1997
+        y: 961
+        width: 46
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_diamond
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 124
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_hourglass
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 943
+        width: 89
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_Illustration
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 772
+        width: 85
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_next
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 1120
+        width: 80
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_reset
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 120
+        width: 85
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_resource_plus
+      rect:
+        serializedVersion: 2
+        x: 1817
+        y: 816
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_reward
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 204
+        width: 65
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_score
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 379
+        width: 169
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_score_2
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1339
+        width: 113
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_shop
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 1029
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_star
+      rect:
+        serializedVersion: 2
+        x: 1981
+        y: 260
+        width: 61
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_star_1_empty
+      rect:
+        serializedVersion: 2
+        x: 2009
+        y: 451
+        width: 36
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_star_1_filled
+      rect:
+        serializedVersion: 2
+        x: 2009
+        y: 414
+        width: 36
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_star_2_empty
+      rect:
+        serializedVersion: 2
+        x: 1981
+        y: 148
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_star_2_filled
+      rect:
+        serializedVersion: 2
+        x: 1981
+        y: 93
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_star_3_empty
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 538
+        width: 36
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_star_3_filled
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 41
+        width: 36
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_stone
+      rect:
+        serializedVersion: 2
+        x: 1985
+        y: 1554
+        width: 49
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_warning
+      rect:
+        serializedVersion: 2
+        x: 2018
+        y: 729
+        width: 28
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: map_object_detail_bg
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1418
+        width: 536
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: number_bg
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 237
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: panel_title
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 941
+        width: 300
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: progress_bg_1
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 52
+        width: 122
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: progress_bg_2
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 875
+        width: 170
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: progress_fg_1
+      rect:
+        serializedVersion: 2
+        x: 1478
+        y: 311
+        width: 116
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: progress_fg_2
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 859
+        width: 164
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 77, y: 6, z: 77, w: 6}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: seting_line4
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 938
+        width: 341
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 55, y: 0, z: 69, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: skip_bg
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 29
+        width: 185
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: start_info_bg
+      rect:
+        serializedVersion: 2
+        x: 1301
+        y: 759
+        width: 514
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 171, y: 0, z: 327, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: start_info_bg_decoration_1
+      rect:
+        serializedVersion: 2
+        x: 1954
+        y: 1521
+        width: 59
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: start_info_bg_decoration_2
+      rect:
+        serializedVersion: 2
+        x: 2015
+        y: 1510
+        width: 18
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: start_info_bg_decoration_3
+      rect:
+        serializedVersion: 2
+        x: 1310
+        y: 350
+        width: 58
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tag_bg
+      rect:
+        serializedVersion: 2
+        x: 1885
+        y: 884
+        width: 157
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: texture_1
+      rect:
+        serializedVersion: 2
+        x: 1861
+        y: 765
+        width: 160
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: texture_2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 179
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: universal_rect
+      rect:
+        serializedVersion: 2
+        x: 2041
+        y: 1873
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 2, z: 2, w: 2}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: universal_round_rect
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1326
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: wheat_ears
+      rect:
+        serializedVersion: 2
+        x: 1915
+        y: 1117
+        width: 79
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: chapter
+  assetBundleVariant: 

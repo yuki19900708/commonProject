@@ -1,0 +1,23 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:13f1d531b6cc5cb1d02db6886c6eb74d:8558390435b7547dea26934b2bc932ad:6c75caaac77173fba0db78afb992b5e5$
+#
+:format=40300
+:texture=StarupComicsPage1.png
+:size=2048x2048
+:pivotpoints=enabled
+:borders=disabled
+
+bg;1;1045;1624;1002; 0.5;0.5; 0;0;0;0
+cloud_1;1237;901;676;128; 0.5;0.5; 0;0;0;0
+cloud_2;684;450;537;214; 0.5;0.5; 0;0;0;0
+cloud_3;700;690;615;195; 0.5;0.5; 0;0;0;0
+cloud_4;1;101;733;247; 0.5;0.5; 0;0;0;0
+cloud_5;1641;1987;113;60; 0.5;0.5; 0;0;0;0
+evil_cloud;1;680;683;349; 0.5;0.5; 0;0;0;0
+mask;1;364;667;300; 0.5;0.5; 0;0;0;0
+text;1770;2003;108;44; 0.5;0.5; 0;0;0;0

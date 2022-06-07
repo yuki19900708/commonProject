@@ -1,0 +1,1015 @@
+fileFormatVersion: 2
+guid: 0579475da65465a43aa4288a623cc4eb
+timeCreated: 1538117928
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: avatar_1
+    21300002: avatar_2
+    21300004: number_bg
+    21300006: universal_rect
+    21300008: dialog_bg_2
+    21300010: avatar_201
+    21300012: avatar_202
+    21300014: avatar_203
+    21300016: avatar_204
+    21300018: avatar_205
+    21300020: avatar_206
+    21300022: avatar_207
+    21300024: avatar_208
+    21300026: avatar_209
+    21300028: avatar_210
+    21300030: avatar_701
+    21300032: avatar_801
+    21300034: avatar_802
+    21300036: avatar_901
+    21300038: avatar_902
+    21300040: avatar_avatar_1
+    21300042: avatar_avatar_2
+    21300044: avatar_outline_201
+    21300046: avatar_outline_202
+    21300048: avatar_outline_203
+    21300050: avatar_outline_204
+    21300052: avatar_outline_205
+    21300054: avatar_outline_206
+    21300056: avatar_outline_207
+    21300058: avatar_outline_208
+    21300060: avatar_outline_209
+    21300062: avatar_outline_210
+    21300064: avatar_outline_303
+    21300066: avatar_outline_503
+    21300068: avatar_outline_603
+    21300070: avatar_outline_701
+    21300072: avatar_outline_702
+    21300074: avatar_outline_801
+    21300076: avatar_outline_901
+    21300078: avatar_outline_902
+    21300080: avatar_outline_1101
+    21300082: avatar_outline_1102
+    21300084: universal_round_rect
+    21300086: avatar_303
+    21300088: avatar_503
+    21300090: avatar_603
+    21300092: avatar_702
+    21300094: avatar_1101
+    21300096: avatar_1102
+    21300098: avatar_frame_201
+    21300100: avatar_frame_202
+    21300102: avatar_frame_203
+    21300104: avatar_frame_204
+    21300106: avatar_frame_205
+    21300108: avatar_frame_206
+    21300110: avatar_frame_207
+    21300112: avatar_frame_208
+    21300114: avatar_frame_209
+    21300116: avatar_frame_210
+    21300118: avatar_frame_701
+    21300120: avatar_frame_801
+    21300122: avatar_frame_802
+    21300124: avatar_frame_901
+    21300126: avatar_frame_902
+    21300128: avatar_frame_avatar_frame_1
+    21300130: avatar_frame_avatar_frame_2
+    21300132: avatar_100
+    21300134: avatar_301
+    21300136: avatar_302
+    21300138: avatar_401
+    21300140: avatar_402
+    21300142: avatar_403
+    21300144: avatar_501
+    21300146: avatar_502
+    21300148: avatar_601
+    21300150: avatar_602
+    21300152: avatar_1001
+    21300154: avatar_1002
+    21300156: avatar_1003
+    21300158: avatar_1004
+    21300160: avatar_1005
+    21300162: avatar_1006
+    21300164: avatar_1007
+    21300166: avatar_1008
+    21300168: avatar_1009
+    21300170: avatar_1010
+    21300172: avatar_1011
+    21300174: avatar_1012
+    21300176: avatar_1013
+    21300178: avatar_1014
+    21300180: avatar_1015
+    21300182: avatar_1016
+    21300184: avatar_1017
+    21300186: avatar_1018
+    21300188: avatar_1019
+    21300190: avatar_1020
+    21300192: avatar_frame_100
+    21300194: avatar_frame_301
+    21300196: avatar_frame_302
+    21300198: avatar_frame_303
+    21300200: avatar_frame_401
+    21300202: avatar_frame_402
+    21300204: avatar_frame_403
+    21300206: avatar_frame_501
+    21300208: avatar_frame_502
+    21300210: avatar_frame_503
+    21300212: avatar_frame_601
+    21300214: avatar_frame_602
+    21300216: avatar_frame_603
+    21300218: avatar_frame_803
+    21300220: avatar_504
+    21300222: avatar_505
+    21300224: avatar_506
+    21300226: avatar_507
+    21300228: avatar_508
+    21300230: avatar_509
+    21300232: avatar_510
+    21300234: avatar_511
+    21300236: avatar_512
+    21300238: avatar_513
+    21300240: avatar_514
+    21300242: avatar_515
+    21300244: avatar_516
+    21300246: avatar_517
+    21300248: avatar_518
+    21300250: avatar_519
+    21300252: avatar_520
+    21300254: avatar_521
+    21300256: avatar_522
+    21300258: avatar_523
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: 54
+    textureCompression: 1
+    compressionQuality: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: 54
+    textureCompression: 1
+    compressionQuality: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: avatar_100
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 293
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_201
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 549
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_202
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 547
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_301
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 462
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_401
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 433
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_402
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 397
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_501
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 547
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_502
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 460
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_503
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 375
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_504
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 346
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_505
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 310
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_506
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 300
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_507
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 291
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_508
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 206
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_509
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 460
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_510
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 119
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_511
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 32
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_512
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 204
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_513
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 117
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_514
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 30
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_515
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 213
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_516
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 126
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_517
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 39
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_518
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 213
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_519
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 126
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_520
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 39
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_521
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 373
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_522
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 288
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_523
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 259
+        width: 100
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_100
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 765
+        width: 121
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_201
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 378
+        width: 116
+        height: 117
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4829}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_202
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 898
+        width: 128
+        height: 125
+      alignment: 9
+      pivot: {x: 0.5, y: 0.502}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_203
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 642
+        width: 120
+        height: 122
+      alignment: 9
+      pivot: {x: 0.48333, y: 0.4959}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_204
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 519
+        width: 119
+        height: 122
+      alignment: 9
+      pivot: {x: 0.50084, y: 0.4836}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_205
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 768
+        width: 121
+        height: 122
+      alignment: 9
+      pivot: {x: 0.50826, y: 0.4918}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_206
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 780
+        width: 140
+        height: 125
+      alignment: 9
+      pivot: {x: 0.49642, y: 0.476}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_207
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 484
+        width: 117
+        height: 129
+      alignment: 9
+      pivot: {x: 0.51709, y: 0.46511}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_208
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 387
+        width: 116
+        height: 130
+      alignment: 9
+      pivot: {x: 0.52155, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_209
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 634
+        width: 118
+        height: 129
+      alignment: 9
+      pivot: {x: 0.49576, y: 0.45348}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_210
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 892
+        width: 127
+        height: 131
+      alignment: 9
+      pivot: {x: 0.49606, y: 0.47328}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_301
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 380
+        width: 121
+        height: 144
+      alignment: 9
+      pivot: {x: 0.49579, y: 0.43478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_302
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 884
+        width: 121
+        height: 139
+      alignment: 9
+      pivot: {x: 0.49586, y: 0.44604}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_303
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 615
+        width: 119
+        height: 138
+      alignment: 9
+      pivot: {x: 0.49586, y: 0.43402}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_401
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 636
+        width: 120
+        height: 130
+      alignment: 9
+      pivot: {x: 0.49603, y: 0.55384}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_402
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 643
+        width: 123
+        height: 132
+      alignment: 9
+      pivot: {x: 0.49593, y: 0.57575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_403
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 766
+        width: 126
+        height: 130
+      alignment: 9
+      pivot: {x: 0.49583, y: 0.53846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_501
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 907
+        width: 165
+        height: 116
+      alignment: 9
+      pivot: {x: 0.5074, y: 0.45338}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_502
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 909
+        width: 138
+        height: 114
+      alignment: 9
+      pivot: {x: 0.52, y: 0.48}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_503
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 775
+        width: 136
+        height: 111
+      alignment: 9
+      pivot: {x: 0.5, y: 0.48}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_601
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 892
+        width: 136
+        height: 131
+      alignment: 9
+      pivot: {x: 0.58823, y: 0.44615}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_602
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 888
+        width: 141
+        height: 135
+      alignment: 9
+      pivot: {x: 0.5851, y: 0.4074}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_603
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 777
+        width: 136
+        height: 130
+      alignment: 9
+      pivot: {x: 0.58823, y: 0.43129}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_701
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 520
+        width: 118
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.50833}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_801
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 526
+        width: 122
+        height: 117
+      alignment: 9
+      pivot: {x: 0.4755, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_802
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 755
+        width: 123
+        height: 135
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45555}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_803
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 497
+        width: 122
+        height: 149
+      alignment: 9
+      pivot: {x: 0.4998, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_901
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 648
+        width: 123
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_frame_902
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 645
+        width: 133
+        height: 133
+      alignment: 9
+      pivot: {x: 0.5, y: 0.508}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: number_bg
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 991
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: universal_rect
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 900
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: universal_round_rect
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 894
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: avatar
+  assetBundleVariant: 

@@ -1,0 +1,1312 @@
+fileFormatVersion: 2
+guid: 7b304627106f6f6469d7c9a15695adfa
+timeCreated: 1550738143
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: activity_bg
+    21300002: activity_button
+    21300004: activity_label
+    21300006: activity_panel_color
+    21300008: activity_right_panel
+    21300010: button_L
+    21300012: button_M
+    21300014: button_S
+    21300016: button_XL
+    21300018: close_button
+    21300020: dividing_line
+    21300022: plunder_lace
+    21300024: universal_rect
+    21300026: tab_button_1_active
+    21300028: tab_button_1_inactive
+    21300030: tab_button_active
+    21300032: tab_button_inactive
+    21300034: activity_icon
+    21300036: activity_bg_1
+    21300038: activity_bg_2
+    21300040: activity_bg_3
+    21300042: activity_bg_4
+    21300044: activity_bg_5
+    21300046: activity_bg_6
+    21300048: activity_recharge_icon
+    21300050: price_tag
+    21300052: prize_pool_icon
+    21300054: button_backward
+    21300056: monster_bg
+    21300058: tab_button_lock
+    21300060: sign_item_bg
+    21300062: icon_refresh
+    21300064: sign_item_bg_1
+    21300066: sign_item_bg_2
+    21300068: sign_item_bg_3
+    21300070: texture2_
+    21300072: texture_1
+    21300074: texture_3
+    21300076: choose_icon
+    21300078: icon_vip
+    21300080: sales_tag
+    21300082: progress_bg
+    21300084: progress_fg
+    21300086: splite_line
+    21300088: splite_line_1
+    21300090: tag_bg
+    21300092: texture_2
+    21300094: texture_4
+    21300096: icon_giftbox_1
+    21300098: icon_giftbox_2
+    21300100: icon_giftbox_3
+    21300102: mask_1
+    21300104: mask_2
+    21300106: content_bg
+    21300108: sign_item_bg_4
+    21300110: number_bg
+    21300112: progress_bg_2
+    21300114: progress_fg_2
+    21300116: sign_item_bg_5
+    21300118: goods_1
+    21300120: seting_line4
+    21300122: add_vip_exp
+    21300124: splite_line_h
+    21300126: splite_line_v
+    21300128: rank_choose
+    21300130: rank_unchoose
+    21300132: lighting_1
+    21300134: receive_bg
+    21300136: textur_6_shadow
+    21300138: texture_5_shadow
+    21300140: texture_6
+    21300142: texture_7
+    21300144: texture_5
+    21300146: texture_6_shadow
+    21300148: texture_8
+    21300150: tab_button_active_long
+    21300152: tab_button_inactive_long
+    21300154: icon_giftbox_light_1
+    21300156: icon_giftbox_light_2
+    21300158: icon_giftbox_light_3
+    21300160: active_item_box
+    21300162: active_item_box_bg
+    21300164: active_item_box_bg_2
+    21300166: activity_button_new
+    21300168: activity_show_decoration
+    21300170: activity_small_bg
+    21300172: activity_title_arrow
+    21300174: activity_title_panel
+    21300176: biological_reward
+    21300178: branch_decoration
+    21300180: item_reward_panel
+    21300182: prize_pool_panel
+    21300184: purchase_panel
+    21300186: recharge_panel
+    21300188: tag_bg_2
+    21300190: Choice
+    21300192: choice_bg
+    21300194: activity_extra
+    21300196: activity_count_down
+    21300198: activity_count_down_icon
+    21300200: activity_countdown_icon
+    21300202: activity_stage_reward_view_bg
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: 54
+    textureCompression: 1
+    compressionQuality: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: 54
+    textureCompression: 1
+    compressionQuality: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: active_item_box
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 1819
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: active_item_box_bg
+      rect:
+        serializedVersion: 2
+        x: 1941
+        y: 640
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: active_item_box_bg_2
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 1090
+        width: 102
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: activity_bg
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1232
+        width: 470
+        height: 582
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: activity_button
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 933
+        width: 105
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: activity_button_new
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 1233
+        width: 281
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: activity_count_down
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 491
+        width: 189
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: activity_count_down_icon
+      rect:
+        serializedVersion: 2
+        x: 2020
+        y: 1641
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: activity_countdown_icon
+      rect:
+        serializedVersion: 2
+        x: 2020
+        y: 1617
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: activity_extra
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 1816
+        width: 50
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: activity_icon
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 988
+        width: 103
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: activity_label
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 738
+        width: 260
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: activity_panel_color
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1445
+        width: 509
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: activity_recharge_icon
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 1309
+        width: 291
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: activity_right_panel
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1584
+        width: 509
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: activity_show_decoration
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 1006
+        width: 334
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: activity_small_bg
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 1446
+        width: 697
+        height: 601
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: activity_stage_reward_view_bg
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 800
+        width: 166
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: activity_title_arrow
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 970
+        width: 106
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: activity_title_panel
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 889
+        width: 305
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: add_vip_exp
+      rect:
+        serializedVersion: 2
+        x: 1941
+        y: 479
+        width: 94
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: biological_reward
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 1258
+        width: 335
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: branch_decoration
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 864
+        width: 195
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_backward
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 1124
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_L
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 15
+        width: 199
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_M
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 15
+        width: 152
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_S
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 1280
+        width: 84
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_XL
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 808
+        width: 261
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Choice
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 1015
+        width: 42
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: choice_bg
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 1045
+        width: 335
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: choose_icon
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 1194
+        width: 45
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: close_button
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 1130
+        width: 53
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: content_bg
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1086
+        width: 450
+        height: 357
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dividing_line
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1841
+        width: 959
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: goods_1
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 1187
+        width: 81
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_giftbox_1
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1461
+        width: 56
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_giftbox_2
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 1872
+        width: 57
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_giftbox_3
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 1811
+        width: 56
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_giftbox_light_1
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1578
+        width: 78
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_giftbox_light_2
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1730
+        width: 78
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_giftbox_light_3
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1649
+        width: 78
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_refresh
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 1087
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: item_reward_panel
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 1150
+        width: 335
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: lighting_1
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1669
+        width: 237
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mask_1
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 795
+        width: 178
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: number_bg
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 1175
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: plunder_lace
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 1933
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: price_tag
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 1277
+        width: 87
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: prize_pool_panel
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 996
+        width: 334
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: progress_bg_2
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1819
+        width: 170
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 61, y: 6, z: 62, w: 5}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: progress_fg_2
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 1825
+        width: 164
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_panel
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 1044
+        width: 334
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: rank_choose
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1028
+        width: 208
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: rank_unchoose
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1028
+        width: 208
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: receive_bg
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 526
+        width: 214
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: recharge_panel
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 937
+        width: 334
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: seting_line4
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1816
+        width: 341
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sign_item_bg
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 620
+        width: 178
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sign_item_bg_2
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 1037
+        width: 116
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sign_item_bg_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1852
+        width: 1014
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sign_item_bg_4
+      rect:
+        serializedVersion: 2
+        x: 1941
+        y: 545
+        width: 95
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sign_item_bg_5
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 882
+        width: 131
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: splite_line
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1847
+        width: 961
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: splite_line_1
+      rect:
+        serializedVersion: 2
+        x: 2041
+        y: 1975
+        width: 3
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: splite_line_h
+      rect:
+        serializedVersion: 2
+        x: 2031
+        y: 1904
+        width: 9
+        height: 2
+      alignment: 9
+      pivot: {x: 0.7777778, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: splite_line_v
+      rect:
+        serializedVersion: 2
+        x: 2041
+        y: 1964
+        width: 2
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5, y: 0.22222222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tab_button_1_active
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1727
+        width: 537
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tab_button_1_inactive
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1782
+        width: 537
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tab_button_active
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1587
+        width: 226
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 20, z: 20, w: 20}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tab_button_active_long
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1152
+        width: 426
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tab_button_inactive
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1509
+        width: 226
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 20, z: 20, w: 20}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tab_button_inactive_long
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 1366
+        width: 426
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tab_button_lock
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1431
+        width: 226
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tag_bg
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1512
+        width: 76
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tag_bg_2
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 1209
+        width: 87
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: texture_1
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 1361
+        width: 84
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: texture_2
+      rect:
+        serializedVersion: 2
+        x: 1403
+        y: 532
+        width: 320
+        height: 462
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: texture_3
+      rect:
+        serializedVersion: 2
+        x: 1789
+        y: 1242
+        width: 220
+        height: 187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: texture_4
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 928
+        width: 169
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: texture_5
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 1104
+        width: 271
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: texture_5_shadow
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1908
+        width: 247
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: texture_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 96
+        width: 203
+        height: 381
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: texture_6_shadow
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1209
+        width: 54
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: texture_7
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2004
+        width: 1090
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: texture_8
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 929
+        width: 267
+        height: 311
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: universal_rect
+      rect:
+        serializedVersion: 2
+        x: 2041
+        y: 2042
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: allactivity
+  assetBundleVariant: 

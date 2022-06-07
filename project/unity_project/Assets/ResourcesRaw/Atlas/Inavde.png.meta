@@ -1,0 +1,2446 @@
+fileFormatVersion: 2
+guid: 32de8d87cafafa540b07e990d9753451
+timeCreated: 1543391052
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: background
+    21300002: battle_flag
+    21300004: icon_trophy
+    21300006: icon_warning
+    21300008: tab_button_active
+    21300010: tab_button_inactive
+    21300012: trophy_bg
+    21300014: avatar_bg
+    21300016: battle_sword
+    21300018: content_bg
+    21300020: content_bg_1
+    21300022: crown
+    21300024: crown_gray
+    21300026: dialog_bg
+    21300028: dialog_bg_2
+    21300030: dialog_bg_3
+    21300032: dialog_decoration
+    21300034: dialog_decoration_1
+    21300036: dropdown_bg
+    21300038: dropdown_item_split_line
+    21300040: empty_item
+    21300042: fighting_power_bg
+    21300044: icon_attack
+    21300046: icon_tip
+    21300048: level_bg
+    21300050: lighting_wheel
+    21300052: monster_bg
+    21300054: monster_name_bg
+    21300056: monster_type_all
+    21300058: monster_type_builder
+    21300060: monster_type_collecter
+    21300062: monster_type_defenser
+    21300064: monster_type_warrior
+    21300066: shield_golden
+    21300068: shield_sliver
+    21300070: shield_wood
+    21300072: torch_blue_left
+    21300074: torch_blue_right
+    21300076: filter_arrow
+    21300078: monster_type_balance
+    21300080: ally_army_bg_part1
+    21300082: ally_army_bg_part2
+    21300084: background_1
+    21300086: background_3
+    21300088: crown_small
+    21300090: crown_small_gray
+    21300092: icon_fighting_power
+    21300094: monster_hp_slider_bg
+    21300096: monster_slot_bg
+    21300098: monster_slot_empty
+    21300100: monster_slot_selected
+    21300102: battle_failed_bg
+    21300104: battle_win_bg
+    21300106: progress_bg
+    21300108: progress_fg
+    21300110: tab_button_1_active
+    21300112: tab_button_1_inactive
+    21300114: chest
+    21300116: complete_victory_star
+    21300118: waking_warning_bg_part1
+    21300120: waking_warning_bg_part2
+    21300122: button_cyan
+    21300124: button_cyan_small
+    21300126: button_dark_blue
+    21300128: button_dark_blue_small
+    21300130: button_green
+    21300132: button_green_large
+    21300134: button_light_blue
+    21300136: close_button
+    21300138: icon_coin
+    21300140: icon_diamond
+    21300142: universal_rect
+    21300144: list_item_bg
+    21300146: button_backward
+    21300148: button_L
+    21300150: button_M
+    21300152: button_S
+    21300154: button_XL
+    21300156: number_bg
+    21300158: 1_place
+    21300160: 2_place
+    21300162: 3_place
+    21300164: arena_label
+    21300166: arena_label_day
+    21300168: bronze_segment
+    21300170: diamond_segment
+    21300172: dividing_line
+    21300174: golden_week_icon
+    21300176: grandmaster_segment
+    21300178: I
+    21300180: II
+    21300182: III
+    21300184: IV
+    21300186: king_segment
+    21300188: lucky_day_icon
+    21300190: platinum_segment
+    21300192: rand_change
+    21300194: shield_plane
+    21300196: silver_segment
+    21300198: Triangle
+    21300200: V
+    21300202: wheat_ears
+    21300204: plunder_lace
+    21300206: sports_icon
+    21300208: 4_place
+    21300210: icon_arean
+    21300212: day_wing
+    21300214: week_wing
+    21300216: progress_bg_1
+    21300218: progress_fg_1
+    21300220: universal_round_rect
+    21300222: monster_attack
+    21300224: monster_both
+    21300226: monster_build
+    21300228: monster_collect
+    21300230: monster_defend
+    21300232: monster_equal
+    21300234: plunder_black
+    21300236: plunder_die
+    21300238: plunder_red_light
+    21300240: Crown_00
+    21300242: Crown_01
+    21300244: Crown_02
+    21300246: Crown_03
+    21300248: Crown_04
+    21300250: Crown_05
+    21300252: Crown_06
+    21300254: Crown_07
+    21300256: Crown_08
+    21300258: Crown_09
+    21300260: Crown_10
+    21300262: Crown_11
+    21300264: Crown_12
+    21300266: Crown_13
+    21300268: Crown_14
+    21300270: Crown_15
+    21300272: Crown_16
+    21300274: Crown_80
+    21300276: ban
+    21300278: flower
+    21300280: jian_tou
+    21300282: plunder_decoration
+    21300284: alert
+    21300286: 'confused '
+    21300288: confused
+    21300290: check_box
+    21300292: glod_segment
+    21300294: leaf
+    21300296: plunder_group
+    21300298: Plunder_Panel
+    21300300: shield
+    21300302: plunder_choice_pane
+    21300304: plunder_arrow
+    21300306: torch
+    21300308: trace_line
+    21300310: white_film
+    21300312: white_film2
+    21300314: white_film3
+    21300316: torch_general
+    21300318: flagpole
+    21300320: zhuanhen
+    21300322: banner_panel
+    21300324: Lineup
+    21300326: sun_plane
+    21300328: Lineup_panel
+    21300330: finght_panel
+    21300332: activity_icon
+    21300334: Icon_comm_bg
+    21300336: plunder_equal
+    21300338: "\u95EA\u7EA2"
+    21300340: Lineup2
+    21300342: sword_loading
+    21300344: plunder_initial
+    21300346: monster_bg_1
+    21300348: vacancy
+    21300350: choice_icon
+    21300352: sheild_00
+    21300354: sheild_01
+    21300356: sheild_02
+    21300358: sheild_03
+    21300360: sheild_04
+    21300362: sheild_05
+    21300364: sheild_06
+    21300366: sheild_07
+    21300368: sheild_08
+    21300370: sheild_09
+    21300372: sheild_10
+    21300374: sheild_11
+    21300376: sheild_12
+    21300378: sheild_13
+    21300380: sheild_14
+    21300382: sheild_15
+    21300384: sheild_16
+    21300386: sheild_17
+    21300388: flower_shadow
+    21300390: personal_label
+    21300392: reward_title
+    21300394: battle_flag_fail
+    21300396: monster_bg_2
+    21300398: torch_general_2
+    21300400: monster_bg_3
+    21300402: texture_6
+    21300404: texture_6_shadow
+    21300406: clear_button
+    21300408: plunder_segment_msg
+    21300410: plunder_sanjiao
+    21300412: equal
+    21300414: sheild_18
+    21300416: time_panel
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: 54
+    textureCompression: 1
+    compressionQuality: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: 54
+    textureCompression: 1
+    compressionQuality: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 1_place
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 282
+        width: 86
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: 2_place
+      rect:
+        serializedVersion: 2
+        x: 1447
+        y: 353
+        width: 86
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: 3_place
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 1
+        width: 86
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: 4_place
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 1485
+        width: 67
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: activity_icon
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 1291
+        width: 103
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: alert
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 1059
+        width: 34
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ally_army_bg_part1
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 1216
+        width: 79
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 38, y: 5, z: 38, w: 24}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ally_army_bg_part2
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 1844
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 4, z: 1, w: 4}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: arena_label
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 1419
+        width: 362
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: arena_label_day
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 1285
+        width: 362
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: avatar_bg
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 1061
+        width: 112
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: background
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1713
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: background_1
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 1315
+        width: 37
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 0, z: 18, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: background_3
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 1562
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ban
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 842
+        width: 139
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: banner_panel
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 1476
+        width: 653
+        height: 571
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: battle_failed_bg
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1243
+        width: 102
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: battle_flag
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 249
+        width: 475
+        height: 514
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: battle_flag_fail
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 250
+        width: 474
+        height: 513
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: battle_sword
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 846
+        width: 163
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: battle_win_bg
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 1243
+        width: 102
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bronze_segment
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 1014
+        width: 123
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_backward
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 3
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_L
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 1161
+        width: 199
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_M
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1204
+        width: 152
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_S
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 1123
+        width: 84
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_XL
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 1774
+        width: 261
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: check_box
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 1117
+        width: 69
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chest
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 839
+        width: 138
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: choice_icon
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1752
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: clear_button
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 1242
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: close_button
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 1681
+        width: 53
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: complete_victory_star
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 1291
+        width: 74
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: confused
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1122
+        width: 49
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: crown
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 1114
+        width: 145
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Crown_00
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 1452
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Crown_01
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 1100
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Crown_02
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 1056
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Crown_03
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 1056
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Crown_04
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 1056
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Crown_05
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 1012
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Crown_06
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 968
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Crown_07
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 829
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Crown_08
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1198
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Crown_09
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 338
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Crown_10
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 338
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Crown_11
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 338
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Crown_12
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 338
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Crown_13
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 785
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Crown_14
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 785
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Crown_15
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 1452
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Crown_16
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 1452
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Crown_80
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 1452
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: crown_gray
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 134
+        width: 143
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: crown_small
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 1248
+        width: 43
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: crown_small_gray
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 1248
+        width: 43
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: diamond_segment
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 970
+        width: 123
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dividing_line
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1553
+        width: 959
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dropdown_bg
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1527
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 3, z: 3, w: 4}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dropdown_item_split_line
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 766
+        width: 135
+        height: 2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: empty_item
+      rect:
+        serializedVersion: 2
+        x: 1937
+        y: 893
+        width: 107
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: equal
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 1542
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: fighting_power_bg
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 9
+        width: 128
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: filter_arrow
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 1591
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: finght_panel
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 352
+        width: 167
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: flagpole
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 734
+        width: 125
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: glod_segment
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 1012
+        width: 135
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: golden_week_icon
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 43
+        width: 165
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grandmaster_segment
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 1100
+        width: 141
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_arean
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 1027
+        width: 91
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_attack
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1242
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_coin
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 1496
+        width: 50
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_diamond
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 1064
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_fighting_power
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 1738
+        width: 53
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_tip
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 1014
+        width: 33
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_trophy
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 771
+        width: 46
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: icon_warning
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 1611
+        width: 28
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: jian_tou
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 1291
+        width: 41
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: king_segment
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 834
+        width: 142
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: leaf
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 1144
+        width: 56
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lineup
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1326
+        width: 94
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lineup2
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 1367
+        width: 96
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Lineup_panel
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1683
+        width: 1061
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: list_item_bg
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 770
+        width: 59
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 33, z: 32, w: 22}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_attack
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 1585
+        width: 52
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_bg
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1100
+        width: 117
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_bg_1
+      rect:
+        serializedVersion: 2
+        x: 1937
+        y: 765
+        width: 103
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_bg_2
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1100
+        width: 117
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_bg_3
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 1161
+        width: 133
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_both
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 6
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_build
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 1016
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_collect
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 8
+        width: 47
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_defend
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 968
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_equal
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 1632
+        width: 52
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_hp_slider_bg
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 1374
+        width: 82
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_slot_bg
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 1647
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 14, y: 16, z: 14, w: 16}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_slot_empty
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1330
+        width: 90
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: monster_slot_selected
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1244
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 19, y: 19, z: 19, w: 19}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: number_bg
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 1551
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: personal_label
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1559
+        width: 1028
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: platinum_segment
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 110
+        width: 121
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: plunder_arrow
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 1517
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: plunder_black
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1949
+        width: 1334
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 544, y: 0, z: 770, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: plunder_choice_pane
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 334
+        width: 114
+        height: 429
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: plunder_decoration
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 1142
+        width: 78
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: plunder_die
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 768
+        width: 56
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: plunder_equal
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 829
+        width: 620
+        height: 645
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: plunder_group
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 1242
+        width: 345
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: plunder_initial
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 1389
+        width: 249
+        height: 383
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: plunder_lace
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 281
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Plunder_Panel
+      rect:
+        serializedVersion: 2
+        x: 1937
+        y: 1025
+        width: 110
+        height: 425
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: plunder_red_light
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1855
+        width: 1334
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 544, y: 0, z: 770, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: plunder_segment_msg
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 1348
+        width: 37
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: progress_bg_1
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1056
+        width: 122
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: progress_fg_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1290
+        width: 116
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: reward_title
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 260
+        width: 305
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sheild_00
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 13
+        width: 90
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sheild_01
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 37
+        width: 90
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sheild_02
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 37
+        width: 90
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sheild_03
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 163
+        width: 90
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sheild_04
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 66
+        width: 90
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sheild_05
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 168
+        width: 90
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sheild_06
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 71
+        width: 90
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sheild_07
+      rect:
+        serializedVersion: 2
+        x: 1415
+        y: 185
+        width: 90
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sheild_08
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 88
+        width: 90
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sheild_09
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 256
+        width: 90
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sheild_10
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 159
+        width: 90
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sheild_11
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 62
+        width: 90
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sheild_12
+      rect:
+        serializedVersion: 2
+        x: 1779
+        y: 732
+        width: 90
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sheild_13
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 637
+        width: 90
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sheild_14
+      rect:
+        serializedVersion: 2
+        x: 1871
+        y: 668
+        width: 90
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sheild_15
+      rect:
+        serializedVersion: 2
+        x: 1744
+        y: 635
+        width: 90
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sheild_16
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 540
+        width: 90
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sheild_17
+      rect:
+        serializedVersion: 2
+        x: 1585
+        y: 443
+        width: 90
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sheild_18
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 346
+        width: 90
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: shield
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 423
+        width: 308
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: shield_golden
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 841
+        width: 198
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: shield_plane
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 54
+        width: 230
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: shield_sliver
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 1325
+        width: 172
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: shield_wood
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 835
+        width: 170
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: silver_segment
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 971
+        width: 123
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sports_icon
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 1291
+        width: 103
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sun_plane
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1442
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sword_loading
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 265
+        width: 70
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tab_button_1_active
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 774
+        width: 537
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tab_button_1_inactive
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 770
+        width: 537
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tab_button_active
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 1471
+        width: 226
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tab_button_inactive
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 1393
+        width: 226
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: texture_6
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 382
+        width: 203
+        height: 381
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: texture_6_shadow
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 1797
+        width: 54
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: torch
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 873
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: torch_general
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 846
+        width: 123
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: torch_general_2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3
+        width: 169
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: trace_line
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1726
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Triangle
+      rect:
+        serializedVersion: 2
+        x: 1937
+        y: 1460
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: universal_rect
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 1837
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: universal_round_rect
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1700
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: vacancy
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 840
+        width: 141
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: week_wing
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 6
+        width: 390
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: wheat_ears
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 1285
+        width: 79
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: white_film
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 919
+        width: 78
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: white_film2
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 1253
+        width: 71
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: white_film3
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 873
+        width: 75
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zhuanhen
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1726
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: "\u95EA\u7EA2"
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1539
+        width: 10
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 0, z: 4, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: inavde
+  assetBundleVariant: 

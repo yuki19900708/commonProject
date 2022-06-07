@@ -1,0 +1,55 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:e8ca82a25fda6eedcd15acf01c3b8375:3f071068ae65cfc77bc08f9889a34a25:340214a6762372bf2253e81d157c7980$
+#
+:format=40300
+:texture=Chat.png
+:size=1024x1024
+:pivotpoints=enabled
+:borders=disabled
+
+button_backward;973;427;49;49; 0.5;0.5; 0;0;0;0
+button_L;603;632;199;79; 0.5;0.5; 0;0;0;0
+button_M;866;944;152;79; 0.5;0.5; 0;0;0;0
+button_S;745;517;84;79; 0.5;0.5; 0;0;0;0
+button_XL;603;944;261;79; 0.5;0.5; 0;0;0;0
+chat_bg;1;573;600;450; 0.5;0.5; 0;0;0;0
+chat_input_bg;1002;595;19;63; 0.5;0.5; 0;0;0;0
+chat_item_arrow;725;411;30;23; 0.5;0.5; 0;0;0;0
+chat_setting_bg;1;495;514;76; 0.5;0.5; 0;0;0;0
+chat_settings;804;655;54;56; 0.5;0.5; 0;0;0;0
+chat_tip;517;443;64;65; 0.5;0.5; 0;0;0;0
+close_button;804;598;53;55; 0.5;0.5; 0;0;0;0
+expression_0;865;802;140;140; 0.5;0.5; 0;0;0;0
+expression_1;865;660;140;140; 0.5;0.5; 0;0;0;0
+expression_2;725;234;140;140; 0.5;0.5; 0;0;0;0
+expression_3;571;206;140;140; 0.5;0.5; 0;0;0;0
+expression_4;867;215;140;140; 0.5;0.5; 0;0;0;0
+expression_5;713;92;140;140; 0.5;0.5; 0;0;0;0
+expression_6;855;73;140;140; 0.5;0.5; 0;0;0;0
+expression_7;1;64;140;140; 0.5;0.5; 0;0;0;0
+expression_8;143;64;140;140; 0.5;0.5; 0;0;0;0
+expression_9;285;193;140;140; 0.5;0.5; 0;0;0;0
+expression_10;860;518;140;140; 0.5;0.5; 0;0;0;0
+expression_11;603;490;140;140; 0.5;0.5; 0;0;0;0
+expression_12;831;376;140;140; 0.5;0.5; 0;0;0;0
+expression_13;583;348;140;140; 0.5;0.5; 0;0;0;0
+expression_14;429;301;140;140; 0.5;0.5; 0;0;0;0
+icon_emoji;745;436;84;79; 0.5;0.5; 0;0;0;0
+icon_goto_top;973;395;38;30; 0.5;0.5; 0;0;0;0
+icon_red_dot;973;357;36;36; 0.5;0.5; 0;0;0;0
+icon_red_dot_2;831;547;24;24; 0.5;0.5; 0;0;0;0
+icon_time;831;573;25;23; 0.5;0.5; 0;0;0;0
+icon_vip;517;510;80;61; 0.5;0.5; 0;0;0;0
+icon_warning;757;400;28;34; 0.5;0.5; 0;0;0;0
+number_bg;745;598;52;32; 0.5;0.5; 0;0;0;0
+switch_thumb;973;478;50;38; 0.5;0.5; 0;0;0;0
+tab_button_active_long;1;415;426;78; 0.5;0.5; 0;0;0;0
+tab_button_inactive_long;1;335;426;78; 0.5;0.5; 0;0;0;0
+universal_rect;1007;924;5;5; 0.5;0.5; 0;0;0;0
+universal_round_rect;1007;931;11;11; 0.5;0.5; 0;0;0;0
+user_operate_panel_bg;603;713;260;229; 0.5;0.5; 0;0;0;0

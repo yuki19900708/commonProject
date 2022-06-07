@@ -1,0 +1,55 @@
+
+Comic-dragon.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Comic-dragon/Comic-dragon-1
+  rotate: false
+  xy: 2, 63
+  size: 440, 430
+  orig: 440, 430
+  offset: 0, 0
+  index: -1
+Comic-dragon/Comic-dragon-2
+  rotate: false
+  xy: 444, 217
+  size: 88, 84
+  orig: 88, 84
+  offset: 0, 0
+  index: -1
+Comic-dragon/Comic-dragon-3
+  rotate: false
+  xy: 626, 364
+  size: 113, 33
+  orig: 113, 33
+  offset: 0, 0
+  index: -1
+Comic-dragon/Comic-dragon-4
+  rotate: false
+  xy: 2, 2
+  size: 152, 59
+  orig: 152, 59
+  offset: 0, 0
+  index: -1
+Comic-dragon/Comic-dragon-5
+  rotate: false
+  xy: 444, 399
+  size: 180, 94
+  orig: 180, 94
+  offset: 0, 0
+  index: -1
+Comic-dragon/Comic-dragon-6
+  rotate: false
+  xy: 444, 303
+  size: 180, 94
+  orig: 180, 94
+  offset: 0, 0
+  index: -1
+Comic-dragon/Comic-dragon-7
+  rotate: false
+  xy: 626, 399
+  size: 179, 94
+  orig: 180, 94
+  offset: 1, 0
+  index: -1

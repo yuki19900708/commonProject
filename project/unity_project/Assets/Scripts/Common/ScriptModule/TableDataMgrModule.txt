@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+public enum TableDataName
+{
+    #EnumName#
+}
+
+public partial class TableDataMgr
+{
+    #region
+#Variable#
+    #endregion
+    private static Dictionary<TableDataName, ScriptableObject> dataDic = new Dictionary<TableDataName, ScriptableObject>();
+
+    public static Dictionary<TableDataName, ScriptableObject> DataDic
+    {
+        get
+        {
+            return dataDic;
+        }
+        set
+        {
+            dataDic = value;
+        }
+    }
+
+    public static void LoadAllData()
+    {
+        ScriptableObject[] scriptObj = Resources.LoadAll<ScriptableObject>("DataAsset");
+
+        Array nameArray = Enum.GetValues(typeof(TableDataName));
+        foreach (ScriptableObject obj in scriptObj)
+        {
+            bool isContains = false;
+            foreach (TableDataName name in nameArray)
+            {
+                if(obj.ToString().Contains(name.ToString()))
+                {
+                    isContains= true;
+                    DataDic.Add(name, obj);
+                }
+            }
+
+            if(isContains ==false)
+            {
+                Debug.LogError("检查策划表和资源是否一致");
+            }
+        }
+    }
+
+#Content#
+}

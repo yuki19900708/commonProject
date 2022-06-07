@@ -1,0 +1,130 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:acd183d5182dec436e8d1c3b7146e96e:eff229bdfdc747d08755994e6885ec28:ad60e563c4feca4de554c598eff436ab$
+#
+:format=40300
+:texture=Chapter.png
+:size=2048x2048
+:pivotpoints=enabled
+:borders=disabled
+
+BG;1;1320;767;727; 0.5;0.5; 0;0;0;0
+BG_1;1985;1603;51;67; 0.5;0.5; 0;0;0;0
+BG_2;455;289;50;50; 0.5;0.5; 0;0;0;0
+bg_part1;2041;1891;5;11; 0.5;0.5; 0;0;0;0
+bg_part2;455;208;48;28; 0.5;0.5; 0;0;0;0
+button_1;1407;188;85;75; 0.5;0.5; 0;0;0;0
+button_2;881;2;97;63; 0.5;0.5; 0;0;0;0
+button_backward;455;238;49;49; 0.5;0.5; 0;0;0;0
+button_L;680;40;199;79; 0.5;0.5; 0;0;0;0
+button_M;1883;488;152;79; 0.5;0.5; 0;0;0;0
+button_S;1071;96;84;79; 0.5;0.5; 0;0;0;0
+button_XL;229;30;261;79; 0.5;0.5; 0;0;0;0
+chapter_banner;1571;1553;412;116; 0.5;0.5; 0;0;0;0
+chapter_bell;2041;1880;4;9; 0.5;0.5; 0;0;0;0
+chapter_bg_des;770;1504;799;543; 0.5;0.5; 0;0;0;0
+chapter_button_bg;1;174;228;218; 0.5;0.5; 0;0;0;0
+chapter_challge_kuang1;515;271;218;301; 0.5;0.5; 0;0;0;0
+chapter_challge_kuang2;1663;369;218;388; 0.5;0.5; 0;0;0;0
+chapter_challge_kuang3;1695;1021;218;475; 0.5;0.5; 0;0;0;0
+chapter_des_huawen;1817;778;36;36; 0.5;0.5; 0;0;0;0
+chapter_failed;775;523;612;225; 0.5;0.5; 0;0;0;0
+chapter_item_bg;1;574;385;637; 0.5;0.5; 0;0;0;0
+chapter_item_bg1;388;574;385;637; 0.5;0.5; 0;0;0;0
+chapter_item_bg_locked;1308;859;385;637; 0.5;0.5; 0;0;0;0
+chapter_item_bg_locked_logo;506;83;172;186; 0.5;0.5; 0;0;0;0
+chapter_item_outline;886;750;413;666; 0.5;0.5; 0;0;0;0
+chapter_light;1571;1671;376;376; 0.5;0.5; 0;0;0;0
+chapter_pass_buy_diamond_bg;1695;897;188;39; 0.5;0.5; 0;0;0;0
+chapter_pass_buy_egg_bg;1389;346;272;411; 0.5;0.5; 0;0;0;0
+chapter_pass_item_des;1965;574;77;75; 0.5;0.5; 0;0;0;0
+chapter_pass_item_egg_logo;1949;1696;97;108; 0.5;0.5; 0;0;0;0
+chapter_pass_item_free_logo;1915;1225;110;116; 0.5;0.5; 0;0;0;0
+chapter_pass_itme_bg_back;231;111;222;281; 0.5;0.5; 0;0;0;0
+chapter_pass_itme_bg_back_grey;735;240;222;281; 0.5;0.5; 0;0;0;0
+chapter_pass_itme_bg_front;959;240;222;281; 0.5;0.5; 0;0;0;0
+chapter_pass_itme_bg_front_grey;1183;63;222;281; 0.5;0.5; 0;0;0;0
+chapter_pass_range_arrow;455;180;32;26; 0.5;0.5; 0;0;0;0
+chapter_pass_range_bg_icon;1663;46;316;321; 0.5;0.5; 0;0;0;0
+chapter_pass_range_kuang;680;177;474;58; 0.5;0.5; 0;0;0;0
+chapter_pointer;857;1187;24;24; 0.5;0.5; 0;0;0;0
+chapter_reward_progress_bg;680;121;389;54; 0.5;0.5; 0;0;0;0
+chapter_reward_progress_fg;1571;1505;381;46; 0.5;0.5; 0;0;0;0
+chapter_slider_background;1183;357;125;20; 0.5;0.5; 0;0;0;0
+chapter_slider_line1;2041;1904;2;14; 0.5;0.5; 0;0;0;0
+chapter_slider_line2;2041;1904;2;14; 0.5;0.5; 0;0;0;0
+chapter_slider_value;679;24;119;14; 0.5;0.5; 0;0;0;0
+chapter_succeed;1;394;512;178; 0.5;0.5; 0;0;0;0
+chapter_sword_left;1996;1117;45;45; 0.5;0.5; 0;0;0;0
+chapter_sword_right;182;77;45;45; 0.5;0.5; 0;0;0;0
+chapter_tag1;1883;434;124;52; 0.5;0.5; 0;0;0;0
+chapter_tag2;1883;380;124;52; 0.5;0.5; 0;0;0;0
+chapter_tag3;881;67;124;52; 0.5;0.5; 0;0;0;0
+chapter_wheatears;1949;1920;96;127; 0.5;0.5; 0;0;0;0
+close_button;1981;203;53;55; 0.5;0.5; 0;0;0;0
+decoration_1;1;1213;883;105; 0.5;0.5; 0;0;0;0
+dividing_line;770;1498;959;4; 0.5;0.5; 0;0;0;0
+dividingline3;1731;1500;261;3; 0.5;0.5; 0;0;0;0
+icon_backward;1494;257;60;52; 0.5;0.5; 0;0;0;0
+icon_basecamp;1493;47;75;71; 0.5;0.5; 0;0;0;0
+icon_challenge_win_1;1949;1806;90;112; 0.5;0.5; 0;0;0;0
+icon_challenge_win_2;1883;651;133;112; 0.5;0.5; 0;0;0;0
+icon_challenge_win_3;1915;1343;124;155; 0.5;0.5; 0;0;0;0
+icon_chapter_ap;1981;320;63;58; 0.5;0.5; 0;0;0;0
+icon_chapter_chest;1915;1023;118;92; 0.5;0.5; 0;0;0;0
+icon_chapter_chest_slot_idle;1999;1674;17;20; 0.5;0.5; 0;0;0;0
+icon_chapter_chest_slot_unlocking;455;341;50;51; 0.5;0.5; 0;0;0;0
+icon_chapter_chest_vip_slot_empty;783;1327;8;10; 0.5;0.5; 0;0;0;0
+icon_chapter_chest_vip_slot_idle;1949;1672;23;22; 0.5;0.5; 0;0;0;0
+icon_chapter_chest_vip_slot_unlocking;1974;1672;23;22; 0.5;0.5; 0;0;0;0
+icon_chapter_choose;1407;49;84;69; 0.5;0.5; 0;0;0;0
+icon_chapter_property;1883;569;80;80; 0.5;0.5; 0;0;0;0
+icon_chapter_star_empty;2009;380;34;32; 0.5;0.5; 0;0;0;0
+icon_chapter_star_filled;182;7;34;32; 0.5;0.5; 0;0;0;0
+icon_chapter_task;1407;265;69;79; 0.5;0.5; 0;0;0;0
+icon_chest;775;857;86;84; 0.5;0.5; 0;0;0;0
+icon_coin;1981;38;50;53; 0.5;0.5; 0;0;0;0
+icon_collaspe;1996;1164;41;59; 0.5;0.5; 0;0;0;0
+icon_delete;1997;961;46;60; 0.5;0.5; 0;0;0;0
+icon_diamond;182;124;47;48; 0.5;0.5; 0;0;0;0
+icon_hourglass;775;943;89;84; 0.5;0.5; 0;0;0;0
+icon_Illustration;775;772;85;83; 0.5;0.5; 0;0;0;0
+icon_next;775;1120;80;91; 0.5;0.5; 0;0;0;0
+icon_reset;1407;120;85;66; 0.5;0.5; 0;0;0;0
+icon_resource_plus;1817;816;41;41; 0.5;0.5; 0;0;0;0
+icon_reward;1494;204;65;51; 0.5;0.5; 0;0;0;0
+icon_score;1183;379;169;142; 0.5;0.5; 0;0;0;0
+icon_score_2;770;1339;113;77; 0.5;0.5; 0;0;0;0
+icon_shop;775;1029;89;89; 0.5;0.5; 0;0;0;0
+icon_star;1981;260;61;58; 0.5;0.5; 0;0;0;0
+icon_star_1_empty;2009;451;36;35; 0.5;0.5; 0;0;0;0
+icon_star_1_filled;2009;414;36;35; 0.5;0.5; 0;0;0;0
+icon_star_2_empty;1981;148;56;53; 0.5;0.5; 0;0;0;0
+icon_star_2_filled;1981;93;56;53; 0.5;0.5; 0;0;0;0
+icon_star_3_empty;735;538;36;34; 0.5;0.5; 0;0;0;0
+icon_star_3_filled;182;41;36;34; 0.5;0.5; 0;0;0;0
+icon_stone;1985;1554;49;47; 0.5;0.5; 0;0;0;0
+icon_warning;2018;729;28;34; 0.5;0.5; 0;0;0;0
+map_object_detail_bg;770;1418;536;78; 0.5;0.5; 0;0;0;0
+number_bg;680;237;52;32; 0.5;0.5; 0;0;0;0
+panel_title;1695;941;300;78; 0.5;0.5; 0;0;0;0
+progress_bg_1;1007;52;122;42; 0.5;0.5; 0;0;0;0
+progress_bg_2;1695;875;170;20; 0.5;0.5; 0;0;0;0
+progress_fg_1;1478;311;116;33; 0.5;0.5; 0;0;0;0
+progress_fg_2;1695;859;164;14; 0.5;0.5; 0;0;0;0
+seting_line4;1695;938;341;1; 0.5;0.5; 0;0;0;0
+skip_bg;492;29;185;52; 0.5;0.5; 0;0;0;0
+start_info_bg;1301;759;514;98; 0.5;0.5; 0;0;0;0
+start_info_bg_decoration_1;1954;1521;59;30; 0.5;0.5; 0;0;0;0
+start_info_bg_decoration_2;2015;1510;18;42; 0.5;0.5; 0;0;0;0
+start_info_bg_decoration_3;1310;350;58;27; 0.5;0.5; 0;0;0;0
+tag_bg;1885;884;157;52; 0.5;0.5; 0;0;0;0
+texture_1;1861;765;160;108; 0.5;0.5; 0;0;0;0
+texture_2;1;1;179;171; 0.5;0.5; 0;0;0;0
+universal_rect;2041;1873;5;5; 0.5;0.5; 0;0;0;0
+universal_round_rect;770;1326;11;11; 0.5;0.5; 0;0;0;0
+wheat_ears;1915;1117;79;106; 0.5;0.5; 0;0;0;0

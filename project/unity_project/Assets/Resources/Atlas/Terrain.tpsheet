@@ -1,0 +1,49 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:2fd50a1977759ba5bdff535003616b84:c10d598f7f355276ba76e2390646d47b:c15f94758baa7065a4d8ac9d72d8a626$
+#
+:format=40300
+:texture=Terrain.png
+:size=2048x2048
+:pivotpoints=enabled
+:borders=disabled
+
+bridge;343;88;318;235; 0.5;0.5; 0;0;0;0
+ground_1;915;1145;302;152; 0.5;0.5; 0;0;0;0
+ground_bottom_border_1;1185;1449;151;79; 1;1; 0;0;0;0
+ground_bottom_border_2;1255;1691;151;79; 1;1; 0;0;0;0
+ground_bottom_border_3;1255;1570;151;79; 1;1; 0;0;0;0
+ground_top_border_1;1300;1971;151;76; 1;0; 0;0;0;0
+ground_top_border_2;1300;1853;151;76; 1;0; 0;0;0;0
+ground_top_border_3;1071;342;151;76; 1;0; 0;0;0;0
+wave_front_corner;343;1829;530;218; 0.5;0.5; 0;0;0;0
+wave_side_1;915;1812;343;235; 0.5;0.5; 0;0;0;0
+wave_side_2;343;1050;328;209; 0.5;0.5; 0;0;0;0
+wave_side_3;703;114;326;209; 0.5;0.5; 0;0;0;0
+wave_side_4;915;1570;298;200; 0.5;0.5; 0;0;0;0
+wave_side_5;343;1301;334;215; 0.5;0.5; 0;0;0;0
+wave_side_6;343;1558;338;229; 0.5;0.5; 0;0;0;0
+wave_side_corner;915;1339;228;189; 0.5;0.5; 0;0;0;0
+wall_corner-1;1;1404;300;643; 0.5;0; 0;0;0;0
+wall_corner-2;1;719;300;643; 0.5;0; 0;0;0;0
+wall_corner-3;1;34;300;643; 0.5;0; 0;0;0;0
+wall_corner_left-1;1303;725;150;640; 1;0; 0;0;0;0
+wall_corner_left-2;1495;37;150;640; 1;0; 0;0;0;0
+wall_corner_left-3;1493;1407;151;640; 1;0; 0;0;0;0
+wall_corner_right-1;1687;40;150;637; 0;0; 0;0;0;0
+wall_corner_right-2;1686;1410;151;637; 0;0; 0;0;0;0
+wall_corner_right-3;1879;40;150;637; 0;0; 0;0;0;0
+wall_dark_left-1;723;1144;150;643; 1;0; 0;0;0;0
+wall_dark_left-2;343;365;150;643; 1;0; 0;0;0;0
+wall_dark_left-3;535;365;150;643; 1;0; 0;0;0;0
+wall_dark_left-4;727;459;150;643; 1;0; 0;0;0;0
+wall_dark_left-5;919;460;150;643; 1;0; 0;0;0;0
+wall_light_right-1;1111;460;150;643; 0;0; 0;0;0;0
+wall_light_right-2;1879;1404;150;643; 0;0; 0;0;0;0
+wall_light_right-3;1686;725;150;643; 0;0; 0;0;0;0
+wall_light_right-4;1878;719;150;643; 0;0; 0;0;0;0
+wall_light_right-5;1303;34;150;643; 0;0; 0;0;0;0

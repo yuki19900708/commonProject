@@ -1,0 +1,82 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:acae339d2d6959dc59c458faa1f4ee4e:4fd12c158313c961cccfe9e914225791:7c8e18ea32ca438e6863292976183926$
+#
+:format=40300
+:texture=Shop.png
+:size=1024x2048
+:pivotpoints=enabled
+:borders=disabled
+
+bg;581;853;275;444; 0.5;0.5; 0;0;0;0
+button_backward;957;893;49;49; 0.5;0.5; 0;0;0;0
+button_L;1;156;199;79; 0.5;0.5; 0;0;0;0
+button_M;856;1850;152;79; 0.5;0.5; 0;0;0;0
+button_S;845;557;84;79; 0.5;0.5; 0;0;0;0
+button_XL;581;1442;261;79; 0.5;0.5; 0;0;0;0
+close_button;962;999;53;55; 0.5;0.5; 0;0;0;0
+flash_lock;858;1080;102;119; 0.5;0.5; 0;0;0;0
+flash_star;952;770;71;72; 0.5;0.5; 0;0;0;0
+goods_1;931;539;81;91; 0.5;0.5; 0;0;0;0
+goods_2;844;1382;139;84; 0.5;0.5; 0;0;0;0
+goods_3;856;1468;145;85; 0.5;0.5; 0;0;0;0
+goods_4;828;1299;133;81; 0.5;0.5; 0;0;0;0
+goods_5;845;638;104;106; 0.5;0.5; 0;0;0;0
+goods_6;742;272;108;113; 0.5;0.5; 0;0;0;0
+goods_7;856;1555;151;125; 0.5;0.5; 0;0;0;0
+goods_8;888;366;130;79; 0.5;0.5; 0;0;0;0
+goods_bg_1;278;380;234;194; 0.5;0.5; 0;0;0;0
+goods_bg_2;1;373;233;194; 0.5;0.5; 0;0;0;0
+goods_des_bg_1;581;1337;237;36; 0.5;0.5; 0;0;0;0
+goods_des_bg_2;581;1299;237;36; 0.5;0.5; 0;0;0;0
+handbook_bg_2;291;1495;288;472; 0.5;0.5; 0;0;0;0
+handbook_bg_4;291;1022;288;471; 0.5;0.5; 0;0;0;0
+icon_coin;962;944;50;53; 0.5;0.5; 0;0;0;0
+icon_diamond;845;507;47;48; 0.5;0.5; 0;0;0;0
+icon_diamond_package;109;53;183;98; 0.5;0.5; 0;0;0;0
+icon_diamond_package_1;294;56;188;95; 0.5;0.5; 0;0;0;0
+icon_fly_diamond_1;985;1430;38;36; 0.5;0.5; 0;0;0;0
+icon_fly_diamond_2;985;1392;38;36; 0.5;0.5; 0;0;0;0
+icon_fly_diamond_3;985;1354;38;36; 0.5;0.5; 0;0;0;0
+icon_gold_big;858;975;102;103; 0.5;0.5; 0;0;0;0
+icon_lock;514;465;39;54; 0.5;0.5; 0;0;0;0
+icon_lock_tab_bg;894;447;118;90; 0.5;0.5; 0;0;0;0
+icon_monthly_card;858;746;92;106; 0.5;0.5; 0;0;0;0
+icon_shop_type_building;963;1235;56;63; 0.5;0.5; 0;0;0;0
+icon_shop_type_chest;963;1300;57;52; 0.5;0.5; 0;0;0;0
+icon_shop_type_diamond;962;1056;54;51; 0.5;0.5; 0;0;0;0
+icon_shop_type_egg;514;521;40;53; 0.5;0.5; 0;0;0;0
+icon_shop_type_limited_time;845;387;41;57; 0.5;0.5; 0;0;0;0
+icon_shop_type_limited_time_1;845;446;41;59; 0.5;0.5; 0;0;0;0
+icon_star_2_filled;963;1180;56;53; 0.5;0.5; 0;0;0;0
+icon_stone;957;844;49;47; 0.5;0.5; 0;0;0;0
+icon_stone_big;858;1201;103;96; 0.5;0.5; 0;0;0;0
+icon_unlock;951;632;72;87; 0.5;0.5; 0;0;0;0
+mapobject_item_bg;464;153;219;170; 0.5;0.5; 0;0;0;0
+month_card_bg;1;1487;288;480; 0.5;0.5; 0;0;0;0
+rank_choose;229;244;208;56; 0.5;0.5; 0;0;0;0
+rank_unchoose;1;237;208;56; 0.5;0.5; 0;0;0;0
+sales_tag;857;1931;158;116; 0.5;0.5; 0;0;0;0
+shadow_unlocked;1;1015;288;470; 0.5;0.5; 0;0;0;0
+shop_item_title_bg;581;1375;245;65; 0.5;0.5; 0;0;0;0
+shop_lock;858;854;97;119; 0.5;0.5; 0;0;0;0
+shop_locked_bg;581;1523;273;444; 0.5;0.5; 0;0;0;0
+shop_mistery_icon;962;1109;61;69; 0.5;0.5; 0;0;0;0
+shop_mistery_icon1;962;1109;61;69; 0.5;0.5; 0;0;0;0
+tab_button_active;514;325;226;80; 0.5;0.5; 0;0;0;0
+tab_button_active_long;1;1969;426;78; 0.5;0.5; 0;0;0;0
+tab_button_inactive;236;302;226;76; 0.5;0.5; 0;0;0;0
+tab_button_inactive_long;429;1969;426;78; 0.5;0.5; 0;0;0;0
+tab_button_lock;1;295;226;76; 0.5;0.5; 0;0;0;0
+type_slot_bg;291;576;275;444; 0.5;0.5; 0;0;0;0
+type_slot_bg_lock;1;569;275;444; 0.5;0.5; 0;0;0;0
+type_slot_bg_special;568;407;275;444; 0.5;0.5; 0;0;0;0
+type_slot_decoration;1;31;106;120; 0.5;0.5; 0;0;0;0
+type_slot_decoration_glow;856;1682;151;166; 0.5;0.5; 0;0;0;0
+universal_rect;1017;2042;5;5; 0.5;0.5; 0;0;0;0
+universal_round_rect;1010;1918;11;11; 0.5;0.5; 0;0;0;0
+vip_score;952;721;69;47; 0.5;0.5; 0;0;0;0

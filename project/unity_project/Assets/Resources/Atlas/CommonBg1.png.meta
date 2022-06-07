@@ -1,0 +1,487 @@
+fileFormatVersion: 2
+guid: 82efeb00ad2a10449b3099e0937b1f07
+timeCreated: 1538280459
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: bg_decoration
+    21300002: content_bg_3
+    21300004: content_bg_4
+    21300006: content_bg_5
+    21300008: content_bg_6
+    21300010: content_bg_7
+    21300012: content_bg_8
+    21300014: content_bg_9
+    21300016: content_bg_10
+    21300018: dialog_bg_4
+    21300020: lighting_center
+    21300022: lighting_L
+    21300024: lighting_S
+    21300026: content_bg_11
+    21300028: content_bg_12
+    21300030: content_bg_13
+    21300032: content_bg_14
+    21300034: type_slot_content_bg
+    21300036: universal_rect
+    21300038: languageBg
+    21300040: serchBg
+    21300042: dialog_bg_5
+    21300044: dialog_bg_6
+    21300046: content_bg_15
+    21300048: content_bg_16
+    21300050: background_setting
+    21300052: content_bg_17
+    21300054: content_bg_18
+    21300056: content_bg_19
+    21300058: content_bg_20
+    21300060: content_bg_21
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: 54
+    textureCompression: 1
+    compressionQuality: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: 54
+    textureCompression: 1
+    compressionQuality: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: background_setting
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1300
+        width: 1135
+        height: 747
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bg_decoration
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 1679
+        width: 154
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: content_bg_3
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 257
+        width: 439
+        height: 363
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 213, y: 172, z: 214, w: 169}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: content_bg_4
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 585
+        width: 520
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 255, y: 96, z: 253, w: 101}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: content_bg_5
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 267
+        width: 238
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: content_bg_6
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 809
+        width: 567
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: content_bg_7
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 1125
+        width: 272
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: content_bg_8
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 1327
+        width: 282
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: content_bg_9
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 1829
+        width: 183
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: content_bg_10
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 611
+        width: 444
+        height: 281
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: content_bg_11
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 1591
+        width: 699
+        height: 289
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 295, y: 104, z: 296, w: 103}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: content_bg_13
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 893
+        width: 1028
+        height: 405
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: content_bg_14
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 66
+        width: 439
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: content_bg_16
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 622
+        width: 444
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: content_bg_17
+      rect:
+        serializedVersion: 2
+        x: 1902
+        y: 1980
+        width: 133
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: content_bg_18
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 815
+        width: 514
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: content_bg_19
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 533
+        width: 474
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: content_bg_20
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 783
+        width: 459
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: content_bg_21
+      rect:
+        serializedVersion: 2
+        x: 1902
+        y: 1980
+        width: 133
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dialog_bg_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 37
+        width: 566
+        height: 572
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dialog_bg_6
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 894
+        width: 260
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: languageBg
+      rect:
+        serializedVersion: 2
+        x: 1902
+        y: 1980
+        width: 133
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: lighting_center
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 1529
+        width: 148
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: lighting_L
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 991
+        width: 598
+        height: 598
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: lighting_S
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 9
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: serchBg
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 1882
+        width: 762
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: type_slot_content_bg
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 611
+        width: 219
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: universal_rect
+      rect:
+        serializedVersion: 2
+        x: 2037
+        y: 2042
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: commonbg1
+  assetBundleVariant: 

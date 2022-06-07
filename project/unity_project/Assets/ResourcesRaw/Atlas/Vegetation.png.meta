@@ -1,0 +1,2280 @@
+fileFormatVersion: 2
+guid: 6eac8374dae7db7449c346bfcc60a00a
+timeCreated: 1538218554
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: grass_1_dark
+    21300002: grass_1_light
+    21300004: ground_1
+    21300006: ground_bottom_border_1
+    21300008: ground_bottom_border_2
+    21300010: ground_bottom_border_3
+    21300012: ground_top_border_1
+    21300014: ground_top_border_2
+    21300016: ground_top_border_3
+    21300018: wall_corner
+    21300020: wall_corner_left
+    21300022: wall_corner_right
+    21300024: wall_dark_left-1
+    21300026: wall_dark_left-2
+    21300028: wall_dark_left-3
+    21300030: wall_dark_left-4
+    21300032: wall_dark_left-5
+    21300034: wall_light_right-1
+    21300036: wall_light_right-2
+    21300038: wall_light_right-3
+    21300040: wall_light_right-4
+    21300042: wall_light_right-5
+    21300044: grass_outter_1-1
+    21300046: grass_outter_1-2
+    21300048: grass_outter_2-1
+    21300050: grass_outter_2-2
+    21300052: grass_outter_2-3
+    21300054: grass_outter_2-4
+    21300056: grass_outter_2-5
+    21300058: grass_outter_3-1
+    21300060: grass_outter_3-2
+    21300062: grass_outter_3-3
+    21300064: grass_outter_3-4
+    21300066: grass_outter_3-5
+    21300068: grass_outter_3-6
+    21300070: grass_outter_3-7
+    21300072: grass_outter_3-8
+    21300074: grass_outter_3-9
+    21300076: grass_outter_3-10
+    21300078: grass_outter_3-11
+    21300080: grass_outter_3-12
+    21300082: grass_outter_4-1
+    21300084: grass_outter_4-2
+    21300086: grass_outter_4-3
+    21300088: grass_outter_4-4
+    21300090: grass_outter_7-1
+    21300092: grass_outter_8-1
+    21300094: grass_outter_8-2
+    21300096: grass_outter_8-3
+    21300098: grass_outter_8-4
+    21300100: grass_outter_9-1
+    21300102: grass_outter_11-1
+    21300104: grass_outter_11-2
+    21300106: grass_outter_12-1
+    21300108: grass_outter_12-2
+    21300110: grass_outter_12-3
+    21300112: grass_outter_12-4
+    21300114: grass_outter_12-5
+    21300116: grass_outter_12-6
+    21300118: grass_outter_12-7
+    21300120: grass_outter_12-8
+    21300122: grass_outter_12-9
+    21300124: grass_outter_12-10
+    21300126: grass_outter_12-11
+    21300128: grass_outter_12-12
+    21300130: grass_outter_13-1
+    21300132: grass_outter_14-1
+    21300134: grass_outter_14-2
+    21300136: grass_outter_14-3
+    21300138: grass_outter_14-4
+    21300140: grass_outter_8-5
+    21300142: grass_outter_6-1
+    21300144: grass_outter_6-2
+    21300146: grass_outter_9-2
+    21300148: grass_outter_9-3
+    21300150: grass_outter_9-4
+    21300152: grass_outter_11-3
+    21300154: grass_outter_11-4
+    21300156: grass_outter_11-5
+    21300158: grass_outter_11-6
+    21300160: grass_outter_11-7
+    21300162: grass_outter_11-8
+    21300164: grass_outter_11-9
+    21300166: grass_outter_11-10
+    21300168: grass_outter_11-11
+    21300170: grass_outter_11-12
+    21300172: grass_outter_14-5
+    21300174: grass_outter_14-6
+    21300176: grass_outter_14-7
+    21300178: grass_outter_14-8
+    21300180: grass_outter_14-9
+    21300182: grass_outter_14-10
+    21300184: grass_outter_14-11
+    21300186: grass_outter_14-12
+    21300188: grass_outter_127-1
+    21300190: grass_outter_127-2
+    21300192: grass_outter_191-1
+    21300194: grass_outter_191-2
+    21300196: grass_outter_191-3
+    21300198: grass_outter_191-4
+    21300200: grass_outter_191-5
+    21300202: grass_outter_223-1
+    21300204: grass_outter_223-2
+    21300206: grass_outter_223-3
+    21300208: grass_outter_223-4
+    21300210: grass_outter_239-1
+    21300212: grass_outter_239-2
+    21300214: grass_outter_239-3
+    21300216: grass_outter_239-4
+    21300218: grass_outter_239-5
+    21300220: "\u7ACB\u9762-wall_corner"
+    21300222: "\u7ACB\u9762-wall_corner_left"
+    21300224: "\u7ACB\u9762-wall_corner_right"
+    21300226: "\u7ACB\u9762-wall_dark_left-1"
+    21300228: "\u7ACB\u9762-wall_dark_left-2"
+    21300230: "\u7ACB\u9762-wall_dark_left-3"
+    21300232: "\u7ACB\u9762-wall_dark_left-4"
+    21300234: "\u7ACB\u9762-wall_dark_left-5"
+    21300236: "\u7ACB\u9762-wall_light_right-1"
+    21300238: "\u7ACB\u9762-wall_light_right-2"
+    21300240: "\u7ACB\u9762-wall_light_right-3"
+    21300242: "\u7ACB\u9762-wall_light_right-4"
+    21300244: "\u7ACB\u9762-wall_light_right-5"
+    21300246: "\u8349\u5730\u8FB9\u7F18-grass_outter_3-1"
+    21300248: "\u8349\u5730\u8FB9\u7F18-grass_outter_6-1"
+    21300250: "\u8349\u5730\u8FB9\u7F18-grass_outter_6-2"
+    21300252: "\u8349\u5730\u8FB9\u7F18-grass_outter_9-1"
+    21300254: "\u8349\u5730\u8FB9\u7F18-grass_outter_9-2"
+    21300256: "\u8349\u5730\u8FB9\u7F18-grass_outter_9-3"
+    21300258: "\u8349\u5730\u8FB9\u7F18-grass_outter_9-4"
+    21300260: "\u8349\u5730\u8FB9\u7F18-grass_outter_11-1"
+    21300262: "\u8349\u5730\u8FB9\u7F18-grass_outter_11-2"
+    21300264: "\u8349\u5730\u8FB9\u7F18-grass_outter_11-3"
+    21300266: "\u8349\u5730\u8FB9\u7F18-grass_outter_11-4"
+    21300268: "\u8349\u5730\u8FB9\u7F18-grass_outter_11-5"
+    21300270: "\u8349\u5730\u8FB9\u7F18-grass_outter_11-6"
+    21300272: "\u8349\u5730\u8FB9\u7F18-grass_outter_11-7"
+    21300274: "\u8349\u5730\u8FB9\u7F18-grass_outter_11-8"
+    21300276: "\u8349\u5730\u8FB9\u7F18-grass_outter_11-9"
+    21300278: "\u8349\u5730\u8FB9\u7F18-grass_outter_11-10"
+    21300280: "\u8349\u5730\u8FB9\u7F18-grass_outter_11-11"
+    21300282: "\u8349\u5730\u8FB9\u7F18-grass_outter_11-12"
+    21300284: "\u8349\u5730\u8FB9\u7F18-grass_outter_12-1"
+    21300286: "\u8349\u5730\u8FB9\u7F18-grass_outter_14-1"
+    21300288: "\u8349\u5730\u8FB9\u7F18-grass_outter_14-2"
+    21300290: "\u8349\u5730\u8FB9\u7F18-grass_outter_14-3"
+    21300292: "\u8349\u5730\u8FB9\u7F18-grass_outter_14-4"
+    21300294: "\u8349\u5730\u8FB9\u7F18-grass_outter_14-5"
+    21300296: "\u8349\u5730\u8FB9\u7F18-grass_outter_14-6"
+    21300298: "\u8349\u5730\u8FB9\u7F18-grass_outter_14-7"
+    21300300: "\u8349\u5730\u8FB9\u7F18-grass_outter_14-8"
+    21300302: "\u8349\u5730\u8FB9\u7F18-grass_outter_14-9"
+    21300304: "\u8349\u5730\u8FB9\u7F18-grass_outter_14-10"
+    21300306: "\u8349\u5730\u8FB9\u7F18-grass_outter_14-11"
+    21300308: "\u8349\u5730\u8FB9\u7F18-grass_outter_14-12"
+    21300310: "\u8349\u5730\u8FB9\u7F18-grass_outter_127-1"
+    21300312: "\u8349\u5730\u8FB9\u7F18-grass_outter_127-2"
+    21300314: "\u8349\u5730\u8FB9\u7F18-grass_outter_191-1"
+    21300316: "\u8349\u5730\u8FB9\u7F18-grass_outter_191-2"
+    21300318: "\u8349\u5730\u8FB9\u7F18-grass_outter_191-3"
+    21300320: "\u8349\u5730\u8FB9\u7F18-grass_outter_191-4"
+    21300322: "\u8349\u5730\u8FB9\u7F18-grass_outter_191-5"
+    21300324: "\u8349\u5730\u8FB9\u7F18-grass_outter_223-1"
+    21300326: "\u8349\u5730\u8FB9\u7F18-grass_outter_223-2"
+    21300328: "\u8349\u5730\u8FB9\u7F18-grass_outter_223-3"
+    21300330: "\u8349\u5730\u8FB9\u7F18-grass_outter_223-4"
+    21300332: "\u8349\u5730\u8FB9\u7F18-grass_outter_239-1"
+    21300334: "\u8349\u5730\u8FB9\u7F18-grass_outter_239-2"
+    21300336: "\u8349\u5730\u8FB9\u7F18-grass_outter_239-3"
+    21300338: "\u8349\u5730\u8FB9\u7F18-grass_outter_239-4"
+    21300340: "\u8349\u5730\u8FB9\u7F18-grass_outter_239-5"
+    21300342: grass_15
+    21300344: grass_31
+    21300346: grass_47
+    21300348: grass_61
+    21300350: grass_63
+    21300352: grass_95
+    21300354: grass_121
+    21300356: grass_123
+    21300358: grass_127
+    21300360: grass_143
+    21300362: grass_158
+    21300364: grass_159
+    21300366: grass_175
+    21300368: grass_188
+    21300370: grass_189
+    21300372: grass_190
+    21300374: grass_191
+    21300376: grass_214
+    21300378: grass_222
+    21300380: grass_223
+    21300382: grass_239
+    21300384: grass_240
+    21300386: grass_242
+    21300388: grass_243
+    21300390: grass_246
+    21300392: grass_248
+    21300394: grass_249
+    21300396: grass_250
+    21300398: grass_251-1
+    21300400: grass_251-2
+    21300402: grass_251-3
+    21300404: grass_251-4
+    21300406: grass_251-5
+    21300408: grass_251-6
+    21300410: grass_252
+    21300412: grass_254-1
+    21300414: grass_254-2
+    21300416: grass_254-3
+    21300418: grass_254-4
+    21300420: grass_254-5
+    21300422: grass_254-6
+    21300424: grass_255
+    21300426: sand_15
+    21300428: sand_31
+    21300430: sand_47
+    21300432: sand_61
+    21300434: sand_63
+    21300436: sand_95
+    21300438: sand_121
+    21300440: sand_123
+    21300442: sand_127
+    21300444: sand_143
+    21300446: sand_158
+    21300448: sand_159
+    21300450: sand_175
+    21300452: sand_188
+    21300454: sand_189
+    21300456: sand_190
+    21300458: sand_191
+    21300460: sand_214
+    21300462: sand_222
+    21300464: sand_223
+    21300466: sand_239
+    21300468: sand_240
+    21300470: sand_242
+    21300472: sand_243
+    21300474: sand_246
+    21300476: sand_248
+    21300478: sand_249
+    21300480: sand_250
+    21300482: sand_251-1
+    21300484: sand_251-2
+    21300486: sand_251-3
+    21300488: sand_251-4
+    21300490: sand_251-5
+    21300492: sand_251-6
+    21300494: sand_252
+    21300496: sand_254-1
+    21300498: sand_254-2
+    21300500: sand_254-3
+    21300502: sand_254-4
+    21300504: sand_254-5
+    21300506: sand_254-6
+    21300508: sand_255
+    21300510: bridge
+    21300512: "\u6C99\u5730\u8FB9\u7F18-sand_15"
+    21300514: "\u6C99\u5730\u8FB9\u7F18-sand_31"
+    21300516: "\u6C99\u5730\u8FB9\u7F18-sand_47"
+    21300518: "\u6C99\u5730\u8FB9\u7F18-sand_61"
+    21300520: "\u6C99\u5730\u8FB9\u7F18-sand_63"
+    21300522: "\u6C99\u5730\u8FB9\u7F18-sand_95"
+    21300524: "\u6C99\u5730\u8FB9\u7F18-sand_121"
+    21300526: "\u6C99\u5730\u8FB9\u7F18-sand_123"
+    21300528: "\u6C99\u5730\u8FB9\u7F18-sand_127"
+    21300530: "\u6C99\u5730\u8FB9\u7F18-sand_143"
+    21300532: "\u6C99\u5730\u8FB9\u7F18-sand_158"
+    21300534: "\u6C99\u5730\u8FB9\u7F18-sand_159"
+    21300536: "\u6C99\u5730\u8FB9\u7F18-sand_175"
+    21300538: "\u6C99\u5730\u8FB9\u7F18-sand_188"
+    21300540: "\u6C99\u5730\u8FB9\u7F18-sand_189"
+    21300542: "\u6C99\u5730\u8FB9\u7F18-sand_190"
+    21300544: "\u6C99\u5730\u8FB9\u7F18-sand_191"
+    21300546: "\u6C99\u5730\u8FB9\u7F18-sand_214"
+    21300548: "\u6C99\u5730\u8FB9\u7F18-sand_222"
+    21300550: "\u6C99\u5730\u8FB9\u7F18-sand_223"
+    21300552: "\u6C99\u5730\u8FB9\u7F18-sand_239"
+    21300554: "\u6C99\u5730\u8FB9\u7F18-sand_240"
+    21300556: "\u6C99\u5730\u8FB9\u7F18-sand_242"
+    21300558: "\u6C99\u5730\u8FB9\u7F18-sand_243"
+    21300560: "\u6C99\u5730\u8FB9\u7F18-sand_246"
+    21300562: "\u6C99\u5730\u8FB9\u7F18-sand_248"
+    21300564: "\u6C99\u5730\u8FB9\u7F18-sand_249"
+    21300566: "\u6C99\u5730\u8FB9\u7F18-sand_250"
+    21300568: "\u6C99\u5730\u8FB9\u7F18-sand_251-1"
+    21300570: "\u6C99\u5730\u8FB9\u7F18-sand_251-2"
+    21300572: "\u6C99\u5730\u8FB9\u7F18-sand_251-3"
+    21300574: "\u6C99\u5730\u8FB9\u7F18-sand_251-4"
+    21300576: "\u6C99\u5730\u8FB9\u7F18-sand_251-5"
+    21300578: "\u6C99\u5730\u8FB9\u7F18-sand_251-6"
+    21300580: "\u6C99\u5730\u8FB9\u7F18-sand_252"
+    21300582: "\u6C99\u5730\u8FB9\u7F18-sand_254-1"
+    21300584: "\u6C99\u5730\u8FB9\u7F18-sand_254-2"
+    21300586: "\u6C99\u5730\u8FB9\u7F18-sand_254-3"
+    21300588: "\u6C99\u5730\u8FB9\u7F18-sand_254-4"
+    21300590: "\u6C99\u5730\u8FB9\u7F18-sand_254-5"
+    21300592: "\u6C99\u5730\u8FB9\u7F18-sand_254-6"
+    21300594: "\u6C99\u5730\u8FB9\u7F18-sand_255"
+    21300596: "\u8349\u5730\u8FB9\u7F18-grass_15"
+    21300598: "\u8349\u5730\u8FB9\u7F18-grass_31"
+    21300600: "\u8349\u5730\u8FB9\u7F18-grass_47"
+    21300602: "\u8349\u5730\u8FB9\u7F18-grass_61"
+    21300604: "\u8349\u5730\u8FB9\u7F18-grass_63"
+    21300606: "\u8349\u5730\u8FB9\u7F18-grass_95"
+    21300608: "\u8349\u5730\u8FB9\u7F18-grass_121"
+    21300610: "\u8349\u5730\u8FB9\u7F18-grass_123"
+    21300612: "\u8349\u5730\u8FB9\u7F18-grass_127"
+    21300614: "\u8349\u5730\u8FB9\u7F18-grass_143"
+    21300616: "\u8349\u5730\u8FB9\u7F18-grass_158"
+    21300618: "\u8349\u5730\u8FB9\u7F18-grass_159"
+    21300620: "\u8349\u5730\u8FB9\u7F18-grass_175"
+    21300622: "\u8349\u5730\u8FB9\u7F18-grass_188"
+    21300624: "\u8349\u5730\u8FB9\u7F18-grass_189"
+    21300626: "\u8349\u5730\u8FB9\u7F18-grass_190"
+    21300628: "\u8349\u5730\u8FB9\u7F18-grass_191"
+    21300630: "\u8349\u5730\u8FB9\u7F18-grass_214"
+    21300632: "\u8349\u5730\u8FB9\u7F18-grass_222"
+    21300634: "\u8349\u5730\u8FB9\u7F18-grass_223"
+    21300636: "\u8349\u5730\u8FB9\u7F18-grass_239"
+    21300638: "\u8349\u5730\u8FB9\u7F18-grass_240"
+    21300640: "\u8349\u5730\u8FB9\u7F18-grass_242"
+    21300642: "\u8349\u5730\u8FB9\u7F18-grass_243"
+    21300644: "\u8349\u5730\u8FB9\u7F18-grass_246"
+    21300646: "\u8349\u5730\u8FB9\u7F18-grass_248"
+    21300648: "\u8349\u5730\u8FB9\u7F18-grass_249"
+    21300650: "\u8349\u5730\u8FB9\u7F18-grass_250"
+    21300652: "\u8349\u5730\u8FB9\u7F18-grass_251-1"
+    21300654: "\u8349\u5730\u8FB9\u7F18-grass_251-2"
+    21300656: "\u8349\u5730\u8FB9\u7F18-grass_251-3"
+    21300658: "\u8349\u5730\u8FB9\u7F18-grass_251-4"
+    21300660: "\u8349\u5730\u8FB9\u7F18-grass_251-5"
+    21300662: "\u8349\u5730\u8FB9\u7F18-grass_251-6"
+    21300664: "\u8349\u5730\u8FB9\u7F18-grass_252"
+    21300666: "\u8349\u5730\u8FB9\u7F18-grass_254-1"
+    21300668: "\u8349\u5730\u8FB9\u7F18-grass_254-2"
+    21300670: "\u8349\u5730\u8FB9\u7F18-grass_254-3"
+    21300672: "\u8349\u5730\u8FB9\u7F18-grass_254-4"
+    21300674: "\u8349\u5730\u8FB9\u7F18-grass_254-5"
+    21300676: "\u8349\u5730\u8FB9\u7F18-grass_254-6"
+    21300678: "\u8349\u5730\u8FB9\u7F18-grass_255"
+    21300680: drygrass_15
+    21300682: drygrass_31
+    21300684: drygrass_47
+    21300686: drygrass_61
+    21300688: drygrass_63
+    21300690: drygrass_95
+    21300692: drygrass_121
+    21300694: drygrass_123
+    21300696: drygrass_127
+    21300698: drygrass_143
+    21300700: drygrass_158
+    21300702: drygrass_159
+    21300704: drygrass_175
+    21300706: drygrass_188
+    21300708: drygrass_189
+    21300710: drygrass_190
+    21300712: drygrass_191
+    21300714: drygrass_214
+    21300716: drygrass_222
+    21300718: drygrass_223
+    21300720: drygrass_239
+    21300722: drygrass_240
+    21300724: drygrass_242
+    21300726: drygrass_243
+    21300728: drygrass_246
+    21300730: drygrass_248
+    21300732: drygrass_249
+    21300734: drygrass_250
+    21300736: drygrass_251-1
+    21300738: drygrass_251-2
+    21300740: drygrass_251-3
+    21300742: drygrass_251-4
+    21300744: drygrass_251-5
+    21300746: drygrass_251-6
+    21300748: drygrass_252
+    21300750: drygrass_254-1
+    21300752: drygrass_254-2
+    21300754: drygrass_254-3
+    21300756: drygrass_254-4
+    21300758: drygrass_254-5
+    21300760: drygrass_254-6
+    21300762: drygrass_255
+    21300764: snow_15
+    21300766: snow_31
+    21300768: snow_47
+    21300770: snow_61
+    21300772: snow_63
+    21300774: snow_95
+    21300776: snow_121
+    21300778: snow_123
+    21300780: snow_127
+    21300782: snow_143
+    21300784: snow_158
+    21300786: snow_159
+    21300788: snow_175
+    21300790: snow_188
+    21300792: snow_189
+    21300794: snow_190
+    21300796: snow_191
+    21300798: snow_214
+    21300800: snow_222
+    21300802: snow_223
+    21300804: snow_239
+    21300806: snow_240
+    21300808: snow_242
+    21300810: snow_243
+    21300812: snow_246
+    21300814: snow_248
+    21300816: snow_249
+    21300818: snow_250
+    21300820: snow_251-1
+    21300822: snow_251-2
+    21300824: snow_251-3
+    21300826: snow_251-4
+    21300828: snow_251-5
+    21300830: snow_251-6
+    21300832: snow_252
+    21300834: snow_254-1
+    21300836: snow_254-2
+    21300838: snow_254-3
+    21300840: snow_254-4
+    21300842: snow_254-5
+    21300844: snow_254-6
+    21300846: snow_255
+    21300848: sonw_15
+    21300850: sonw_31
+    21300852: sonw_47
+    21300854: sonw_61
+    21300856: sonw_63
+    21300858: sonw_95
+    21300860: sonw_121
+    21300862: sonw_123
+    21300864: sonw_127
+    21300866: sonw_143
+    21300868: sonw_158
+    21300870: sonw_159
+    21300872: sonw_175
+    21300874: sonw_188
+    21300876: sonw_189
+    21300878: sonw_190
+    21300880: sonw_191
+    21300882: sonw_214
+    21300884: sonw_222
+    21300886: sonw_223
+    21300888: sonw_239
+    21300890: sonw_240
+    21300892: sonw_242
+    21300894: sonw_243
+    21300896: sonw_246
+    21300898: sonw_248
+    21300900: sonw_249
+    21300902: sonw_250
+    21300904: sonw_251-1
+    21300906: sonw_251-2
+    21300908: sonw_251-3
+    21300910: sonw_251-4
+    21300912: sonw_251-5
+    21300914: sonw_251-6
+    21300916: sonw_252
+    21300918: sonw_254-1
+    21300920: sonw_254-2
+    21300922: sonw_254-3
+    21300924: sonw_254-4
+    21300926: sonw_254-5
+    21300928: sonw_254-6
+    21300930: sonw_255
+    21300932: purchase_15
+    21300934: purchase_31
+    21300936: purchase_47
+    21300938: purchase_61
+    21300940: purchase_63
+    21300942: purchase_95
+    21300944: purchase_121
+    21300946: purchase_123
+    21300948: purchase_127
+    21300950: purchase_143
+    21300952: purchase_158
+    21300954: purchase_159
+    21300956: purchase_175
+    21300958: purchase_188
+    21300960: purchase_189
+    21300962: purchase_190
+    21300964: purchase_191
+    21300966: purchase_214
+    21300968: purchase_222
+    21300970: purchase_223
+    21300972: purchase_239
+    21300974: purchase_240
+    21300976: purchase_242
+    21300978: purchase_243
+    21300980: purchase_246
+    21300982: purchase_248
+    21300984: purchase_249
+    21300986: purchase_250
+    21300988: purchase_251-1
+    21300990: purchase_251-2
+    21300992: purchase_251-3
+    21300994: purchase_251-4
+    21300996: purchase_251-5
+    21300998: purchase_251-6
+    21301000: purchase_252
+    21301002: purchase_254-1
+    21301004: purchase_254-2
+    21301006: purchase_254-3
+    21301008: purchase_254-4
+    21301010: purchase_254-5
+    21301012: purchase_254-6
+    21301014: purchase_255
+    21301016: dry_15
+    21301018: dry_31
+    21301020: dry_47
+    21301022: dry_61
+    21301024: dry_63
+    21301026: dry_95
+    21301028: dry_121
+    21301030: dry_123
+    21301032: dry_127
+    21301034: dry_143
+    21301036: dry_158
+    21301038: dry_159
+    21301040: dry_175
+    21301042: dry_188
+    21301044: dry_189
+    21301046: dry_190
+    21301048: dry_191
+    21301050: dry_214
+    21301052: dry_222
+    21301054: dry_223
+    21301056: dry_239
+    21301058: dry_240
+    21301060: dry_242
+    21301062: dry_243
+    21301064: dry_246
+    21301066: dry_248
+    21301068: dry_249
+    21301070: dry_250
+    21301072: dry_251-1
+    21301074: dry_251-2
+    21301076: dry_251-3
+    21301078: dry_251-4
+    21301080: dry_251-5
+    21301082: dry_251-6
+    21301084: dry_252
+    21301086: dry_254-1
+    21301088: dry_254-2
+    21301090: dry_254-3
+    21301092: dry_254-4
+    21301094: dry_254-5
+    21301096: dry_254-6
+    21301098: dry_255
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 1
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: 54
+    textureCompression: 1
+    compressionQuality: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: 54
+    textureCompression: 1
+    compressionQuality: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: purchase_15
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 378
+        width: 247
+        height: 130
+      alignment: 9
+      pivot: {x: 0.5020243, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_31
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 894
+        width: 274
+        height: 130
+      alignment: 9
+      pivot: {x: 0.4489051, y: 0.50769234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_47
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 907
+        width: 259
+        height: 143
+      alignment: 9
+      pivot: {x: 0.4980695, y: 0.46853146}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_61
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 692
+        width: 261
+        height: 130
+      alignment: 9
+      pivot: {x: 0.47126436, y: 0.50769234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_63
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 1093
+        width: 278
+        height: 142
+      alignment: 9
+      pivot: {x: 0.45683452, y: 0.46478873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_95
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 1917
+        width: 302
+        height: 130
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4923077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_121
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 858
+        width: 273
+        height: 128
+      alignment: 9
+      pivot: {x: 0.4871795, y: 0.5234375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_123
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 907
+        width: 278
+        height: 129
+      alignment: 9
+      pivot: {x: 0.45683452, y: 0.49612403}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_127
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 1824
+        width: 302
+        height: 143
+      alignment: 9
+      pivot: {x: 0.5, y: 0.46853146}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_143
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 599
+        width: 246
+        height: 141
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53900707}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_158
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 529
+        width: 252
+        height: 131
+      alignment: 9
+      pivot: {x: 0.4920635, y: 0.5114504}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_159
+      rect:
+        serializedVersion: 2
+        x: 1741
+        y: 1083
+        width: 274
+        height: 138
+      alignment: 9
+      pivot: {x: 0.4489051, y: 0.5507246}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_175
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 714
+        width: 246
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_188
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 213
+        width: 243
+        height: 128
+      alignment: 9
+      pivot: {x: 0.50617284, y: 0.5078125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_189
+      rect:
+        serializedVersion: 2
+        x: 1737
+        y: 946
+        width: 261
+        height: 143
+      alignment: 9
+      pivot: {x: 0.49042144, y: 0.5314685}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_190
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 880
+        width: 258
+        height: 142
+      alignment: 9
+      pivot: {x: 0.48449612, y: 0.46478873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_191
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1206
+        width: 274
+        height: 152
+      alignment: 9
+      pivot: {x: 0.4489051, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_214
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 634
+        width: 264
+        height: 129
+      alignment: 9
+      pivot: {x: 0.4810606, y: 0.49612403}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_222
+      rect:
+        serializedVersion: 2
+        x: 1612
+        y: 1359
+        width: 284
+        height: 134
+      alignment: 9
+      pivot: {x: 0.5316901, y: 0.51492536}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_223
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 1906
+        width: 302
+        height: 141
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53900707}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_239
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 1558
+        width: 282
+        height: 152
+      alignment: 9
+      pivot: {x: 0.535461, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_240
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 413
+        width: 215
+        height: 116
+      alignment: 9
+      pivot: {x: 0.53488374, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_242
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 465
+        width: 252
+        height: 130
+      alignment: 9
+      pivot: {x: 0.4484127, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_243
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 743
+        width: 260
+        height: 131
+      alignment: 9
+      pivot: {x: 0.41923076, y: 0.5114504}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_246
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 1027
+        width: 280
+        height: 133
+      alignment: 9
+      pivot: {x: 0.4892857, y: 0.42857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_248
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 532
+        width: 250
+        height: 132
+      alignment: 9
+      pivot: {x: 0.516, y: 0.5151515}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_249
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 1678
+        width: 279
+        height: 136
+      alignment: 9
+      pivot: {x: 0.4623656, y: 0.5588235}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_250
+      rect:
+        serializedVersion: 2
+        x: 1515
+        y: 1752
+        width: 274
+        height: 140
+      alignment: 9
+      pivot: {x: 0.50364965, y: 0.5214286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_251-1
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 1413
+        width: 277
+        height: 147
+      alignment: 9
+      pivot: {x: 0.45487365, y: 0.5170068}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_251-2
+      rect:
+        serializedVersion: 2
+        x: 1341
+        y: 1507
+        width: 279
+        height: 139
+      alignment: 9
+      pivot: {x: 0.45878136, y: 0.5467626}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_251-3
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 1310
+        width: 277
+        height: 148
+      alignment: 9
+      pivot: {x: 0.45487365, y: 0.5135135}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_251-4
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 1579
+        width: 285
+        height: 140
+      alignment: 9
+      pivot: {x: 0.47017545, y: 0.54285717}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_251-5
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 1385
+        width: 291
+        height: 142
+      alignment: 9
+      pivot: {x: 0.48109967, y: 0.53521127}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_251-6
+      rect:
+        serializedVersion: 2
+        x: 1627
+        y: 1521
+        width: 278
+        height: 139
+      alignment: 9
+      pivot: {x: 0.45683452, y: 0.5467626}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_252
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 593
+        width: 249
+        height: 135
+      alignment: 9
+      pivot: {x: 0.6064257, y: 0.51111114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_254-1
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 1649
+        width: 291
+        height: 148
+      alignment: 9
+      pivot: {x: 0.51890033, y: 0.4864865}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_254-2
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 1341
+        width: 281
+        height: 143
+      alignment: 9
+      pivot: {x: 0.53736657, y: 0.46853146}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_254-3
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 1026
+        width: 280
+        height: 142
+      alignment: 9
+      pivot: {x: 0.5392857, y: 0.46478873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_254-4
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 1578
+        width: 280
+        height: 144
+      alignment: 9
+      pivot: {x: 0.5392857, y: 0.4722222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_254-5
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 1060
+        width: 280
+        height: 142
+      alignment: 9
+      pivot: {x: 0.5392857, y: 0.46478873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_254-6
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 1508
+        width: 282
+        height: 142
+      alignment: 9
+      pivot: {x: 0.535461, y: 0.46478873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: purchase_255
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1895
+        width: 302
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_15
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 394
+        width: 247
+        height: 130
+      alignment: 9
+      pivot: {x: 0.5020243, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_31
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 962
+        width: 274
+        height: 130
+      alignment: 9
+      pivot: {x: 0.4489051, y: 0.50769234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_47
+      rect:
+        serializedVersion: 2
+        x: 1686
+        y: 680
+        width: 259
+        height: 143
+      alignment: 9
+      pivot: {x: 0.4980695, y: 0.46853146}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_61
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 680
+        width: 261
+        height: 130
+      alignment: 9
+      pivot: {x: 0.47126436, y: 0.50769234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_63
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 1265
+        width: 278
+        height: 142
+      alignment: 9
+      pivot: {x: 0.45683452, y: 0.46478873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_95
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 1733
+        width: 302
+        height: 130
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4923077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_121
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 783
+        width: 273
+        height: 128
+      alignment: 9
+      pivot: {x: 0.4871795, y: 0.5234375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_123
+      rect:
+        serializedVersion: 2
+        x: 1551
+        y: 1026
+        width: 278
+        height: 129
+      alignment: 9
+      pivot: {x: 0.45683452, y: 0.49612403}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_127
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1740
+        width: 302
+        height: 143
+      alignment: 9
+      pivot: {x: 0.5, y: 0.46853146}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_143
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 509
+        width: 246
+        height: 141
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53900707}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_158
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 451
+        width: 252
+        height: 131
+      alignment: 9
+      pivot: {x: 0.4920635, y: 0.5114504}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_159
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 979
+        width: 274
+        height: 138
+      alignment: 9
+      pivot: {x: 0.4489051, y: 0.5507246}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_175
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 603
+        width: 246
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_188
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 293
+        width: 243
+        height: 128
+      alignment: 9
+      pivot: {x: 0.50617284, y: 0.5078125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_189
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 958
+        width: 261
+        height: 143
+      alignment: 9
+      pivot: {x: 0.49042144, y: 0.5314685}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_190
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 723
+        width: 258
+        height: 142
+      alignment: 9
+      pivot: {x: 0.48449612, y: 0.46478873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_191
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1408
+        width: 274
+        height: 152
+      alignment: 9
+      pivot: {x: 0.4489051, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_214
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 531
+        width: 264
+        height: 129
+      alignment: 9
+      pivot: {x: 0.4810606, y: 0.49612403}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_222
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 1276
+        width: 284
+        height: 134
+      alignment: 9
+      pivot: {x: 0.5316901, y: 0.51492536}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_223
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 1646
+        width: 302
+        height: 141
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53900707}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_239
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 1556
+        width: 282
+        height: 152
+      alignment: 9
+      pivot: {x: 0.535461, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_240
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 325
+        width: 194
+        height: 115
+      alignment: 9
+      pivot: {x: 0.52577317, y: 0.49565217}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_242
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 539
+        width: 252
+        height: 130
+      alignment: 9
+      pivot: {x: 0.4484127, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_243
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 820
+        width: 260
+        height: 131
+      alignment: 9
+      pivot: {x: 0.41923076, y: 0.5114504}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_246
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 1095
+        width: 280
+        height: 133
+      alignment: 9
+      pivot: {x: 0.4892857, y: 0.42857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_248
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 405
+        width: 250
+        height: 132
+      alignment: 9
+      pivot: {x: 0.516, y: 0.5151515}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_249
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 1759
+        width: 279
+        height: 136
+      alignment: 9
+      pivot: {x: 0.4623656, y: 0.5588235}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_250
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 1105
+        width: 274
+        height: 140
+      alignment: 9
+      pivot: {x: 0.50364965, y: 0.5214286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_251-1
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1237
+        width: 277
+        height: 147
+      alignment: 9
+      pivot: {x: 0.45487365, y: 0.5170068}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_251-2
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 1908
+        width: 279
+        height: 139
+      alignment: 9
+      pivot: {x: 0.45878136, y: 0.5467626}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_251-3
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 1896
+        width: 277
+        height: 148
+      alignment: 9
+      pivot: {x: 0.45487365, y: 0.5135135}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_251-4
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 1239
+        width: 285
+        height: 140
+      alignment: 9
+      pivot: {x: 0.47017545, y: 0.54285717}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_251-5
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 1647
+        width: 291
+        height: 142
+      alignment: 9
+      pivot: {x: 0.48109967, y: 0.53521127}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_251-6
+      rect:
+        serializedVersion: 2
+        x: 1769
+        y: 1449
+        width: 278
+        height: 139
+      alignment: 9
+      pivot: {x: 0.45683452, y: 0.5467626}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_252
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 658
+        width: 249
+        height: 135
+      alignment: 9
+      pivot: {x: 0.6064257, y: 0.51111114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_254-1
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 1831
+        width: 291
+        height: 148
+      alignment: 9
+      pivot: {x: 0.51890033, y: 0.4864865}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_254-2
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 1653
+        width: 281
+        height: 143
+      alignment: 9
+      pivot: {x: 0.53736657, y: 0.46853146}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_254-3
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 1097
+        width: 280
+        height: 142
+      alignment: 9
+      pivot: {x: 0.5392857, y: 0.46478873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_254-4
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 1166
+        width: 280
+        height: 144
+      alignment: 9
+      pivot: {x: 0.5392857, y: 0.4722222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_254-5
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 1165
+        width: 280
+        height: 142
+      alignment: 9
+      pivot: {x: 0.5392857, y: 0.46478873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_254-6
+      rect:
+        serializedVersion: 2
+        x: 1225
+        y: 1736
+        width: 282
+        height: 142
+      alignment: 9
+      pivot: {x: 0.535461, y: 0.46478873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: dry_255
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 1895
+        width: 302
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_15
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 290
+        width: 247
+        height: 130
+      alignment: 9
+      pivot: {x: 0.5020243, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_31
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 762
+        width: 274
+        height: 130
+      alignment: 9
+      pivot: {x: 0.4489051, y: 0.50769234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_47
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 822
+        width: 259
+        height: 143
+      alignment: 9
+      pivot: {x: 0.4980695, y: 0.46853146}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_61
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 756
+        width: 261
+        height: 130
+      alignment: 9
+      pivot: {x: 0.47126436, y: 0.50769234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_63
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 1173
+        width: 278
+        height: 142
+      alignment: 9
+      pivot: {x: 0.45683452, y: 0.46478873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_95
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 1814
+        width: 302
+        height: 130
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4923077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_121
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 708
+        width: 273
+        height: 128
+      alignment: 9
+      pivot: {x: 0.4871795, y: 0.5234375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_123
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 978
+        width: 278
+        height: 129
+      alignment: 9
+      pivot: {x: 0.45683452, y: 0.49612403}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_127
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 1741
+        width: 302
+        height: 143
+      alignment: 9
+      pivot: {x: 0.5, y: 0.46853146}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_143
+      rect:
+        serializedVersion: 2
+        x: 1526
+        y: 591
+        width: 246
+        height: 141
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53900707}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_158
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 555
+        width: 252
+        height: 131
+      alignment: 9
+      pivot: {x: 0.4920635, y: 0.5114504}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_159
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 1246
+        width: 274
+        height: 138
+      alignment: 9
+      pivot: {x: 0.4489051, y: 0.5507246}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_175
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 797
+        width: 246
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_188
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 374
+        width: 243
+        height: 128
+      alignment: 9
+      pivot: {x: 0.50617284, y: 0.5078125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_189
+      rect:
+        serializedVersion: 2
+        x: 1723
+        y: 815
+        width: 261
+        height: 143
+      alignment: 9
+      pivot: {x: 0.49042144, y: 0.5314685}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_190
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 818
+        width: 258
+        height: 142
+      alignment: 9
+      pivot: {x: 0.48449612, y: 0.46478873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_191
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 1308
+        width: 274
+        height: 152
+      alignment: 9
+      pivot: {x: 0.4489051, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_214
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 875
+        width: 264
+        height: 129
+      alignment: 9
+      pivot: {x: 0.4810606, y: 0.49612403}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_222
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 1350
+        width: 284
+        height: 134
+      alignment: 9
+      pivot: {x: 0.5316901, y: 0.51492536}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_223
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1563
+        width: 302
+        height: 141
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53900707}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_239
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 1478
+        width: 282
+        height: 152
+      alignment: 9
+      pivot: {x: 0.535461, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_240
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 1931
+        width: 215
+        height: 116
+      alignment: 9
+      pivot: {x: 0.53488374, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_242
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 449
+        width: 252
+        height: 130
+      alignment: 9
+      pivot: {x: 0.4484127, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_243
+      rect:
+        serializedVersion: 2
+        x: 1787
+        y: 1608
+        width: 260
+        height: 131
+      alignment: 9
+      pivot: {x: 0.41923076, y: 0.5114504}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_246
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 1168
+        width: 280
+        height: 133
+      alignment: 9
+      pivot: {x: 0.4892857, y: 0.42857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_248
+      rect:
+        serializedVersion: 2
+        x: 1177
+        y: 468
+        width: 250
+        height: 132
+      alignment: 9
+      pivot: {x: 0.516, y: 0.5151515}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_249
+      rect:
+        serializedVersion: 2
+        x: 1341
+        y: 1193
+        width: 279
+        height: 136
+      alignment: 9
+      pivot: {x: 0.4623656, y: 0.5588235}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_250
+      rect:
+        serializedVersion: 2
+        x: 1661
+        y: 1843
+        width: 274
+        height: 140
+      alignment: 9
+      pivot: {x: 0.50364965, y: 0.5214286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_251-1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1040
+        width: 277
+        height: 147
+      alignment: 9
+      pivot: {x: 0.45487365, y: 0.5170068}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_251-2
+      rect:
+        serializedVersion: 2
+        x: 1478
+        y: 1433
+        width: 279
+        height: 139
+      alignment: 9
+      pivot: {x: 0.45878136, y: 0.5467626}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_251-3
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 1392
+        width: 277
+        height: 148
+      alignment: 9
+      pivot: {x: 0.45487365, y: 0.5135135}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_251-4
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 1487
+        width: 285
+        height: 140
+      alignment: 9
+      pivot: {x: 0.47017545, y: 0.54285717}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_251-5
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 1468
+        width: 291
+        height: 142
+      alignment: 9
+      pivot: {x: 0.48109967, y: 0.53521127}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_251-6
+      rect:
+        serializedVersion: 2
+        x: 1490
+        y: 1596
+        width: 278
+        height: 139
+      alignment: 9
+      pivot: {x: 0.45683452, y: 0.5467626}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_252
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 469
+        width: 249
+        height: 135
+      alignment: 9
+      pivot: {x: 0.6064257, y: 0.51111114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_254-1
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 1735
+        width: 291
+        height: 148
+      alignment: 9
+      pivot: {x: 0.51890033, y: 0.4864865}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_254-2
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 1320
+        width: 281
+        height: 143
+      alignment: 9
+      pivot: {x: 0.53736657, y: 0.46853146}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_254-3
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 1427
+        width: 280
+        height: 142
+      alignment: 9
+      pivot: {x: 0.5392857, y: 0.46478873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_254-4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 1134
+        width: 280
+        height: 144
+      alignment: 9
+      pivot: {x: 0.5392857, y: 0.4722222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_254-5
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 1247
+        width: 280
+        height: 142
+      alignment: 9
+      pivot: {x: 0.5392857, y: 0.46478873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_254-6
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 1831
+        width: 282
+        height: 142
+      alignment: 9
+      pivot: {x: 0.535461, y: 0.46478873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: grass_255
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 1813
+        width: 302
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: vegetation
+  assetBundleVariant: 

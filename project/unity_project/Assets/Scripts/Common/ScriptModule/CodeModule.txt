@@ -1,0 +1,16 @@
+﻿    public static List<#DataName#> GetAll#TypeName#s(bool getReadonly = false)
+    {
+        if(getReadonly)
+        {
+           return new List<#DataName#>(#TypeName#Table.GetAllReadonlyData());
+        }
+        else
+        {
+           return #TypeName#Table.GetAllData();
+        }
+    }
+
+    public static #DataName# GetSingle#TypeName#(int id)
+    {
+        return #TypeName#Table.GetData(id);
+    }

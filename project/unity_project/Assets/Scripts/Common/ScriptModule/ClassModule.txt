@@ -1,0 +1,12 @@
+﻿using UnityEngine;
+using System.Collections.Generic;
+[System.Serializable]
+public class #ScriptName#
+{
+#Content#
+
+    public #ScriptName# Clone()
+    {
+        return (#ScriptName#)this.MemberwiseClone();
+    }
+}
