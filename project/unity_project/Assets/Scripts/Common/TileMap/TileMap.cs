@@ -317,7 +317,7 @@ namespace Universal.TileMapping
                 UpdateTileAt(x, y);
                 if (updateNeighbour)
                 {
-                    UpdateNeighbours(x, y, true);
+//                    UpdateNeighbours(x, y, true);
                 }
                 return true;
             }

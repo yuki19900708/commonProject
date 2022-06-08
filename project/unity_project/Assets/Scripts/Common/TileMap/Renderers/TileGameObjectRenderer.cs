@@ -7,7 +7,7 @@ namespace Universal.TileMapping
     public class TileGameObjectRenderer : TileRenderer
     {
         public event Action<int, int, GameObject> OnRenderTile;
-        public event Func<int, int, GameObject, GameObject> OverrideCreateInstance;
+//        public event Func<int, int, GameObject, GameObject> OverrideCreateInstance;
         public event Action<int, int, GameObject> OverrideDestoryInstance;
         public event Action<int, int, SortingOrderTag, Renderer> OverrideReOrder;
 
@@ -47,14 +47,8 @@ namespace Universal.TileMapping
 
             if (prefab != null)
             {
-                if (OverrideCreateInstance != null)
-                {
-                    current = OverrideCreateInstance(x, y, prefab);
-                }
-                else
-                {
-                    current = Instantiate(prefab);
-                }
+				current = Instantiate(prefab);
+
 
                 ITileIndexSetter tileIndexSetter = current.GetComponent<ITileIndexSetter>();
                 if (tileIndexSetter != null)
@@ -63,6 +57,7 @@ namespace Universal.TileMapping
                 }
 
                 CheckSoringOrderTag(current);
+				Debug.LogError ( current.name);
                 current.name = string.Format("[{0},{1}]_{2}", x, y, prefab.name);
                 current.transform.SetParent(parent);
                 gameObjectMap[index] = current;

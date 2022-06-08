@@ -825,18 +825,20 @@ public class TerrainEditorUICtrl : MonoBehaviour
 
     private void LoadMapObject()
     {
-        foreach (MapGridGameData info in mapDataList)
-        {
-            if (info.hasVegetation == 1)
-            {
-                Debug.LogError(string.Format("有草皮的值不太对x:{0} y:{1} = {2}", info.x, info.y, info.hasVegetation));
-            }
-			Debug.LogError (info.hasVegetation);
-            if (info.hasVegetation != 0)
-            {
-                vegetationMap.SetTileAndUpdateNeighbours(info.x, info.y, vegetationTile);
-            }
-        }
+//        foreach (MapGridGameData info in mapDataList)
+//        {
+//            if (info.hasVegetation == 1)
+//            {
+//                Debug.LogError(string.Format("有草皮的值不太对x:{0} y:{1} = {2}", info.x, info.y, info.hasVegetation));
+//            }
+//
+//			if (info.hasVegetation != 0)
+//            {
+//                vegetationMap.SetTileAndUpdateNeighbours(info.x, info.y, vegetationTile);
+//            }
+//        }
+		vegetationMap.SetTileAndUpdateNeighbours(0, 0, vegetationTile);
+
     }
 
     private void ShowTipText(string txt)

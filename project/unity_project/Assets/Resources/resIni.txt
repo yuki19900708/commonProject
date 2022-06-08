@@ -794,5 +794,4 @@ grass_247|Tiles/Vegetation
 grass_251|Tiles/Vegetation
 grass_253|Tiles/Vegetation
 grass_254|Tiles/Vegetation
-sandyLand|Tiles/Vegetation
 vegetation|Tiles/Vegetation
