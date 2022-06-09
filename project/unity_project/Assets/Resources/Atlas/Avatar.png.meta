@@ -1,140 +1,399 @@
 fileFormatVersion: 2
 guid: cbc74d11633fbdc48aba44d2a1953761
-timeCreated: 1538117928
-licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: avatar_1
-    21300002: avatar_2
-    21300004: number_bg
-    21300006: universal_rect
-    21300008: dialog_bg_2
-    21300010: avatar_201
-    21300012: avatar_202
-    21300014: avatar_203
-    21300016: avatar_204
-    21300018: avatar_205
-    21300020: avatar_206
-    21300022: avatar_207
-    21300024: avatar_208
-    21300026: avatar_209
-    21300028: avatar_210
-    21300030: avatar_701
-    21300032: avatar_801
-    21300034: avatar_802
-    21300036: avatar_901
-    21300038: avatar_902
-    21300040: avatar_avatar_1
-    21300042: avatar_avatar_2
-    21300044: avatar_outline_201
-    21300046: avatar_outline_202
-    21300048: avatar_outline_203
-    21300050: avatar_outline_204
-    21300052: avatar_outline_205
-    21300054: avatar_outline_206
-    21300056: avatar_outline_207
-    21300058: avatar_outline_208
-    21300060: avatar_outline_209
-    21300062: avatar_outline_210
-    21300064: avatar_outline_303
-    21300066: avatar_outline_503
-    21300068: avatar_outline_603
-    21300070: avatar_outline_701
-    21300072: avatar_outline_702
-    21300074: avatar_outline_801
-    21300076: avatar_outline_901
-    21300078: avatar_outline_902
-    21300080: avatar_outline_1101
-    21300082: avatar_outline_1102
-    21300084: universal_round_rect
-    21300086: avatar_303
-    21300088: avatar_503
-    21300090: avatar_603
-    21300092: avatar_702
-    21300094: avatar_1101
-    21300096: avatar_1102
-    21300098: avatar_frame_201
-    21300100: avatar_frame_202
-    21300102: avatar_frame_203
-    21300104: avatar_frame_204
-    21300106: avatar_frame_205
-    21300108: avatar_frame_206
-    21300110: avatar_frame_207
-    21300112: avatar_frame_208
-    21300114: avatar_frame_209
-    21300116: avatar_frame_210
-    21300118: avatar_frame_701
-    21300120: avatar_frame_801
-    21300122: avatar_frame_802
-    21300124: avatar_frame_901
-    21300126: avatar_frame_902
-    21300128: avatar_frame_avatar_frame_1
-    21300130: avatar_frame_avatar_frame_2
-    21300132: avatar_100
-    21300134: avatar_301
-    21300136: avatar_302
-    21300138: avatar_401
-    21300140: avatar_402
-    21300142: avatar_403
-    21300144: avatar_501
-    21300146: avatar_502
-    21300148: avatar_601
-    21300150: avatar_602
-    21300152: avatar_1001
-    21300154: avatar_1002
-    21300156: avatar_1003
-    21300158: avatar_1004
-    21300160: avatar_1005
-    21300162: avatar_1006
-    21300164: avatar_1007
-    21300166: avatar_1008
-    21300168: avatar_1009
-    21300170: avatar_1010
-    21300172: avatar_1011
-    21300174: avatar_1012
-    21300176: avatar_1013
-    21300178: avatar_1014
-    21300180: avatar_1015
-    21300182: avatar_1016
-    21300184: avatar_1017
-    21300186: avatar_1018
-    21300188: avatar_1019
-    21300190: avatar_1020
-    21300192: avatar_frame_100
-    21300194: avatar_frame_301
-    21300196: avatar_frame_302
-    21300198: avatar_frame_303
-    21300200: avatar_frame_401
-    21300202: avatar_frame_402
-    21300204: avatar_frame_403
-    21300206: avatar_frame_501
-    21300208: avatar_frame_502
-    21300210: avatar_frame_503
-    21300212: avatar_frame_601
-    21300214: avatar_frame_602
-    21300216: avatar_frame_603
-    21300218: avatar_frame_803
-    21300220: avatar_504
-    21300222: avatar_505
-    21300224: avatar_506
-    21300226: avatar_507
-    21300228: avatar_508
-    21300230: avatar_509
-    21300232: avatar_510
-    21300234: avatar_511
-    21300236: avatar_512
-    21300238: avatar_513
-    21300240: avatar_514
-    21300242: avatar_515
-    21300244: avatar_516
-    21300246: avatar_517
-    21300248: avatar_518
-    21300250: avatar_519
-    21300252: avatar_520
-    21300254: avatar_521
-    21300256: avatar_522
-    21300258: avatar_523
-  serializedVersion: 4
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: avatar_1
+  - first:
+      213: 21300002
+    second: avatar_2
+  - first:
+      213: 21300004
+    second: number_bg
+  - first:
+      213: 21300006
+    second: universal_rect
+  - first:
+      213: 21300008
+    second: dialog_bg_2
+  - first:
+      213: 21300010
+    second: avatar_201
+  - first:
+      213: 21300012
+    second: avatar_202
+  - first:
+      213: 21300014
+    second: avatar_203
+  - first:
+      213: 21300016
+    second: avatar_204
+  - first:
+      213: 21300018
+    second: avatar_205
+  - first:
+      213: 21300020
+    second: avatar_206
+  - first:
+      213: 21300022
+    second: avatar_207
+  - first:
+      213: 21300024
+    second: avatar_208
+  - first:
+      213: 21300026
+    second: avatar_209
+  - first:
+      213: 21300028
+    second: avatar_210
+  - first:
+      213: 21300030
+    second: avatar_701
+  - first:
+      213: 21300032
+    second: avatar_801
+  - first:
+      213: 21300034
+    second: avatar_802
+  - first:
+      213: 21300036
+    second: avatar_901
+  - first:
+      213: 21300038
+    second: avatar_902
+  - first:
+      213: 21300040
+    second: avatar_avatar_1
+  - first:
+      213: 21300042
+    second: avatar_avatar_2
+  - first:
+      213: 21300044
+    second: avatar_outline_201
+  - first:
+      213: 21300046
+    second: avatar_outline_202
+  - first:
+      213: 21300048
+    second: avatar_outline_203
+  - first:
+      213: 21300050
+    second: avatar_outline_204
+  - first:
+      213: 21300052
+    second: avatar_outline_205
+  - first:
+      213: 21300054
+    second: avatar_outline_206
+  - first:
+      213: 21300056
+    second: avatar_outline_207
+  - first:
+      213: 21300058
+    second: avatar_outline_208
+  - first:
+      213: 21300060
+    second: avatar_outline_209
+  - first:
+      213: 21300062
+    second: avatar_outline_210
+  - first:
+      213: 21300064
+    second: avatar_outline_303
+  - first:
+      213: 21300066
+    second: avatar_outline_503
+  - first:
+      213: 21300068
+    second: avatar_outline_603
+  - first:
+      213: 21300070
+    second: avatar_outline_701
+  - first:
+      213: 21300072
+    second: avatar_outline_702
+  - first:
+      213: 21300074
+    second: avatar_outline_801
+  - first:
+      213: 21300076
+    second: avatar_outline_901
+  - first:
+      213: 21300078
+    second: avatar_outline_902
+  - first:
+      213: 21300080
+    second: avatar_outline_1101
+  - first:
+      213: 21300082
+    second: avatar_outline_1102
+  - first:
+      213: 21300084
+    second: universal_round_rect
+  - first:
+      213: 21300086
+    second: avatar_303
+  - first:
+      213: 21300088
+    second: avatar_503
+  - first:
+      213: 21300090
+    second: avatar_603
+  - first:
+      213: 21300092
+    second: avatar_702
+  - first:
+      213: 21300094
+    second: avatar_1101
+  - first:
+      213: 21300096
+    second: avatar_1102
+  - first:
+      213: 21300098
+    second: avatar_frame_201
+  - first:
+      213: 21300100
+    second: avatar_frame_202
+  - first:
+      213: 21300102
+    second: avatar_frame_203
+  - first:
+      213: 21300104
+    second: avatar_frame_204
+  - first:
+      213: 21300106
+    second: avatar_frame_205
+  - first:
+      213: 21300108
+    second: avatar_frame_206
+  - first:
+      213: 21300110
+    second: avatar_frame_207
+  - first:
+      213: 21300112
+    second: avatar_frame_208
+  - first:
+      213: 21300114
+    second: avatar_frame_209
+  - first:
+      213: 21300116
+    second: avatar_frame_210
+  - first:
+      213: 21300118
+    second: avatar_frame_701
+  - first:
+      213: 21300120
+    second: avatar_frame_801
+  - first:
+      213: 21300122
+    second: avatar_frame_802
+  - first:
+      213: 21300124
+    second: avatar_frame_901
+  - first:
+      213: 21300126
+    second: avatar_frame_902
+  - first:
+      213: 21300128
+    second: avatar_frame_avatar_frame_1
+  - first:
+      213: 21300130
+    second: avatar_frame_avatar_frame_2
+  - first:
+      213: 21300132
+    second: avatar_100
+  - first:
+      213: 21300134
+    second: avatar_301
+  - first:
+      213: 21300136
+    second: avatar_302
+  - first:
+      213: 21300138
+    second: avatar_401
+  - first:
+      213: 21300140
+    second: avatar_402
+  - first:
+      213: 21300142
+    second: avatar_403
+  - first:
+      213: 21300144
+    second: avatar_501
+  - first:
+      213: 21300146
+    second: avatar_502
+  - first:
+      213: 21300148
+    second: avatar_601
+  - first:
+      213: 21300150
+    second: avatar_602
+  - first:
+      213: 21300152
+    second: avatar_1001
+  - first:
+      213: 21300154
+    second: avatar_1002
+  - first:
+      213: 21300156
+    second: avatar_1003
+  - first:
+      213: 21300158
+    second: avatar_1004
+  - first:
+      213: 21300160
+    second: avatar_1005
+  - first:
+      213: 21300162
+    second: avatar_1006
+  - first:
+      213: 21300164
+    second: avatar_1007
+  - first:
+      213: 21300166
+    second: avatar_1008
+  - first:
+      213: 21300168
+    second: avatar_1009
+  - first:
+      213: 21300170
+    second: avatar_1010
+  - first:
+      213: 21300172
+    second: avatar_1011
+  - first:
+      213: 21300174
+    second: avatar_1012
+  - first:
+      213: 21300176
+    second: avatar_1013
+  - first:
+      213: 21300178
+    second: avatar_1014
+  - first:
+      213: 21300180
+    second: avatar_1015
+  - first:
+      213: 21300182
+    second: avatar_1016
+  - first:
+      213: 21300184
+    second: avatar_1017
+  - first:
+      213: 21300186
+    second: avatar_1018
+  - first:
+      213: 21300188
+    second: avatar_1019
+  - first:
+      213: 21300190
+    second: avatar_1020
+  - first:
+      213: 21300192
+    second: avatar_frame_100
+  - first:
+      213: 21300194
+    second: avatar_frame_301
+  - first:
+      213: 21300196
+    second: avatar_frame_302
+  - first:
+      213: 21300198
+    second: avatar_frame_303
+  - first:
+      213: 21300200
+    second: avatar_frame_401
+  - first:
+      213: 21300202
+    second: avatar_frame_402
+  - first:
+      213: 21300204
+    second: avatar_frame_403
+  - first:
+      213: 21300206
+    second: avatar_frame_501
+  - first:
+      213: 21300208
+    second: avatar_frame_502
+  - first:
+      213: 21300210
+    second: avatar_frame_503
+  - first:
+      213: 21300212
+    second: avatar_frame_601
+  - first:
+      213: 21300214
+    second: avatar_frame_602
+  - first:
+      213: 21300216
+    second: avatar_frame_603
+  - first:
+      213: 21300218
+    second: avatar_frame_803
+  - first:
+      213: 21300220
+    second: avatar_504
+  - first:
+      213: 21300222
+    second: avatar_505
+  - first:
+      213: 21300224
+    second: avatar_506
+  - first:
+      213: 21300226
+    second: avatar_507
+  - first:
+      213: 21300228
+    second: avatar_508
+  - first:
+      213: 21300230
+    second: avatar_509
+  - first:
+      213: 21300232
+    second: avatar_510
+  - first:
+      213: 21300234
+    second: avatar_511
+  - first:
+      213: 21300236
+    second: avatar_512
+  - first:
+      213: 21300238
+    second: avatar_513
+  - first:
+      213: 21300240
+    second: avatar_514
+  - first:
+      213: 21300242
+    second: avatar_515
+  - first:
+      213: 21300244
+    second: avatar_516
+  - first:
+      213: 21300246
+    second: avatar_517
+  - first:
+      213: 21300248
+    second: avatar_518
+  - first:
+      213: 21300250
+    second: avatar_519
+  - first:
+      213: 21300252
+    second: avatar_520
+  - first:
+      213: 21300254
+    second: avatar_521
+  - first:
+      213: 21300256
+    second: avatar_522
+  - first:
+      213: 21300258
+    second: avatar_523
+  externalObjects: {}
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -142,6 +401,8 @@ TextureImporter:
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
@@ -150,6 +411,9 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -157,10 +421,13 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
-    mipBias: -1
-    wrapMode: 1
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -169,49 +436,71 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Standalone
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
     maxTextureSize: 2048
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: iPhone
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 2048
-    textureFormat: 54
+    resizeAlgorithm: 0
+    textureFormat: 48
     textureCompression: 1
     compressionQuality: 0
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 1
-  - buildTarget: Android
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Android
     maxTextureSize: 2048
-    textureFormat: 54
+    resizeAlgorithm: 0
+    textureFormat: 48
     textureCompression: 1
     compressionQuality: 0
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 1
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -227,7 +516,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 4a305410000000000800000000000000
+      internalID: 21300132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_201
       rect:
@@ -240,7 +537,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_202
       rect:
@@ -253,7 +558,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_301
       rect:
@@ -266,7 +579,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 6a305410000000000800000000000000
+      internalID: 21300134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_401
       rect:
@@ -279,7 +600,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: aa305410000000000800000000000000
+      internalID: 21300138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_402
       rect:
@@ -292,7 +621,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: ca305410000000000800000000000000
+      internalID: 21300140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_501
       rect:
@@ -305,7 +642,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 0b305410000000000800000000000000
+      internalID: 21300144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_502
       rect:
@@ -318,7 +663,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 2b305410000000000800000000000000
+      internalID: 21300146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_503
       rect:
@@ -331,7 +684,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 87305410000000000800000000000000
+      internalID: 21300088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_504
       rect:
@@ -344,7 +705,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: cf305410000000000800000000000000
+      internalID: 21300220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_505
       rect:
@@ -357,7 +726,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: ef305410000000000800000000000000
+      internalID: 21300222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_506
       rect:
@@ -370,7 +747,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 00405410000000000800000000000000
+      internalID: 21300224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_507
       rect:
@@ -383,7 +768,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 20405410000000000800000000000000
+      internalID: 21300226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_508
       rect:
@@ -396,7 +789,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 40405410000000000800000000000000
+      internalID: 21300228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_509
       rect:
@@ -409,7 +810,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 60405410000000000800000000000000
+      internalID: 21300230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_510
       rect:
@@ -422,7 +831,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 80405410000000000800000000000000
+      internalID: 21300232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_511
       rect:
@@ -435,7 +852,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: a0405410000000000800000000000000
+      internalID: 21300234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_512
       rect:
@@ -448,7 +873,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: c0405410000000000800000000000000
+      internalID: 21300236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_513
       rect:
@@ -461,7 +894,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: e0405410000000000800000000000000
+      internalID: 21300238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_514
       rect:
@@ -474,7 +915,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 01405410000000000800000000000000
+      internalID: 21300240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_515
       rect:
@@ -487,7 +936,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 21405410000000000800000000000000
+      internalID: 21300242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_516
       rect:
@@ -500,7 +957,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 41405410000000000800000000000000
+      internalID: 21300244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_517
       rect:
@@ -513,7 +978,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 61405410000000000800000000000000
+      internalID: 21300246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_518
       rect:
@@ -526,7 +999,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 81405410000000000800000000000000
+      internalID: 21300248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_519
       rect:
@@ -539,7 +1020,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: a1405410000000000800000000000000
+      internalID: 21300250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_520
       rect:
@@ -552,7 +1041,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: c1405410000000000800000000000000
+      internalID: 21300252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_521
       rect:
@@ -565,7 +1062,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: e1405410000000000800000000000000
+      internalID: 21300254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_522
       rect:
@@ -578,7 +1083,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 02405410000000000800000000000000
+      internalID: 21300256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_523
       rect:
@@ -591,7 +1104,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 22405410000000000800000000000000
+      internalID: 21300258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_100
       rect:
@@ -604,7 +1125,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 0e305410000000000800000000000000
+      internalID: 21300192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_201
       rect:
@@ -617,7 +1146,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.4829}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 28305410000000000800000000000000
+      internalID: 21300098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_202
       rect:
@@ -630,7 +1167,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.502}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 48305410000000000800000000000000
+      internalID: 21300100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_203
       rect:
@@ -643,7 +1188,15 @@ TextureImporter:
       pivot: {x: 0.48333, y: 0.4959}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 68305410000000000800000000000000
+      internalID: 21300102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_204
       rect:
@@ -656,7 +1209,15 @@ TextureImporter:
       pivot: {x: 0.50084, y: 0.4836}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 88305410000000000800000000000000
+      internalID: 21300104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_205
       rect:
@@ -669,7 +1230,15 @@ TextureImporter:
       pivot: {x: 0.50826, y: 0.4918}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: a8305410000000000800000000000000
+      internalID: 21300106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_206
       rect:
@@ -682,7 +1251,15 @@ TextureImporter:
       pivot: {x: 0.49642, y: 0.476}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: c8305410000000000800000000000000
+      internalID: 21300108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_207
       rect:
@@ -695,7 +1272,15 @@ TextureImporter:
       pivot: {x: 0.51709, y: 0.46511}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: e8305410000000000800000000000000
+      internalID: 21300110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_208
       rect:
@@ -708,7 +1293,15 @@ TextureImporter:
       pivot: {x: 0.52155, y: 0.45}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 09305410000000000800000000000000
+      internalID: 21300112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_209
       rect:
@@ -721,7 +1314,15 @@ TextureImporter:
       pivot: {x: 0.49576, y: 0.45348}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 29305410000000000800000000000000
+      internalID: 21300114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_210
       rect:
@@ -734,7 +1335,15 @@ TextureImporter:
       pivot: {x: 0.49606, y: 0.47328}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 49305410000000000800000000000000
+      internalID: 21300116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_301
       rect:
@@ -747,7 +1356,15 @@ TextureImporter:
       pivot: {x: 0.49579, y: 0.43478}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 2e305410000000000800000000000000
+      internalID: 21300194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_302
       rect:
@@ -760,7 +1377,15 @@ TextureImporter:
       pivot: {x: 0.49586, y: 0.44604}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 4e305410000000000800000000000000
+      internalID: 21300196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_303
       rect:
@@ -773,7 +1398,15 @@ TextureImporter:
       pivot: {x: 0.49586, y: 0.43402}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 6e305410000000000800000000000000
+      internalID: 21300198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_401
       rect:
@@ -786,7 +1419,15 @@ TextureImporter:
       pivot: {x: 0.49603, y: 0.55384}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 8e305410000000000800000000000000
+      internalID: 21300200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_402
       rect:
@@ -799,7 +1440,15 @@ TextureImporter:
       pivot: {x: 0.49593, y: 0.57575}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: ae305410000000000800000000000000
+      internalID: 21300202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_403
       rect:
@@ -812,7 +1461,15 @@ TextureImporter:
       pivot: {x: 0.49583, y: 0.53846}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: ce305410000000000800000000000000
+      internalID: 21300204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_501
       rect:
@@ -825,7 +1482,15 @@ TextureImporter:
       pivot: {x: 0.5074, y: 0.45338}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: ee305410000000000800000000000000
+      internalID: 21300206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_502
       rect:
@@ -838,7 +1503,15 @@ TextureImporter:
       pivot: {x: 0.52, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 0f305410000000000800000000000000
+      internalID: 21300208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_503
       rect:
@@ -851,7 +1524,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 2f305410000000000800000000000000
+      internalID: 21300210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_601
       rect:
@@ -864,7 +1545,15 @@ TextureImporter:
       pivot: {x: 0.58823, y: 0.44615}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 4f305410000000000800000000000000
+      internalID: 21300212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_602
       rect:
@@ -877,7 +1566,15 @@ TextureImporter:
       pivot: {x: 0.5851, y: 0.4074}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 6f305410000000000800000000000000
+      internalID: 21300214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_603
       rect:
@@ -890,7 +1587,15 @@ TextureImporter:
       pivot: {x: 0.58823, y: 0.43129}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 8f305410000000000800000000000000
+      internalID: 21300216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_701
       rect:
@@ -903,7 +1608,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.50833}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 69305410000000000800000000000000
+      internalID: 21300118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_801
       rect:
@@ -916,7 +1629,15 @@ TextureImporter:
       pivot: {x: 0.4755, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 89305410000000000800000000000000
+      internalID: 21300120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_802
       rect:
@@ -929,7 +1650,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.45555}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: a9305410000000000800000000000000
+      internalID: 21300122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_803
       rect:
@@ -942,7 +1671,15 @@ TextureImporter:
       pivot: {x: 0.4998, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: af305410000000000800000000000000
+      internalID: 21300218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_901
       rect:
@@ -955,7 +1692,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: c9305410000000000800000000000000
+      internalID: 21300124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: avatar_frame_902
       rect:
@@ -968,7 +1713,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.508}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: e9305410000000000800000000000000
+      internalID: 21300126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: number_bg
       rect:
@@ -981,7 +1734,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: universal_rect
       rect:
@@ -994,7 +1755,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: universal_round_rect
       rect:
@@ -1007,9 +1776,28 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: -1
+      bones: []
+      spriteID: 47305410000000000800000000000000
+      internalID: 21300084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: avatar
   assetBundleVariant: 

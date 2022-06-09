@@ -704,7 +704,7 @@ public partial class MapObject : MapItem
             magicBookTip = transform.Find("tipAnimation");
             magicBookTip.DOLocalMoveY(1.89f, 0.8f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
         }
-
+//		Debug.LogError (23);
         //if (skeletonAnimation != null)
         //{
         //    MeshRenderer mr = skeletonAnimation.GetComponent<MeshRenderer>();

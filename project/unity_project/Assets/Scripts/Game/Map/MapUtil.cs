@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Vectrosity;
-
+using EditorTerrainModel;
 namespace Universal.TileMapping
 {
     public class MapUtil : MonoBehaviour
@@ -24,6 +24,10 @@ namespace Universal.TileMapping
 
             int mapWidth = tileMap.MapWidth;
             int mapHeight = tileMap.MapHeight;
+
+			int mapPhase = 1;
+
+			TerrainEditorModel.LoadMapSize(ref mapWidth, ref mapHeight, ref mapPhase);
 
             for (int i = 0; i <= mapHeight; i++)
             {
@@ -48,22 +52,9 @@ namespace Universal.TileMapping
             if (tran != null)
             {
                 SetNewLine();
+              
+				DrawGridHightLight (new int[]{1, 1});
 
-                Vector3 tmp = new Vector3(0, 0.75f, 0);
-                for (int i = 0; i <= 1; i++)
-                {
-                    Vector3 start = tileMap.Coordinate2WorldPosition(0, i);
-                    Vector3 end = tileMap.Coordinate2WorldPosition(1, i);
-                    DrawGridHightLight(start - tmp, end - tmp);
-                }
-                //Draw vertical grid lines
-                for (int i = 0; i <= 1; i++)
-                {
-                    Vector3 start = tileMap.Coordinate2WorldPosition(i, 0);
-                    Vector3 end = tileMap.Coordinate2WorldPosition(i, 1);
-                    DrawGridHightLight(start - tmp, end - tmp);
-                }
-                newLine.Draw();
                 canvas = line.rectTransform.parent.GetComponent<Canvas>();
                 canvas.renderMode = RenderMode.WorldSpace;
                 canvas.sortingLayerName = "UI";
@@ -77,7 +68,9 @@ namespace Universal.TileMapping
                 canvas.sortingLayerName = "UI";
                 canvas.sortingOrder = -2;
             }
-        }
+
+			TerrainEditorUICtrl.Instance.Init();
+		}
 
         public void DisableDraw()
         {
@@ -166,20 +159,21 @@ namespace Universal.TileMapping
             if (TerrainEditorUICtrl.Instance == null)
                 return;
             newLine.points2.Clear();
-            Vector3 tmp = new Vector3(0, 0.75f, 0);
+			Vector3 tmp = Vector3.zero;
             tran.position = tmp;
             for (int i = 0; i <= area[1]; i++)
             {
-                Vector3 start = tileMap.Coordinate2WorldPosition(0, i);
-                Vector3 end = tileMap.Coordinate2WorldPosition(area[0], i);
-                DrawGridHightLight(start - tmp, end - tmp);
+				Vector3 start = tran.transform.position + Vector3.right * i;
+				Vector3 end = start  + Vector3.up;
+
+                DrawGridHightLight(start, end );
             }
             //Draw vertical grid lines
             for (int i = 0; i <= area[0]; i++)
             {
-                Vector3 start = tileMap.Coordinate2WorldPosition(i, 0);
-                Vector3 end = tileMap.Coordinate2WorldPosition(i, area[1]);
-                DrawGridHightLight(start - tmp, end - tmp);
+				Vector3 start =  tran.transform.position + Vector3.up * i;
+				Vector3 end = start  + Vector3.right;
+                DrawGridHightLight(start, end);
             }
             newLine.Draw();
         }

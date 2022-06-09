@@ -10,7 +10,7 @@ using System;
 using System.Text;
 using GameProto;
 using Google.Protobuf;
-
+using UnityEngine.SceneManagement;
 public class MapDataCache
 {
     public int width;
@@ -26,9 +26,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
     public static string Suffix = ".xlsx";
 
     public UGUISpriteAtlas[] terrainAtlas;
-    public Dropdown editorTypeSelectDropDown;
-    public InputField contentInputField;
-    public Button loadButton;
     public Button exitButton;
 
     public TerrainEditorContentEditorInterface editInterface;
@@ -45,22 +42,19 @@ public class TerrainEditorUICtrl : MonoBehaviour
     public Toggle isEditorToggle;
     public UGUISpriteAtlas[] atlas;
 
-    public MapObjectData currentSelectObjectItemData;
     public Text tipText;
     public Button previewButton;
 
-    public VegetationData currentSelectVegetationItemData;
+	[SerializeField]
+	private VegetationData currentSelectVegetationItemData = null;
 
-    public Button settingButton;
-    public GameObject settingObject;
-    public InputField sizeXInputFiled;
-    public InputField sizeYInputFiled;
-    public Button settingExitButton;
-    public Button settingOkButton;
 
-//    public GameObject showSettingObject;
-//    public Toggle showTerrainToggle;
-//    public Toggle showVegetionToggle;
+	public VegetationData CurrentSelectVegetationItemData
+	{
+		get {
+			return currentSelectVegetationItemData;
+		}
+	}
 
     public Material spriteHSVMat;
 
@@ -71,7 +65,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
     public Text entityText;
     #endregion
     private TerrainEditorVegetation currentSelectVegetationItem;
-    private TerrainEditorSelectItem currentSelectObjectItem;
     private TileMap currentSelectTileMap;
     private ScriptableTile currentScriptableTile;
     private EditorType editorType = EditorType.Level;
@@ -80,9 +73,9 @@ public class TerrainEditorUICtrl : MonoBehaviour
     private bool isBoxUp = false;
     private List<Point> region = new List<Point>();
     private List<MapGridGameData> mapDataList = new List<MapGridGameData>();
-    private bool isShowTip = false;
     private int mapWidth = 100;
 	private int mapHeight = 100;
+	private int mapPhase = 1;
 #if UNITY_EDITOR
     private string textPath = "";
     private string checktextPath = "";
@@ -100,13 +93,17 @@ public class TerrainEditorUICtrl : MonoBehaviour
         get { return Instance.isEditorToggle.isOn; }
     }
 
-    private void Awake()
+	void Awake()
+	{
+		TerrainEditorModel.IsRunMapEditor = true;
+
+		PATH = Application.dataPath + "../../../../design_asset/datatable/";
+		Instance = this;
+	}
+			
+	public void Init()
     {
-        TerrainEditorModel.IsRunMapEditor = true;
-
-
-        PATH = Application.dataPath + "../../../../design_asset/datatable/";
-        Instance = this;
+        
         CameraGestureMgr.Instance.Init(5, new Rect(-60, -10, 120, 70));
         TableDataEventMgr.BindAllEvent();
 
@@ -116,30 +113,16 @@ public class TerrainEditorUICtrl : MonoBehaviour
         }
 
         editInterface.Event_BrushStyleChange += DropDownSelectChange;
-        editInterface.Event_SelectObjectItem += SelectObjectItem;
         editInterface.Event_SaveEditor += SaveEdiotr;
 
         editInterface.Event_SelectVegetationItem += EventSelectVegetationItem;
 
-        editorTypeSelectDropDown.onValueChanged.AddListener(EditorSelectDropDownValueChange);
-        editorTypeSelectDropDown.value = 0;
-        editorTypeSelectDropDown.options = TerrainEditorModel.GetTerrainEditorDropDownOptionData(TerrainEditorModel.loadPrefabNames);
-
         isEditorToggle.onValueChanged.AddListener(IsEditorToggleValueChange);
         isEditorToggle.isOn = false;
 
-        loadButton.onClick.AddListener(OnLoadButtonClick);
         exitButton.onClick.AddListener(OnExitButtonClick);
         previewButton.onClick.AddListener(OnPreviewButtonClick);
 
-        settingButton.onClick.AddListener(OnSettingButtonClick);
-        settingExitButton.onClick.AddListener(OnSettingExitButtonClick);
-        settingOkButton.onClick.AddListener(OnSettingOKButtonClick);
-
-//        showTerrainToggle.onValueChanged.AddListener(ShowTerrainToggleValuechange);
-//        showVegetionToggle.onValueChanged.AddListener(ShowVegetionToggleValuechange);
-
-//        terrainRenderer.OnRenderTile += OnTerrainRederTile;
         vegetationRenderer.OnRenderTile += OnVegetationRederTile;
 
         foreach (UGUISpriteAtlas a in atlas)
@@ -149,7 +132,8 @@ public class TerrainEditorUICtrl : MonoBehaviour
         ExitEditor();
         ShowTipText("来测试一下");
 
-    }
+		LoadEditor ();
+	}
 
     private void SetAdjacentMat(Point point)
     {
@@ -234,21 +218,14 @@ public class TerrainEditorUICtrl : MonoBehaviour
         }
 
         Point tmpGridPoint = vegetationMap.WorldPosition2Coordinate(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-        if (lineGridPoint != tmpGridPoint)
-        {
+
+//        if (lineGridPoint != tmpGridPoint)
+//        {
 			MapUtil.Instance.tran.position = vegetationMap.Coordinate2WorldPosition(tmpGridPoint);
 			if (vegetationMap.IsInBounds(tmpGridPoint) && mapDataList.Count > 0)
             {
                 MapGridGameData data = mapDataList[tmpGridPoint.y + tmpGridPoint.x * mapHeight];
-                mousePosText.text = string.Format("坐标: {0},{1}", tmpGridPoint.x, tmpGridPoint.y);
-                if (data.hasTerrain != 0)
-                {
-                    terrainText.text = string.Format("地形: {0}", data.hasTerrain);
-                }
-                else
-                {
-                    terrainText.text = string.Format("地形: {0}", "没有地形");
-                }
+              
 
                 if (data.hasVegetation != 0)
                 {
@@ -266,21 +243,8 @@ public class TerrainEditorUICtrl : MonoBehaviour
                     vegetationText.text = string.Format("草地: {0}", "没有草地");
                 }
 
-                if (data.entityId != 0)
-                {
-                    MapObjectData entityData = TableDataMgr.GetSingleMapObjectData(data.entityId);
-                    entityText.text = string.Format("物体: {0}->{1}->{2}", data.entityId, entityData.standbyName, entityData.currentName);
-                    if (entityData == null)
-                    {
-                        Debug.LogError("这里有一个致命错误----格子上的物品不存在表里");
-                    }
-                }
-                else
-                {
-                    entityText.text = string.Format("物体: {0}", "没有物体");
-                }
-
-            }
+              
+//            }	
 
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
@@ -309,130 +273,28 @@ public class TerrainEditorUICtrl : MonoBehaviour
                     }
                 }
             }
+
         }
     }
 
-
-    private void OnSettingOKButtonClick()
-    {
-        if (sizeXInputFiled.text != null && sizeYInputFiled.text != null)
-        {
-            int x = 0;
-            int y = 0;
-            bool result = int.TryParse(sizeXInputFiled.text, out x);
-            if (result == false)
-            {
-                ShowTipText("请输入正确的尺寸！！！");
-                return;
-            }
-            result = int.TryParse(sizeYInputFiled.text, out y);
-            if (result == false)
-            {
-                ShowTipText("请输入正确的尺寸！！！");
-                return;
-            }
-            if (x <= 2 || y <= 2)
-            {
-                ShowTipText("请输入正确的尺寸！！！");
-                return;
-            }
-            mapWidth = x;
-            mapHeight = y;
-
-            Dictionary<Point, MapGridGameData> dict = new Dictionary<Point, MapGridGameData>();
-
-            for (int i = 0; i < mapDataList.Count; i++)
-            {
-                MapGridGameData da = new MapGridGameData();
-                da.x = mapDataList[i].x;
-                da.y = mapDataList[i].y;
-                da.entityId = mapDataList[i].entityId;
-                da.hasTerrain = mapDataList[i].hasTerrain;
-                da.hasVegetation = mapDataList[i].hasVegetation;
-                da.purificationLevel = mapDataList[i].purificationLevel;
-                da.sealLockId = mapDataList[i].sealLockId;
-                da.vegetationHue = mapDataList[i].vegetationHue;
-
-                dict.Add(new Point(da.x, da.y), da);
-            }
-
-            mapDataList.Clear();
-            for (int i = 0; i < mapWidth; i++)
-            {
-                for (int j = 0; j < mapHeight; j++)
-                {
-                    MapGridGameData data = new MapGridGameData();
-                    data.x = i;
-                    data.y = j;
-                    Point p = new Point(i, j);
-                    if (dict.ContainsKey(p))
-                    {
-                        data.entityId = dict[p].entityId;
-                        data.hasTerrain = dict[p].hasTerrain;
-                        data.hasVegetation = dict[p].hasVegetation;
-                        data.purificationLevel = dict[p].purificationLevel;
-                        data.sealLockId = dict[p].sealLockId;
-                        data.vegetationHue = dict[p].vegetationHue;
-                    }
-                    mapDataList.Add(data);
-                }
-            }
-
-//            terrainMap.ResizeMap(x, y);
-            vegetationMap.ResizeMap(x, y);
-            //objectMap.ResizeMap(x, y);
-            MapUtil.Instance.DrawMapGridLine(x, y);
-        }
-        settingObject.gameObject.SetActive(false);
-        Timer.AddDelayFunc(0.5f, () =>
-        {
-            LoadMapObject();
-        });
-    }
-
-    private void OnSettingExitButtonClick()
-    {
-        settingObject.gameObject.SetActive(false);
-    }
-
-    private void OnSettingButtonClick()
-    {
-        //if (isCanSetting == false)
-        //{
-        //    ShowTipText("已经设置过这个关卡的size 或已经开始编辑 无法再继续设置");
-        //    return;
-        //}
-        settingObject.gameObject.SetActive(true);
-    }
-
+  
     private void OnPreviewButtonClick()
     {
         editInterface.gameObject.SetActive(!editInterface.gameObject.activeSelf);
         exitButton.gameObject.SetActive(!exitButton.gameObject.activeSelf);
         isEditorToggle.gameObject.SetActive(!isEditorToggle.gameObject.activeSelf);
-        settingButton.gameObject.SetActive(!settingButton.gameObject.activeSelf);
-//        showSettingObject.gameObject.SetActive(!showSettingObject.gameObject.activeSelf);
 
         isEditorToggle.isOn = false;
         if (editInterface.gameObject.activeSelf)
         {
             MapUtil.Instance.EnableDraw();
-
-//           terrainMap.gameObject.SetActive(tileMapActiveSelfDict[terrainMap]);
             vegetationMap.gameObject.SetActive(tileMapActiveSelfDict[vegetationMap]);
-            //objectMap.gameObject.SetActive(tileMapActiveSelfDict[objectMap]);
         }
         else
         {
             tileMapActiveSelfDict.Clear();
-//            tileMapActiveSelfDict.Add(terrainMap, terrainMap.gameObject.activeSelf);
             tileMapActiveSelfDict.Add(vegetationMap, vegetationMap.gameObject.activeSelf);
-            //tileMapActiveSelfDict.Add(objectMap, objectMap.gameObject.activeSelf);
-
-//            terrainMap.gameObject.SetActive(true);
             vegetationMap.gameObject.SetActive(true);
-            //objectMap.gameObject.SetActive(true);
-
             MapUtil.Instance.DisableDraw();
         }
     }
@@ -473,32 +335,18 @@ public class TerrainEditorUICtrl : MonoBehaviour
         MapUtil.Instance.DrawListLineGrid(x0, x1 + 1, y0, y1 + 1);
         return region;
     }
-
-    private void OnLoadButtonClick()
-    {
-        switch (editorType)
-        {
-            case EditorType.Level:
-                Debug.Log(string.Format("加载第{0}关地形", int.Parse(contentInputField.text)));
-                editInterface.InitData(string.Format("第{0}关", contentInputField.text));
-                break;
-        }
-        LoadEditor();
-    }
+		
 
     private void OnExitButtonClick()
     {
-//        terrainMap.gameObject.SetActive(true);
         vegetationMap.gameObject.SetActive(true);
 
-//        terrainMap.CompleteReset();
         vegetationMap.CompleteReset();
-        editorTypeSelectDropDown.value = 0;
 
-//        terrainMap.gameObject.SetActive(false);
         vegetationMap.gameObject.SetActive(false);
 
         ExitEditor();
+		SceneManager.LoadScene (0);
     }
 
     public void DragStart()
@@ -562,6 +410,10 @@ public class TerrainEditorUICtrl : MonoBehaviour
 
     public void BrushTile()
     {
+
+		if (currentSelectTileMap == null || CurrentSelectVegetationItemData == null) {
+			return;
+		}
         ScriptableTile tmpTile = currentScriptableTile;
 
         if (isBoxUp || Input.GetMouseButton(1) || isChangePoint && clickIsRmove)
@@ -585,21 +437,10 @@ public class TerrainEditorUICtrl : MonoBehaviour
                 case EditoryLayoutType.Vegetation:
                     if (tmpTile == null)
                     {
-                        //objectMap.gameObject.SetActive(true);
-
-                        //objectMap.SetTileAndUpdateNeighbours(offsetPoint.x, offsetPoint.y, null);
-
-                        //objectMap.gameObject.SetActive(true);
-
-                        mapDataList[index].hasTerrain = 0;
-                        mapDataList[index].hasVegetation = 0;
-                        mapDataList[index].entityId = 0;
-                        mapDataList[index].purificationLevel = 0;
-                        mapDataList[index].sealLockId = 0;
+                        mapDataList[index].hasVegetation = 1001;
                     }
                     else
                     {
-                        mapDataList[index].hasTerrain = 1;
                         mapDataList[index].hasVegetation = currentSelectVegetationItemData.id;
                         mapDataList[index].vegetationHue = currentSelectVegetationItemData.hueValue;
                     }
@@ -627,47 +468,14 @@ public class TerrainEditorUICtrl : MonoBehaviour
         currentSelectVegetationItem.IsSelect = true;
         if (item != null)
         {
-            //if (item.Data.type == 1)
-            {
-                currentScriptableTile = vegetationTile;
-            }
-            //else
-            //{
-            //    Debug.Log("LY", "并没有这方面的资源，暂时无法选择这个地形");
-            //    currentScriptableTile = sandyLandTile;
-            //}
+            currentScriptableTile = vegetationTile;
         }
         else
         {
             currentScriptableTile = null;
         }
     }
-
-    private void SelectObjectItem(DropDownSelectType state, TerrainEditorSelectItem item)
-    {
-        if (currentSelectObjectItem != null)
-        {
-            currentSelectObjectItem.IsSelect = false;
-            currentSelectObjectItem = null;
-            currentSelectObjectItemData = null;
-        }
-        currentSelectObjectItemData = item.Data;
-        currentSelectObjectItem = item;
-        currentSelectObjectItem.IsSelect = true;
-        if (item != null)
-        {
-            //SimpleTile simpleTile = ResMgr.Load<SimpleTile>("Tile" + item.Data.id.ToString());
-            //objectTile = simpleTile;
-            //currentScriptableTile = objectTile;
-            MapUtil.Instance.DrawGridHightLight(currentSelectObjectItem.Data.area);
-        }
-        else
-        {
-            //Debug.Log("LY", "没有物件 请排查数据表!!!");
-            currentScriptableTile = null;
-        }
-    }
-
+		
     private void DropDownSelectChange(DropDownSelectType type, string name)
     {
         switch (type)
@@ -682,45 +490,24 @@ public class TerrainEditorUICtrl : MonoBehaviour
                     brushStyle = BrushStyle.BoxUp;
                 }
                 break;
-            case DropDownSelectType.Layout:
-                MapUtil.Instance.DrawGridHightLight(new int[] { 1, 1 });
-                switch (name)
-                {
-                    case "草皮":
-                        layoutType = EditoryLayoutType.Vegetation;
-                        currentSelectTileMap = vegetationMap;
-                        currentScriptableTile = vegetationTile;
-//                        terrainMap.gameObject.SetActive(true);
-//                        showTerrainToggle.isOn = true;
-                        vegetationMap.gameObject.SetActive(true);
-//                        showVegetionToggle.isOn = true;
-                        break;
-                }
-                break;
         }
     }
-
-    private void EditorSelectDropDownValueChange(int index)
-    {
-        ExitEditor();
-        editorType = (EditorType)index;
-        switch (editorType)
-        {
-            case EditorType.Level:
-                contentInputField.gameObject.SetActive(true);
-                loadButton.gameObject.SetActive(true);
-                (contentInputField.placeholder as Text).text = "输入关卡数";
-                break;
-        }
-    }
+		
 
     private void IsEditorToggleValueChange(bool arg0)
     {
+		layoutType = EditoryLayoutType.Vegetation;
+
         if (arg0)
         {
             FingerMgr.Instance.fingerMgrOperation = FingerMgrOperation.OperationObject;
+		
+
             if (layoutType == EditoryLayoutType.Vegetation)
             {
+
+				currentSelectTileMap = vegetationMap;
+				currentScriptableTile = vegetationTile;
                 editInterface.EnableVegetationSelect();
             }
         }
@@ -729,6 +516,8 @@ public class TerrainEditorUICtrl : MonoBehaviour
             FingerMgr.Instance.fingerMgrOperation = FingerMgrOperation.None;
           	if (layoutType == EditoryLayoutType.Vegetation)
             {
+				currentSelectTileMap = null;
+				currentScriptableTile = null;
                 editInterface.DisableVegetationSelect();
             }
         }
@@ -737,33 +526,24 @@ public class TerrainEditorUICtrl : MonoBehaviour
     private void ExitEditor()
     {
         isEditorToggle.isOn = false;
-        editorTypeSelectDropDown.gameObject.SetActive(true);
-        contentInputField.gameObject.SetActive(true);
-        loadButton.gameObject.SetActive(true);
         exitButton.gameObject.SetActive(false);
         isEditorToggle.gameObject.SetActive(false);
         editInterface.gameObject.SetActive(false);
         previewButton.gameObject.SetActive(false);
-        settingButton.gameObject.SetActive(false);
-//        showSettingObject.gameObject.SetActive(false);
 
-//        terrainMap.gameObject.SetActive(true);
         vegetationMap.gameObject.SetActive(false);
+		currentSelectVegetationItemData = null;
     }
 
     private void LoadEditor()
     {
-        editorTypeSelectDropDown.gameObject.SetActive(false);
-        contentInputField.gameObject.SetActive(true);
-        loadButton.gameObject.SetActive(false);
+		TerrainEditorModel.LoadMapSize (ref mapWidth, ref mapHeight, ref mapPhase);
+
+		editInterface.InitData(string.Format("第{0}期地图", mapPhase));
         exitButton.gameObject.SetActive(true);
         isEditorToggle.gameObject.SetActive(true);
         editInterface.gameObject.SetActive(true);
         previewButton.gameObject.SetActive(true);
-        settingButton.gameObject.SetActive(true);
-//        showSettingObject.gameObject.SetActive(true);
-
-//        terrainMap.gameObject.SetActive(true);
         vegetationMap.gameObject.SetActive(true);
         brushStyle = BrushStyle.None;
 
@@ -780,15 +560,13 @@ public class TerrainEditorUICtrl : MonoBehaviour
         switch (editorType)
         {
             case EditorType.Level:
-                currentPath = "MapData/LevelData/" + contentInputField.text;
+			currentPath = "MapData/LevelData/" + mapPhase;
                 ta = Resources.Load(currentPath) as TextAsset;
                 break;
         }
 
         if (ta == null)
         {
-            //isCanSetting = true;
-            //Debug.Log("LY", "不存在這個关卡");
             mapDataList.Clear();
 
             for (int i = 0; i < mapWidth; i++)
@@ -804,7 +582,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
         }
         else
         {
-            //isCanSetting = false;
             MapDataCache saveEditor = SimpleJson.SimpleJson.DeserializeObject<MapDataCache>(ta.text);
             mapDataList = saveEditor.playerDataList;
 
@@ -812,7 +589,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
             mapHeight = saveEditor.height;
         }
 
-//        terrainMap.ResizeMap(mapWidth, mapHeight);
         vegetationMap.ResizeMap(mapWidth, mapHeight);
         MapUtil.Instance.DrawMapGridLine(mapWidth, mapHeight);
 
@@ -825,61 +601,50 @@ public class TerrainEditorUICtrl : MonoBehaviour
 
     private void LoadMapObject()
     {
-//        foreach (MapGridGameData info in mapDataList)
-//        {
-//            if (info.hasVegetation == 1)
-//            {
-//                Debug.LogError(string.Format("有草皮的值不太对x:{0} y:{1} = {2}", info.x, info.y, info.hasVegetation));
-//            }
-//
-//			if (info.hasVegetation != 0)
-//            {
-//                vegetationMap.SetTileAndUpdateNeighbours(info.x, info.y, vegetationTile);
-//            }
-//        }
-		vegetationMap.SetTileAndUpdateNeighbours(0, 0, vegetationTile);
+        foreach (MapGridGameData info in mapDataList)
+        {
+            if (info.hasVegetation == 1)
+            {
+                Debug.LogError(string.Format("有草皮的值不太对x:{0} y:{1} = {2}", info.x, info.y, info.hasVegetation));
+            }
 
+			if (info.hasVegetation != 0)
+            {
+                vegetationMap.SetTileAndUpdateNeighbours(info.x, info.y, vegetationTile);
+            }
+        }
+//		vegetationMap.SetTileAndUpdateNeighbours(0, 0, vegetationTile);
+		Timer.AddDelayFunc(1, () =>
+			{
+				foreach (MapGridGameData info in mapDataList)
+				{
+					MapObject mapObject;
+
+					if (info.hasVegetation > 0)
+					{
+						mapObject = vegetationRenderer.GetTileGameObject(info.x, info.y).GetComponent<MapObject>();
+						mapObject.DisplayAsUnLockAndCured();
+
+					}
+
+				}
+			});
     }
 
     private void ShowTipText(string txt)
-    {
-        isShowTip = true;
-        tipText.text = txt;
+    {       
+		tipText.text = txt;
         tipText.DOKill();
         tipText.color = Color.white;
         Timer.AddDelayFunc(0.5f, () =>
          {
              tipText.DOColor(new Color(1, 1, 1, 0), 0.5f).OnComplete(delegate
                 {
-                    isShowTip = false;
                     tipText.text = "";
                 });
          });
     }
-
-    public bool CheckCanResetSize()
-    {
-        isBrush = false;
-        string currentPath = "";
-        mapDataList.Clear();
-        TextAsset ta = null;
-        switch (editorType)
-        {
-            case EditorType.Level:
-                currentPath = "MapData/LevelData/" + contentInputField.text;
-                ta = Resources.Load(currentPath) as TextAsset;
-                break;
-        }
-
-        if (ta == null)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
+		
     private void SaveEdiotr()
     {
 #if UNITY_EDITOR
@@ -888,9 +653,9 @@ public class TerrainEditorUICtrl : MonoBehaviour
         switch (editorType)
         {
             case EditorType.Level:
-                currentPath = PATH + contentInputField.text + Suffix;
-                textPath = Application.dataPath + "/Resources/MapData/LevelData/" + contentInputField.text + ".txt";
-                checktextPath = Application.dataPath + "/ResourcesRaw/Check/" + contentInputField.text + ".txt";
+			currentPath = PATH + mapPhase + Suffix;
+			textPath = Application.dataPath + "/Resources/MapData/LevelData/" + mapPhase + ".txt";
+			checktextPath = Application.dataPath + "/ResourcesRaw/Check/" + mapPhase + ".txt";
                 CreatExcel(textPath, checktextPath, currentPath, mapDataList);
                 break;
         }
@@ -928,92 +693,20 @@ public class TerrainEditorUICtrl : MonoBehaviour
         {
             Grid_data grid_data = new Grid_data();
 
-            if (data.hasTerrain != 0 && data.hasVegetation == 0)
-            {
-                data.hasTerrain = 2;
-            }
-
-            string s = string.Format("x:{0} y:{1} hasTerrain:{2} hasVegetation:{3} vegetationHue:{4} entityId:{5} purificationLevel:{6} sealLockId{7},",
-                data.x, data.y, data.hasTerrain, data.hasVegetation, data.vegetationHue, data.entityId, data.purificationLevel, data.sealLockId);
+//            if (data.hasTerrain != 0 && data.hasVegetation == 0)
+//            {
+//                data.hasTerrain = 2;
+//            }
+//
+            string s = string.Format("x:{0} y:{1} hasVegetation:{2} vegetationHue:{3},",
+               						data.x, data.y, data.hasVegetation, data.vegetationHue);
             sb.AppendLine(s);
 
             grid_data.Coord = new Coord();
             grid_data.Coord.X = (uint)data.x;
             grid_data.Coord.Y = (uint)data.y;
-            grid_data.SeallockId = (uint)data.sealLockId;
-            grid_data.DeadLevel = (uint)data.purificationLevel;
-            if (data.sealLockId > 0)
-            {
-                grid_data.State = Grid_state.Locked;
-            }
-            else
-            {
-                if (data.purificationLevel > 0)
-                {
-                    grid_data.State = Grid_state.UnlockAndDead;
-                }
-                else
-                {
-                    grid_data.State = Grid_state.UnlockAndCured;
-                }
-            }
+        
 
-            if (data.hasTerrain > 0)
-            {
-                grid_data.Terrain = new Map_object_data();
-                grid_data.Terrain.Id = 1;
-                //此处为桥
-                if (data.hasVegetation == 0)
-                {
-                    grid_data.Terrain.Id = 2;
-                }
-            }
-            else
-            {
-                grid_data.State = Grid_state.Locked;
-            }
-
-            if (data.entityId > 0)
-            {
-                grid_data.Entity = new Map_object_data();
-                grid_data.Entity.Id = (uint)data.entityId;
-
-                Resting_building_data buildingData = new Resting_building_data();
-                buildingData.Timestamp = -1;
-                grid_data.Entity.BuildingData = buildingData;
-
-                MapObjectData mapObjectData = TableDataMgr.GetSingleMapObjectData(data.entityId);
-
-                if (mapObjectData.initLock)
-                {
-                    grid_data.Entity.Status = MAP_OBJECT_STATUS.Lock;
-                }
-
-                if (mapObjectData.destructType > 0)
-                {
-                    DestructEventData destructEventData = TableDataMgr.GetSingleDestructEventData(data.entityId);
-                    grid_data.Entity.Hp = (uint)destructEventData.hp;
-                }
-                if (mapObjectData.canClick && data.entityId != 70022)
-                {
-                    TapEventData tapEventData = TableDataMgr.GetSingleTapEventData(data.entityId);
-                    int max = UnityEngine.Random.Range(tapEventData.clickTimes[0], tapEventData.clickTimes[1]);
-                    grid_data.Entity.LeftTapCount = max;
-                    grid_data.Entity.TapMaxMount = max;
-                }
-                if (mapObjectData.canHarvest)
-                {
-                    HarvestEventData harvestEventData = TableDataMgr.GetSingleHarvestEventData(data.entityId);
-                    grid_data.Entity.LeftCollectCount = harvestEventData.count;
-                    grid_data.Entity.CollectMaxCount = harvestEventData.count;
-                }
-                if (mapObjectData.canSpawn)
-                {
-                    SpawnEventData spawnEventData = TableDataMgr.GetSingleSpawnEventData(data.entityId);
-                    grid_data.Entity.LeftSpawnCount = spawnEventData.cooldown;
-                    grid_data.Entity.SpawnMaxCount = spawnEventData.cooldown;
-                }
-            }
             camp_data.Grid.Add(grid_data);
         }
         Map_size size = new Map_size();

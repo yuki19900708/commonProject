@@ -37,7 +37,7 @@ namespace Universal.TileMapping
         private float yRotation = 60; // y axis rotation(to unity y axis counterclockwise) when layout is IsometricDiamondFreestyle
         private float sinY, cosY;
         [SerializeField]
-        private float isoWidth = 3f, isoHeight = 1.5f; // Single isometric grid width and height when layout is Isometric*, but the value means length along the unity world x y asix when layout is IsometricDiamond and IsometricStaggered, means the length along the tile shape axis when layout is IsometricDiamondFreestyle
+        private float isoWidth = 0, isoHeight = 0; // Single isometric grid width and height when layout is Isometric*, but the value means length along the unity world x y asix when layout is IsometricDiamond and IsometricStaggered, means the length along the tile shape axis when layout is IsometricDiamondFreestyle
         private float isoHalfWidth, isoHalfHeight;
         private Vector2 freestylePivot;
         private float freestyleWidth, freestyleHeight;
@@ -415,38 +415,17 @@ namespace Universal.TileMapping
 
         public Vector3 Coordinate2WorldPosition(float x, float y)
         {
-            return this.transform.position + Coordinate2LocalPosition(x, y) +new Vector3(0, 0, (x + y) * 0.01f);
+			return this.transform.position + Coordinate2LocalPosition (x, y);
+//			+new Vector3(0, 0, (x + y) * 0.01f);
         }
 
         public Vector3 Coordinate2LocalPosition(float x, float y)
         {
             if (mapLayout == Layout.CartesianCoordinate)
             {
-                return new Vector3(x * gridSize, y * gridSize);
-            }
-            else if (mapLayout == Layout.IsometricDiamond)
-            {
-                return new Vector3(x * isoHalfWidth - y * isoHalfWidth, y * isoHalfHeight + x * isoHalfHeight);
-            }
-            else if (mapLayout == Layout.IsometricDiamondFreestyle)
-            {
-                return new Vector3(x * isoWidth * cosX - y * isoHeight * sinY, x * isoWidth * sinX + y * isoHeight * cosY);
+				return new Vector3((x- mapWidth * 0.5f)* gridSize , (y- mapHeight * 0.5f) * gridSize);
+//				return new Vector3((x)* gridSize , (y) * gridSize);
 
-            }
-            else if (mapLayout == Layout.IsometricStaggered)
-            {
-                return new Vector3(x * isoWidth + Mathf.Abs(y % 2) * isoHalfWidth, y * isoHalfHeight);
-            }
-            else if (mapLayout == Layout.Hexagonal)
-            {
-                if (orientation == HexOrientation.PointySideUp)
-                {
-                    return new Vector3(x * innerRadius * 2 + (y % 2) * innerRadius, y * (outerRadius + outerRadius / 2));
-                }
-                else
-                {
-                    return new Vector3(x * (outerRadius + outerRadius / 2), y * innerRadius * 2 + (x % 2) * innerRadius);
-                }
             }
             return Vector3.zero;
         }
@@ -456,122 +435,13 @@ namespace Universal.TileMapping
             Vector3 posInTileMap = worldPos - this.transform.position;
             if (mapLayout == Layout.CartesianCoordinate)
             {
-                return new Vector2(posInTileMap.x / gridSize, posInTileMap.y / gridSize);
+//				return Vector2.zero;
+//				Vector2 re = new Vector2((posInTileMap.x +  mapWidth * 0.5f) / gridSize , (posInTileMap.y)/ gridSize + 0.5f);
+//				Debug.LogError (posInTileMap + "***" + re);
+
+				return new Vector2( mapWidth * 0.5f + (posInTileMap.x) / gridSize , mapHeight * 0.5f + (posInTileMap.y)/ gridSize);
             }
-            else if (mapLayout == Layout.IsometricDiamond)
-            {
-                return new Vector2(posInTileMap.x / isoWidth + posInTileMap.y / isoHeight,
-                                posInTileMap.y / isoHeight - posInTileMap.x / isoWidth);
-            }
-            else if (mapLayout == Layout.IsometricDiamondFreestyle)
-            {
-                return new Vector2((posInTileMap.x * cosY + posInTileMap.y * sinY) / (cosX * cosY + sinX * sinY) / isoWidth,
-                     (posInTileMap.y * cosX - posInTileMap.x * sinX) / (cosX * cosY + sinX * sinY) / isoHeight);
-            }
-            else if (mapLayout == Layout.IsometricStaggered)
-            {
-                posInTileMap -= new Vector3(0, isoHalfHeight);
-                float x = posInTileMap.x / isoWidth;
-                float y = -x;
-
-                float offset = posInTileMap.y / isoHeight;
-                x -= offset;
-                y -= offset;
-
-                int iX = Mathf.RoundToInt(x);
-                int iY = Mathf.RoundToInt(y);
-                int iZ = Mathf.RoundToInt(-x - y);
-
-                if (iX + iY + iZ != 0)
-                {
-                    float dX = Mathf.Abs(x - iX);
-                    float dY = Mathf.Abs(y - iY);
-                    float dZ = Mathf.Abs(-x - y - iZ);
-
-                    if (dX > dY && dX > dZ)
-                    {
-                        iX = -iY - iZ;
-                    }
-                    else if (dZ > dY)
-                    {
-                        iZ = -iX - iY;
-                    }
-                }
-                iX += iZ / 2;
-
-                return new Vector2(iX, iZ);
-            }
-            else if (mapLayout == Layout.Hexagonal)
-            {
-                if (orientation == HexOrientation.PointySideUp)
-                {
-                    float x = posInTileMap.x / (innerRadius * 2f);
-                    float y = -x;
-
-                    float offset = posInTileMap.y / (outerRadius * 3f);
-                    x -= offset;
-                    y -= offset;
-
-                    int iX = Mathf.RoundToInt(x);
-                    int iY = Mathf.RoundToInt(y);
-                    int iZ = Mathf.RoundToInt(-x - y);
-
-                    if (iX + iY + iZ != 0)
-                    {
-                        float dX = Mathf.Abs(x - iX);
-                        float dY = Mathf.Abs(y - iY);
-                        float dZ = Mathf.Abs(-x - y - iZ);
-
-                        if (dX > dY && dX > dZ)
-                        {
-                            iX = -iY - iZ;
-                        }
-                        else if (dZ > dY)
-                        {
-                            iZ = -iX - iY;
-                        }
-                    }
-                    iX += iZ / 2;
-
-                    return new Vector2(iX, iZ);
-                }
-                else
-                {
-                    float y = posInTileMap.y / (innerRadius * 2f);
-                    float x = -y;
-
-                    float offset = posInTileMap.x / (outerRadius * 3f);
-                    y -= offset;
-                    x -= offset;
-
-                    int iX = Mathf.RoundToInt(x);
-                    int iY = Mathf.RoundToInt(y);
-                    int iZ = Mathf.RoundToInt(-x - y);
-
-                    if (iX + iY + iZ != 0)
-                    {
-                        float dX = Mathf.Abs(x - iX);
-                        float dY = Mathf.Abs(y - iY);
-                        float dZ = Mathf.Abs(-x - y - iZ);
-
-                        if (dX > dY && dX > dZ)
-                        {
-                            iX = -iY - iZ;
-                        }
-                        else if (dZ > dY)
-                        {
-                            iZ = -iX - iY;
-                        }
-                        else if (dY > dZ)
-                        {
-                            iY = -iX - iZ;
-                        }
-                    }
-                    iY += iZ / 2;
-
-                    return new Vector2(iZ, iY);
-                }
-            }
+            
             return Vector2.zero;
         }
 

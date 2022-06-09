@@ -278,12 +278,8 @@ public partial class MapMgr
             //这里要最新地图放上去以后判断地形  草皮  的正确性
             if (grid.Terrain != null)
             {
-                mapData.hasTerrain = (int)grid.Terrain.Id;
                 mapData.hasVegetation = tmpMapDataCache.playerDataList[i].hasVegetation;
             }
-
-            mapData.sealLockId = (int)grid.SeallockId;
-            mapData.purificationLevel = (int)grid.DeadLevel;
 
             PurificationData purificationData = new PurificationData();
             purificationData.x = mapData.x;
@@ -293,20 +289,20 @@ public partial class MapMgr
             //给每个地块赋值净化值
             mapGridPurificationDataCache.purificationList.Add(purificationData);
 
-            if (grid.Entity != null)
-            {
-                mapData.entityId = (int)grid.Entity.Id;
-
-                //MapObjectGameData objData = DataConvert.ConverServeMapObjectData(grid.Entity, mapData.x, mapData.y);
-                //if (entityAndMonsterDataCache.entityList.Contains(objData))
-                //{
-                //    //Debug.LogError("卢洋的Log : 严重错误-->> 有重复的key添加!" + objData.id);
-                //}
-                //else
-                //{
-                //    entityAndMonsterDataCache.entityList.Add(objData);
-                //}
-            }
+//            if (grid.Entity != null)
+//            {
+////                mapData.entityId = (int)grid.Entity.Id;
+//
+//                //MapObjectGameData objData = DataConvert.ConverServeMapObjectData(grid.Entity, mapData.x, mapData.y);
+//                //if (entityAndMonsterDataCache.entityList.Contains(objData))
+//                //{
+//                //    //Debug.LogError("卢洋的Log : 严重错误-->> 有重复的key添加!" + objData.id);
+//                //}
+//                //else
+//                //{
+//                //    entityAndMonsterDataCache.entityList.Add(objData);
+//                //}
+//            }
             mapDataCache.playerDataList.Add(mapData);
         }
 
@@ -595,7 +591,7 @@ public partial class MapMgr
         //地图数据的赋值
         for (int i = 0; i < mapDataCache.playerDataList.Count; i++)
         {
-            mapDataCache.playerDataList[i].entityId = 0;
+//            mapDataCache.playerDataList[i].entityId = 0;
         }
 
         foreach (MapGrid grid in Instance.MapGrids)
@@ -612,14 +608,14 @@ public partial class MapMgr
                 //赋值当前的死地等级 和 锁定信息
                 if (grid.point.x == mapDataCache.playerDataList[i].x && grid.point.y == mapDataCache.playerDataList[i].y)
                 {
-                    mapDataCache.playerDataList[i].purificationLevel = 0;
+//                    mapDataCache.playerDataList[i].purificationLevel = 0;
                     if (grid.deadLandData != null)
                     {
-                        mapDataCache.playerDataList[i].purificationLevel = grid.deadLandData.id;
+//                        mapDataCache.playerDataList[i].purificationLevel = grid.deadLandData.id;
                     }
                     if (grid.sealLock == null)
                     {
-                        mapDataCache.playerDataList[i].sealLockId = 0;
+//                        mapDataCache.playerDataList[i].sealLockId = 0;
                     }
                 }
                 if (grid.Entity != null)
@@ -627,21 +623,21 @@ public partial class MapMgr
                     if (grid.Entity.StaticMapGridList[0].point.x == mapDataCache.playerDataList[i].x &&
                        grid.Entity.StaticMapGridList[0].point.y == mapDataCache.playerDataList[i].y)
                     {
-                        mapDataCache.playerDataList[i].entityId = grid.Entity.Id;
+//                        mapDataCache.playerDataList[i].entityId = grid.Entity.Id;
                     }
                 }
             }
         }
 
-        foreach (MapGridGameData data in mapDataCache.playerDataList)
-        {
-            if (data.entityId > 0)
-            {
+//        foreach (MapGridGameData data in mapDataCache.playerDataList)
+//        {
+//            if (data.entityId > 0)
+//            {
                 //缓存所有地面物体的数据
                 //MapObjectGameData obj = DataConvert.ConverLocaCacheMapObjectData(Instance.mapGrid[data.x, data.y].Entity);
                 //entityAndMonsterDataCache.entityList.Add(obj);
-            }
-        }
+////            }
+//        }
 
         //foreach (List<MapObject> list in entityMapObjectDic.Values)
         //{
@@ -785,18 +781,18 @@ public partial class MapMgr
 
         mapWidth = saveEditor.width;
         mapHeight = saveEditor.height;
-
-        float mapXSize = terrainMap.IsoWidth * (mapWidth + mapHeight) / 2 * 1.5f;
-        float mapYSize = terrainMap.IsoHeight * (mapWidth + mapHeight) / 2 * 1.75f;
-
-        if (mapXSize < 36)
-        {
-            mapXSize = 36;
-        }
-        if (mapYSize < 27)
-        {
-            mapYSize = 27;
-        }
+//
+//		float mapXSize = mapWidth;
+//		float mapYSize = mapHeight;
+//
+//        if (mapXSize < 36)
+//        {
+//            mapXSize = 36;
+//        }
+//        if (mapYSize < 27)
+//        {
+//            mapYSize = 27;
+//        }
 
         //float offsize = 0;
         //offsize = (float)mapWidth / (float)mapHeight - 1;
@@ -874,16 +870,16 @@ public partial class MapMgr
                 mapGrid[info.x, info.y].vegetationId = info.hasVegetation;
             }
 
-            if (info.hasTerrain == 1)
-            {
-                terrainMap.SetTileAndUpdateNeighbours(info.x, info.y, terrainTile);
-                wallMap.SetTileAndUpdateNeighbours(info.x, info.y, wallTile);
-                effectiveBlocksCount++;
-            }
-            else if (info.hasTerrain == 2)
-            {
-                terrainMap.SetTileAndUpdateNeighbours(info.x, info.y, bridgeTile);
-            }
+//            if (info.hasTerrain == 1)
+//            {
+//                terrainMap.SetTileAndUpdateNeighbours(info.x, info.y, terrainTile);
+//                wallMap.SetTileAndUpdateNeighbours(info.x, info.y, wallTile);
+//                effectiveBlocksCount++;
+//            }
+//            else if (info.hasTerrain == 2)
+//            {
+//                terrainMap.SetTileAndUpdateNeighbours(info.x, info.y, bridgeTile);
+//            }
             count++;
             if (Event_LoadingMapContent != null)
             {
@@ -922,20 +918,20 @@ public partial class MapMgr
         //实体
         foreach (MapGridGameData info in playerDataList)
         {
-            if (info.entityId != 0)
-            {
-                MapObjectData data = TableDataMgr.GetSingleMapObjectData(info.entityId);
-                if (data.illustration == (int)Handbook.Monster && data.detachGrid)
-                {
-                    //GetEntityMapObject(info.entityId);
-                }
-                else
-                {
-                    SimpleTile simpleTile = ResMgr.Load<SimpleTile>(ComUtil.GetStringAdd("Tile", info.entityId));
-                    mapGrid[info.x, info.y].entityId = info.entityId;
-                    entityMap.SetTileAt(info.x, info.y, simpleTile, false);
-                }
-            }
+//            if (info.entityId != 0)
+//            {
+//                MapObjectData data = TableDataMgr.GetSingleMapObjectData(info.entityId);
+//                if (data.illustration == (int)Handbook.Monster && data.detachGrid)
+//                {
+//                    //GetEntityMapObject(info.entityId);
+//                }
+//                else
+//                {
+//                    SimpleTile simpleTile = ResMgr.Load<SimpleTile>(ComUtil.GetStringAdd("Tile", info.entityId));
+//                    mapGrid[info.x, info.y].entityId = info.entityId;
+//                    entityMap.SetTileAt(info.x, info.y, simpleTile, false);
+//                }
+//            }
             count++;
             if (Event_LoadingMapContent != null)
             {
@@ -951,11 +947,11 @@ public partial class MapMgr
         //封印
         foreach (MapGridGameData info in playerDataList)
         {
-            if (info.sealLockId >= 100)
-            {
-                sealLockMap.SetTileAndUpdateNeighbours(info.x, info.y, sealLockTile);
-                allLockMapGridList.Add(mapGrid[info.x, info.y]);
-            }
+//            if (info.sealLockId >= 100)
+//            {
+//                sealLockMap.SetTileAndUpdateNeighbours(info.x, info.y, sealLockTile);
+//                allLockMapGridList.Add(mapGrid[info.x, info.y]);
+//            }
             count++;
             if (Event_LoadingMapContent != null)
             {
@@ -971,28 +967,28 @@ public partial class MapMgr
         //判断状态
         foreach (MapGridGameData info in playerDataList)
         {
-            mapGrid[info.x, info.y].deadLandData = TableDataMgr.GetSingleDeadLandData(info.purificationLevel);
-
-            if (info.sealLockId != 0 || info.hasTerrain == 0)
-            {
-                mapGrid[info.x, info.y].SetStatus(MapGridState.Locked);
-            }
-            else if (info.purificationLevel != 0)
-            {
-                mapGrid[info.x, info.y].SetStatus(MapGridState.UnlockButDead);
-            }
-            else if (info.hasTerrain == 2)
-            {
-                mapGrid[info.x, info.y].SetStatus(MapGridState.Locked);
-            }
-            else
-            {
+//            mapGrid[info.x, info.y].deadLandData = TableDataMgr.GetSingleDeadLandData(info.purificationLevel);
+//
+//            if (info.sealLockId != 0 || info.hasTerrain == 0)
+//            {
+//                mapGrid[info.x, info.y].SetStatus(MapGridState.Locked);
+//            }
+//            else if (info.purificationLevel != 0)
+//            {
+//                mapGrid[info.x, info.y].SetStatus(MapGridState.UnlockButDead);
+//            }
+//            else if (info.hasTerrain == 2)
+//            {
+//                mapGrid[info.x, info.y].SetStatus(MapGridState.Locked);
+//            }
+//            else
+//            {
                 mapGrid[info.x, info.y].SetStatus(MapGridState.UnlockAndCured);
                 if (mapGrid[info.x, info.y].Terrain != null)
                 {
                     unlockAndCuredTerrainList.Add(mapGrid[info.x, info.y].Terrain);
                 }
-            }
+//            }
             if (mapGrid[info.x, info.y].Entity != null)
             {
                 //RecordMapObjectWhenLoadMap(mapGrid[info.x, info.y].Entity);
@@ -1237,9 +1233,9 @@ public partial class MapMgr
             mapGrid[x, y].point = new Point(x, y);
 
             int index = y + x * mapHeight;
-            tmpMapDataCache.playerDataList[index].entityId = 0;
-            tmpMapDataCache.playerDataList[index].purificationLevel = 0;
-            tmpMapDataCache.playerDataList[index].sealLockId = 0;
+//            tmpMapDataCache.playerDataList[index].entityId = 0;
+//            tmpMapDataCache.playerDataList[index].purificationLevel = 0;
+//            tmpMapDataCache.playerDataList[index].sealLockId = 0;
 
             if (tmpMapDataCache.playerDataList[index].hasVegetation > 0)
             {
@@ -1258,7 +1254,7 @@ public partial class MapMgr
 
                 if (grid.SeallockId == 0 && grid.Entity != null)
                 {
-                    tmpMapDataCache.playerDataList[index].entityId = (int)grid.Entity.Id;
+//                    tmpMapDataCache.playerDataList[index].entityId = (int)grid.Entity.Id;
                     //MapObjectData tableData = TableDataMgr.GetSingleMapObjectData((int)grid.Entity.Id);
                     //if (tableData != null && tableData.id != MapObject.OBJECT_ID_CHAPTER_CHEST && tableData.id != MapObject.OBJECT_ID_DAILY_CHEST)
                     //{
@@ -1282,83 +1278,23 @@ public partial class MapMgr
 
             if (grid.DeadLevel > 0)
             {
-                tmpMapDataCache.playerDataList[index].purificationLevel = (int)grid.DeadLevel;
+//                tmpMapDataCache.playerDataList[index].purificationLevel = (int)grid.DeadLevel;
                 mapGrid[x, y].Status = MapGridState.UnlockButDead;
             }
 
             if (grid.SeallockId > 0)
             {
                 mapGrid[x, y].Status = MapGridState.Locked;
-                tmpMapDataCache.playerDataList[index].sealLockId = (int)grid.SeallockId;
+//                tmpMapDataCache.playerDataList[index].sealLockId = (int)grid.SeallockId;
             }
         }
 
-        foreach (MapGridGameData mapData in tmpMapDataCache.playerDataList)
-        {
-            if (mapData.hasTerrain == 1)
-            {
-                terrainMap.SetTileAndUpdateNeighbours(mapData.x, mapData.y, terrainTile);
-                vegetationMap.SetTileAndUpdateNeighbours(mapData.x, mapData.y, vegetationTile);
-                wallMap.SetTileAndUpdateNeighbours(mapData.x, mapData.y, wallTile);
-            }
-            else if (mapData.hasTerrain == 2)
-            {
-                terrainMap.SetTileAndUpdateNeighbours(mapData.x, mapData.y, bridgeTile);
-            }
-        }
+       
 
-        foreach (MapGridGameData mapData in tmpMapDataCache.playerDataList)
-        {
-            if (mapData.entityId > 0)
-            {
-                mapGrid[mapData.x, mapData.y].entityId = mapData.entityId;
+       
 
-                SimpleTile simpleTile = ResMgr.Load<SimpleTile>(ComUtil.GetStringAdd("Tile", mapData.entityId));
-                entityMap.SetTileAt(mapData.x, mapData.y, simpleTile, false);
-            }
-        }
+    
 
-        foreach (MapGridGameData mapData in tmpMapDataCache.playerDataList)
-        {
-            if (mapData.sealLockId > 0)
-            {
-                if (mapData.sealLockId > 500)
-                {
-                    ScriptableTile tile = ResMgr.Load<ScriptableTile>(string.Format(High_Area_Seal_Lock, mapData.sealLockId));
-                    sealLockMap.SetTileAndUpdateNeighbours(mapData.x, mapData.y, tile);
-                }
-                else
-                {
-                    sealLockMap.SetTileAndUpdateNeighbours(mapData.x, mapData.y, sealLockTile);
-                }
-            }
-        }
-
-        foreach (MapGridGameData mapData in tmpMapDataCache.playerDataList)
-        {
-            mapGrid[mapData.x, mapData.y].deadLandData = TableDataMgr.GetSingleDeadLandData(mapData.purificationLevel);
-            if (mapData.sealLockId != 0 || mapData.hasTerrain == 0)
-            {
-                mapGrid[mapData.x, mapData.y].SetStatus(MapGridState.Locked);
-            }
-            else if (mapData.purificationLevel != 0)
-            {
-                mapGrid[mapData.x, mapData.y].SetStatus(MapGridState.UnlockButDead);
-            }
-            else if (mapData.hasTerrain == 2)
-            {
-                mapGrid[mapData.x, mapData.y].SetStatus(MapGridState.Locked);
-            }
-            else
-            {
-                mapGrid[mapData.x, mapData.y].SetStatus(MapGridState.UnlockAndCured);
-            }
-            if (mapGrid[mapData.x, mapData.y].Entity != null)
-            {
-                //RecordMapObjectWhenLoadMap(mapGrid[mapData.x, mapData.y].Entity);
-            }
-            mapGrid[mapData.x, mapData.y].Event_GameRuningMapGridStatusChanged = EventMapGridStatusChange;
-        }
 
         MapObjectInitialize();
         isMapInitialzeLoading = false;

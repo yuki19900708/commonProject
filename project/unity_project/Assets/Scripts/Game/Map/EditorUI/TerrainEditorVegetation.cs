@@ -60,7 +60,7 @@ public class TerrainEditorVegetation : APWrapContentItem
 
     private void Awake()
     {
-        mat = ResMgr.Load<Material>("SpriteHSVMaterial");
+		mat = Resources.Load<Material>("Material/SpriteHSVMaterial");
         button.onClick.AddListener(OnClickItem);
     }
 
