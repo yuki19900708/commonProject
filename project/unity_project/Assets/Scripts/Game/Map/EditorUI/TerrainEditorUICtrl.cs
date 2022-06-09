@@ -104,7 +104,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
 	public void Init()
     {
         
-        CameraGestureMgr.Instance.Init(5, new Rect(-60, -10, 120, 70));
+        CameraGestureMgr.Instance.Init(5, new Rect(-5000, -5000, 10000, 10000));
         TableDataEventMgr.BindAllEvent();
 
         foreach (UGUISpriteAtlas atl in terrainAtlas)
@@ -236,7 +236,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
                         vegetationText.text = string.Format("草地: {0} 色:{1}饱:{2}亮:{3}", data.hasVegetation,
                             obj.mpb.GetFloat("_Hue"), obj.mpb.GetFloat("_Saturation"), obj.mpb.GetFloat("_Value"));
                     }
-                    //ShowVegetationMatInfo(vegetationRenderer.GetTileGameObject(tmpGridPoint.x, tmpGridPoint.y));
+                //ShowVegetationMatInfo(vegetationRenderer.GetTileGameObject(tmpGridPoint.x, tmpGridPoint.y));
                 }
                 else
                 {
@@ -437,7 +437,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
                 case EditoryLayoutType.Vegetation:
                     if (tmpTile == null)
                     {
-                        mapDataList[index].hasVegetation = 1001;
+                        mapDataList[index].hasVegetation = 0;
                     }
                     else
                     {
@@ -565,34 +565,40 @@ public class TerrainEditorUICtrl : MonoBehaviour
                 break;
         }
 
-        if (ta == null)
-        {
-            mapDataList.Clear();
+        mapDataList.Clear();
 
-            for (int i = 0; i < mapWidth; i++)
+        for (int i = 0; i < mapWidth; i++)
+        {
+            for (int j = 0; j < mapHeight; j++)
             {
-                for (int j = 0; j < mapHeight; j++)
-                {
-                    MapGridGameData data = new MapGridGameData();
-                    data.x = i;
-                    data.y = j;
-                    mapDataList.Add(data);
-                }
+                MapGridGameData data = new MapGridGameData();
+                data.x = i;
+                data.y = j;
+                mapDataList.Add(data);
             }
         }
-        else
+        if (ta != null)
         {
             MapDataCache saveEditor = SimpleJson.SimpleJson.DeserializeObject<MapDataCache>(ta.text);
-            mapDataList = saveEditor.playerDataList;
-
-            mapWidth = saveEditor.width;
-            mapHeight = saveEditor.height;
+            List<MapGridGameData> savedData = saveEditor.playerDataList;
+            
+            for (int j = 0; j < mapDataList.Count; j++)
+            {
+                for (int i = 0; i < savedData.Count; i++)
+                {
+                    if (savedData[i].x == mapDataList[j].x && savedData[i].y == mapDataList[j].y)
+                    {
+                        mapDataList[j] = savedData[i];
+                    }
+                }
+            
+            }
         }
 
         vegetationMap.ResizeMap(mapWidth, mapHeight);
         MapUtil.Instance.DrawMapGridLine(mapWidth, mapHeight);
 
-        Timer.AddDelayFunc(0.5f, () =>
+        Timer.AddDelayFunc(2f, () =>
          {
              LoadMapObject();
          });
@@ -607,7 +613,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
             {
                 Debug.LogError(string.Format("有草皮的值不太对x:{0} y:{1} = {2}", info.x, info.y, info.hasVegetation));
             }
-
 			if (info.hasVegetation != 0)
             {
                 vegetationMap.SetTileAndUpdateNeighbours(info.x, info.y, vegetationTile);

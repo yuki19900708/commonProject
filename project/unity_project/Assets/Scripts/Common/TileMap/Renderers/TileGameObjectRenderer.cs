@@ -57,7 +57,6 @@ namespace Universal.TileMapping
                 }
 
                 CheckSoringOrderTag(current);
-				Debug.LogError ( current.name);
                 current.name = string.Format("[{0},{1}]_{2}", x, y, prefab.name);
                 current.transform.SetParent(parent);
                 gameObjectMap[index] = current;

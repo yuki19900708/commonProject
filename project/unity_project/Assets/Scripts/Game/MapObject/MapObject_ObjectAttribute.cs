@@ -139,7 +139,8 @@ public partial class MapObject
         Renderer[] entityRendererList = gameObject.GetComponentsInChildren<Renderer>(true);
         foreach (Renderer renderer in entityRendererList)
         {
-            if (this.IsVegetation)
+
+            if (this.IsVegetation && this.VegetationData != null)
             {
                 renderer.GetPropertyBlock(mpb);
                 mpb.SetFloat("_Hue", this.VegetationData.hueValue);
@@ -175,7 +176,7 @@ public partial class MapObject
         Renderer[] entityRendererList = gameObject.GetComponentsInChildren<Renderer>(true);
         foreach (Renderer renderer in entityRendererList)
         {
-            if (this.IsVegetation)
+            if (this.IsVegetation && this.VegetationData != null)
             {
                 renderer.GetPropertyBlock(mpb);
                 mpb.SetFloat("_Hue", this.VegetationData.hueValue);
@@ -252,25 +253,12 @@ public partial class MapObject
 
     public void ClearObjectAttribute()
     {
-        if (gameObject == null)
-        {
-            //Debug.Log("LY", "错误排查代码出问题的物品id" + basicData.id);
-        }
 
         if (godTip != null)
         {
             godTip.gameObject.SetActive(false);
-            //MapMgr.clickToCollectTipPool.RecycleInstance(godTip);
-            //godTip = null;
         }
 
-        //if (IsEntity && basicData.id == OBJECT_ID_DAILY_CHEST)
-        //{
-        //    if (Event_DailyChestBackPool != null)
-        //    {
-        //        Event_DailyChestBackPool();
-        //    }
-        //}
 
         Renderer[] entityRendererList = gameObject.GetComponentsInChildren<Renderer>(true);
         foreach (Renderer renderer in entityRendererList)
