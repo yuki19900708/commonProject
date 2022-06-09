@@ -45,7 +45,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
     public Toggle isEditorToggle;
     public UGUISpriteAtlas[] atlas;
 
-    public MapObjectData currentSelectObjectItemData;
     public Text tipText;
     public Button previewButton;
 
@@ -71,7 +70,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
     public Text entityText;
     #endregion
     private TerrainEditorVegetation currentSelectVegetationItem;
-    private TerrainEditorSelectItem currentSelectObjectItem;
     private TileMap currentSelectTileMap;
     private ScriptableTile currentScriptableTile;
     private EditorType editorType = EditorType.Level;
@@ -116,7 +114,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
         }
 
         editInterface.Event_BrushStyleChange += DropDownSelectChange;
-        editInterface.Event_SelectObjectItem += SelectObjectItem;
+//        editInterface.Event_SelectObjectItem += SelectObjectItem;
         editInterface.Event_SaveEditor += SaveEdiotr;
 
         editInterface.Event_SelectVegetationItem += EventSelectVegetationItem;
@@ -234,21 +232,14 @@ public class TerrainEditorUICtrl : MonoBehaviour
         }
 
         Point tmpGridPoint = vegetationMap.WorldPosition2Coordinate(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-        if (lineGridPoint != tmpGridPoint)
-        {
+
+//        if (lineGridPoint != tmpGridPoint)
+//        {
 			MapUtil.Instance.tran.position = vegetationMap.Coordinate2WorldPosition(tmpGridPoint);
 			if (vegetationMap.IsInBounds(tmpGridPoint) && mapDataList.Count > 0)
             {
                 MapGridGameData data = mapDataList[tmpGridPoint.y + tmpGridPoint.x * mapHeight];
-                mousePosText.text = string.Format("坐标: {0},{1}", tmpGridPoint.x, tmpGridPoint.y);
-                if (data.hasTerrain != 0)
-                {
-                    terrainText.text = string.Format("地形: {0}", data.hasTerrain);
-                }
-                else
-                {
-                    terrainText.text = string.Format("地形: {0}", "没有地形");
-                }
+              
 
                 if (data.hasVegetation != 0)
                 {
@@ -266,21 +257,8 @@ public class TerrainEditorUICtrl : MonoBehaviour
                     vegetationText.text = string.Format("草地: {0}", "没有草地");
                 }
 
-                if (data.entityId != 0)
-                {
-                    MapObjectData entityData = TableDataMgr.GetSingleMapObjectData(data.entityId);
-                    entityText.text = string.Format("物体: {0}->{1}->{2}", data.entityId, entityData.standbyName, entityData.currentName);
-                    if (entityData == null)
-                    {
-                        Debug.LogError("这里有一个致命错误----格子上的物品不存在表里");
-                    }
-                }
-                else
-                {
-                    entityText.text = string.Format("物体: {0}", "没有物体");
-                }
-
-            }
+              
+//            }	
 
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
@@ -309,6 +287,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
                     }
                 }
             }
+
         }
     }
 
@@ -346,11 +325,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
                 MapGridGameData da = new MapGridGameData();
                 da.x = mapDataList[i].x;
                 da.y = mapDataList[i].y;
-                da.entityId = mapDataList[i].entityId;
-                da.hasTerrain = mapDataList[i].hasTerrain;
                 da.hasVegetation = mapDataList[i].hasVegetation;
-                da.purificationLevel = mapDataList[i].purificationLevel;
-                da.sealLockId = mapDataList[i].sealLockId;
                 da.vegetationHue = mapDataList[i].vegetationHue;
 
                 dict.Add(new Point(da.x, da.y), da);
@@ -367,11 +342,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
                     Point p = new Point(i, j);
                     if (dict.ContainsKey(p))
                     {
-                        data.entityId = dict[p].entityId;
-                        data.hasTerrain = dict[p].hasTerrain;
                         data.hasVegetation = dict[p].hasVegetation;
-                        data.purificationLevel = dict[p].purificationLevel;
-                        data.sealLockId = dict[p].sealLockId;
                         data.vegetationHue = dict[p].vegetationHue;
                     }
                     mapDataList.Add(data);
@@ -585,21 +556,10 @@ public class TerrainEditorUICtrl : MonoBehaviour
                 case EditoryLayoutType.Vegetation:
                     if (tmpTile == null)
                     {
-                        //objectMap.gameObject.SetActive(true);
-
-                        //objectMap.SetTileAndUpdateNeighbours(offsetPoint.x, offsetPoint.y, null);
-
-                        //objectMap.gameObject.SetActive(true);
-
-                        mapDataList[index].hasTerrain = 0;
-                        mapDataList[index].hasVegetation = 0;
-                        mapDataList[index].entityId = 0;
-                        mapDataList[index].purificationLevel = 0;
-                        mapDataList[index].sealLockId = 0;
+                        mapDataList[index].hasVegetation = 1001;
                     }
                     else
                     {
-                        mapDataList[index].hasTerrain = 1;
                         mapDataList[index].hasVegetation = currentSelectVegetationItemData.id;
                         mapDataList[index].vegetationHue = currentSelectVegetationItemData.hueValue;
                     }
@@ -628,9 +588,9 @@ public class TerrainEditorUICtrl : MonoBehaviour
         if (item != null)
         {
             //if (item.Data.type == 1)
-            {
+//            {
                 currentScriptableTile = vegetationTile;
-            }
+//            }
             //else
             //{
             //    Debug.Log("LY", "并没有这方面的资源，暂时无法选择这个地形");
@@ -642,32 +602,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
             currentScriptableTile = null;
         }
     }
-
-    private void SelectObjectItem(DropDownSelectType state, TerrainEditorSelectItem item)
-    {
-        if (currentSelectObjectItem != null)
-        {
-            currentSelectObjectItem.IsSelect = false;
-            currentSelectObjectItem = null;
-            currentSelectObjectItemData = null;
-        }
-        currentSelectObjectItemData = item.Data;
-        currentSelectObjectItem = item;
-        currentSelectObjectItem.IsSelect = true;
-        if (item != null)
-        {
-            //SimpleTile simpleTile = ResMgr.Load<SimpleTile>("Tile" + item.Data.id.ToString());
-            //objectTile = simpleTile;
-            //currentScriptableTile = objectTile;
-            MapUtil.Instance.DrawGridHightLight(currentSelectObjectItem.Data.area);
-        }
-        else
-        {
-            //Debug.Log("LY", "没有物件 请排查数据表!!!");
-            currentScriptableTile = null;
-        }
-    }
-
+		
     private void DropDownSelectChange(DropDownSelectType type, string name)
     {
         switch (type)
@@ -825,20 +760,34 @@ public class TerrainEditorUICtrl : MonoBehaviour
 
     private void LoadMapObject()
     {
-//        foreach (MapGridGameData info in mapDataList)
-//        {
-//            if (info.hasVegetation == 1)
-//            {
-//                Debug.LogError(string.Format("有草皮的值不太对x:{0} y:{1} = {2}", info.x, info.y, info.hasVegetation));
-//            }
-//
-//			if (info.hasVegetation != 0)
-//            {
-//                vegetationMap.SetTileAndUpdateNeighbours(info.x, info.y, vegetationTile);
-//            }
-//        }
-		vegetationMap.SetTileAndUpdateNeighbours(0, 0, vegetationTile);
+        foreach (MapGridGameData info in mapDataList)
+        {
+            if (info.hasVegetation == 1)
+            {
+                Debug.LogError(string.Format("有草皮的值不太对x:{0} y:{1} = {2}", info.x, info.y, info.hasVegetation));
+            }
 
+			if (info.hasVegetation != 0)
+            {
+                vegetationMap.SetTileAndUpdateNeighbours(info.x, info.y, vegetationTile);
+            }
+        }
+//		vegetationMap.SetTileAndUpdateNeighbours(0, 0, vegetationTile);
+		Timer.AddDelayFunc(1, () =>
+			{
+				foreach (MapGridGameData info in mapDataList)
+				{
+					MapObject mapObject;
+
+					if (info.hasVegetation > 0)
+					{
+						mapObject = vegetationRenderer.GetTileGameObject(info.x, info.y).GetComponent<MapObject>();
+						mapObject.DisplayAsUnLockAndCured();
+
+					}
+
+				}
+			});
     }
 
     private void ShowTipText(string txt)
@@ -928,92 +877,20 @@ public class TerrainEditorUICtrl : MonoBehaviour
         {
             Grid_data grid_data = new Grid_data();
 
-            if (data.hasTerrain != 0 && data.hasVegetation == 0)
-            {
-                data.hasTerrain = 2;
-            }
-
-            string s = string.Format("x:{0} y:{1} hasTerrain:{2} hasVegetation:{3} vegetationHue:{4} entityId:{5} purificationLevel:{6} sealLockId{7},",
-                data.x, data.y, data.hasTerrain, data.hasVegetation, data.vegetationHue, data.entityId, data.purificationLevel, data.sealLockId);
+//            if (data.hasTerrain != 0 && data.hasVegetation == 0)
+//            {
+//                data.hasTerrain = 2;
+//            }
+//
+            string s = string.Format("x:{0} y:{1} hasVegetation:{2} vegetationHue:{3},",
+               						data.x, data.y, data.hasVegetation, data.vegetationHue);
             sb.AppendLine(s);
 
             grid_data.Coord = new Coord();
             grid_data.Coord.X = (uint)data.x;
             grid_data.Coord.Y = (uint)data.y;
-            grid_data.SeallockId = (uint)data.sealLockId;
-            grid_data.DeadLevel = (uint)data.purificationLevel;
-            if (data.sealLockId > 0)
-            {
-                grid_data.State = Grid_state.Locked;
-            }
-            else
-            {
-                if (data.purificationLevel > 0)
-                {
-                    grid_data.State = Grid_state.UnlockAndDead;
-                }
-                else
-                {
-                    grid_data.State = Grid_state.UnlockAndCured;
-                }
-            }
+        
 
-            if (data.hasTerrain > 0)
-            {
-                grid_data.Terrain = new Map_object_data();
-                grid_data.Terrain.Id = 1;
-                //此处为桥
-                if (data.hasVegetation == 0)
-                {
-                    grid_data.Terrain.Id = 2;
-                }
-            }
-            else
-            {
-                grid_data.State = Grid_state.Locked;
-            }
-
-            if (data.entityId > 0)
-            {
-                grid_data.Entity = new Map_object_data();
-                grid_data.Entity.Id = (uint)data.entityId;
-
-                Resting_building_data buildingData = new Resting_building_data();
-                buildingData.Timestamp = -1;
-                grid_data.Entity.BuildingData = buildingData;
-
-                MapObjectData mapObjectData = TableDataMgr.GetSingleMapObjectData(data.entityId);
-
-                if (mapObjectData.initLock)
-                {
-                    grid_data.Entity.Status = MAP_OBJECT_STATUS.Lock;
-                }
-
-                if (mapObjectData.destructType > 0)
-                {
-                    DestructEventData destructEventData = TableDataMgr.GetSingleDestructEventData(data.entityId);
-                    grid_data.Entity.Hp = (uint)destructEventData.hp;
-                }
-                if (mapObjectData.canClick && data.entityId != 70022)
-                {
-                    TapEventData tapEventData = TableDataMgr.GetSingleTapEventData(data.entityId);
-                    int max = UnityEngine.Random.Range(tapEventData.clickTimes[0], tapEventData.clickTimes[1]);
-                    grid_data.Entity.LeftTapCount = max;
-                    grid_data.Entity.TapMaxMount = max;
-                }
-                if (mapObjectData.canHarvest)
-                {
-                    HarvestEventData harvestEventData = TableDataMgr.GetSingleHarvestEventData(data.entityId);
-                    grid_data.Entity.LeftCollectCount = harvestEventData.count;
-                    grid_data.Entity.CollectMaxCount = harvestEventData.count;
-                }
-                if (mapObjectData.canSpawn)
-                {
-                    SpawnEventData spawnEventData = TableDataMgr.GetSingleSpawnEventData(data.entityId);
-                    grid_data.Entity.LeftSpawnCount = spawnEventData.cooldown;
-                    grid_data.Entity.SpawnMaxCount = spawnEventData.cooldown;
-                }
-            }
             camp_data.Grid.Add(grid_data);
         }
         Map_size size = new Map_size();

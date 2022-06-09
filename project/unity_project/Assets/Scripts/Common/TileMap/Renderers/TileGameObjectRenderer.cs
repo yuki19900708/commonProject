@@ -71,14 +71,6 @@ namespace Universal.TileMapping
                     {
                         pivotTileMap = new Vector2(0f, 0f);
                     }
-                    else if (tileMap.MapLayout == TileMap.Layout.Hexagonal)
-                    {
-                        pivotTileMap = new Vector2(0.5f, 0.5f);
-                    }
-                    else if (tileMap.MapLayout == TileMap.Layout.IsometricDiamondFreestyle)
-                    {
-                        pivotTileMap = tileMap.FreestylePivot;
-                    }
                     else
                     {
                         pivotTileMap = new Vector2(0.5f, 0);
@@ -94,26 +86,7 @@ namespace Universal.TileMapping
                     Vector3 offset = Vector3.zero;
                     if (tileMap.MapLayout == TileMap.Layout.CartesianCoordinate)
                     {
-                        offset = new Vector3(pivotOffset.x * tileMap.GridSize, pivotOffset.y * tileMap.GridSize);
-                    }
-                    else if (tileMap.MapLayout == TileMap.Layout.Hexagonal)
-                    {
-                        if (tileMap.Orientation == TileMap.HexOrientation.PointySideUp)
-                        {
-                            offset = new Vector3(pivotOffset.x * tileMap.InnerRadius * 2, pivotOffset.y * tileMap.OuterRadius * 2);
-                        }
-                        else
-                        {
-                            offset = new Vector3(pivotOffset.x * tileMap.OuterRadius * 2, pivotOffset.y * tileMap.InnerRadius * 2);
-                        }
-                    }
-                    else if (tileMap.MapLayout == TileMap.Layout.IsometricDiamondFreestyle)
-                    {
-                        offset = new Vector3(pivotOffset.x * tileMap.FreestyleWidth, pivotOffset.y * tileMap.FreestyleHeight);
-                    }
-                    else
-                    {
-                        offset = new Vector3(pivotOffset.x * tileMap.IsoWidth, pivotOffset.y * tileMap.IsoHeight);
+//                        offset = new Vector3(pivotOffset.x * tileMap.GridSize, pivotOffset.y * tileMap.GridSize);
                     }
                     current.transform.localPosition = tileMap.Coordinate2LocalPosition(x, y) + offset;
                 }
@@ -121,8 +94,8 @@ namespace Universal.TileMapping
                 {
                     current.transform.localPosition = tileMap.Coordinate2LocalPosition(x, y);
                 }
-
-                //current.transform.localScale = Vector2.one;
+//				Debug.LogError (current.transform.localPosition);
+//                current.transform.localScale = Vector2.one  * 3;
                 ReOrder(x, y, current);
             }
 

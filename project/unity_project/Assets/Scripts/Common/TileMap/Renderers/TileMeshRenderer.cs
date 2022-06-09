@@ -131,23 +131,11 @@ namespace Universal.TileMapping
                     {
                         //pivot change will affect the sprite transform position, because tile map system is base on 
                         //fixed pivot, so the keypoint is calculate the offset between actual pivot and bottomCenter
-                        Vector2 pivotTileMap;
-                        if (tileMap.MapLayout == TileMap.Layout.CartesianCoordinate)
-                        {
-                            pivotTileMap = new Vector2(0f, 0f);
-                        }
-                        else if (tileMap.MapLayout == TileMap.Layout.Hexagonal)
-                        {
-                            pivotTileMap = new Vector2(0.5f, 0.5f);
-                        }
-                        else if (tileMap.MapLayout == TileMap.Layout.IsometricDiamondFreestyle)
-                        {
-                            pivotTileMap = tileMap.FreestylePivot;
-                        }
-                        else
-                        {
-                            pivotTileMap = new Vector2(0.5f, 0);
-                        }
+						Vector2 pivotTileMap = Vector2.zero;
+//                        if (tileMap.MapLayout == TileMap.Layout.CartesianCoordinate)
+//                        {
+//                            pivotTileMap = new Vector2(0f, 0f);
+//                        }
                         Vector2 pivotActual = new Vector2(sr.sprite.pivot.x / sr.sprite.rect.width, sr.sprite.pivot.y / sr.sprite.rect.height);
                         Vector2 pivotOffset = pivotActual - pivotTileMap;
                         //Then translate the pivotOffset's world position to tilemap coordinate
@@ -156,25 +144,7 @@ namespace Universal.TileMapping
                         {
                             offset = new Vector3(pivotOffset.x * tileMap.GridSize, pivotOffset.y * tileMap.GridSize);
                         }
-                        else if (tileMap.MapLayout == TileMap.Layout.Hexagonal)
-                        {
-                            if (tileMap.Orientation == TileMap.HexOrientation.PointySideUp)
-                            {
-                                offset = new Vector3(pivotOffset.x * tileMap.InnerRadius * 2, pivotOffset.y * tileMap.OuterRadius * 2);
-                            }
-                            else
-                            {
-                                offset = new Vector3(pivotOffset.x * tileMap.OuterRadius * 2, pivotOffset.y * tileMap.InnerRadius * 2);
-                            }
-                        }
-                        else if (tileMap.MapLayout == TileMap.Layout.IsometricDiamondFreestyle)
-                        {
-                            offset = new Vector3(pivotOffset.x * tileMap.FreestyleWidth, pivotOffset.y * tileMap.FreestyleHeight);
-                        }
-                        else
-                        {
-                            offset = new Vector3(pivotOffset.x * tileMap.IsoWidth, pivotOffset.y * tileMap.IsoHeight);
-                        }
+                        
                         basePos += offset;
                     }
                     for (int i = 0; i < sr.sprite.vertices.Length; i++)

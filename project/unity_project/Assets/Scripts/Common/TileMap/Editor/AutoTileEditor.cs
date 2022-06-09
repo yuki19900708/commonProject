@@ -13,10 +13,8 @@ namespace Universal.TileMapping
 
         private int[,] indexLookup4 = new int[,]
         {
-            { 4, 6, 14, 12  },
-            { 5, 7 ,15, 13  },
-            { 1, 3 ,11, 9   }, 
-            { 0, 2 ,10, 8   },
+            { 0, 1, 2, 3  },
+            { 4, 5 ,6, 7 }
         };
 
         private int[,] indexLookup8 = new int[,]
@@ -47,7 +45,7 @@ namespace Universal.TileMapping
             GUILayout.Label("Tiles: T/P means use a random tile or just prefab", TileMapGUIStyles.leftBoldLabel);
 
             GUILayout.BeginVertical();
-            int rowCount = 4;
+            int rowCount = 2;
             int columnCount = 4;
             int[,] indexLookup;
             if (autoTile.neighbourMode == AutoTile.NeighbourMode.Eight)
@@ -80,36 +78,36 @@ namespace Universal.TileMapping
                         GUI.color = new Color(1, 0.9f, 0.5f);
                         labelText = string.Format("{0}: Empty", labelText);
                     }
-                    autoTile.tileOrPrefab[index] = GUILayout.Toggle(autoTile.tileOrPrefab[index], "T/P");
+//                    autoTile.tileOrPrefab[index] = GUILayout.Toggle(autoTile.tileOrPrefab[index], "T/P");
 
                     if (GUILayout.Button(GUIContent.none, TileMapGUIStyles.centerWhiteBoldLabel, GUILayout.Width(sizePerButton), GUILayout.Height(sizePerButton)))
                     {
-                        if (autoTile.tileOrPrefab[index])
-                        {
-                            RandomTile tile = autoTile.bitmaskRandomTiles[index] ? autoTile.bitmaskRandomTiles[index] : null;
-                            EditorGUIUtility.ShowObjectPicker<RandomTile>(tile, false, "", index);
-                        }
-                        else
-                        {
+//                        if (autoTile.tileOrPrefab[index])
+//                        {
+//                            RandomTile tile = autoTile.bitmaskRandomTiles[index] ? autoTile.bitmaskRandomTiles[index] : null;
+//                            EditorGUIUtility.ShowObjectPicker<RandomTile>(tile, false, "", index);
+//                        }
+//                        else
+//                        {
                             GameObject prefab = autoTile.bitmaskPrefabs[index] ? autoTile.bitmaskPrefabs[index] : null;
                             EditorGUIUtility.ShowObjectPicker<GameObject>(prefab, false, "", index);
-                        }
+//                        }
                     }
                     Rect r = GUILayoutUtility.GetLastRect();
                     if (GUILayout.Button("Ping"))
                     {
                         Type pt = Assembly.GetAssembly(typeof(Editor)).GetType("UnityEditor.ProjectBrowser");
                         EditorWindow.GetWindow(pt).Show();
-                        if (autoTile.tileOrPrefab[index])
-                        {
-                            RandomTile tile = autoTile.bitmaskRandomTiles[index] ? autoTile.bitmaskRandomTiles[index] : null;
-                            EditorGUIUtility.PingObject(tile);
-                        }
-                        else
-                        {
+//                        if (autoTile.tileOrPrefab[index])
+//                        {
+//                            RandomTile tile = autoTile.bitmaskRandomTiles[index] ? autoTile.bitmaskRandomTiles[index] : null;
+//                            EditorGUIUtility.PingObject(tile);
+//                        }
+//                        else
+//                        {
                             GameObject prefab = autoTile.bitmaskPrefabs[index] ? autoTile.bitmaskPrefabs[index] : null;
                             EditorGUIUtility.PingObject(prefab);
-                        }
+//                        }
                     }
                     if (Event.current.type == EventType.DragUpdated || Event.current.type == EventType.DragPerform)
                     {
@@ -117,28 +115,22 @@ namespace Universal.TileMapping
                         {
                             UnityEngine.Object dragItem = DragAndDrop.objectReferences[0];
                             bool droppable = false;
-                            if (autoTile.tileOrPrefab[index])
-                            {
-                                droppable = dragItem is RandomTile;
-                            }
-                            else
-                            {
+//                            if (autoTile.tileOrPrefab[index])
+//                            {
+//                                droppable = dragItem is RandomTile;
+//                            }
+//                            else
+//                            {
                                 droppable = dragItem is GameObject;
-                            }
+//                            }
                             if (droppable)
                             {
                                 DragAndDrop.visualMode = DragAndDropVisualMode.Copy;
                                 if (Event.current.type == EventType.DragPerform)
                                 {
                                     DragAndDrop.AcceptDrag();
-                                    if (autoTile.tileOrPrefab[index])
-                                    {
-                                        autoTile.bitmaskRandomTiles[index] = dragItem as RandomTile;
-                                    }
-                                    else
-                                    {
-                                        autoTile.bitmaskPrefabs[index] = dragItem as GameObject;
-                                    }
+									autoTile.bitmaskPrefabs[index] = dragItem as GameObject;
+
                                 }
                             }
                         }
@@ -164,14 +156,14 @@ namespace Universal.TileMapping
             int controlID = EditorGUIUtility.GetObjectPickerControlID();
             if (Event.current.commandName == "ObjectSelectorUpdated")
             {
-                if (autoTile.tileOrPrefab[controlID])
-                {
-                    autoTile.bitmaskRandomTiles[controlID] = EditorGUIUtility.GetObjectPickerObject() as RandomTile;
-                }
-                else
-                {
+//                if (autoTile.tileOrPrefab[controlID])
+//                {
+//                    autoTile.bitmaskRandomTiles[controlID] = EditorGUIUtility.GetObjectPickerObject() as RandomTile;
+//                }
+//                else
+//                {
                     autoTile.bitmaskPrefabs[controlID] = EditorGUIUtility.GetObjectPickerObject() as GameObject;
-                }
+//                }
             }
             if (GUI.changed)
             {

@@ -83,7 +83,7 @@ public class TerrainEditorContentEditorInterface : MonoBehaviour
     private void EventVegetationSelect(TerrainEditorVegetation item)
     {
         Debug.Log("选中了" + item.nameText.text);
-        if (Event_SelectObjectItem != null)
+		if (Event_SelectVegetationItem != null)
         {
             Event_SelectVegetationItem(item);
         }
@@ -93,14 +93,14 @@ public class TerrainEditorContentEditorInterface : MonoBehaviour
     {
         TerrainEditorSelectItem item = obj.GetComponent<TerrainEditorSelectItem>();
         item.Data = selectDataList[index];
-        if (item.Data == TerrainEditorUICtrl.Instance.currentSelectObjectItemData)
-        {
+//        if (item.Data == TerrainEditorUICtrl.Instance.currentSelectObjectItemData)
+//        {
             item.IsSelect = true;
-        }
-        else
-        {
-            item.IsSelect = false;
-        }
+//        }
+//        else
+//        {
+//            item.IsSelect = false;
+//        }
     }
 
 
