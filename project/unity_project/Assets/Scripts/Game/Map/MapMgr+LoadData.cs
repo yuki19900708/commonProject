@@ -19,7 +19,7 @@ public class MapUnlcokCache
 {
     public bool isUnlock;
     public MapUnlockData data;
-    public DragonPowerSlider slider;
+    //public DragonPowerSlider slider;
 }
 
 public enum MapClearType
@@ -481,7 +481,7 @@ public partial class MapMgr
     /// <param name="type"></param>
     public static void ClearBaseCampOrPlunderData()
     {
-        ClearSealLockMapGridEffect();
+        //ClearSealLockMapGridEffect();
         //TipFlyMgr.ClearAllTipFly();
         CommonObjectMgr.ClearTip();
         ClearExtraPool();
@@ -543,7 +543,7 @@ public partial class MapMgr
             //}
 
             //noSaveEntityMapObjectDic.Clear();
-            foreach (MapUnlcokCache cache in Instance.mapUnlockCacheDict.Values)
+          /*  foreach (MapUnlcokCache cache in Instance.mapUnlockCacheDict.Values)
             {
                 if (cache.slider != null)
                 {
@@ -551,7 +551,7 @@ public partial class MapMgr
                     //dragonPowerPool.RecycleInstance(cache.slider);
                     cache.slider = null;
                 }
-            }
+            }*/
 
             //对净化粒子进行清理
             foreach (MapObject obj in purification_Automatic_GridCureValueChangeList.Values)
@@ -560,7 +560,7 @@ public partial class MapMgr
             }
             purification_Automatic_GridCureValueChangeList.Clear();
         }
-        Instance.mapUnlockCacheDict.Clear();
+        //Instance.mapUnlockCacheDict.Clear();
         Instance.wallMap.CompleteReset();
         Instance.terrainMap.CompleteReset();
         Instance.vegetationMap.CompleteReset();
