@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Vectrosity;
-
+using EditorTerrainModel;
 namespace Universal.TileMapping
 {
     public class MapUtil : MonoBehaviour
@@ -24,6 +24,10 @@ namespace Universal.TileMapping
 
             int mapWidth = tileMap.MapWidth;
             int mapHeight = tileMap.MapHeight;
+
+			int mapPhase = 1;
+
+			TerrainEditorModel.LoadMapSize(ref mapWidth, ref mapHeight, ref mapPhase);
 
             for (int i = 0; i <= mapHeight; i++)
             {
@@ -64,7 +68,9 @@ namespace Universal.TileMapping
                 canvas.sortingLayerName = "UI";
                 canvas.sortingOrder = -2;
             }
-        }
+
+			TerrainEditorUICtrl.Instance.Init();
+		}
 
         public void DisableDraw()
         {

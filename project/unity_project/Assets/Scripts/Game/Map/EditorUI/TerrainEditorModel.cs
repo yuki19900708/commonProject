@@ -51,16 +51,20 @@ namespace EditorTerrainModel
 
         private static string HEIGHT_KEY = "MAP_HEIGHT_KEY";
 
-        public static void SetMapSize(int width , int height)
+		private static string PHASE_KEY = "MAP_PHASE_KEY";
+
+		public static void SetMapSize(int width , int height, int phase)
         {
             PlayerPrefs.SetInt(WIDTH_KEY, width);
             PlayerPrefs.SetInt(HEIGHT_KEY, height);
+			PlayerPrefs.SetInt(PHASE_KEY, phase);
         }
 
-        public static void LoadMapSize(ref int width, ref int height)
+		public static void LoadMapSize(ref int width, ref int height, ref int phase)
         {
             width = PlayerPrefs.GetInt(WIDTH_KEY, width);
             height = PlayerPrefs.GetInt(HEIGHT_KEY, height);
+			phase= PlayerPrefs.GetInt(PHASE_KEY, height);
         }
 
         private static bool isRunMapEditor = false;
@@ -82,11 +86,8 @@ namespace EditorTerrainModel
             "关卡选择",
         };
 
-        public static string[] editoryLayouts = new string[]
-        {
-            "草皮",
-        };
-
+    
+	
         private static List<VegetationData> allVegetationElements;
 
         private static List<MapObjectData> allObjectElements;
