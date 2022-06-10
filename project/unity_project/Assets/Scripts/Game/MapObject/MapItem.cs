@@ -75,7 +75,7 @@ public class MapItem : MonoBehaviour, ITileIndexSetter
                 {
                     spName = spName.Replace(GRASS, prefix);
                     Debug.LogError(spName);
-                    re.sprite = UGUISpriteAtlasMgr.LoadSprite(spName);
+                    //re.sprite = UGUISpriteAtlasMgr.LoadSprite(spName);
 
                     continue;
                 }
