@@ -369,33 +369,7 @@ public class TimerMgr : MonoBehaviour
         return mServerTimestampLong;
     }
 
-    /// <summary>
-    /// 因为请求服务器时间戳的返回不是protobuf，所以是单独的NetMgr事件
-    /// </summary>
-    /// <param name="timeStamp"></param>
-    public static void RequestServerStampCallback(string timeStamp)
-    {
-        mServerTimestampLong = Convert.ToInt64(timeStamp);
-        //Debug.Log("RYH", "TimerMgr", "获得服务器时间戳：" + mServerTimestampLong, LogFontSize.General);
-        if (getTimestampCallback != null)
-        {
-            ThreadUtil.QueueActionToMainThread(getTimestampCallback);
-        }
-    }
-
-    /// <summary>  
-    /// 时间戳Timestamp转换成日期  
-    /// </summary>  
-    /// <param name="timeStamp"></param>
-    /// <returns></returns>  
-    public static DateTime GetDateTime(long timeStamp)
-    {
-        DateTime dtStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
-        long lTime = ((long)timeStamp * 10000000);
-        TimeSpan toNow = new TimeSpan(lTime);
-        DateTime targetDt = dtStart.Add(toNow);
-        return targetDt;
-    }
+ 
 
     public static DateTime GetDateTime()
     {
@@ -405,60 +379,4 @@ public class TimerMgr : MonoBehaviour
         DateTime targetDt = dtStart.Add(toNow);
         return targetDt;
     }
-
-    public static long GetTime(DateTime dateTime)
-    {
-        System.DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new System.DateTime(1970, 1, 1));
-        long timeStamp = (long)(dateTime - startTime).TotalSeconds;
-        System.Console.WriteLine(timeStamp);
-        return timeStamp;
-    }
-
-    /// <summary>
-    /// 获取时间戳转换为字符串（几分钟前的格式）
-    /// </summary>
-    /// <param name="time"></param>
-    /// <returns></returns>
-    //public static string GetTimeString(int time)
-    //{
-    //    string result = "";
-    //    if (time == 0)
-    //    {
-    //        //result = L10NMgr.GetText(25100005);
-    //    }
-    //    else
-    //    {
-    //        int timePeriod = GetSeconds() - time;
-    //        int day = timePeriod / (24 * 60 * 60);
-    //        int hour = timePeriod / (60 * 60);
-    //        int minute = timePeriod / 60;
-    //        if (day >= 1)
-    //        {
-    //            //几天前
-    //            result = string.Format(L10NMgr.GetText(26800007), day);
-    //        }
-    //        else if (hour >= 1)
-    //        {
-    //            //几小时前
-    //            result = string.Format(L10NMgr.GetText(26800006), hour);
-    //        }
-    //        else if (minute >= 30)
-    //        {
-    //            //半小时前
-    //            result = L10NMgr.GetText(26800005);
-    //        }
-    //        else if (minute >= 1)
-    //        {
-    //            //几分钟前
-    //            result = string.Format(L10NMgr.GetText(26800004), minute);
-    //        }
-    //        else
-    //        {
-    //            //刚刚
-    //            result = L10NMgr.GetText(26800003);
-    //        }
-    //    }
-    //    return result;
-    //}
-
 }
