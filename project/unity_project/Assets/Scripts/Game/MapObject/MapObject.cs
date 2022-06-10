@@ -26,201 +26,6 @@ public enum ItemStatus
 
 public partial class MapObject : MapItem
 {
-    public static readonly string ANI_NAME_IDLE = "idle";
-    public static readonly string ANI_NAME_COLLECT = "interact";
-    public static readonly string ANI_NAME_ATTACK = "attack";
-    public static readonly string[] ANI_NAME_ARRAY = { ANI_NAME_IDLE , ANI_NAME_COLLECT, ANI_NAME_ATTACK };
-
-
-    public const float DOUBLE_CLICLK_SPEED = 5;
-    public const float Attack_Move_Speed = 3;
-
-
-    /// <summary>
-    /// 生命之球
-    /// </summary>
-    public const int OBJECT_TYPE_PURIFY_BALL = 101;
-    /// <summary>
-    /// 地精洞穴
-    /// </summary>
-    public const int OBJECT_TYPE_GOBLIN_CAVE = 204;
-    /// <summary>
-    /// 净化神树
-    /// </summary>
-    public const int OBJECT_TYPE_PURIFY_GOD_TREE = 206;
-    /// <summary>
-    /// 石砖房
-    /// </summary>
-    public const int OBJECT_TYPE_STONE_BUILDING = 302;
-    /// <summary>
-    /// 金币房
-    /// </summary>
-    public const int OBJECT_TYPE_GOLD_BUILDING = 303;
-    /// <summary>
-    /// 云雾
-    /// </summary>
-    public const int OBJECT_TYPE_FOGGY_MOUNTAIN = 605;
-    /// <summary>
-    /// 我方图腾
-    /// </summary>
-    public const int OBJECT_TYPE_TOTEM = 606;
-    /// <summary>
-    /// 净化者
-    /// </summary>
-    public const int OBJECT_TYPE_PURIFIER = 608;
-    /// <summary>
-    /// 魔物
-    /// </summary>
-    public const int OBJECT_TYPE_EVIL_MONSTER = 611;
-    /// <summary>
-    /// 怪石阵
-    /// </summary>
-    public const int OBJECT_TYPE_STRANGE_STONE_ARRAY = 614;
-    /// <summary>
-    /// 净化之力
-    /// </summary>
-    public const int OBJECT_TYPE_PURIFY_POWER = 701;
-    /// <summary>
-    /// 魔物雕像
-    /// </summary>
-    public const int OBJECT_TYPE_ENEMY_TOTEM = 714;
-    /// <summary>
-    /// 小龙蛋巢
-    /// </summary>
-    public const int OBJECT_TYPE_DRAG_EGG_NEST_SMALL = 718;
-    /// <summary>
-    /// 大龙蛋巢
-    /// </summary>
-    public const int OBJECT_TYPE_DRAG_EGG_NEST_BIG = 719;
-    /// <summary>
-    /// 魔窟洞穴
-    /// </summary>
-    public const int OBJECT_TYPE_MAGIC_CAVE = 728;
-    /// <summary>
-    /// 战利品球
-    /// </summary>
-    public const int OBJECT_TYPE_TROPHY_BALL = 729;
-    /// <summary>
-    /// 连击球
-    /// </summary>
-    public const int OBJECT_TYPE_BATTER_BALL = 730;
-
-    #region 需要花钻石解锁物品
-    /// <summary>
-    /// 蛋箱1
-    /// </summary>
-    public const int OBJECT_TYPE_EGG_CHEST_1 = 720;
-    /// <summary>
-    /// 蛋箱2
-    /// </summary>
-    public const int OBJECT_TYPE_EGG_CHEST_2 = 721;
-    /// <summary>
-    /// 巢箱1
-    /// </summary>
-    public const int OBJECT_TYPE_EGG_GROUP_CHEST_1 = 722;
-    /// <summary>
-    /// 巢箱2
-    /// </summary>
-    public const int OBJECT_TYPE_EGG_GROUP_CHEST_2 = 723;
-    /// <summary>
-    /// 巢箱3
-    /// </summary>
-    public const int OBJECT_TYPE_EGG_GROUP_CHEST_3 = 724;
-    /// <summary>
-    /// 神秘箱
-    /// </summary>
-    public const int OBJECT_TYPE_MYSTERIOUS_CHEST = 733;
-    #endregion
-
-    #region 直接点击就打开的箱子类物品
-    /// <summary>
-    /// 关卡宝箱
-    /// </summary>
-    public const int OBJECT_TYPE_FREE_CHEST = 401;
-    /// <summary>
-    /// 商店宝箱A
-    /// </summary>
-    public const int OBJECT_TYPE_SHOP_CHEST_A = 402;
-    /// <summary>
-    /// 商店宝箱B
-    /// </summary>
-    public const int OBJECT_TYPE_SHOP_CHEST_B = 403;
-    /// <summary>
-    /// 商店宝箱C
-    /// </summary>
-    public const int OBJECT_TYPE_SHOP_CHEST_C = 404;
-    /// <summary>
-    /// 商店宝箱D
-    /// </summary>
-    public const int OBJECT_TYPE_SHOP_CHEST_D = 405;
-    /// <summary>
-    /// 商店宝箱E
-    /// </summary>
-    public const int OBJECT_TYPE_SHOP_CHEST_E = 406;
-    /// <summary>
-    /// 格森姆箱
-    /// </summary>
-    public const int OBJECT_TYPE_GRIMM_CHEST = 407;
-    /// <summary>
-    /// 关卡宝箱
-    /// </summary>
-    public const int OBJECT_TYPE_CHAPTER_CHEST = 725;
-    /// <summary>
-    /// 日常宝箱
-    /// </summary>
-    public const int OBJECT_TYPE_DAILY_CHEST = 726;
-    /// <summary>
-    /// 掠夺宝箱
-    /// </summary>
-    public const int OBJECT_TYPE_PLUNDER_CHEST = 734;
-#endregion
-
-    /// <summary>
-    /// 雨云
-    /// </summary>
-    public const int OBJECT_ID_RAIN_CLOUD = 70013;
-    /// <summary>
-    /// 云一
-    /// </summary>
-    public const int OBJECT_ID_CLOUD_1 = 70014;
-    /// <summary>
-    /// 云二
-    /// </summary>
-    public const int OBJECT_ID_CLOUD_2 = 70015;
-    /// <summary>
-    /// 溢出石砖
-    /// </summary>
-    public const int OBJECT_ID_SPILLING_STONE = 70017;
-    /// <summary>
-    /// 关卡宝箱入口物体
-    /// </summary>
-    public const int OBJECT_ID_CHAPTER_CHEST = 70020;
-    /// <summary>
-    /// 古神的指引
-    /// </summary>
-    public const int OBJECT_ID_MAGIC_BOOK = 70022;
-    /// <summary>
-    /// 溢出金币
-    /// </summary>
-    public const int OBJECT_ID_SPILLING_COIN = 70024;
-    /// <summary>
-    /// 特惠球
-    /// </summary>
-    public const int OBJECT_ID_SPECIAL_BALL = 73101;
-    /// <summary>
-    /// 真 建筑地基。73202与73203都不是
-    /// </summary>
-    public const int OBJECT_ID_BUILDING_FOUNDATION = 73201;
-    /// <summary>
-    /// 积分道具
-    /// </summary>
-    public const int POINT_PROPS = 103;
-
-    /// <summary>
-    /// 自然死亡事件
-    /// </summary>
-    //public event Action<int> Event_NaturalDeath;
-
     /// <summary>
     /// 用于对象池出池时使用
     /// </summary>
@@ -245,15 +50,9 @@ public partial class MapObject : MapItem
     /// 是否处于玩家操作状态
     /// </summary>
     private bool isPlayerOperate;
-    private Tweener floatingAnim;
-
-    private float idleTimer;
-    private float idleMoment;
     private Transform magicBookTip;
 
     private MAP_OBJECT_STATUS mapObjectStatus= MAP_OBJECT_STATUS.Normal;
-    //骨骼动画
-    //public SkeletonAnimation skeletonAnimation;
 
     #region 物体待机相关动画
     public enum IdleAnimType
@@ -348,32 +147,7 @@ public partial class MapObject : MapItem
         }
     }
 
-    /// <summary>
-    /// 是否是箱子
-    /// </summary>
-    public bool IsChest
-    {
-        get
-        {
-            return (this.ObjectType == OBJECT_TYPE_FREE_CHEST ||
-                this.ObjectType == OBJECT_TYPE_SHOP_CHEST_A ||
-                this.ObjectType == OBJECT_TYPE_SHOP_CHEST_B ||
-                this.ObjectType == OBJECT_TYPE_SHOP_CHEST_C ||
-                this.ObjectType == OBJECT_TYPE_SHOP_CHEST_D ||
-                this.ObjectType == OBJECT_TYPE_SHOP_CHEST_E ||
-                this.ObjectType == OBJECT_TYPE_GRIMM_CHEST ||
-                this.ObjectType == OBJECT_TYPE_CHAPTER_CHEST ||
-                this.ObjectType == OBJECT_TYPE_DAILY_CHEST ||
-                this.ObjectType == OBJECT_TYPE_PLUNDER_CHEST ||
-
-                this.ObjectType == OBJECT_TYPE_EGG_CHEST_1 ||
-                this.ObjectType == OBJECT_TYPE_EGG_CHEST_2 ||
-                this.ObjectType == OBJECT_TYPE_EGG_GROUP_CHEST_1 ||
-                this.ObjectType == OBJECT_TYPE_EGG_GROUP_CHEST_2 ||
-                this.ObjectType == OBJECT_TYPE_EGG_GROUP_CHEST_3 ||
-                this.ObjectType == OBJECT_TYPE_MYSTERIOUS_CHEST);
-        }
-    }
+    
     /// <summary>
     /// 是否为怪兽
     /// </summary>
@@ -384,13 +158,7 @@ public partial class MapObject : MapItem
             return false;
         }
     }
-    /// <summary>
-    /// 是否为敌怪
-    /// </summary>
-    public bool IsZombies
-    {
-        get { return ObjectType == OBJECT_TYPE_EVIL_MONSTER; }
-    }
+  
   
     /// <summary>
     /// 是否为地面物体
@@ -617,99 +385,6 @@ public partial class MapObject : MapItem
 
         
     }
-
-    #region Idle状态相关
-
-    public void IdleStatusEnter()
-    {
-        ResetIdleTimer();
-        targetObject = null;
-        SetPlayerOperateTag(false);
-        SetDoubleClickTag(false);
-        PlayIdleAnimation();
-    }
-
-    public void IdleStatusUpdate()
-    {
-        Assert.IsNull(targetObject, "TargetObject should be null");
-        if (IsMonster)
-        {
-            MonsterAutonomousBehaviour();
-        }
-        else if (ObjectType == OBJECT_TYPE_EVIL_MONSTER)
-        {
-            ZombiesMonsterAutonomousBehaviour();
-        }
-    }
-
-    private void MonsterAutonomousBehaviour()
-    {
-        ////大本营模式与关卡模式AI行为
-        //if (GlobalVariable.GameState == GameState.MainSceneMode)
-        //{
-        //    BaseCampAI();
-        //}
-        //else if (GlobalVariable.GameState == GameState.LevelModel)
-        //{
-        //    LevelModeAI();
-        //}
-        //else if (GlobalVariable.GameState == GameState.PlunderMode)
-        //{
-        //    MapMgr.MonsterAIForPlunder(this);
-        //}
-    }
-
-    private void ZombiesMonsterAutonomousBehaviour()
-    {
-        idleTimer += Time.deltaTime;
-        if (idleTimer >= idleMoment)
-        {
-            ResetIdleTimer();
-            //MapMgr.ZombieAIForLevel(this);
-        }
-    }
-
-    private void BaseCampAI()
-    {
-        idleTimer += Time.deltaTime;
-        if (idleTimer >= idleMoment)
-        {
-            ResetIdleTimer();
-            //MapMgr.MonsterAIForBasecamp(this);
-        }
-    }
-
-    private void LevelModeAI()
-    {
-        idleTimer += Time.deltaTime;
-        if (idleTimer >= idleMoment)
-        {
-            ResetIdleTimer();
-            //MapMgr.MonsterAIForChapter(this);
-        }
-    }
-
-    private void ResetIdleTimer()
-    {
-        idleTimer = 0;
-        idleMoment = UnityEngine.Random.Range(2.5f, 5.5f);
-    }
-
-    public void IdleStatusQuit()
-    {
-        
-    }
-
-    public void SwitchStatusToIdle()
-    {
-        //if (collectArticleMapObject != null)
-        //{
-        //    UnloadingCollectObject(transform.position);
-        //}
-        //SwitchStatus(StatusName.Idle);
-    }
-
-    #endregion
 
     #region Drag状态相关
 
