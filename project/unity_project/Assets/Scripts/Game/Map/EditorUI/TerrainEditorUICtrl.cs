@@ -41,7 +41,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
 	[SerializeField]
 	private VegetationData currentSelectVegetationItemData = null;
 
-
 	public VegetationData CurrentSelectVegetationItemData
 	{
 		get {
@@ -56,12 +55,11 @@ public class TerrainEditorUICtrl : MonoBehaviour
     public Text vegetationText;   
     #endregion
     private TerrainEditorVegetation currentSelectVegetationItem;
-    private TileMap currentSelectTileMap;
     private ScriptableTile currentScriptableTile;
     private EditorType editorType = EditorType.Level;
     private EditoryLayoutType layoutType = EditoryLayoutType.Vegetation;
     private BrushStyle brushStyle = BrushStyle.None;
-    private bool isBoxUp = false;
+    
     private List<Point> region = new List<Point>();
     private List<MapGridGameData> mapDataList = new List<MapGridGameData>();
     private int mapWidth = 100;
@@ -73,10 +71,9 @@ public class TerrainEditorUICtrl : MonoBehaviour
 #endif
     private Point lastGridPoint;
     private Point startPoint;
-    private bool isChangePoint = false;
     private Point lineGridPoint;
+
     private bool clickIsRmove = true;
-    private Dictionary<TileMap, bool> tileMapActiveSelfDict = new Dictionary<TileMap, bool>();
     private bool isBrush = false;
 
     public static bool IsEditor
@@ -97,11 +94,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
         CameraGestureMgr.Instance.Init(5, new Rect(-5000, -5000, 10000, 10000));
         TableDataEventMgr.BindAllEvent();
 
-        //foreach (UGUISpriteAtlas atl in terrainAtlas)
-        //{
-        //    atl.Init();
-        //}
-
         editInterface.Event_BrushStyleChange += DropDownSelectChange;
         editInterface.Event_SaveEditor += SaveEdiotr;
 
@@ -115,13 +107,8 @@ public class TerrainEditorUICtrl : MonoBehaviour
 
         vegetationRenderer.OnRenderTile += OnVegetationRederTile;
 
-        //foreach (UGUISpriteAtlas a in atlas)
-        //{
-        //    a.Init();
-        //}
         ExitEditor();
         ShowTipText("来测试一下");
-
 		LoadEditor ();
 	}
 
@@ -179,75 +166,37 @@ public class TerrainEditorUICtrl : MonoBehaviour
 
     private void Update()
     {
-
         if (EventSystem.current.IsPointerOverGameObject())
         {
             return;
         }
-        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
-        {
-            isChangePoint = true;
-            if (Input.GetMouseButton(0))
-            {
-                clickIsRmove = false;
-            }
-            else if (Input.GetMouseButton(1))
-            {
-                clickIsRmove = true;
-            }
-        }
+     
         if (brushStyle == BrushStyle.BoxUp)
         {
-            isChangePoint = false;
             return;
         }
 
         Point tmpGridPoint = vegetationMap.WorldPosition2Coordinate(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
-//        if (lineGridPoint != tmpGridPoint)
-//        {
-			MapUtil.Instance.tran.position = vegetationMap.Coordinate2WorldPosition(tmpGridPoint);
-			if (vegetationMap.IsInBounds(tmpGridPoint) && mapDataList.Count > 0)
-            {
-                MapGridGameData data = mapDataList[tmpGridPoint.y + tmpGridPoint.x * mapHeight];
+		MapUtil.Instance.tran.position = vegetationMap.Coordinate2WorldPosition(tmpGridPoint);
+		if (vegetationMap.IsInBounds(tmpGridPoint) && mapDataList.Count > 0)
+        {
+            MapGridGameData data = mapDataList[tmpGridPoint.y + tmpGridPoint.x * mapHeight];
               
-
-                if (data.hasVegetation != 0)
-                {
-                    GameObject go = vegetationRenderer.GetTileGameObject(data.x, data.y);
-                    if (go != null)
-                    {
-                        MapObject obj = go.GetComponent<MapObject>();
-                        vegetationText.text = string.Format("草地: {0} 色:{1}饱:{2}亮:{3}", data.hasVegetation,
-                            obj.mpb.GetFloat("_Hue"), obj.mpb.GetFloat("_Saturation"), obj.mpb.GetFloat("_Value"));
-                    }
-                }
-                else
-                {
-                    vegetationText.text = string.Format("草地: {0}", "没有草地");
-                }
-
-              
-//            }	
-
-           
-
-            if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+            if (data.hasVegetation != 0)
             {
-                if (isChangePoint && IsEditor)
+                GameObject go = vegetationRenderer.GetTileGameObject(data.x, data.y);
+                if (go != null)
                 {
-                    if (currentSelectTileMap && brushStyle == BrushStyle.None)
-                    {
-                        lineGridPoint = tmpGridPoint;
-
-                        region = GetRegion(lineGridPoint);
-                        isBrush = true;
-                        BrushTile();
-                        isBrush = false;
-                    }
+                    MapObject obj = go.GetComponent<MapObject>();
+                    vegetationText.text = string.Format("草地: {0} 色:{1}饱:{2}亮:{3}", data.hasVegetation,
+                        obj.mpb.GetFloat("_Hue"), obj.mpb.GetFloat("_Saturation"), obj.mpb.GetFloat("_Value"));
                 }
             }
-
+            else
+            {
+                vegetationText.text = string.Format("草地: {0}", "没有草地");
+            }
         }
     }
 
@@ -262,13 +211,9 @@ public class TerrainEditorUICtrl : MonoBehaviour
         if (editInterface.gameObject.activeSelf)
         {
             MapUtil.Instance.EnableDraw();
-            vegetationMap.gameObject.SetActive(tileMapActiveSelfDict[vegetationMap]);
         }
         else
         {
-            tileMapActiveSelfDict.Clear();
-            tileMapActiveSelfDict.Add(vegetationMap, vegetationMap.gameObject.activeSelf);
-            vegetationMap.gameObject.SetActive(true);
             MapUtil.Instance.DisableDraw();
         }
     }
@@ -310,14 +255,11 @@ public class TerrainEditorUICtrl : MonoBehaviour
         return region;
     }
 		
-
     private void OnExitButtonClick()
     {
         vegetationMap.gameObject.SetActive(true);
 
         vegetationMap.CompleteReset();
-
-        vegetationMap.gameObject.SetActive(false);
 
         ExitEditor();
 		SceneManager.LoadScene (0);
@@ -326,29 +268,29 @@ public class TerrainEditorUICtrl : MonoBehaviour
     public void DragStart()
     {
         Debug.Log("编辑开始");
-        isChangePoint = false;
+
         startPoint = new Point(-1, -1);
         lastGridPoint = new Point(-1, -2);
         lineGridPoint = startPoint;
+        clickIsRmove = Input.GetMouseButton(1) ? true : false;
 
         if (brushStyle == BrushStyle.BoxUp)
         {
 			startPoint = vegetationMap.WorldPosition2Coordinate(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-            isBoxUp = Input.GetMouseButton(1) ? true : false;
         }
     }
 
     public void Drag()
     {
-        Point curPoint = currentSelectTileMap.WorldPosition2Coordinate(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        Point curPoint = vegetationMap.WorldPosition2Coordinate(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         if (lineGridPoint != curPoint)
         {
             lineGridPoint = curPoint;
 			MapUtil.Instance.tran.position = vegetationMap.Coordinate2WorldPosition(curPoint);
 
-            if (currentSelectTileMap && brushStyle == BrushStyle.None)
+            if ( brushStyle == BrushStyle.None)
             {
-                Point point = currentSelectTileMap.WorldPosition2Coordinate(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                Point point = vegetationMap.WorldPosition2Coordinate(Camera.main.ScreenToWorldPoint(Input.mousePosition));
                 if (lastGridPoint == point) return;
                 lastGridPoint = point;
                 region = GetRegion(point);
@@ -356,10 +298,9 @@ public class TerrainEditorUICtrl : MonoBehaviour
                 BrushTile();
                 isBrush = false;
             }
-
-            if (currentSelectTileMap && brushStyle == BrushStyle.BoxUp)
+            else if (brushStyle == BrushStyle.BoxUp)
             {
-                Point point = currentSelectTileMap.WorldPosition2Coordinate(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                Point point = vegetationMap.WorldPosition2Coordinate(Camera.main.ScreenToWorldPoint(Input.mousePosition));
                 GetRegion(point, point);
             }
         }
@@ -368,16 +309,15 @@ public class TerrainEditorUICtrl : MonoBehaviour
     public void DragEnd()
     {
         Debug.Log("编辑结束");
-        if (currentSelectTileMap && brushStyle == BrushStyle.BoxUp)
+        if (brushStyle == BrushStyle.BoxUp)
         {
-            Point point = currentSelectTileMap.WorldPosition2Coordinate(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            Point point = vegetationMap.WorldPosition2Coordinate(Camera.main.ScreenToWorldPoint(Input.mousePosition));
             if (lastGridPoint == point) return;
             lastGridPoint = point;
             region = GetRegion(point, point);
             isBrush = true;
             BrushTile();
             isBrush = false;
-            isChangePoint = false;
             MapUtil.Instance.ClearLineList();
         }
     }
@@ -386,14 +326,14 @@ public class TerrainEditorUICtrl : MonoBehaviour
     {
         if (clickIsRmove == false)
         {
-            if (currentSelectTileMap == null || CurrentSelectVegetationItemData == null)
+            if (CurrentSelectVegetationItemData == null)
             {
                 return;
             }
         }
         ScriptableTile tmpTile = currentScriptableTile;
 
-        if (isBoxUp || Input.GetMouseButton(1) || isChangePoint && clickIsRmove)
+        if (clickIsRmove)
         {
             tmpTile = null;
         }
@@ -407,8 +347,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
                 continue;
             }
          
-        
-          
             int index = offsetPoint.y + offsetPoint.x * mapHeight;
             switch (layoutType)
             {
@@ -416,6 +354,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
                     if (tmpTile == null)
                     {
                         mapDataList[index].hasVegetation = 0;
+                        mapDataList[index].vegetationHue = 0;
                     }
                     else
                     {
@@ -424,12 +363,11 @@ public class TerrainEditorUICtrl : MonoBehaviour
                     }
                     break;
             }
-            currentSelectTileMap.SetTileAndUpdateNeighbours(offsetPoint, tmpTile);
+            vegetationMap.SetTileAndUpdateNeighbours(offsetPoint, tmpTile);
 
 
             SetAdjacentMat(offsetPoint);
         }
-        isChangePoint = false;
         lineGridPoint = new Point(-1, -1);
     }
 
@@ -444,14 +382,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
         currentSelectVegetationItemData = item.Data;
         currentSelectVegetationItem = item;
         currentSelectVegetationItem.IsSelect = true;
-        if (item != null)
-        {
-            currentScriptableTile = vegetationTile;
-        }
-        else
-        {
-            currentScriptableTile = null;
-        }
     }
 		
     private void DropDownSelectChange(DropDownSelectType type, string name)
@@ -471,7 +401,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
         }
     }
 		
-
     private void IsEditorToggleValueChange(bool arg0)
     {
 		layoutType = EditoryLayoutType.Vegetation;
@@ -480,11 +409,8 @@ public class TerrainEditorUICtrl : MonoBehaviour
         {
             FingerMgr.Instance.fingerMgrOperation = FingerMgrOperation.OperationObject;
 		
-
             if (layoutType == EditoryLayoutType.Vegetation)
             {
-
-				currentSelectTileMap = vegetationMap;
 				currentScriptableTile = vegetationTile;
                 editInterface.EnableVegetationSelect();
             }
@@ -494,7 +420,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
             FingerMgr.Instance.fingerMgrOperation = FingerMgrOperation.None;
           	if (layoutType == EditoryLayoutType.Vegetation)
             {
-				currentSelectTileMap = null;
 				currentScriptableTile = null;
                 editInterface.DisableVegetationSelect();
             }

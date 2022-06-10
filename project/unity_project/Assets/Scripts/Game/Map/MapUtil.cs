@@ -13,7 +13,6 @@ namespace Universal.TileMapping
         public VectorLine newLine;
         public VectorLine listLine;
         public Transform tran;
-        Vector3 pos;
 
         private void Start()
         {
