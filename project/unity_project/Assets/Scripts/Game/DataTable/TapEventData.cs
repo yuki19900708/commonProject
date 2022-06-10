@@ -24,16 +24,12 @@ public class TapEventData
     /// <summary>UI展示奖励</summary>
     public int showReward;
     /// <summary>主要产出列表</summary>
-    public OutputData mainOutputList;
     /// <summary>主要产出数量</summary>
     public int[] mainOutputCount;
     /// <summary>其他产出列表</summary>
-    public OutputData otherOutputList;
     /// <summary>其他产出数量</summary>
     public int[] otherOutputCount;
-    /// <summary>额外产出列表</summary>
-    public OutputData extraOutputList;
-    /// <summary>额外产出概率</summary>
+    /// <summary>额外产出列表</summary>    /// <summary>额外产出概率</summary>
     public int extraOutputRate;
     /// <summary>有效点击次数</summary>
     public int[] clickTimes;

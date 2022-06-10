@@ -76,9 +76,8 @@ public class MapObjectData
     /// <summary>可脱离网格</summary>
     public bool detachGrid;
     /// <summary>存活时间</summary>
-    public int[] liveTime;
-    /// <summary>死亡产出</summary>
-    public OutputData deadOutput;
+    public int[] liveTime; 
+
     /// <summary>点击特效</summary>
     public int clickParticle;
     /// <summary>死亡动画</summary>

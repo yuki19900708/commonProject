@@ -8,7 +8,6 @@ public class HarvestEventData
     /// <summary>同时采集数</summary>
     public int harvestAtSameTime;
     /// <summary>采集产出</summary>
-    public OutputData outputItems;
     /// <summary>采集时间</summary>
     public int time;
     /// <summary>充能时间</summary>

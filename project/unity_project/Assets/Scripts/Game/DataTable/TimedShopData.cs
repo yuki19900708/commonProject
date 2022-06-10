@@ -6,7 +6,6 @@ public class TimedShopData
     /// <summary>商品编号</summary>
     public int id;
     /// <summary>物件编号</summary>
-    public OutputData items;
     /// <summary>位置</summary>
     public int pos;
     /// <summary>权重</summary>

@@ -760,7 +760,6 @@ public partial class MapMgr
     {
         if (PlayerProfile.LoadFristLoadBaseCamp() == 0)
         {
-            TDGAModel.UserDefineEvent(SelfEvent.FRIST_LOAD_BASE_CAMP);
             PlayerProfile.SaveFristLoadBaseCamp(1);
         }
 
@@ -985,7 +984,6 @@ public partial class MapMgr
 
         if (PlayerProfile.LoadFristLoadBaseCamp() == 1)
         {
-            TDGAModel.UserDefineEvent(SelfEvent.FIRST_END_BASECAMP_LOAD_INTERFACE);
             PlayerProfile.SaveFristLoadBaseCamp(2);
         }
 

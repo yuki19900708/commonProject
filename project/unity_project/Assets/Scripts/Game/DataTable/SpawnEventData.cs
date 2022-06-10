@@ -6,7 +6,6 @@ public class SpawnEventData
     /// <summary>ID</summary>
     public int id;
     /// <summary>产出列表</summary>
-    public OutputData outputItems;
     /// <summary>产出数量</summary>
     public int[] count;
     /// <summary>衍生循环充能次数</summary>

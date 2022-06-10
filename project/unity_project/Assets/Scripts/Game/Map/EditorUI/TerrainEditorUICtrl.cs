@@ -30,11 +30,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
 
     public TerrainEditorContentEditorInterface editInterface;
 
-
-//    public TileMap terrainMap;
-//    public ScriptableTile terrainTile;
-//    public TileGameObjectRenderer terrainRenderer;
-
     public TileMap vegetationMap;
     public ScriptableTile vegetationTile;
     public TileGameObjectRenderer vegetationRenderer;
@@ -60,9 +55,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
 
     #region 界面新增提示
     public Text mousePosText;
-    public Text terrainText;
-    public Text vegetationText;
-    public Text entityText;
+    public Text vegetationText;   
     #endregion
     private TerrainEditorVegetation currentSelectVegetationItem;
     private TileMap currentSelectTileMap;
@@ -102,8 +95,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
 	}
 			
 	public void Init()
-    {
-        
+    {        
         CameraGestureMgr.Instance.Init(5, new Rect(-5000, -5000, 10000, 10000));
         TableDataEventMgr.BindAllEvent();
 
@@ -138,51 +130,36 @@ public class TerrainEditorUICtrl : MonoBehaviour
     private void SetAdjacentMat(Point point)
     {
         if (isBrush == false) return;
-        //if (layoutType != EditoryLayoutType.Purification)
+        
+        List<Point> pointList = new List<Point>();
+        pointList.Add(point);
+        pointList.Add(point.Up);
+        pointList.Add(point.Down);
+        pointList.Add(point.Left);
+        pointList.Add(point.Right);
+        pointList.Add(point.UpLeft);
+        pointList.Add(point.UpRight);
+        pointList.Add(point.DownLeft);
+        pointList.Add(point.DownRight);
+        for (int i = 0; i < pointList.Count; i++)
         {
-            List<Point> pointList = new List<Point>();
-            pointList.Add(point);
-            pointList.Add(point.Up);
-            pointList.Add(point.Down);
-            pointList.Add(point.Left);
-            pointList.Add(point.Right);
-            pointList.Add(point.UpLeft);
-            pointList.Add(point.UpRight);
-            pointList.Add(point.DownLeft);
-            pointList.Add(point.DownRight);
-            for (int i = 0; i < pointList.Count; i++)
+            if (vegetationMap.IsInBounds(pointList[i]))
             {
-                if (vegetationMap.IsInBounds(pointList[i]))
+                int index = pointList[i].y + pointList[i].x * mapHeight;
+
+                if (vegetationRenderer.GetTileGameObject(pointList[i].x, pointList[i].y) != null)
                 {
-                    int index = pointList[i].y + pointList[i].x * mapHeight;
-
-                    if (vegetationRenderer.GetTileGameObject(pointList[i].x, pointList[i].y) != null)
+                    MapObject mapObject;
+                    MapGridGameData data = mapDataList[index];
+                    if (data.hasVegetation > 0)
                     {
-                        //    GameObject gameObject = objectRenderer.GetTileGameObject(pointList[i].x, pointList[i].y);
-                        MapObject mapObject;
-                        //    if (gameObject != null)
-                        //    {
-                        //        mapObject = gameObject.GetComponent<MapObject>();
-                        //        mapObject.DisplayAsUnLockAndCured();
-                        //    }
-
-                        //    gameObject = terrainRenderer.GetTileGameObject(pointList[i].x, pointList[i].y);
-                        //    if (gameObject != null)
-                        //    {
-                        //        mapObject = gameObject.GetComponent<MapObject>();
-                        //        mapObject.DisplayAsUnLockAndCured();
-                        //    }
-
-                        MapGridGameData data = mapDataList[index];
-                        if (data.hasVegetation > 0)
-                        {
-                            mapObject = vegetationRenderer.GetTileGameObject(pointList[i].x, pointList[i].y).GetComponent<MapObject>();
-                            mapObject.DisplayAsUnLockAndCured();
-                        }
+                        mapObject = vegetationRenderer.GetTileGameObject(pointList[i].x, pointList[i].y).GetComponent<MapObject>();
+                        mapObject.DisplayAsUnLockAndCured();
                     }
                 }
             }
         }
+        
     }
 
     private void OnVegetationRederTile(int x, int y, GameObject go)
@@ -235,7 +212,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
                         vegetationText.text = string.Format("草地: {0} 色:{1}饱:{2}亮:{3}", data.hasVegetation,
                             obj.mpb.GetFloat("_Hue"), obj.mpb.GetFloat("_Saturation"), obj.mpb.GetFloat("_Value"));
                     }
-                //ShowVegetationMatInfo(vegetationRenderer.GetTileGameObject(tmpGridPoint.x, tmpGridPoint.y));
                 }
                 else
                 {
@@ -409,10 +385,13 @@ public class TerrainEditorUICtrl : MonoBehaviour
 
     public void BrushTile()
     {
-
-		if (currentSelectTileMap == null || CurrentSelectVegetationItemData == null) {
-			return;
-		}
+        if (clickIsRmove == false)
+        {
+            if (currentSelectTileMap == null || CurrentSelectVegetationItemData == null)
+            {
+                return;
+            }
+        }
         ScriptableTile tmpTile = currentScriptableTile;
 
         if (isBoxUp || Input.GetMouseButton(1) || isChangePoint && clickIsRmove)

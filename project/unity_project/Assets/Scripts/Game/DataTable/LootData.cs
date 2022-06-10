@@ -6,7 +6,6 @@ public class LootData
     /// <summary>序号</summary>
     public int id;
     /// <summary>产出列表</summary>
-    public OutputData outputItems;
 
 
     public LootData Clone()

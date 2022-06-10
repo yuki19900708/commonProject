@@ -14,13 +14,11 @@ public class DailyTransactionData
     /// <summary>索要数量</summary>
     public int[] needCount;
     /// <summary>回馈物件</summary>
-    public OutputData rewardItems;
     /// <summary>回馈数量</summary>
     public int rewardCount;
     /// <summary>额外奖励几率</summary>
     public int extraRewardRate;
     /// <summary>额外奖励物件</summary>
-    public OutputData extraRewardItem;
     /// <summary>额外奖励数量</summary>
     public int extraRewardCount;
 

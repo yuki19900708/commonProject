@@ -28,7 +28,6 @@ public class TaskData
     /// <summary>跳过成本</summary>
     public int skipNeed;
     /// <summary>任务奖励</summary>
-    public OutputData reward;
     /// <summary>任务ICON</summary>
     public string taskIcon;
     /// <summary>描述文本</summary>

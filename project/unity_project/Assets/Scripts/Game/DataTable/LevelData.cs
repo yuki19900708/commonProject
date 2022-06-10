@@ -27,24 +27,9 @@ public class LevelData
     public int[] challengeReward;
     /// <summary>宝箱列表</summary>
     public int[] chestList;
-    /// <summary>免费掉落1</summary>
-    public OutputData freeReward1;
-    /// <summary>免费掉落2</summary>
-    public OutputData freeReward2;
-    /// <summary>付费掉落1</summary>
-    public OutputData payReward1;
-    /// <summary>付费掉落2</summary>
-    public OutputData payReward2;
-    /// <summary>付费掉落3</summary>
-    public OutputData payReward3;
-    /// <summary>付费掉落4</summary>
-    public OutputData payReward4;
-    /// <summary>付费掉落5</summary>
-    public OutputData payReward5;
     /// <summary>奖励展示</summary>
     public int[] rewardShow;
     /// <summary>风产出列表</summary>
-    public OutputData windItems;
     /// <summary>风产出速度</summary>
     public float[] windOutputSpeed;
     /// <summary>产出物间隔</summary>
@@ -68,7 +53,6 @@ public class LevelData
     /// <summary>阶段奖励</summary>
     public int stageReward;
     /// <summary>结算衍生</summary>
-    public OutputData levelSpawn;
     /// <summary>关卡图标</summary>
     public string imagePath;
     /// <summary>魔物关卡</summary>
