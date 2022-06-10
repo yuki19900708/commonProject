@@ -236,4 +236,44 @@ public partial class MapMgr : MonoBehaviour
         vfx.transform.position = v3;
         return vfx;
     }
+
+    /// <summary>地图的宽</summary>
+    public static int mapWidth = 35;
+    /// <summary>地图的高</summary>
+    public static int mapHeight = 35;
+
+    /// <summary>
+    /// 当前地图上所有格子的数据  
+    /// </summary>
+    private MapGrid[,] mapGrid;
+
+    /// <summary>
+    /// 草皮绘制完毕后的回调
+    /// </summary>
+    /// <param name="x"></param>
+    /// <param name="y"></param>
+    /// <param name="go"></param>
+    private void VegetationOnRenderTile(int x, int y, GameObject go)
+    {
+        if (mapGrid != null && mapGrid[x, y] != null)
+        {
+            if (go != null)
+            {
+                mapGrid[x, y].Vegetation = go.GetComponent<MapObject>();
+                mapGrid[x, y].Vegetation.StaticPos = mapGrid[x, y].point;
+                mapGrid[x, y].Vegetation.StaticMapGridList.Clear();
+                mapGrid[x, y].Vegetation.StaticMapGridList.Add(mapGrid[x, y]);
+                vegetationRenderer.ReOrder(x, y, go);
+            }
+            else
+            {
+                if (mapGrid[x, y].Vegetation != null)
+                {
+                    mapGrid[x, y].Vegetation.StaticMapGridList.Clear();
+                    mapGrid[x, y].Vegetation = null;
+                }
+            }
+        }
+    }
+
 }

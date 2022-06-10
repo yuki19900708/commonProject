@@ -6,7 +6,7 @@ using System;
 /// <summary>
 /// 物体拖动控制
 /// </summary>
-public class DragObjectMgr : BindableMonoBehaviour
+public class DragObjectMgr : MonoBehaviour
 {
     public static DragObjectMgr Instance;
     public const float CHECK_DISTANCE = 0.35F;
