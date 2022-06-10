@@ -473,7 +473,6 @@ public partial class MapMgr
     {
         //ClearSealLockMapGridEffect();
         //TipFlyMgr.ClearAllTipFly();
-        CommonObjectMgr.ClearTip();
         //VFXMgr.Clear();
 
         if (Instance.mapGrid == null)
