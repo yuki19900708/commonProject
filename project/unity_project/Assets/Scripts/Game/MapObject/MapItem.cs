@@ -74,14 +74,9 @@ public class MapItem : MonoBehaviour, ITileIndexSetter
                 if (spName.Contains(GRASS))
                 {
                     spName = spName.Replace(GRASS, prefix);
-                    if (EditorTerrainModel.TerrainEditorModel.IsRunMapEditor)
-                    {
-                        re.sprite = TerrainEditorUICtrl.GetSprite(spName, re.sprite);
-                    }
-                    else
-                    {
-                        re.sprite = UGUISpriteAtlasMgr.LoadSprite(spName);
-                    }
+                    Debug.LogError(spName);
+                    re.sprite = UGUISpriteAtlasMgr.LoadSprite(spName);
+
                     continue;
                 }
 

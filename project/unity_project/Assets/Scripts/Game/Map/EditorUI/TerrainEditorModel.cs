@@ -80,64 +80,15 @@ namespace EditorTerrainModel
                 isRunMapEditor = value;
             }
         }
-
-        public static string[] loadPrefabNames = new string[]
-        {
-            "关卡选择",
-        };
-
-    
 	
         private static List<VegetationData> allVegetationElements;
-
-        private static List<MapObjectData> allObjectElements;
-
-        private static string[] purificationElements;
-
-        private static string[] sealLockElements;
-
-        public static string[] SealLockElements
-        {
-            get
-            {
-                if (sealLockElements == null)
-                {
-                    List<string> list = new List<string>();
-                    List<MapUnlockData> data = TableDataMgr.GetAllMapUnlockDatas();
-                    for (int i = 0; i < data.Count; i++)
-                    {
-                        list.Add(data[i].id.ToString());
-                    }
-                    sealLockElements = list.ToArray();
-                }
-                return sealLockElements;
-            }
-        }
 
         public static string[] brushStyleElements = new string[]
         {
             "正常",
             "拉涂",
         };
-
-        public static string[] PurificationElements
-        {
-            get
-            {
-                if (purificationElements == null)
-                {
-                    List<string> list = new List<string>();
-                    List<DeadLandData> data = TableDataMgr.GetAllDeadLandDatas();
-                    for (int i = 0; i < data.Count; i++)
-                    {
-                        list.Add(data[i].id.ToString());
-                    }
-                    purificationElements = list.ToArray();
-                }
-                return purificationElements;
-            }
-        }
-
+       
         public static List<VegetationData> AllVegetationElements
         {
             get
@@ -147,18 +98,6 @@ namespace EditorTerrainModel
                     allVegetationElements = TableDataMgr.GetAllVegetationDatas();
                 }
                 return allVegetationElements;
-            }
-        }
-
-        public static List<MapObjectData> AllOjbectElements
-        {
-            get
-            {
-                if (allObjectElements == null)
-                {
-                    allObjectElements = TableDataMgr.GetAllMapObjectDatas();
-                }
-                return allObjectElements;
             }
         }
 
@@ -174,54 +113,5 @@ namespace EditorTerrainModel
             return optionData;
         }
 
-        public static List<Dropdown.OptionData> GetObjectElementsDropDownOptionData(int index)
-        {
-         
-            List<string> list = new List<string>();
-            for (int i = 0; i < AllOjbectElements.Count; i++)
-            {
-                if (AllOjbectElements[i].illustration == index)
-                {
-                    string s = "";
-                     if (TableDataMgr.TextDataTable == null)
-                    {
-                        s = "";
-                    }
-                    if (TableDataMgr.GetSingleTextData(AllOjbectElements[i].describe) == null)
-                    {
-                        s = "";
-                    }
-                   
-                    s = TableDataMgr.GetSingleTextData(AllOjbectElements[i].describe).CN;
-
-                    list.Add(s);
-                }
-            }
-            return GetTerrainEditorDropDownOptionData(list.ToArray());
-        }
-
-        public static MapObjectData GetObjectInfoTabelByDescribe(string describe)
-        {
-            for (int i = 0; i < AllOjbectElements.Count; i++)
-            {
-                if (AllOjbectElements[i].describe == GetTextTableDataByDes(describe).id)
-                {
-                    return AllOjbectElements[i];
-                }
-            }
-            return null;
-        }
-
-        public static TextData GetTextTableDataByDes(string des)
-        {
-            for (int i = 0; i < TableDataMgr.GetAllTextDatas().Count; i++)
-            {
-                if (TableDataMgr.GetAllTextDatas()[i].CN == des)
-                {
-                    return TableDataMgr.GetAllTextDatas()[i];
-                }
-            }
-            return null;
-        }
     }
 }

@@ -25,7 +25,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
     public static string PATH;
     public static string Suffix = ".xlsx";
 
-    public UGUISpriteAtlas[] terrainAtlas;
     public Button exitButton;
 
     public TerrainEditorContentEditorInterface editInterface;
@@ -35,7 +34,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
     public TileGameObjectRenderer vegetationRenderer;
    
     public Toggle isEditorToggle;
-    public UGUISpriteAtlas[] atlas;
 
     public Text tipText;
     public Button previewButton;
@@ -99,10 +97,10 @@ public class TerrainEditorUICtrl : MonoBehaviour
         CameraGestureMgr.Instance.Init(5, new Rect(-5000, -5000, 10000, 10000));
         TableDataEventMgr.BindAllEvent();
 
-        foreach (UGUISpriteAtlas atl in terrainAtlas)
-        {
-            atl.Init();
-        }
+        //foreach (UGUISpriteAtlas atl in terrainAtlas)
+        //{
+        //    atl.Init();
+        //}
 
         editInterface.Event_BrushStyleChange += DropDownSelectChange;
         editInterface.Event_SaveEditor += SaveEdiotr;
@@ -117,10 +115,10 @@ public class TerrainEditorUICtrl : MonoBehaviour
 
         vegetationRenderer.OnRenderTile += OnVegetationRederTile;
 
-        foreach (UGUISpriteAtlas a in atlas)
-        {
-            a.Init();
-        }
+        //foreach (UGUISpriteAtlas a in atlas)
+        //{
+        //    a.Init();
+        //}
         ExitEditor();
         ShowTipText("来测试一下");
 
@@ -712,28 +710,5 @@ public class TerrainEditorUICtrl : MonoBehaviour
 #endif
     }
 
-    public static Sprite GetSprite(string spriteName, Sprite sp)
-    {
-        foreach (UGUISpriteAtlas atl in Instance.terrainAtlas)
-        {
-            if (atl.spriteDict.ContainsKey(spriteName))
-            {
-                return atl.spriteDict[spriteName];
-            }
-        }
-        return sp;
-    }
 
-
-    public Sprite GetSpriteByName(string name)
-    {
-        foreach (UGUISpriteAtlas atl in atlas)
-        {
-            if (atl.spriteDict.ContainsKey(name))
-            {
-                return atl.spriteDict[name];
-            }
-        }
-        return null;
-    }
 }
