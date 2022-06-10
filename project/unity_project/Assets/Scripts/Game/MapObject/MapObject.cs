@@ -387,7 +387,6 @@ public partial class MapObject : MapItem
     /// 当前能否被操作 （主要用于飞翔的神圣粒子，与龙采集成功挂载的物体）
     /// </summary>
     private bool isCanBeSelected = true;
-    private bool isSelected = false;
     private bool isDraged = false;
     /// <summary>
     /// 是否时间静止
@@ -461,35 +460,6 @@ public partial class MapObject : MapItem
     public MapObjectData BasicData { get { return basicData; } }
 
     public bool IsPlayerOperate { get { return isPlayerOperate; } }
-
-    public bool IsSelected
-    {
-        get
-        {
-            return isSelected;
-        }
-        set
-        {
-            isSelected = value;
-            //if (currentStatus.Name != StatusName.AttackFront
-            //    && currentStatus.Name != StatusName.AttackAnimation
-            //    && currentStatus.Name != StatusName.ShootWait
-            //    && currentStatus.Name != StatusName.DeadAnimationStatus
-            //    && currentStatus.Name != StatusName.DeadStatus
-            //    && CurrentStatus.Name != StatusName.EnterHomeAnimation
-            //    && CurrentStatus.Name != StatusName.QuitHomeAnimation)
-            //{
-            //    if (isSelected)
-            //    {
-            //        SwitchStatus(StatusName.Select);
-            //    }
-            //    else
-            //    {
-            //        SwitchStatus(StatusName.Idle);
-            //    }
-            //}
-        }
-    }
 
     public bool IsDraged
     {
@@ -1213,11 +1183,9 @@ public partial class MapObject : MapItem
     /// </summary>
     public void ReturnPoolClearAssociation()
     {
-        isSelected = false;
         isDraged = false;
         isPlayerOperate = false;
         isDoubleClick = false;
-        isSelected = false;
         isTimeStill = false;
         transform.localScale = Vector3.one;
         //归池时将所有的物体的碰撞再次打开（被锁或者封印的地形的Collider是false）

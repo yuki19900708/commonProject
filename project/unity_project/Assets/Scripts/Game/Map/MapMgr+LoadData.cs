@@ -465,16 +465,6 @@ public partial class MapMgr
     #endregion
 
 
-    public static void ClearExtraPool()
-    {
-        //清除净化进度条的对象池预设
-        foreach (PurifyProgressbar pur in PurifyProgressbar.DisplayInfoDict.Values)
-        {
-            pur.TimerRemove();
-        }
-        PurifyProgressbar.DisplayInfoDict.Clear();
-    }
-
     /// <summary>
     /// 对大本营 - 关卡 - 或掠夺场景 进行缓存清除操作
     /// </summary>
@@ -484,7 +474,6 @@ public partial class MapMgr
         //ClearSealLockMapGridEffect();
         //TipFlyMgr.ClearAllTipFly();
         CommonObjectMgr.ClearTip();
-        ClearExtraPool();
         //VFXMgr.Clear();
 
         if (Instance.mapGrid == null)
