@@ -192,7 +192,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
             return;
         }
         MapObject mapObject = go.GetComponent<MapObject>();
-        mapObject.IsVegetation = true;
         int index = y + x * mapHeight;
         MapGridGameData data = mapDataList[index];
         mapObject.VegetationId = data.hasVegetation;

@@ -282,10 +282,9 @@ public class FingerMgr : MonoBehaviour {
             int mount = 0;
             for (int i = 0; i < a.StaticMapGridList.Count; i++)
             {
-                if (a.StaticMapGridList[i].Status == MapGridState.UnlockAndCured)
-                {
+                
                     mount++;
-                }
+                
             }
 
             if (mount == a.StaticMapGridList.Count)

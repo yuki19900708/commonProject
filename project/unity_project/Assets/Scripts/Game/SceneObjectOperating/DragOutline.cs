@@ -10,21 +10,21 @@ public class DragOutline : MonoBehaviour {
     public static Color NO_PLACE = new Color(249 / 255f, 50 / 255f, 50 / 255f, 1);
     public static Color TIP = new Color(18 / 255f, 50 / 255f, 166 / 255f, 1);
     public SpriteRenderer spriteRenderer;
-    public void Init(MapGridState state)
-    {
-        switch (state)
-        {
-            case MapGridState.UnlockAndCured:
-                spriteRenderer.sprite = UGUISpriteAtlasMgr.LoadSprite("selected_outline_square");
-                spriteRenderer.color = Color.green;
-                break;
-            case MapGridState.UnlockButDead:
-                spriteRenderer.sprite = UGUISpriteAtlasMgr.LoadSprite("selected_outline_square");
-                spriteRenderer.color = Color.red;
-                break;
-        }
-        transform.localScale = Vector3.one;
-    }
+    //public void Init(MapGridState state)
+    //{
+    //    switch (state)
+    //    {
+    //        case MapGridState.UnlockAndCured:
+    //            spriteRenderer.sprite = UGUISpriteAtlasMgr.LoadSprite("selected_outline_square");
+    //            spriteRenderer.color = Color.green;
+    //            break;
+    //        case MapGridState.UnlockButDead:
+    //            spriteRenderer.sprite = UGUISpriteAtlasMgr.LoadSprite("selected_outline_square");
+    //            spriteRenderer.color = Color.red;
+    //            break;
+    //    }
+    //    transform.localScale = Vector3.one;
+    //}
 
     public void SetSpriteColor(Color color,int orderLayer=0)
     {

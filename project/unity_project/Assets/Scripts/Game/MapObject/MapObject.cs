@@ -604,36 +604,7 @@ public partial class MapObject : MapItem
     {
         get { return ObjectType == OBJECT_TYPE_EVIL_MONSTER; }
     }
-    /// <summary>
-    /// 是否解锁并治愈
-    /// </summary>
-    public bool IsUnLocked
-    {
-        get
-        {
-            if (basicData.detachGrid == false)
-            {
-                for (int i = 0; i < StaticMapGridList.Count; i++)
-                {
-                    if (StaticMapGridList[i].Status != MapGridState.UnlockAndCured)
-                    {
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
-    }
-    /// <summary>
-    /// 是否为浮空物体
-    /// </summary>
-    public bool IsFloatingObject
-    {
-        get
-        {
-            return basicData.detachGrid;
-        }
-    }
+  
     /// <summary>
     /// 是否为地面物体
     /// </summary>
@@ -725,69 +696,6 @@ public partial class MapObject : MapItem
         //{
         //    PlayCollectAnimation();
         //}
-    }
-
-    private void Update()
-    {
-        //if (EditorTerrainModel.TerrainEditorModel.IsRunMapEditor == false && NetMgr.GetClientState() != SocketState.Connected)
-        //{
-        //    return;
-        //}
-        //在执行地图加载或者清除地图数据的时候，不在执行状态机
-        if (MapMgr.isMapInitialzeLoading || MapMgr.isMapClearing)
-        {
-            return;
-        }
-
-        if (!isTimeStill)
-        {
-            //物件表中的物品
-            if (basicData != null)
-            {
-                //if (currentStatus != null)
-                //{
-                //    currentStatus.StatusUpdate();
-                //}
-                //被建造
-                //if (ObjectType == Foundation_ObjectType)
-                //{
-                //    BeBuildUpdate();
-                //}
-                //休息建筑
-                //if (ObjectType == SleepBuilding_ObjectType)
-                //{
-                //    SleepBuildingUpdate();
-                //}
-                //ShowSpecialTime();
-            }
-        }
-
-        //如果需要开始播放待机动画  并且是物体 并且不是怪物 并且不在死地上
-        if (EditorTerrainModel.TerrainEditorModel.IsRunMapEditor == false &&
-            PlayingEnityIdleAnimation == IdleAnimType.stop && IsEntity && basicData.idleAnimation != 0 && this.IsPurified)
-        {
-            entityIdleAnimationTimer += Time.deltaTime;
-            if (entityIdleAnimationTimer >= entityIdleAnimationInterval)
-            {
-                entityIdleAnimationTimer = 0;
-                EntityIdleAnimationStart();
-                ResetEntityIdleAnimationInterval();
-            }
-        }
-
-        //更新血条位置
-        //使用bool变量而不是直接判断 hpSlider == null 是因为UnityEngine.Object对象的Equals方法在大量调用时性能较差
-        //if (showHPSlider)
-        //{
-        //    hpSlider.transform.position = hpPosition.position;
-        //}
-
-        //更新「点击」「古神的指引」位置
-        if (shouldShowGodTip)
-        {
-            SetGodTipPos();
-        }
-        //PurificationPowerUpdate();
     }
 
     #endregion
@@ -890,7 +798,7 @@ public partial class MapObject : MapItem
             if (mapObjectStatus == MAP_OBJECT_STATUS.Normal)
             {
                 //VFXMgr.PlayMapChestUnlockedVFX(this);
-                AnimMgr.PlayBreathAnimation(this.entityTransform, 1.11f, 0.5f);
+                //AnimMgr.PlayBreathAnimation(this.entityTransform, 1.11f, 0.5f);
             }
         }
 
@@ -1369,7 +1277,7 @@ public partial class MapObject : MapItem
         //点击产出清除关联
         //ClearClickOutPutTime();
         //清除净化器的信息
-        ClearPurifier();
+        //ClearPurifier();
         //清楚基础属性
         ClearObjectAttribute();
         //清除漂浮叶子关联
@@ -1378,7 +1286,7 @@ public partial class MapObject : MapItem
         //StopTrophyBallTimer();
         //清除特惠关联；
         //RecycleSpecialData();
-        RecycleBatterball();
+        //RecycleBatterball();
         HideTip();
 
         //清除特效
@@ -1752,17 +1660,17 @@ public partial class MapObject : MapItem
         switch (basicData.idleAnimation)
         {
             case 1: // 随机抖动
-                tweener = AnimMgr.PlayShakeAnimation(entityTransform, 0.5f).OnComplete(EntityIdleAnimationEnd);
+                //tweener = AnimMgr.PlayShakeAnimation(entityTransform, 0.5f).OnComplete(EntityIdleAnimationEnd);
                 break;
             case 2: // 呼吸动画
                 //启动这个动画时，可能与新生缩放动画冲突
                 if (DOTween.IsTweening(entityTransform) == false)
                 {
-                    tweener = AnimMgr.PlayBreathAnimation(entityTransform);
+                    //tweener = AnimMgr.PlayBreathAnimation(entityTransform);
                 }
                 break;
             case 3: // 上下浮动动画
-                tweener = AnimMgr.PlayFloatingAnimation(entityTransform, entityTransformInitPos.y).SetDelay(UnityEngine.Random.Range(0, 3));
+                //tweener = AnimMgr.PlayFloatingAnimation(entityTransform, entityTransformInitPos.y).SetDelay(UnityEngine.Random.Range(0, 3));
                 break;
         }
         //注意：由于新生物体有统一的新生动画，待机动画需要等新生动画完成后再继续播放

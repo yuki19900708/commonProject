@@ -497,12 +497,6 @@ public partial class MapMgr
             ClearPurificationList();
             foreach (MapGrid grid in Instance.mapGrid)
             {
-                if (grid.Terrain != null)
-                {
-                    //RecyleTerrainFurlToPool(grid.Terrain);
-                    Instance.terrainRenderer.ChangeTileMap(grid.point.x, grid.point.y, null);
-                    grid.Terrain = null;
-                }
                 if (grid.Vegetation != null)
                 {
                     //RecyleTerrainFurlToPool(grid.Vegetation);
@@ -510,18 +504,6 @@ public partial class MapMgr
                     grid.Vegetation = null;
                 }
 
-                if (grid.sealLock != null)
-                {
-                    //RecyleTerrainFurlToPool(grid.sealLock);
-                    Instance.sealLockRenderer.ChangeTileMap(grid.point.x, grid.point.y, null);
-                    grid.sealLock = null;
-                }
-
-                if (grid.Entity != null)
-                {
-                    Instance.RemoveMapObjectEntity(grid.Entity);
-                    grid.Entity = null;
-                }
             }
 
             //foreach (List<MapObject> list in entityMapObjectDic.Values)
@@ -593,64 +575,6 @@ public partial class MapMgr
         {
 //            mapDataCache.playerDataList[i].entityId = 0;
         }
-
-        foreach (MapGrid grid in Instance.MapGrids)
-        {
-            for (int i = 0; i < mapDataCache.playerDataList.Count; i++)
-            {
-                //赋值当前的  净化值
-                if (mapGridPurificationDataCache.purificationList[i].x == grid.point.x &&
-                    mapGridPurificationDataCache.purificationList[i].y == grid.point.y)
-                {
-                    mapGridPurificationDataCache.purificationList[i].value = grid.CurPurificationValue;
-                }
-
-                //赋值当前的死地等级 和 锁定信息
-                if (grid.point.x == mapDataCache.playerDataList[i].x && grid.point.y == mapDataCache.playerDataList[i].y)
-                {
-//                    mapDataCache.playerDataList[i].purificationLevel = 0;
-                    if (grid.deadLandData != null)
-                    {
-//                        mapDataCache.playerDataList[i].purificationLevel = grid.deadLandData.id;
-                    }
-                    if (grid.sealLock == null)
-                    {
-//                        mapDataCache.playerDataList[i].sealLockId = 0;
-                    }
-                }
-                if (grid.Entity != null)
-                {
-                    if (grid.Entity.StaticMapGridList[0].point.x == mapDataCache.playerDataList[i].x &&
-                       grid.Entity.StaticMapGridList[0].point.y == mapDataCache.playerDataList[i].y)
-                    {
-//                        mapDataCache.playerDataList[i].entityId = grid.Entity.Id;
-                    }
-                }
-            }
-        }
-
-//        foreach (MapGridGameData data in mapDataCache.playerDataList)
-//        {
-//            if (data.entityId > 0)
-//            {
-                //缓存所有地面物体的数据
-                //MapObjectGameData obj = DataConvert.ConverLocaCacheMapObjectData(Instance.mapGrid[data.x, data.y].Entity);
-                //entityAndMonsterDataCache.entityList.Add(obj);
-////            }
-//        }
-
-        //foreach (List<MapObject> list in entityMapObjectDic.Values)
-        //{
-        //    if (list != null && list.Count > 0 && list[0].IsMonster)
-        //    {
-        //        for (int i = 0; i < list.Count; i++)
-        //        {
-        //            //缓存所有龙的数据
-        //            MapObjectGameData obj = DataConvert.ConverLocaCacheMapObjectData(list[i]);
-        //            entityAndMonsterDataCache.entityList.Add(obj);
-        //        }
-        //    }
-        //}
         entityAndMonsterDataCache.chapterIndex = 0;
     }
 
@@ -983,29 +907,10 @@ public partial class MapMgr
 //            }
 //            else
 //            {
-                mapGrid[info.x, info.y].SetStatus(MapGridState.UnlockAndCured);
-                if (mapGrid[info.x, info.y].Terrain != null)
-                {
-                    unlockAndCuredTerrainList.Add(mapGrid[info.x, info.y].Terrain);
-                }
+               
 //            }
-            if (mapGrid[info.x, info.y].Entity != null)
-            {
-                //RecordMapObjectWhenLoadMap(mapGrid[info.x, info.y].Entity);
-            }
-            mapGrid[info.x, info.y].Event_GameRuningMapGridStatusChanged = EventMapGridStatusChange;
         }
 
-        if (purificationData != null)
-        {
-            foreach (PurificationData data in purificationData.purificationList)
-            {
-                if (data.value > 0)
-                {
-                    mapGrid[data.x, data.y].CurPurificationValue = data.value;
-                }
-            }
-        }
 
         //如果有本地数据 那么需要依照本地数据进行 龙的物体生成以及数据赋值
         if (entityDataDict.Count > 0)
@@ -1170,140 +1075,6 @@ public partial class MapMgr
         }
     }
 
-    #region 掠夺处理
-    /// <summary>
-    /// 加载掠夺地图数据
-    /// </summary>
-    /// <param name="data"></param>
-    public void LoadPlunderData(RepeatedField<Grid_data> data)
-    {
-        //GlobalVariable.GameState = GameState.PlunderMode;
-        LoadPlunderServerData(data, mapWidth, mapHeight);
-        if (Event_MapInitialzeLoadFinish != null)
-        {
-            Event_MapInitialzeLoadFinish();
-        }
-    }
-
-    /// <summary>
-    /// 进行掠夺模式时地方大本营地图尺寸初始化 以及数据生成
-    /// </summary>
-    /// <param name="data"></param>
-    private void LoadPlunderServerData(RepeatedField<Grid_data> data, int wdith, int height)
-    {
-        isMapInitialzeLoading = true;
-        //设置地图样式
-        mapWidth = wdith;
-        mapHeight = height;
-
-        //shadowMap.ResizeMap(mapWidth, mapHeight, false);
-        wallMap.ResizeMap(mapWidth, mapHeight, false);
-        terrainMap.ResizeMap(mapWidth, mapHeight, false);
-        vegetationMap.ResizeMap(mapWidth, mapHeight, false);
-        entityMap.ResizeMap(mapWidth, mapHeight, false);
-        purificationMap.ResizeMap(mapWidth, mapHeight, false);
-        sealLockMap.ResizeMap(mapWidth, mapHeight, false);
-
-        mapGrid = new MapGrid[mapWidth, mapHeight];
-
-        currentLoadPath = baseCampPath;
-        //加载基础地图数据
-        MapDataCache tmpMapDataCache = GetMapDataCache();
-        TextAsset ta = Resources.Load(currentLoadPath) as TextAsset;
-        if (ta == null)
-        {
-            //Debug.LogError("LY --->>> 大本营数据不存在!");
-        }
-        else
-        {
-            tmpMapDataCache = SimpleJson.SimpleJson.DeserializeObject<MapDataCache>(ta.text);
-        }
-
-
-        //将服务器的值 赋值给 基础地图数据
-        foreach (Grid_data grid in data)
-        {
-            int x = 0, y = 0;
-            if (grid.Coord != null)
-            {
-                x = (int)grid.Coord.X;
-                y = (int)grid.Coord.Y;
-            }
-            mapGrid[x, y] = new MapGrid();
-            mapGrid[x, y].point = new Point(x, y);
-
-            int index = y + x * mapHeight;
-//            tmpMapDataCache.playerDataList[index].entityId = 0;
-//            tmpMapDataCache.playerDataList[index].purificationLevel = 0;
-//            tmpMapDataCache.playerDataList[index].sealLockId = 0;
-
-            if (tmpMapDataCache.playerDataList[index].hasVegetation > 0)
-            {
-                VegetationData vegetData = TableDataMgr.GetSingleVegetationData(tmpMapDataCache.playerDataList[index].hasVegetation);
-                mapGrid[x, y].vegetationHue = vegetData.hueValue;
-                mapGrid[x, y].vegetationId = tmpMapDataCache.playerDataList[index].hasVegetation;
-            }
-
-            //设置 锁定 -- 有一些物体是无法被掠夺的 要设置为  封印状态
-            if (grid.Terrain != null && grid.Terrain.Id > 0)
-            {
-                if (grid.Terrain.Id == 2)
-                {
-                    mapGrid[x, y].Status = MapGridState.Locked;
-                }
-
-                if (grid.SeallockId == 0 && grid.Entity != null)
-                {
-//                    tmpMapDataCache.playerDataList[index].entityId = (int)grid.Entity.Id;
-                    //MapObjectData tableData = TableDataMgr.GetSingleMapObjectData((int)grid.Entity.Id);
-                    //if (tableData != null && tableData.id != MapObject.OBJECT_ID_CHAPTER_CHEST && tableData.id != MapObject.OBJECT_ID_DAILY_CHEST)
-                    //{
-                    //    if (tableData.canScramble == false && grid.DeadLevel == 0 && tableData.objectType != 301)
-                    //    {
-                    //        tmpMapDataCache.playerDataList[index].purificationLevel = 1;
-                    //        mapGrid[x, y].Status = MapGridState.UnlockButDead;
-                    //    }
-                    //    else
-                    //    {
-                    //        mapGrid[x, y].Status = MapGridState.UnlockAndCured;
-                    //    }
-                    //}
-                }
-            }
-
-            if (grid.Terrain == null)
-            {
-                mapGrid[x, y].Status = MapGridState.Locked;
-            }
-
-            if (grid.DeadLevel > 0)
-            {
-//                tmpMapDataCache.playerDataList[index].purificationLevel = (int)grid.DeadLevel;
-                mapGrid[x, y].Status = MapGridState.UnlockButDead;
-            }
-
-            if (grid.SeallockId > 0)
-            {
-                mapGrid[x, y].Status = MapGridState.Locked;
-//                tmpMapDataCache.playerDataList[index].sealLockId = (int)grid.SeallockId;
-            }
-        }
-
-       
-
-       
-
-    
-
-
-        MapObjectInitialize();
-        isMapInitialzeLoading = false;
-        //进行锁定逻辑处理
-        //MapUnlockInit();
-    }
-
-    #endregion
-
     /// <summary>
     /// 在没有本地缓存的情况下 对场景上的物体进行初始化赋值
     /// </summary>
@@ -1359,150 +1130,6 @@ public partial class MapMgr
     }
 
     /// <summary>
-    /// 墙体绘制完毕后的回调
-    /// </summary>
-    /// <param name="x"></param>
-    /// <param name="y"></param>
-    /// <param name="go"></param>
-    private void WallOnRenderTile(int x, int y, GameObject go)
-    {
-        if (mapGrid != null && mapGrid[x, y] != null)
-        {
-            if (go != null)
-            {
-                mapGrid[x, y].Wall = go.GetComponent<MapObject>();
-                mapGrid[x, y].Wall.StaticPos = mapGrid[x, y].point;
-                mapGrid[x, y].Wall.StaticMapGridList.Clear();
-                mapGrid[x, y].Wall.StaticMapGridList.Add(mapGrid[x, y]);
-            }
-            else if (mapGrid[x, y].Wall != null)
-            {
-                mapGrid[x, y].Wall = null;
-            }
-        }
-    }
-
-    /// <summary>
-    /// 地形绘制完毕的回调
-    /// </summary>
-    /// <param name="x"></param>
-    /// <param name="y"></param>
-    /// <param name="go"></param>
-    private void TerrainOnRenderTile(int x, int y, GameObject go)
-    {
-        if (mapGrid != null && mapGrid[x, y] != null)
-        {
-            mapGrid[x, y].point = new Point(x, y);
-            if (go != null)
-            {
-                mapGrid[x, y].Terrain = go.GetComponent<MapObject>();
-                mapGrid[x, y].Terrain.StaticPos = mapGrid[x, y].point;
-                mapGrid[x, y].Terrain.StaticMapGridList.Clear();
-                mapGrid[x, y].Terrain.StaticMapGridList.Add(mapGrid[x, y]);
-                if (go.name.Contains("bridge"))
-                {
-                    mapGrid[x, y].Terrain.IsBridge = true;
-                }
-                else
-                {
-                    mapGrid[x, y].Terrain.IsTerrain = true;
-                }
-            }
-            else if (mapGrid[x, y].Terrain != null)
-            {
-                mapGrid[x, y].Terrain.IsBridge = false;
-                mapGrid[x, y].Terrain.IsTerrain = false;
-                mapGrid[x, y].Terrain.StaticMapGridList.Clear();
-                mapGrid[x, y].Terrain = null;
-            }
-
-            if (mapGrid[x, y].Terrain != null)
-            {
-                if (mapGrid[x, y].Terrain.StaticMapGridList.Count == 0)
-                {
-                    //Debug.LogError("排查地形赋值错误问题的Log");
-                }
-            }
-        }
-    }
-
-    /// <summary>
-    /// 锁定绘制完毕的特效
-    /// </summary>
-    /// <param name="x"></param>
-    /// <param name="y"></param>
-    /// <param name="go"></param>
-    private void SealLockOnRenderTile(int x, int y, GameObject go)
-    {
-        if (mapGrid != null && mapGrid[x, y] != null)
-        {
-            if (go != null)
-            {
-                mapGrid[x, y].sealLock = go.GetComponent<MapObject>();
-                mapGrid[x, y].sealLock.IsSealLock = true;
-                mapGrid[x, y].sealLock.StaticPos = mapGrid[x, y].point;
-                mapGrid[x, y].sealLock.StaticMapGridList.Clear();
-                mapGrid[x, y].sealLock.StaticMapGridList.Add(mapGrid[x, y]);
-            }
-            else
-            {
-                if (mapGrid[x, y].Vegetation != null)
-                {
-                    if (mapGrid[x, y].sealLock != null)
-                    {
-                        mapGrid[x, y].sealLock.IsSealLock = false;
-                        mapGrid[x, y].sealLock.StaticMapGridList.Clear();
-                    }
-                    mapGrid[x, y].sealLock = null;
-                }
-            }
-        }
-    }
-
-    /// <summary>
-    /// 地图上实体绘制完毕后的回调
-    /// </summary>
-    /// <param name="x"></param>
-    /// <param name="y"></param>
-    /// <param name="go"></param>
-    private void EntityOnRenderTile(int x, int y, GameObject go)
-    {
-        if (mapGrid != null && mapGrid[x, y] != null)
-        {
-            if (go != null)
-            {
-                mapGrid[x, y].Entity = go.GetComponent<MapObject>();
-                mapGrid[x, y].Entity.IsEntity = true;
-                SetMapObjectEntity(x, y, mapGrid[x, y].Entity);
-                if (mapGrid[x, y].Entity.Id == (int)ObjectId.Purifier)
-                {
-                    mapGrid[x, y].Entity.IsPurifier = true;
-                    mapGrid[x, y].Entity.Event_StartPurifier = EventStartPurifier;
-                }
-
-                //if (mapGrid[x, y].Entity.Id == 70022 &&
-                //    GlobalVariable.GameState == GameState.LevelModel &&
-                //    ChapterModel.CurrentChapterInfo.is_ancient_god == 0)
-                //{
-                //    mapGrid[x, y].Entity.ShouldShowGodTip = true;
-                //    //ClickToCollectTip tip = clickToCollectTipPool.GetInstance();
-                //    //tip.ShowTip(go.transform.position + new Vector3(0, 4, 0), L10NMgr.GetText(22900003), SenceTipEnum.TextAndIcon, mapGrid[x, y].Entity.tipMountPosition);
-                //    mapGrid[x, y].Entity.godTip.SetActive(true);// = tip;
-                //}
-            }
-            else
-            {
-                if (mapGrid[x, y].Entity != null)
-                {
-                    mapGrid[x, y].Entity.IsEntity = false;
-                    mapGrid[x, y].Entity.StaticMapGridList.Clear();
-                    mapGrid[x, y].Entity = null;
-                }
-            }
-        }
-    }
-
-    /// <summary>
     /// 草皮绘制完毕后的回调
     /// </summary>
     /// <param name="x"></param>
@@ -1515,7 +1142,6 @@ public partial class MapMgr
             if (go != null)
             {
                 mapGrid[x, y].Vegetation = go.GetComponent<MapObject>();
-                mapGrid[x, y].Vegetation.IsVegetation = true;
                 mapGrid[x, y].Vegetation.StaticPos = mapGrid[x, y].point;
                 mapGrid[x, y].Vegetation.StaticMapGridList.Clear();
                 mapGrid[x, y].Vegetation.StaticMapGridList.Add(mapGrid[x, y]);
@@ -1525,7 +1151,6 @@ public partial class MapMgr
             {
                 if (mapGrid[x, y].Vegetation != null)
                 {
-                    mapGrid[x, y].Vegetation.IsVegetation = false;
                     mapGrid[x, y].Vegetation.StaticMapGridList.Clear();
                     mapGrid[x, y].Vegetation = null;
                 }
@@ -1535,212 +1160,7 @@ public partial class MapMgr
 
     #endregion
 
-    /// <summary>
-    /// 开始净化的事件监听
-    /// </summary>
-    /// <param name="obj"></param>
-    private void EventStartPurifier(MapObject obj)
-    {
-        Dictionary<Point, UpdateTerrainInfo> updateTerrainDict = new Dictionary<Point, UpdateTerrainInfo>();
-        foreach (Point point in obj.StaticPos.Surrounded)
-        {
-            if (terrainMap.IsInBounds(point.x, point.y) == false)
-            {
-                continue;
-            }
-            MapGrid data = GetMapGridData(point);
-            if (data != null && data.Status == MapGridState.UnlockButDead)
-            {
-                //PlayerModel.ChangePlayerDataSendServer(MATERIAL_TYPE.MaterialExp, AFFECT_MATERIAL_TYPE.EcmtPurifyTheDeadGround, data.deadLandData.exp);
-                data.SetStatus(MapGridState.UnlockAndCured);
-
-                UpdateTerrainInfo info = new UpdateTerrainInfo();
-                info.point = point;
-                info.state = Grid_state.UnlockAndCured;
-                info.dead_level = 0;
-                info.cure_count = 0;
-
-                //VFXMgr.PlayDeadLandCuredVFX(data);
-
-                if (data.Entity != null &&
-                    data.Entity.BasicData.objectType == 711)
-                {
-                    //衍生初始化
-                    data.Entity.InitializeExtraGameData();
-                    //info.entity = MapMgr.Instance.AddMapEntityToTrophyBall(data.Entity.StaticPos, data.Entity.BasicData.id);
-                    MapMgr.Instance.RemoveMapObjectEntity(data.Entity);
-                }
-                updateTerrainDict.Add(info.point, info);
-            }
-        }
-        SendGridStatusChange(UpdateTerrainEventType.AllChange, updateTerrainDict);
-    }
-
-    /// <summary>
-    /// 地图上格子状态变化的事件监听 （仅限于地图生成完毕之后的游戏过程中的状态变更，初始的状态赋值不算在内）
-    /// </summary>
-    /// <param name="gridInfo"></param>
-    /// <param name="lastState"></param>
-    /// <param name="nextState"></param>
-    private void EventMapGridStatusChange(MapGrid gridInfo, MapGridState lastState, MapGridState nextState)
-    {
-        if (lastState == nextState)
-        {
-            //Debug.LogError("调用者SB，，这特么一样的状态调什么调");
-        }
-        if (lastState == MapGridState.UnlockButDead && nextState == MapGridState.UnlockAndCured)
-        {
-            if (gridInfo.Entity != null && gridInfo.Entity.IsPurifier && gridInfo.Entity.PurifierIsStart == false)
-            {
-                //启动物体的倒计时
-                gridInfo.Entity.PurifierStart();
-            }
-
-            foreach (Point point in gridInfo.point.Surrounded)
-            {
-                if (terrainMap.IsInBounds(point.x, point.y) == false)
-                {
-                    continue;
-                }
-
-                MapGrid data = GetMapGridData(point);
-                if (data != null && data.Entity != null && data.Entity.IsPurifier && data.Entity.PurifierIsStart == false)
-                {
-                    if (data.Status == MapGridState.UnlockButDead)
-                    {
-                        //对格子的状态进行变更
-                        data.SetStatus(MapGridState.UnlockAndCured);
-                    }
-                    //启动物体的倒计时
-                    data.Entity.PurifierStart();
-                }
-            }
-
-            if (gridInfo.Entity != null && gridInfo.Entity.IsEntity && gridInfo.Entity.IsPurified)
-            {
-                //衍生充能时间
-                if (gridInfo.Entity.BasicData.canSpawn)
-                {
-                    SpawnEventData data = TableDataMgr.GetSingleSpawnEventData(gridInfo.Entity.BasicData.id);
-                    if (data != null)
-                    {
-                        //float derivativeTime = UnityEngine.Random.Range(data.interval[0], data.interval[1]);
-                        //gridInfo.Entity.StartDerivativeTurnOnTheTimer(data, derivativeTime);
-                    }
-                }
-                //自动消亡初始化
-                if (gridInfo.Entity.BasicData.liveTime != null && gridInfo.Entity.BasicData.liveTime.Length == 2)
-                {
-                    //float survivalTime = UnityEngine.Random.Range(gridInfo.Entity.BasicData.liveTime[0], gridInfo.Entity.BasicData.liveTime[1] + 1);
-                    //gridInfo.Entity.StartSurvivalTurnOnTheTimer(survivalTime);
-                }
-
-                //点击充能时间初始化
-                if (gridInfo.Entity.BasicData.canClick)
-                {
-                    TapEventData data = TableDataMgr.GetSingleTapEventData(gridInfo.Entity.BasicData.id);
-                    if (data != null)
-                    {
-                        //gridInfo.Entity.StartClickOutPutTurnOnTheTimer(data, data.cooldown);
-                    }
-                }
-
-                //采集充能时间初始化
-                if (gridInfo.Entity.BasicData.canClick)
-                {
-                    HarvestEventData data = TableDataMgr.GetSingleHarvestEventData(gridInfo.Entity.BasicData.id);
-                    if (data != null)
-                    {
-                        //gridInfo.Entity.StartCollectTurnOnTheTimer(data, data.cooldown);
-                    }
-                }
-            }
-            unlockAndCuredTerrainList.Add(gridInfo.Terrain);
-
-            //对于任务模块的统计记录(地形相关任务排除所有的高端区)
-            //TaskModel.RecordOperateWithTaskType(TaskType.PurifyTerrain);
-            //TaskModel.RecordOperateWithTaskType(TaskType.PurifyAllTerrain);
-            //TaskModel.RecordOperateWithTaskType(TaskType.HavePurifiedTerrain);
-        }
-        else if (lastState == MapGridState.Locked && nextState == MapGridState.UnlockAndCured)
-        {
-            //此种情况只会出现在高端区解锁
-            if (gridInfo.Entity != null && gridInfo.Entity.IsEntity && gridInfo.Entity.IsPurified)
-            {
-                if (gridInfo.Entity.BasicData.canSpawn)
-                {
-                    SpawnEventData data = TableDataMgr.GetSingleSpawnEventData(gridInfo.Entity.BasicData.id);
-                    if (data != null)
-                    {
-                        //float derivativeTime = UnityEngine.Random.Range(data.interval[0], data.interval[1]);
-                        //gridInfo.Entity.StartDerivativeTurnOnTheTimer(data, derivativeTime);
-                    }
-                }
-                ////衍生初始化
-                //gridInfo.Entity.DerivativeInit();
-                //自动消亡初始化
-                if (gridInfo.Entity.BasicData.liveTime != null && gridInfo.Entity.BasicData.liveTime.Length == 2)
-                {
-                    //float survivalTime = UnityEngine.Random.Range(gridInfo.Entity.BasicData.liveTime[0], gridInfo.Entity.BasicData.liveTime[1] + 1);
-                    //gridInfo.Entity.StartSurvivalTurnOnTheTimer(survivalTime);
-                }
-
-            }
-        }
-
-        if (nextState == MapGridState.UnlockAndCured && lastState != MapGridState.UnlockAndCured)
-        {
-            if (gridInfo.Entity != null)
-            {
-                //RecordMapObjectWhenGameProcess(gridInfo.Entity);
-            }
-        }
-
-        if (nextState == MapGridState.UnlockButDead && lastState == MapGridState.UnlockAndCured)
-        {
-            if (gridInfo.Entity != null)
-            {
-                //RecordMapObjectWhenGameProcess(gridInfo.Entity);
-                //停止衍生充能计时器
-                //gridInfo.Entity.StopDerivativeTimer();
-                //停止采集充能计时器
-                //gridInfo.Entity.StopCollectTimer();
-                //停止点击产出计时器
-                //gridInfo.Entity.StopClickOutPutTimer();
-                //停止存活时间计时器
-                //gridInfo.Entity.StopDerivativeTimer();
-            }
-        }
-
-        if (nextState == MapGridState.UnlockButDead)
-        {
-            if (gridInfo.Entity != null && gridInfo.Entity.IsDraged == false)
-            {
-                SetMapObjectToNormolPostion(gridInfo.Entity, gridInfo.Entity.StaticMapGridList[0].point);
-            }
-        }
-
-        if (lastState == MapGridState.UnlockAndCured && nextState == MapGridState.UnlockButDead)
-        {
-            foreach (MapGrid grid in mapGrid)
-            {
-                if (grid.Status == MapGridState.UnlockAndCured)
-                {
-                    return;
-                }
-            }
-            //ChapterModel.ChapterStatus = ChapterState.ChapterFailed;
-        }
-
-        //if (GlobalVariable.GameState == GameState.MainSceneMode)
-        //{
-        //    //检测掠夺净化的土地
-        //    if (nextState == MapGridState.UnlockAndCured)
-        //    {
-        //        //PlunderInitialPromptUIModel.ClearPlunderMapGrid(gridInfo.point);
-        //    }
-        //}
-    }
+  
 
     /// <summary>
     /// 根据服务器发送过来的被掠夺数据 对相应的格子进行封印（被掠夺的建筑会变为死地）
@@ -1773,19 +1193,8 @@ public partial class MapMgr
         }
     }
 
-    /// <summary>
-    /// 掠夺锁住一个地
-    /// </summary>
-    /// <param name="point"></param>
-    public void SealOneLand(Point point)
-    {
-        MapGrid data = GetMapGridData(point);
-        data.deadLandData = TableDataMgr.GetSingleDeadLandData(1);
-        if (data.Status != MapGridState.Locked)
-        {
-            data.SetStatus(MapGridState.UnlockButDead);
-        }
-    }
+   
+   
 
     /// <summary>
     /// 从大本营缓存中随机获取一只生物（召唤法阵合成后 会在关卡中召唤一直大本营的龙到关卡内）

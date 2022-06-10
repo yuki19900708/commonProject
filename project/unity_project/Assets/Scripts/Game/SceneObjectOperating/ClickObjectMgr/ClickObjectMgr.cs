@@ -89,7 +89,6 @@ public class ClickObjectMgr : MonoBehaviour {
                 {
                     DragOutline dragOutline = SceneObjectGestureMgr.DragOutlinePool.GetInstance();
                     dragOutline.transform.position = MapMgr.Instance.GetWorldPosByPointCenter(mapObject.StaticMapGridList[i].point);
-                    dragOutline.Init(mapObject.StaticMapGridList[i].Status);
                  
                     if (mapObject.BasicData.canMerge && mapObject.BasicData.canDrag)
                     {
@@ -131,87 +130,6 @@ public class ClickObjectMgr : MonoBehaviour {
         //}
     }
 
-    public void ClickUnlockButNotCuredObject(Vector2 worldPostion)
-    {
-        #region 显示为解锁的地形的解锁进度
-        MapGrid grid = MapMgr.Instance.GetMapGridData(worldPostion);
-        if (grid == null)
-        {
-            return;
-        }
-
-        if (grid!=null && (grid.Status == MapGridState.UnlockButDead))
-        {
-            if (grid.deadLandData.ignorePure)
-            {
-                //superDeadLandTip.transform.position = MapMgr.Instance.GetWorldPosByPoint(grid.point) + new Vector3(0, 2,0);
-                //superDeadLandTip.ShowTip();
-            }
-            else
-            {
-                PurifyProgressbar.Show(grid, grid.CurPurificationValue, grid.CurPurificationValue, grid.deadLandData.pureNeed1);
-            }
-        }
-        #endregion
-    }
-
-    /// <summary>
-    /// 按下在一定时间内抬起
-    /// </summary>
-    /// <param name="postion"></param>
-    /// <param name="tagertGameObject"></param>
-    public void ClickObjectInPeriodTimeLiftUp(Vector2 worldPostion, MapObject tagertMapObject)
-    {
-        if (detectionMapObject==null||detectionMapObject != tagertMapObject)
-        {
-            return;
-        }
-        //TODO 在这里获取点击的物品判断他是否可以点击产出物品 产出物品
-        if (Event_ClickObjectInPeriodTimeLiftUp != null)
-        {
-            Event_ClickObjectInPeriodTimeLiftUp(worldPostion, tagertMapObject);
-        }
-        detectionMapObject = tagertMapObject;
-        if (detectionMapObject != null)
-        {
-            //TapEventData tapEventData = TableDataMgr.GetSingleTapEventData(detectionMapObject.Id);
-            //if (GlobalVariable.GameState == GameState.MainSceneMode &&
-            //    tapEventData!=null && GlobalVariable.isConfirmClick && tapEventData.showTip)
-            //{
-                //if (confirmClickGameObject == null)
-                //{
-                //    confirmClickGameObject = MapMgr.clickToCollectTipPool.GetInstance();
-                //}
-                //confirmClickGameObject.gameObject.SetActive(true);
-            //    //confirmClickGameObject.ShowClickConfirmButton(detectionMapObject.tipMountPosition.position, L10NMgr.GetText(27800007), detectionMapObject,CallBack);
-            //}
-            //else
-            //{
-            //    //if (confirmClickGameObject != null)
-            //    //{
-            //    //    confirmClickGameObject.gameObject.SetActive(false);
-            //    //}
-            //    detectionMapObject.ClickInPeriodTimeLiftUp();
-            //}
-        }
-    }
-
-    //private void CallBack(MapObject obj)
-    //{
-    //    obj.ClickInPeriodTimeLiftUp();
-    //}
-
-    private void Event_MapObjectRemove(MapObject obj)
-    {
-        if (detectionMapObject != null)
-        {
-            if (obj == detectionMapObject)
-            {
-                SceneObjectGestureMgr.RecycleInstanceAllOutLine();
-            }
-        }
-
-    }
 
     private void SuperDeadLandInit()
     {

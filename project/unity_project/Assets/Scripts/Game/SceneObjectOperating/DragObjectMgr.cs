@@ -108,7 +108,6 @@ public class DragObjectMgr : BindableMonoBehaviour
                 DragOutline dragOutline = SceneObjectGestureMgr.DragOutlinePool.GetInstance();
                 dragOutline.transform.position = MapMgr.Instance.GetWorldPosByPointCenter(dragMapObject.StaticMapGridList[i].point);
                 dragOutline.transform.SetParent(dragObject.transform, true);
-                dragOutline.Init(dragMapObject.StaticMapGridList[i].Status);
                 if (dragMapObject.BasicData.canMerge)
                 {
                     dragOutline.SetSpriteColor(DragOutline.CAN_MOVE_CAN_MERGE);
@@ -262,7 +261,7 @@ public class DragObjectMgr : BindableMonoBehaviour
                 {
                     if (dragObject.IsMonster)
                     {
-                        DrawDragTipOutLine(worldPostion);
+                        //DrawDragTipOutLine(worldPostion);
                     }
                     Vector3 oldPosition = dragObject.transform.position;
                     oldPosition.x = worldPostion.x - offsetposition.x;
@@ -297,53 +296,6 @@ public class DragObjectMgr : BindableMonoBehaviour
         }
     }
 
-    bool JugeObjectMove()
-    {
-            if (CheckCanMoveTo())
-            {
-
-                if (CheckCanBePlace())
-                {
-                    //lastEffectiveArea = moveMapGrid;
-                    //canPutInto = true;
-                }
-                else
-                {
-                    Debug.Log("无效区域");
-                    //canPutInto = fal/*s*/e;
-                }
-                //开始本次判断
-                if (dragObject != null)
-                {
-                    //dragObject.DragStartChangePosition(moveMapGrid);
-                }
-
-                if (dragTweener != null)
-                {
-                    dragTweener.Kill();
-                    dragTweener = null;
-                }
-                Vector2 pos = MapMgr.Instance.GetWorldPosByPoint(moveMapGrid.point);
-                //Debug.Log(pos);
-                DrawMapGridOutLine();
-                dragTweener = dragObject.transform.DOMove(pos, 0.3f);
-
-                //位置改变
-                changeMapGrid = moveMapGrid;
-
-                //开始本次判断
-                if (dragObject != null)
-                {
-                    //dragObject.DragStartChangePosition(moveMapGrid);
-                }
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-    }
-
     public void DragEnd(Vector3 worldPostion)
     {
         startResponse = false;
@@ -360,19 +312,19 @@ public class DragObjectMgr : BindableMonoBehaviour
                 {
                     //canPutInto = false;
                 }
-                else
-                {
-                    if (CheckCanBePlace())
-                    {
-                        //lastEffectiveArea = moveMapGrid;
-                        //canPutInto = true;
-                    }
-                    else
-                    {
-                        Debug.Log("无效区域");
-                        //canPutInto = false;
-                    }
-                }
+                //else
+                //{
+                //    if (CheckCanBePlace())
+                //    {
+                //        //lastEffectiveArea = moveMapGrid;
+                //        //canPutInto = true;
+                //    }
+                //    else
+                //    {
+                //        Debug.Log("无效区域");
+                //        //canPutInto = false;
+                //    }
+                //}
 
                 //dragObject.DragEndChangePosition(moveMapGrid);
                 //if (moveMapGrid != null)
@@ -505,87 +457,6 @@ public class DragObjectMgr : BindableMonoBehaviour
         }
     }
 
-    bool CheckCanBePlace()
-    {
-        List<MapGrid> allGrid = new List<MapGrid>();
-        bool result = MapMgr.Instance.IsLegalMovement(moveMapGrid.point, dragObject.Area, ref allGrid);
-        if (result)
-        {
-            for (int i = 0; i < allGrid.Count; i++)
-            {
-                if (allGrid[i].Status != MapGridState.UnlockAndCured)
-                {
-                    return false;
-                }
-                if (allGrid[i].Entity != null && allGrid[i].Entity.IsPurified == false)
-                {
-                    return false;
-                }
-
-                if (allGrid[i].Entity != null && allGrid[i].Entity.BasicData.canDrag == false)
-                {
-                    return false;
-                }
-                if (allGrid[i].Entity != null && (allGrid[i].Entity.CurrentItemStatus == ItemStatus.BeAttacking || allGrid[i].Entity.CurrentItemStatus == ItemStatus.AttackTarget))
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    /// <summary>
-    /// 拖动物品在到达锁定与时，给予红框提示
-    /// </summary>
-    /// <returns></returns>
-    bool DrawMapGridOutLine()
-    {
-
-        for (int i = 0; i < SceneObjectGestureMgr.mapGridOutLine.Count; i++)
-        {
-            SceneObjectGestureMgr.DragOutlinePool.RecycleInstance(SceneObjectGestureMgr.mapGridOutLine[i]);
-        }
-        SceneObjectGestureMgr.mapGridOutLine.Clear();
-
-        List<MapGrid> allGrid = new List<MapGrid>();
-
-        MapMgr.Instance.IsLegalMovement(moveMapGrid.point, dragObject.Area, ref allGrid);
-
-        for (int i = 0; i < allGrid.Count; i++)
-        {
-            if (allGrid[i].Status == MapGridState.UnlockButDead)
-            {
-                DragOutline dragOutline = SceneObjectGestureMgr.DragOutlinePool.GetInstance();
-                dragOutline.transform.position = MapMgr.Instance.GetWorldPosByPointCenter(allGrid[i].point);
-                dragOutline.Init(allGrid[i].Status);
-                dragOutline.SetSpriteColor(DragOutline.NO_PLACE, 2);
-                SceneObjectGestureMgr.mapGridOutLine.Add(dragOutline);
-            }
-            else if (allGrid[i].Entity != null && allGrid[i].Entity.IsPurified == false)
-            {
-                DragOutline dragOutline = SceneObjectGestureMgr.DragOutlinePool.GetInstance();
-                dragOutline.transform.position = MapMgr.Instance.GetWorldPosByPointCenter(allGrid[i].point);
-                dragOutline.Init(allGrid[i].Status);
-                dragOutline.SetSpriteColor(DragOutline.NO_PLACE, 2);
-                SceneObjectGestureMgr.mapGridOutLine.Add(dragOutline);
-            }
-            else if (allGrid[i].Entity != null && allGrid[i].Entity.BasicData.canDrag == false)
-            {
-                DragOutline dragOutline = SceneObjectGestureMgr.DragOutlinePool.GetInstance();
-                dragOutline.transform.position = MapMgr.Instance.GetWorldPosByPointCenter(allGrid[i].point);
-                dragOutline.Init(allGrid[i].Status);
-                dragOutline.SetSpriteColor(DragOutline.NO_PLACE, 2);
-                SceneObjectGestureMgr.mapGridOutLine.Add(dragOutline);
-            }
-        }
-        return true;
-    }
-
     /// <summary>
     /// 龙在拖动到物体时，给予物体的提示框（可采集，可建造，可攻击的物品）
     /// </summary>
@@ -639,22 +510,22 @@ public class DragObjectMgr : BindableMonoBehaviour
         //    return;
         //}
 
-        if (gridData.Entity != null)
-        {
-            List<MapGrid> allGrid = new List<MapGrid>();
-            MapMgr.Instance.IsLegalMovement(gridData.Entity.StaticPos, gridData.Entity.Area, ref allGrid);
+        //if (gridData.Entity != null)
+        //{
+        //    List<MapGrid> allGrid = new List<MapGrid>();
+        //    MapMgr.Instance.IsLegalMovement(gridData.Entity.StaticPos, gridData.Entity.Area, ref allGrid);
 
-            for (int i = 0; i < allGrid.Count; i++)
-            {
-                DragOutline dragOutline = SceneObjectGestureMgr.DragOutlinePool.GetInstance();
-                dragOutline.transform.position = MapMgr.Instance.GetWorldPosByPointCenter(allGrid[i].point);
-                dragOutline.Init(allGrid[i].Status);
-                dragOutline.SetSpriteColor(DragOutline.TIP);
-                SceneObjectGestureMgr.mapGridOutLine.Add(dragOutline);
-            }
-            //dragTip.ShowTip(gridData.Entity.tipMountPosition.position, str, SenceTipEnum.TextAndIcon, gridData.Entity.tipMountPosition);
-            //dragTip.transform.position = gridData.Entity.tipMountPosition.position;
-        }
+        //    for (int i = 0; i < allGrid.Count; i++)
+        //    {
+        //        DragOutline dragOutline = SceneObjectGestureMgr.DragOutlinePool.GetInstance();
+        //        dragOutline.transform.position = MapMgr.Instance.GetWorldPosByPointCenter(allGrid[i].point);
+        //        dragOutline.Init(allGrid[i].Status);
+        //        dragOutline.SetSpriteColor(DragOutline.TIP);
+        //        SceneObjectGestureMgr.mapGridOutLine.Add(dragOutline);
+        //    }
+        //    //dragTip.ShowTip(gridData.Entity.tipMountPosition.position, str, SenceTipEnum.TextAndIcon, gridData.Entity.tipMountPosition);
+        //    //dragTip.transform.position = gridData.Entity.tipMountPosition.position;
+        //}
     }
 
 }
