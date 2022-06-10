@@ -186,7 +186,18 @@ public class TerrainEditorUICtrl : MonoBehaviour
         {
             return;
         }
-
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+        {
+            isChangePoint = true;
+            if (Input.GetMouseButton(0))
+            {
+                clickIsRmove = false;
+            }
+            else if (Input.GetMouseButton(1))
+            {
+                clickIsRmove = true;
+            }
+        }
         if (brushStyle == BrushStyle.BoxUp)
         {
             isChangePoint = false;
@@ -221,19 +232,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
               
 //            }	
 
-            if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
-            {
-                isChangePoint = true;
-                lineGridPoint = tmpGridPoint;
-                if (Input.GetMouseButton(0))
-                {
-                    clickIsRmove = false;
-                }
-                else if (Input.GetMouseButton(1))
-                {
-                    clickIsRmove = true;
-                }
-            }
+           
 
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
@@ -241,6 +240,8 @@ public class TerrainEditorUICtrl : MonoBehaviour
                 {
                     if (currentSelectTileMap && brushStyle == BrushStyle.None)
                     {
+                        lineGridPoint = tmpGridPoint;
+
                         region = GetRegion(lineGridPoint);
                         isBrush = true;
                         BrushTile();
@@ -399,6 +400,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
             tmpTile = null;
         }
 
+      
         for (int i = 0; i < region.Count; i++)
         {
             Point offsetPoint = region[i];
