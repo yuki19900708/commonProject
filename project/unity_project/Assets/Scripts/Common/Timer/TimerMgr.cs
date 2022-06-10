@@ -345,12 +345,6 @@ public class TimerMgr : MonoBehaviour
         }
     }
 
-    public static void RequestTimeStamp(Action callback)
-    {
-        getTimestampCallback = callback;
-        //NetMgr.Send(NetAPIDef.eCTS_ACCESS_GET_TIME, null);
-    }
-
     /// <summary>
     /// 获取当前时间（秒）
     /// </summary>
@@ -360,23 +354,4 @@ public class TimerMgr : MonoBehaviour
         return (int)(mServerTimestampLong / 1000);
     }
 
-    /// <summary>
-    /// 获取当前时间（毫秒）
-    /// </summary>
-    /// <returns></returns>
-    public static long GetMillisecond()
-    {
-        return mServerTimestampLong;
-    }
-
- 
-
-    public static DateTime GetDateTime()
-    {
-        DateTime dtStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
-        long lTime = (mServerTimestampLong * 10000);
-        TimeSpan toNow = new TimeSpan(lTime);
-        DateTime targetDt = dtStart.Add(toNow);
-        return targetDt;
-    }
 }

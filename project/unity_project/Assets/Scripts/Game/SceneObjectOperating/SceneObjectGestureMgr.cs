@@ -9,7 +9,6 @@ public enum ControlObjectType
     NoPostion,
 }
 
-[RequireComponent(typeof(DragObjectMgr))]
 public class SceneObjectGestureMgr : MonoBehaviour
 {
     public static SceneObjectGestureMgr Instance;

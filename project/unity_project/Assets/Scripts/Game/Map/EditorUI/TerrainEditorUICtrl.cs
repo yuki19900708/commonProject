@@ -576,7 +576,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
         vegetationMap.ResizeMap(mapWidth, mapHeight);
         MapUtil.Instance.DrawMapGridLine(mapWidth, mapHeight);
 
-        Timer.AddDelayFunc(2f, () =>
+        Timer.AddDelayFunc(1f, () =>
          {
              LoadMapObject();
          });

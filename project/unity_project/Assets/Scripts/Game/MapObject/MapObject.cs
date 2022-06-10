@@ -7,151 +7,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-/// <summary>
-/// 图鉴类型枚举
-/// </summary>
-public enum Handbook
-{
-    /// <summary>
-    /// 资源类
-    /// </summary>
-    Resources = 1,
-    /// <summary>
-    /// 奇迹类
-    /// </summary>
-    Miracle,
-    /// <summary>
-    /// 建筑类
-    /// </summary>
-    Building,
-    /// <summary>
-    /// 宝箱类
-    /// </summary>
-    Chest,
-    /// <summary>
-    /// 怪物类
-    /// </summary>
-    Monster,
-    /// <summary>
-    /// 其他类
-    /// </summary>
-    Other
-}
-
-/// <summary>
-/// 稀有度等级
-/// </summary>
-public enum Rarity
-{
-    /// <summary>
-    /// 普通
-    /// </summary>
-    Common = 1,
-    /// <summary>
-    /// 罕见
-    /// </summary>
-    UnCommon = 2,
-    /// <summary>
-    /// 稀有
-    /// </summary>
-    Rare = 3,
-    /// <summary>
-    /// 神话
-    /// </summary>
-    Mythic = 4,
-    /// <summary>
-    /// 史诗
-    /// </summary>
-    Epic = 5,
-    /// <summary>
-    /// 传说
-    /// </summary>
-    Legend = 6
-}
-
-/// <summary>
-/// 被攻击类型
-/// </summary>
-public enum DestructType
-{
-    /// <summary>
-    /// 不可被摧毁
-    /// </summary>
-    CannotBeDestroy,
-    /// <summary>
-    /// 可被敌人摧毁
-    /// </summary>
-    DestroyedByEnemy,
-    /// <summary>
-    /// 可被己方单位摧毁
-    /// </summary>
-    DestroyedByAlly
-}
-
-/// <summary>
-/// 生物类型
-/// </summary>
-public enum MonsterType
-{
-    //未知
-    None = 0,
-    /// <summary>
-    /// 均衡
-    /// </summary>
-    Normal = 1,
-    /// <summary>
-    /// 采集
-    /// </summary>
-    Harvester,
-    /// <summary>
-    /// 建造
-    /// </summary>
-    Builder,
-    /// <summary>
-    /// 攻击
-    /// </summary>
-    Attacker,
-    /// <summary>
-    /// 坚守
-    /// </summary>
-    Defender,
-}
-
-/// <summary>
-/// 物体间的行为
-/// </summary>
-public enum BehaviourOfObjects
-{
-    None,
-    /// <summary>
-    /// 攻击
-    /// </summary>
-    NormalAttack,
-    /// <summary>
-    /// 掠夺战斗
-    /// </summary>
-    PlunderAttack,
-    /// <summary>
-    /// 污染
-    /// </summary>
-    Pollute,
-    /// <summary>
-    /// 采集
-    /// </summary>
-    Collect,
-    /// <summary>
-    /// 建造
-    /// </summary>
-    Build,
-    /// <summary>
-    /// 休息
-    /// </summary>
-    Sleep,
-    /// <summary>
-    /// 运输
-    /// </summary>
-    Transport
-}
 
 public enum ItemStatus
 {
@@ -371,9 +226,6 @@ public partial class MapObject : MapItem
     /// </summary>
     public int tableID;
 
-    private Handbook handbook;
-    private DestructType destructType;
-    private Rarity rarity;
     //剩余熟量 溢出金币，与溢出石块
     private int remain_amount;
     private MapObject targetObject;
@@ -388,10 +240,7 @@ public partial class MapObject : MapItem
     /// </summary>
     private bool isCanBeSelected = true;
     private bool isDraged = false;
-    /// <summary>
-    /// 是否时间静止
-    /// </summary>
-    private bool isTimeStill = false;
+
     /// <summary>
     /// 是否处于玩家操作状态
     /// </summary>
@@ -413,45 +262,17 @@ public partial class MapObject : MapItem
         pause,
         stop
     }
-    /// <summary>
-    /// 是否正在播放待机动画
-    /// </summary>
-    private IdleAnimType PlayingEnityIdleAnimation = IdleAnimType.stop;
-    /// <summary>
-    /// 待机动画播放间隔
-    /// </summary>
-    private float entityIdleAnimationInterval = 0;
-    /// <summary>
-    /// 待机动画播放间隔计时器
-    /// </summary>
-    private float entityIdleAnimationTimer = 0;
+
+   
     public Transform entityTransform;
     public Tweener entityTweener;
-    private Vector3 entityTransformInitPos;
     public Transform shadowTransform;
-    private Vector3 shadowTransformInitScale;
     #endregion
     public Transform tipMountPosition;
-    //public ClickToCollectTip clickToCollectTip;
-    //public ClickToCollectTip chapterTip;
+
     public int Id { get { return basicData.id; } }
 
-    /// <summary>
-    /// 物品图鉴类型
-    /// </summary>
-    public Handbook HandBook { get { return handbook; } }
-
-    /// <summary>
-    /// 被摧毁类型
-    /// </summary>
-    public DestructType DestructType { get { return destructType; } }
-
     public int ObjectType { get { return basicData.objectType; } }
-
-    /// <summary>
-    /// 稀有度等级
-    /// </summary>
-    public Rarity Rarity { get { return rarity; } }
 
     public int Level { get { return basicData.level; } }
 
@@ -560,10 +381,6 @@ public partial class MapObject : MapItem
     {
         get
         {
-            if (handbook == Handbook.Monster && basicData.detachGrid)
-            {
-                return true;
-            }
             return false;
         }
     }
@@ -784,7 +601,6 @@ public partial class MapObject : MapItem
         isDraged = false;
         isPlayerOperate = false;
         isDoubleClick = false;
-        isTimeStill = false;
         transform.localScale = Vector3.one;
         //归池时将所有的物体的碰撞再次打开（被锁或者封印的地形的Collider是false）
         if (gameObject.GetComponent<Collider2D>() != null)
@@ -795,116 +611,11 @@ public partial class MapObject : MapItem
         DOTween.Kill(transform);
         DOTween.Kill(entityTransform);
 
-        ////龙巢被清除时，赶出所有的龙
-        //if (ObjectType == SleepBuilding_ObjectType)
-        //{
-        //    ClearAllSleeper();
-        ////}
-        ////地基被清除时，清除所有的建造者
-        //if (ObjectType == Foundation_ObjectType)
-        //{
-        //    ClearAllBuilder();
-        //}
-
-        //被攻击的物体清除攻击者
-        if (destructType != DestructType.CannotBeDestroy || IsMonster)
-        {
-            //ClearAllAttacker();
-        }
-
-        //清除当前采集的关联
-        //if (basicData.canHarvest)
-        //{
-        //    CollectMgr.CollectInterrupt(this);
-        //}
-
-        //if (IsMonster)
-        //{
-        //    //龙背负物体
-        //    if (collectArticleMapObject != null)
-        //    {
-        //        if (this.transform.localScale.x != 1)
-        //        {
-        //            Debug.LogWarning("LFL  采集ICon 在归池前 父物体的Scale 不为1");
-        //        }
-        //        MapMgr.CollectBallPool.RecycleInstance(collectArticleMapObject);
-        //        collectArticleMapObject = null;
-        //    }
-        //}
-        //SwitchStatus(StatusName.Idle);
-        //清除合成动画
-        //ClearMergeAnimation();
-        //清除衍生所有关联
-        //DerivativeClear(true);
-        //清除采集所有关联
-        //CollectTimeClear();
-        //清除存活时间的记录值
-        //SurvivalTimeClear();
-        //点击产出清除关联
-        //ClearClickOutPutTime();
-        //清除净化器的信息
-        //ClearPurifier();
-        //清楚基础属性
+     
         ClearObjectAttribute();
-        //清除漂浮叶子关联
-        //RecycleLeaf();
-        //清楚战利品球关联
-        //StopTrophyBallTimer();
-        //清除特惠关联；
-        //RecycleSpecialData();
-        //RecycleBatterball();
         HideTip();
 
-        //清除特效
-        //if (entityTransform != null)
-        //{
-            //VFXMgr.RemoveTrailVFX(this.entityTransform);
-        //}
-        //VFXMgr.RemoveMapChestUnlockedVFX(this);
-
-        //清楚Doublick点击效果
-        //if (doublePFXList != null && doublePFXList.Count > 0)
-        //{
-        //    for (int i = 0; i < doublePFXList.Count; i++)
-        //    {
-        //        MapMgr.DoubleClickSightTipPool.RecycleInstance(doublePFXList[i]);
-        //    }
-        //    doublePFXList.Clear();
-        //}
-    }
-
-    /// <summary>
-    /// 地图上的物体在被挤走时，清除关联
-    /// </summary>
-    //public void BeingSqueezeAwayClearAssociation()
-    //{
-        ////地基被挤走时
-        //if (ObjectType == Foundation_ObjectType)
-        //{
-        //    ClearBuilder();
-        //}
-        //else if (basicData.canHarvest)
-        //{
-        //    //CollectMgr.CollectInterrupt(this);
-        //}
-    //}
-
-    /// <summary>
-    /// 合成的时候清除关联
-    /// </summary>
-    public void ReadyMergeClearAssociation()
-    {
-        if (IsMonster)
-        {
-            SwitchStatusToIdle();
-        }
-        else
-        {
-            if (basicData.canHarvest)
-            {
-                //CollectMgr.CollectInterrupt(this);
-            }
-        }
+        
     }
 
     #region Idle状态相关
@@ -1066,12 +777,7 @@ public partial class MapObject : MapItem
     /// </summary>
     public void MapObejctTimeout(bool stopAll = true)
     {
-        if (stopAll)
-        {
-            isTimeStill = true;
-            //CollectMgr.StopTimer();
-        }
-
+      
         //存活时间暂停
         //SurvivalTimeTimeOut();
         //采集时间暂停
@@ -1095,7 +801,6 @@ public partial class MapObject : MapItem
     {
         if (restoreAll)
         {
-            isTimeStill = false;
             //CollectMgr.StartTimer();
         }
 
@@ -1242,56 +947,6 @@ public partial class MapObject : MapItem
         //注意：由于新生物体有统一的新生动画，待机动画需要等新生动画完成后再继续播放
         if (tweener != null)
         {
-            PlayingEnityIdleAnimation = IdleAnimType.play;
-        }
-    }
-
-    /// <summary>
-    /// 重置类型为Entity的物体的待机动画间隔
-    /// </summary>
-    private void ResetEntityIdleAnimationInterval()
-    {
-        switch (basicData.idleAnimation)
-        {
-            case 1: // 随机抖动
-                entityIdleAnimationInterval = UnityEngine.Random.Range(4, 30);
-                break;
-            case 2: // 呼吸动画
-            case 3: // 上下浮动动画
-                entityIdleAnimationInterval = 0;
-                break;
-        }
-    }
-
-    /// <summary>
-    /// 类型为Entity的物体的待机动画播放结束，仅适用于不循环的待机动画
-    /// </summary>
-    private void EntityIdleAnimationEnd()
-    {
-        PlayingEnityIdleAnimation = IdleAnimType.stop;
-    }
-
-    /// <summary>
-    /// 停止类型为Entity的物体的待机动画
-    /// </summary>
-    private void StopEntityIdleAnimation()
-    {
-        if (entityTransform != null)
-        {
-            DOTween.Kill(this.entityTransform);
-            entityTransform.localPosition = entityTransformInitPos;
-            entityTransform.localScale = Vector3.one;
-        }
-    }
-
-    private void EntityIdleAnimationPause()
-    {
-        PlayingEnityIdleAnimation = IdleAnimType.pause;
-        if (entityTransform != null)
-        {
-            DOTween.Kill(this.entityTransform);
-            entityTransform.localPosition = entityTransformInitPos;
-            entityTransform.localScale = Vector3.one;
         }
     }
 
