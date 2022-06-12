@@ -163,7 +163,7 @@ namespace Universal.TileMapping
             for (int i = 0; i <= area[1]; i++)
             {
                 Vector3 start = tran.transform.position + Vector3.right * i;
-                Vector3 end = start + Vector3.up;
+                Vector3 end = start + Vector3.up * area[1];
 
                 DrawGridHightLight(start, end);
             }
@@ -171,7 +171,7 @@ namespace Universal.TileMapping
             for (int i = 0; i <= area[0]; i++)
             {
                 Vector3 start = tran.transform.position + Vector3.up * i;
-                Vector3 end = start + Vector3.right;
+                Vector3 end = start + Vector3.right * area[1];
                 DrawGridHightLight(start, end);
             }
             newLine.Draw();

@@ -423,8 +423,8 @@ namespace Universal.TileMapping
         {
             if (mapLayout == Layout.CartesianCoordinate)
             {
-				return new Vector3((x- mapWidth * 0.5f)* gridSize , (y- mapHeight * 0.5f) * gridSize);
-//				return new Vector3((x)* gridSize , (y) * gridSize);
+                return new Vector3((x - mapWidth * 0.5f) * gridSize, (y - mapHeight * 0.5f) * gridSize);
+                //return new Vector3((x/*)*/ * gridSize, (y) * gridSize);
 
             }
             return Vector3.zero;

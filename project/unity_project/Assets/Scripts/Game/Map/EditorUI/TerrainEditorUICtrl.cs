@@ -382,6 +382,12 @@ public class TerrainEditorUICtrl : MonoBehaviour
         currentSelectVegetationItemData = item.Data;
         currentSelectVegetationItem = item;
         currentSelectVegetationItem.IsSelect = true;
+
+
+        if(item != null)
+        {
+            MapUtil.Instance.DrawGridHightLight(currentSelectVegetationItemData.area);
+        }
     }
 		
     private void DropDownSelectChange(DropDownSelectType type, string name)
