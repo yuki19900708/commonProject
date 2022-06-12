@@ -162,16 +162,16 @@ namespace Universal.TileMapping
             tran.position = tmp;
             for (int i = 0; i <= area[1]; i++)
             {
-				Vector3 start = tran.transform.position + Vector3.right * i;
-				Vector3 end = start  + Vector3.up;
+                Vector3 start = tran.transform.position + Vector3.right * i;
+                Vector3 end = start + Vector3.up;
 
-                DrawGridHightLight(start, end );
+                DrawGridHightLight(start, end);
             }
             //Draw vertical grid lines
             for (int i = 0; i <= area[0]; i++)
             {
-				Vector3 start =  tran.transform.position + Vector3.up * i;
-				Vector3 end = start  + Vector3.right;
+                Vector3 start = tran.transform.position + Vector3.up * i;
+                Vector3 end = start + Vector3.right;
                 DrawGridHightLight(start, end);
             }
             newLine.Draw();

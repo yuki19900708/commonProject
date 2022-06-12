@@ -15,7 +15,8 @@ public class VegetationData
     public float saturation;
     /// <summary>亮度</summary>
     public float brightness;
-
+    /// <summary>占地</summary>
+    public int[] area;
 
     public VegetationData Clone()
     {
