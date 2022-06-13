@@ -178,7 +178,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
 		if (vegetationMap.IsInBounds(tmpGridPoint) && mapDataList.Count > 0)
         {
             MapGridGameData data = mapDataList[tmpGridPoint.y + tmpGridPoint.x * mapHeight];
-              
+            mousePosText.text = string.Format("坐标: {0},{1}", tmpGridPoint.x, tmpGridPoint.y);
             if (data.hasVegetation != 0)
             {
                 GameObject go = vegetationRenderer.GetTileGameObject(data.x, data.y);
@@ -278,6 +278,8 @@ public class TerrainEditorUICtrl : MonoBehaviour
 
     public void Drag()
     {
+        Debug.Log("编辑中");
+
         Point curPoint = vegetationMap.WorldPosition2Coordinate(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         if (lineGridPoint != curPoint)
         {
