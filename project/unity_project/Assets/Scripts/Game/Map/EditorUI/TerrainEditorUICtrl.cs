@@ -8,8 +8,6 @@ using UnityEngine.EventSystems;
 using DG.Tweening;
 using System;
 using System.Text;
-using GameProto;
-using Google.Protobuf;
 using UnityEngine.SceneManagement;
 public class MapDataCache
 {
@@ -452,11 +450,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
         vegetationMap.ResizeMap(mapWidth, mapHeight);
         MapUtil.Instance.DrawMapGridLine(mapWidth, mapHeight);
 
-        Timer.AddDelayFunc(1f, () =>
-         {
-             LoadMapObject();
-         });
-
+        LoadMapObject();
     }
 
     private void LoadMapObject()
@@ -480,13 +474,10 @@ public class TerrainEditorUICtrl : MonoBehaviour
 		tipText.text = txt;
         tipText.DOKill();
         tipText.color = Color.white;
-        Timer.AddDelayFunc(0.5f, () =>
-         {
-             tipText.DOColor(new Color(1, 1, 1, 0), 0.5f).OnComplete(delegate
-                {
-                    tipText.text = "";
-                });
-         });
+        tipText.DOColor(new Color(1, 1, 1, 0), 0.5f).OnComplete(delegate
+        {
+            tipText.text = "";
+        }).SetDelay(1);
     }
 		
     private void SaveEdiotr()
