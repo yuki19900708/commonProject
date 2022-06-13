@@ -6,10 +6,10 @@ namespace Universal.TileMapping
     [AddComponentMenu("2D/Renderer/TileGameObjectRenderer")]
     public class TileGameObjectRenderer : TileRenderer
     {
-        public event Action<int, int, GameObject> OnRenderTile;
+        //public event Action<int, int, GameObject> OnRenderTile;
 //        public event Func<int, int, GameObject, GameObject> OverrideCreateInstance;
-        public event Action<int, int, GameObject> OverrideDestoryInstance;
-        public event Action<int, int, SortingOrderTag, Renderer> OverrideReOrder;
+        //public event Action<int, int, GameObject> OverrideDestoryInstance;
+        //public event Action<int, int, SortingOrderTag, Renderer> OverrideReOrder;
 
         [SerializeField]
         private GameObject[] gameObjectMap = new GameObject[0];
@@ -30,14 +30,8 @@ namespace Universal.TileMapping
             GameObject current = gameObjectMap[index];
             if (current != null)
             {
-                if (OverrideDestoryInstance != null)
-                {
-                    OverrideDestoryInstance(x, y, current);
-                }
-                else
-                {
-                    DestroyImmediate(current);
-                }
+                DestroyImmediate(current);
+
                 gameObjectMap[index] = null;
                 current = null;
             }
@@ -56,51 +50,21 @@ namespace Universal.TileMapping
                     tileIndexSetter.SetTileIndex(tile.GetTileIndex(tileMap, point));
                 }
 
-                CheckSoringOrderTag(current);
                 current.name = string.Format("[{0},{1}]_{2}", x, y, prefab.name);
                 current.transform.SetParent(parent);
-                gameObjectMap[index] = current;
-                current.transform.localPosition = tileMap.Coordinate2WorldPosition(x, y);
-                if (autoPivot)
-                {
-                    //pivot change will affect the sprite transform position, because tile map system is base on 
-                    //fixed pivot, so the keypoint is calculate the offset between actual pivot and bottomCenter
-                    Vector2 pivotTileMap;
-                    if (tileMap.MapLayout == TileMap.Layout.CartesianCoordinate)
-                    {
-                        pivotTileMap = new Vector2(0f, 0f);
-                    }
-                    else
-                    {
-                        pivotTileMap = new Vector2(0.5f, 0);
-                    }
-                    Vector2 pivotActual = new Vector2(0.5f, 0.5f);
-                    SpriteRenderer sr = current.transform.GetComponentInChildren<SpriteRenderer>();
-                    if (sr != null && sr.sprite != null)
-                    {
-                        pivotActual = new Vector2(sr.sprite.pivot.x / sr.sprite.rect.width, sr.sprite.pivot.y / sr.sprite.rect.height);
-                    }
-                    Vector2 pivotOffset = pivotActual - pivotTileMap;
-                    //Then translate the pivotOffset's world position to tilemap coordinate
-                    Vector3 offset = Vector3.zero;
-                    if (tileMap.MapLayout == TileMap.Layout.CartesianCoordinate)
-                    {
-//                        offset = new Vector3(pivotOffset.x * tileMap.GridSize, pivotOffset.y * tileMap.GridSize);
-                    }
-                    current.transform.localPosition = tileMap.Coordinate2LocalPosition(x, y) + offset;
-                }
-                else
-                {
-                    current.transform.localPosition = tileMap.Coordinate2LocalPosition(x, y);
-                }
-//				Debug.LogError (current.transform.localPosition);
-//                current.transform.localScale = Vector2.one  * 3;
-                ReOrder(x, y, current);
-            }
 
-            if (OnRenderTile != null)
-            {
-                OnRenderTile(x, y, current);
+                int[] area = current.GetComponent<MapObject>().GetArea();
+                for (int i = 0; i < area[0]; i++)
+                {
+                    for (int j = 0; j < area[1]; j++)
+                    {
+                        index = (x + i) + (y + j) * tileMap.MapWidth;
+                        gameObjectMap[index] = current;
+                    }
+                }
+                Vector3 offset = new Vector3((area[0] - 1) * tileMap.GridSize * 0.5f, (area[1] - 1) * tileMap.GridSize * 0.5f, 0);
+                current.transform.localPosition = tileMap.Coordinate2WorldPosition(x, y) + offset;
+              
             }
         }
 
@@ -115,11 +79,6 @@ namespace Universal.TileMapping
             }
         }
 
-        public GameObject GetTileGameObject(Point point)
-        {
-            return GetTileGameObject(point.x, point.y);
-        }
-
         public GameObject GetTileGameObject(int x, int y)
         {
             int index = x + y * tileMap.MapWidth;
@@ -130,112 +89,5 @@ namespace Universal.TileMapping
             return gameObjectMap[index];
         }
 
-        public void ChangeTileMap(int x, int y, GameObject go)
-        {
-            int index = x + y * tileMap.MapWidth;
-            gameObjectMap[index] = go;
-            if (go != null)
-            {
-                go.transform.SetParent(parent);
-            }
-        }
-
-        public void SetSortingMethodOrder(GameObject go, string sortingLayerName)
-        {
-            if (sortingMethod == SortingMethod.SortingLayer)
-            {
-                SpriteRenderer[] srs = go.GetComponentsInChildren<SpriteRenderer>(true);
-                foreach (SpriteRenderer sr in srs)
-                {
-                    sr.sortingLayerName = sortingLayerName;
-                }
-            }
-        }
-
-        public float GetSortingOrderValue(int x, int y, GameObject go)
-        {
-            if (sortingMethod == SortingMethod.SortingLayer)
-            {
-                SortingOrderTag tag = go.GetComponent<SortingOrderTag>();
-                int sortingOrder = tag.sortingOrder + (orderInLayer - y - x) * orderDelta;
-                return sortingOrder;
-            }
-            else
-            {
-                SortingOrderTag tag = go.GetComponent<SortingOrderTag>();
-                float sortingOrder = tag.zOrder + (y * tileMap.MapWidth + x) * zDepthDelta;
-                return sortingOrder;
-            }
-        }
-
-        public void ReOrder(int x, int y, GameObject go)
-        {
-            if (sortingMethod == SortingMethod.SortingLayer)
-            {
-                Renderer[] renderers = go.GetComponentsInChildren<Renderer>(true);
-                foreach (Renderer renderer in renderers)
-                {
-                    SortingOrderTag tag = renderer.GetComponent<SortingOrderTag>();
-                    //生成时在该物体中加入动态粒子时，Tag为
-                    if (tag == null)
-                    {
-                        continue;
-                    }
-                    int sortingOrder = tag.sortingOrder + (orderInLayer - y - x) * orderDelta;
-                    renderer.sortingOrder = sortingOrder;
-                    renderer.sortingLayerID = sortingLayer;
-                    if (OverrideReOrder != null)
-                    {
-                         OverrideReOrder(x, y, tag, renderer);
-                    }
-                }
-            }
-            else if (sortingMethod == SortingMethod.ZDepth)
-            {
-                Transform[] transforms = go.GetComponentsInChildren<Transform>(true);
-                foreach (Transform transform in transforms)
-                {
-                    SortingOrderTag tag = transform.GetComponent<SortingOrderTag>();
-                    Vector3 position = transform.localPosition;
-                    position.z = tag.zOrder + (y * tileMap.MapWidth + x) * zDepthDelta;
-                    go.transform.localPosition = position;
-                }
-            }
-        }
-
-        private void CheckSoringOrderTag(GameObject go)
-        {
-            if (sortingMethod == SortingMethod.SortingLayer)
-            {
-                Renderer[] renderers = go.GetComponentsInChildren<Renderer>(true);
-                foreach (Renderer renderer in renderers)
-                {
-                    SortingOrderTag tag = renderer.GetComponent<SortingOrderTag>();
-                    if (tag == null)
-                    {
-                        tag = renderer.gameObject.AddComponent<SortingOrderTag>();
-                        tag.sortingOrder = renderer.sortingOrder;
-                        tag.zOrder = renderer.transform.localPosition.z;
-                    }
-                }
-            }
-            else if (sortingMethod == SortingMethod.ZDepth)
-            {
-                Transform[] transforms = go.GetComponentsInChildren<Transform>(true);
-                foreach (Transform transform in transforms)
-                {
-                    SortingOrderTag tag = transform.GetComponent<SortingOrderTag>();
-                    if (tag != null)
-                    {
-                        return;
-                    }
-                    else
-                    {
-                        tag = transform.gameObject.AddComponent<SortingOrderTag>();
-                        tag.zOrder = transform.localPosition.z;
-                    }
-                }
-            }
-        }
     }
 }

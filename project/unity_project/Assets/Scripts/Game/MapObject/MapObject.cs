@@ -3,21 +3,10 @@ using UnityEngine;
 
 public class MapObject : MonoBehaviour, ITileIndexSetter
 {
+    [SerializeField]
     private int vegetationId;
-    private VegetationData vegetationData;
-    public int VegetationId
-    {
-        get
-        {
-            return vegetationId;
-        }
-        set
-        {
-            vegetationId = value;
-            VegetationData = TableDataMgr.GetSingleVegetationData(vegetationId);
-        }
-    }
-
+    private VegetationData vegetationData = null;
+ 
     public VegetationData VegetationData
     {
         get
@@ -38,5 +27,16 @@ public class MapObject : MonoBehaviour, ITileIndexSetter
     public virtual void SetTileIndex(int tileIndex)
     {
 
+    }
+
+    public int[] GetArea()
+    {
+        VegetationData = TableDataMgr.GetSingleVegetationData(vegetationId);
+        if (VegetationData != null)
+        {
+            return VegetationData.area;
+        }
+        int[] a = new int[2] {1,1 };
+        return a;
     }
 }

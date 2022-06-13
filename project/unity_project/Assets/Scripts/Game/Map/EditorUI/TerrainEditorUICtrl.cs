@@ -94,24 +94,10 @@ public class TerrainEditorUICtrl : MonoBehaviour
         exitButton.onClick.AddListener(OnExitButtonClick);
         previewButton.onClick.AddListener(OnPreviewButtonClick);
 
-        vegetationRenderer.OnRenderTile += OnVegetationRederTile;
-
         ExitEditor();
         ShowTipText("来测试一下");
 		LoadEditor ();
 	}
-
-    private void OnVegetationRederTile(int x, int y, GameObject go)
-    {
-        if (go == null)
-        {
-            return;
-        }
-        MapObject mapObject = go.GetComponent<MapObject>();
-        int index = y + x * mapHeight;
-        MapGridGameData data = mapDataList[index];
-        mapObject.VegetationId = data.entityId;
-    }
 
     private void Update()
     {
@@ -230,8 +216,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
 
     public void Drag()
     {
-        Debug.Log("编辑中");
-
         Point curPoint = vegetationMap.WorldPosition2Coordinate(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         if (lineGridPoint != curPoint)
         {
@@ -285,7 +269,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
             tmpTile = null;
         }
 
-      
         for (int i = 0; i < region.Count; i++)
         {
             Point offsetPoint = region[i];
@@ -293,7 +276,36 @@ public class TerrainEditorUICtrl : MonoBehaviour
             {
                 continue;
             }
-         
+
+            bool canBrush = true;
+            string reason = "";
+            if (tmpTile != null)
+            {
+                int[] area = currentSelectVegetationItemData.area;
+                for (int x = 0; x < area[0]; x++)
+                {
+                    for (int j = 0; j < area[1]; j++)
+                    {
+                        if (vegetationRenderer.GetTileGameObject(offsetPoint.x + x, offsetPoint.y + j) != null)
+                        {
+                            reason = "必须先移除物件 才可以继续放置物件";
+                            canBrush = false;
+                        }
+                        else if(vegetationMap.IsInBounds(offsetPoint.x + x, offsetPoint.y + j) == false)
+                        {
+                            reason = "物体越界";
+                            canBrush = false;
+                        }
+                    }
+                }
+            }
+
+            if(!canBrush)
+            {
+                ShowTipText(reason);
+                return;
+            }
+
             int index = offsetPoint.y + offsetPoint.x * mapHeight;
             switch (layoutType)
             {
@@ -459,10 +471,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
         {
             if (info.entityId > 0)
             {
-                if (vegetationRenderer.GetTileGameObject(info.x, info.y) != null)
-                {
-                    Debug.LogError(string.Format("致命错误 -- 有重复的物品添加,排查下表的正确性：X:{0} Y:{1}的{2}", info.x, info.y, info.entityId));
-                }
                 SimpleTile simpleTile = GetTile(info.entityId);
                 vegetationMap.SetTileAt(info.x, info.y, simpleTile, false);
             }

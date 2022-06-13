@@ -327,26 +327,12 @@ namespace Universal.TileMapping
         {
             SetTileAt(point.x, point.y, to, true);
         }
-        public void SetTileAndUpdateNeighbours(int x, int y, ScriptableTile to)
-        {
-            SetTileAt(x, y, to, true);
-        }
-
-        public void UpdateTileAt(Point point)
-        {
-            UpdateTileAt(point.x, point.y);
-        }
+     
         public void UpdateTileAt(int x, int y)
         {
             OnUpdateTileAt(x, y);
         }
-        public void UpdateTilesAt(Point[] points)
-        {
-            for (int i = 0; i < points.Length; i++)
-            {
-                UpdateTileAt(points[i]);
-            }
-        }
+     
         public void UpdateNeighbours(int x, int y, bool incudeCorners = false)
         {
             ScriptableTile centerTile = map[x, y];
