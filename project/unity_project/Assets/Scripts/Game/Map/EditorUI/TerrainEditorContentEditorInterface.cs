@@ -19,7 +19,6 @@ public class TerrainEditorContentEditorInterface : MonoBehaviour
     public Button saveButton;
     public Text tipText;
 
-    private List<MapObjectData> selectDataList = new List<MapObjectData>();
     private List<VegetationData> selectVegetationList = new List<VegetationData>();
     public void InitData(string text)
     {

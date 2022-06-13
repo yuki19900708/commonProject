@@ -22,8 +22,6 @@ public class MapDataCache
 public class TerrainEditorUICtrl : MonoBehaviour
 {
     public static TerrainEditorUICtrl Instance;
-    public static string PATH;
-    public static string Suffix = ".xlsx";
 
     public Button exitButton;
 
@@ -67,7 +65,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
 	private int mapPhase = 1;
 #if UNITY_EDITOR
     private string textPath = "";
-    private string checktextPath = "";
 #endif
     private Point lastGridPoint;
     private Point startPoint;
@@ -85,8 +82,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
 	{
 		TerrainEditorModel.IsRunMapEditor = true;
 
-		PATH = Application.dataPath + "../../../../design_asset/datatable/";
-		Instance = this;
+        Instance = this;
 	}
 			
 	public void Init()
@@ -562,21 +558,18 @@ public class TerrainEditorUICtrl : MonoBehaviour
     private void SaveEdiotr()
     {
 #if UNITY_EDITOR
-        string currentPath = "";
         Debug.Log("将地形保存为文件！！！");
         switch (editorType)
         {
             case EditorType.Level:
-			currentPath = PATH + mapPhase + Suffix;
 			textPath = Application.dataPath + "/Resources/MapData/LevelData/" + mapPhase + ".txt";
-			checktextPath = Application.dataPath + "/ResourcesRaw/Check/" + mapPhase + ".txt";
-                CreatExcel(textPath, checktextPath, currentPath, mapDataList);
+                CreatExcel(textPath, mapDataList);
                 break;
         }
 #endif
     }
 
-    private void CreatExcel(string textPath1, string checkTextPath1, string outputFilePath, List<MapGridGameData> mapList, int w = -1, int h = -1)
+    private void CreatExcel(string textPath1, List<MapGridGameData> mapList, int w = -1, int h = -1)
     {
 #if UNITY_EDITOR
         MapDataCache saveEditor = new MapDataCache();
@@ -587,14 +580,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
             saveEditor.width = w;
             saveEditor.height = h;
         }
-        FileInfo newFile = new FileInfo(outputFilePath);
-
-        if (newFile.Exists)
-        {
-            newFile.Delete();
-            newFile = new FileInfo(outputFilePath);
-            Debug.Log("创建文件 = " + outputFilePath);
-        }
+   
         saveEditor.playerDataList = mapList;
 
         Debug.Log("查看格子列表的总长度" + saveEditor.playerDataList.Count);
@@ -636,7 +622,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
         }
 
         File.WriteAllText(textPath1, SimpleJson.SimpleJson.SerializeObject(saveEditor));
-        File.WriteAllText(checkTextPath1, sb.ToString());
         UnityEditor.AssetDatabase.Refresh();
 #endif
     }

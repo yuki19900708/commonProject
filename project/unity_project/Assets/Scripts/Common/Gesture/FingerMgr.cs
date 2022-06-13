@@ -177,34 +177,6 @@ public class FingerMgr : MonoBehaviour {
                 {
                     fingerMgrOperation = FingerMgrOperation.OperationMap;
                 }
-                else if (e.Selection.layer == LayerMask.NameToLayer("CollectBall"))
-                {
-                    if (Event_CloseMoreFeatures != null)
-                    {
-                        Event_CloseMoreFeatures();
-                    }
-                    //e.Selection.GetComponent<CollectBall>().UnloadingMapObject();
-                    fingerMgrOperation = FingerMgrOperation.OperationMap;
-                }
-                else if (e.Selection.layer == LayerMask.NameToLayer("DragObject") || e.Selection.layer == LayerMask.NameToLayer("Cloud"))
-                {
-                    if (e.Selection.GetComponent<MapObject>().IsCanBeSelected == false)
-                    {
-                        fingerMgrOperation = FingerMgrOperation.OperationMap;
-                    }
-                    else if (JugeObjectStateInGrid(e.Selection.GetComponent<MapObject>()))
-                    {
-                        if (Event_CloseMoreFeatures != null)
-                        {
-                            Event_CloseMoreFeatures();
-                        }
-                        fingerMgrOperation = FingerMgrOperation.OperationObject;
-                    }
-                    else
-                    {
-                        fingerMgrOperation = FingerMgrOperation.OperationMap;
-                    }
-                }
                 else
                 {
                     fingerMgrOperation = FingerMgrOperation.OperationMap;
@@ -270,32 +242,4 @@ public class FingerMgr : MonoBehaviour {
         return mount > 0;
     }
 
-    private bool JugeObjectStateInGrid(MapObject a)
-    {
-        bool canDrag = false;
-        //if (GlobalVariable.GameState == GameState.PlunderMode)
-        //{
-        //    return false;
-        //}
-        if (a.BasicData.area.Length >= 1)
-        {
-            int mount = 0;
-            for (int i = 0; i < a.StaticMapGridList.Count; i++)
-            {
-                
-                    mount++;
-                
-            }
-
-            if (mount == a.StaticMapGridList.Count)
-            {
-                canDrag = true;
-            }
-        }
-        else
-        {
-            canDrag = true;
-        }
-        return canDrag;
-    }
 }

@@ -5,24 +5,6 @@ using UnityEngine;
 
 namespace EditorTerrainModel
 {
-    public class SelectItemData
-    {
-        public bool isSelect;
-        public MapObjectData data;
-    }
-
-    [SerializeField]
-    public class terrainInfoTableData
-    {
-        public int xPos;
-        public int yPos;
-        public int terrainIndex;
-        public int vegetationIndex;
-        public int objectIndex;
-        public int purificationIndex;
-        public int sealLockIndex;
-    }
-
     public enum BrushStyle
     {
         None,
