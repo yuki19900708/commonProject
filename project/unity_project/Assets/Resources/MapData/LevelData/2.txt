@@ -1,0 +1,1 @@
+{"width":2,"height":2,"playerDataList":[{"x":0,"y":0,"entityId":1001},{"x":0,"y":1,"entityId":1003},{"x":1,"y":0,"entityId":1002},{"x":1,"y":1,"entityId":0}]}

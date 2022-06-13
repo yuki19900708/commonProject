@@ -20,6 +20,7 @@ namespace Universal.TileMapping
 
         public override GameObject GetTile(TileMap tileMap = null, Point position = default(Point))
         {
+            Debug.LogError("draw" + prefab.name);
             return prefab;
         }
 

@@ -9,10 +9,8 @@ public class TerrainEditorVegetation : APWrapContentItem
     public Image iconImage;
     public Text nameText;
     public Text idText;
-    public Text infoText;
     public Button button;
     public Sprite[] spriteArray;
-    Material mat;
     private VegetationData data;
     private bool isSelect = false;
     public bool IsSelect
@@ -49,18 +47,13 @@ public class TerrainEditorVegetation : APWrapContentItem
             data = value;
 
             iconImage.sprite = spriteArray[index];
-            Material newMat = new Material(mat);
-            newMat.SetFloat("_Hue", data.hueValue);
-            iconImage.material = newMat;
             nameText.text = data.des.ToString();
             idText.text = data.id.ToString();
-            infoText.text = "Hue:" + data.hueValue;
         }
     }
 
     private void Awake()
     {
-		mat = Resources.Load<Material>("Material/SpriteHSVMaterial");
         button.onClick.AddListener(OnClickItem);
     }
 
