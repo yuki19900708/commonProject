@@ -30,12 +30,22 @@ public class TerrainEditorContentEditorInterface : MonoBehaviour
         brushStyleDropDown.options = TerrainEditorModel.GetTerrainEditorDropDownOptionData(TerrainEditorModel.brushStyleElements);
         brushStyleDropDown.value = 0;
 
-        selectVegetationList = EditorTerrainModel.TerrainEditorModel.AllVegetationElements;
+        List<VegetationData> tmpList = EditorTerrainModel.TerrainEditorModel.AllVegetationElements;
+        selectVegetationList = new List<VegetationData>();
+        int character = TerrainEditorModel.LoadCharacter();
 
+        if (character == 0)
+        {
+            selectVegetationList.Add(tmpList[0]);
+        }
+        else
+        {
+            selectVegetationList.AddRange(tmpList);
+        }
         selectVegetationGameObject.SetActive(true);
         vegetationContent.Event_OnCreateWrapContentItem += EventVegetationOnCreateWrapContent;
         vegetationContent.Event_OnRefreshWrapContentItem += EventVegetationOnRefreshWrapContent;
-        vegetationContent.RefreshWrapContent(EditorTerrainModel.TerrainEditorModel.AllVegetationElements.Count);
+        vegetationContent.RefreshWrapContent(selectVegetationList.Count);
         selectVegetationGameObject.SetActive(false);
 
     }

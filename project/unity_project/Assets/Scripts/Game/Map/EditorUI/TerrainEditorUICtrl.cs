@@ -117,19 +117,17 @@ public class TerrainEditorUICtrl : MonoBehaviour
 		if (vegetationMap.IsInBounds(tmpGridPoint) && mapDataList.Count > 0)
         {
             MapGridGameData data = mapDataList[tmpGridPoint.y + tmpGridPoint.x * mapHeight];
-            mousePosText.text = string.Format("坐标: {0},{1}", tmpGridPoint.x, tmpGridPoint.y);
-            if (data.entityId != 0)
+            mousePosText.text = string.Format("坐标: {0},{1}\n格子索引{2}", tmpGridPoint.x, tmpGridPoint.y, tmpGridPoint.x + tmpGridPoint.y * vegetationMap.MapHeight);
+            GameObject go = vegetationRenderer.GetTileGameObject(data.x, data.y);
+            if (go != null)
             {
-                GameObject go = vegetationRenderer.GetTileGameObject(data.x, data.y);
-                if (go != null)
-                {
-                    MapObject obj = go.GetComponent<MapObject>();
-                    vegetationText.text = string.Format("草地: {0}", data.entityId);
-                }
+                MapObject obj = go.GetComponent<MapObject>();
+                vegetationText.text = string.Format("草地: {0}", obj.VegetationId);
+                vegetationText.text += string.Format("\n所属格子索引{0}\n起始格子坐标x:{1},y:{2}:", obj.gridIndex, obj.gridIndex % vegetationMap.MapWidth, obj.gridIndex / vegetationMap.MapWidth);
             }
             else
             {
-                vegetationText.text = string.Format("草地: {0}", "没有草地");
+                vegetationText.text = "空地块";
             }
         }
     }
@@ -278,7 +276,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
             }
 
             bool canBrush = true;
-            string reason = "";
             if (tmpTile != null)
             {
                 int[] area = currentSelectVegetationItemData.area;
@@ -288,12 +285,10 @@ public class TerrainEditorUICtrl : MonoBehaviour
                     {
                         if (vegetationRenderer.GetTileGameObject(offsetPoint.x + x, offsetPoint.y + j) != null)
                         {
-                            reason = "必须先移除物件 才可以继续放置物件";
                             canBrush = false;
                         }
                         else if(vegetationMap.IsInBounds(offsetPoint.x + x, offsetPoint.y + j) == false)
                         {
-                            reason = "物体越界";
                             canBrush = false;
                         }
                     }
@@ -302,7 +297,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
 
             if(!canBrush)
             {
-                ShowTipText(reason);
                 return;
             }
 
@@ -320,6 +314,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
                     }
                     break;
             }
+            mapDataList[index].gridIndex = index;
             vegetationMap.SetTileAndUpdateNeighbours(offsetPoint, tmpTile);
         }
         lineGridPoint = new Point(-1, -1);

@@ -10,4 +10,7 @@ public class MapGridGameData
     /// <summary>物件块编号</summary>
     public int entityId;
 
+
+    /// <summary>各自索引 x + y * width</summary>
+    public int gridIndex;
 }

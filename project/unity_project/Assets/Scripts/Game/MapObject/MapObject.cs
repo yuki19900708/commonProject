@@ -1,10 +1,21 @@
 ﻿
 using UnityEngine;
 
-public class MapObject : MonoBehaviour, ITileIndexSetter
+public class MapObject : MonoBehaviour
 {
     [SerializeField]
     private int vegetationId;
+
+    public int VegetationId
+    {
+        get
+        {
+            return vegetationId;
+        }
+    }
+
+    public int gridIndex;
+
     private VegetationData vegetationData = null;
  
     public VegetationData VegetationData
@@ -21,12 +32,6 @@ public class MapObject : MonoBehaviour, ITileIndexSetter
                 Debug.LogError("致命错误 === 没有这种草皮！！!" + vegetationId);
             }
         }
-    }
-
-
-    public virtual void SetTileIndex(int tileIndex)
-    {
-
     }
 
     public int[] GetArea()

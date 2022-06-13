@@ -43,17 +43,11 @@ namespace Universal.TileMapping
             {
 				current = Instantiate(prefab);
 
-
-                ITileIndexSetter tileIndexSetter = current.GetComponent<ITileIndexSetter>();
-                if (tileIndexSetter != null)
-                {
-                    tileIndexSetter.SetTileIndex(tile.GetTileIndex(tileMap, point));
-                }
-
                 current.name = string.Format("[{0},{1}]_{2}", x, y, prefab.name);
                 current.transform.SetParent(parent);
 
                 int[] area = current.GetComponent<MapObject>().GetArea();
+                current.GetComponent<MapObject>().gridIndex = index;
                 for (int i = 0; i < area[0]; i++)
                 {
                     for (int j = 0; j < area[1]; j++)
@@ -62,6 +56,7 @@ namespace Universal.TileMapping
                         gameObjectMap[index] = current;
                     }
                 }
+                
                 Vector3 offset = new Vector3((area[0] - 1) * tileMap.GridSize * 0.5f, (area[1] - 1) * tileMap.GridSize * 0.5f, 0);
                 current.transform.localPosition = tileMap.Coordinate2WorldPosition(x, y) + offset;
               

@@ -34,8 +34,9 @@ namespace EditorTerrainModel
         private static string HEIGHT_KEY = "MAP_HEIGHT_KEY";
 
 		private static string PHASE_KEY = "MAP_PHASE_KEY";
+        private static string CHARACTER_KEY = "MAP_CHARACTER_KEY";
 
-		public static void SetMapSize(int width , int height, int phase)
+        public static void SetMapSize(int width , int height, int phase)
         {
             PlayerPrefs.SetInt(WIDTH_KEY, width);
             PlayerPrefs.SetInt(HEIGHT_KEY, height);
@@ -44,10 +45,21 @@ namespace EditorTerrainModel
 
 		public static void LoadMapSize(ref int width, ref int height, ref int phase)
         {
-            width = PlayerPrefs.GetInt(WIDTH_KEY, width);
-            height = PlayerPrefs.GetInt(HEIGHT_KEY, height);
-			phase= PlayerPrefs.GetInt(PHASE_KEY, height);
+            width = PlayerPrefs.GetInt(WIDTH_KEY, 100);
+            height = PlayerPrefs.GetInt(HEIGHT_KEY, 100);
+			phase= PlayerPrefs.GetInt(PHASE_KEY, 1);
         }
+
+        public static void SetCharacter(int character)
+        {
+            PlayerPrefs.SetInt(CHARACTER_KEY, character);
+        }
+
+        public static int LoadCharacter()
+        {
+            return PlayerPrefs.GetInt(CHARACTER_KEY, 0);
+        }
+
 
         private static bool isRunMapEditor = false;
 

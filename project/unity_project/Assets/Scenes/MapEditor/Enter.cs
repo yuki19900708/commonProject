@@ -30,7 +30,8 @@ public class Enter : MonoBehaviour {
 			"绘制地图",
 			"编辑地图",
 		});
-		dropPanel.value = 0;
+		dropPanel.value = TerrainEditorModel.LoadCharacter();
+
 		close.onClick.AddListener(() =>
 		{
 				ShowTipPanel(false);
@@ -63,15 +64,7 @@ public class Enter : MonoBehaviour {
 
 	private void BrushStyleDropDownValueChange(int index)
 	{
-		switch (index)
-		{
-			case 0:
-				
-				break;
-			case 1:
-				break;
-
-		}
+		TerrainEditorModel.SetCharacter(index);
 	}
 
 	void ShowTipPanel(bool show, string tip = "")
