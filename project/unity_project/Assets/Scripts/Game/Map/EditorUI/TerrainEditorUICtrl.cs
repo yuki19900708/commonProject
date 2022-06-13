@@ -485,7 +485,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
         tipText.DOColor(new Color(1, 1, 1, 0), 0.5f).OnComplete(delegate
         {
             tipText.text = "";
-        }).SetDelay(1);
+        }).SetDelay(0.5f);
     }
 		
     private void SaveEdiotr()

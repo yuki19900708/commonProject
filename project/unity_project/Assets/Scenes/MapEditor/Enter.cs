@@ -14,6 +14,8 @@ public class Enter : MonoBehaviour {
 	public Text tipText;
 	public GameObject tipPanel;
 
+	public Dropdown dropPanel;
+
 	// Use this for initialization
 	void Start () {
 		x.text = "100";
@@ -21,6 +23,14 @@ public class Enter : MonoBehaviour {
 		phase.text = "1";
 
 		ShowTipPanel(false);
+
+		dropPanel.onValueChanged.AddListener(BrushStyleDropDownValueChange);
+		dropPanel.options = TerrainEditorModel.GetTerrainEditorDropDownOptionData(new string[]
+		{
+			"绘制地图",
+			"编辑地图",
+		});
+		dropPanel.value = 0;
 		close.onClick.AddListener(() =>
 		{
 				ShowTipPanel(false);
@@ -51,6 +61,18 @@ public class Enter : MonoBehaviour {
 		});
 	}
 
+	private void BrushStyleDropDownValueChange(int index)
+	{
+		switch (index)
+		{
+			case 0:
+				
+				break;
+			case 1:
+				break;
+
+		}
+	}
 
 	void ShowTipPanel(bool show, string tip = "")
 	{
