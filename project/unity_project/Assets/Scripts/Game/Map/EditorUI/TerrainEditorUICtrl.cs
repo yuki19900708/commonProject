@@ -82,7 +82,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
     {        
         CameraGestureMgr.Instance.Init(5, new Rect(-5000, -5000, 10000, 10000));
         TableDataEventMgr.BindAllEvent();
-
+        Camera.main.fieldOfView = 35;
         editInterface.Event_BrushStyleChange += DropDownSelectChange;
         editInterface.Event_SaveEditor += SaveEdiotr;
 
@@ -122,7 +122,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
             if (go != null)
             {
                 MapObject obj = go.GetComponent<MapObject>();
-                vegetationText.text = string.Format("草地: {0}", obj.VegetationId);
+                vegetationText.text = string.Format("地块id: {0}", obj.VegetationId);
                 vegetationText.text += string.Format("\n所属格子索引{0}\n起始格子坐标x:{1},y:{2}:", obj.gridIndex, obj.gridIndex % vegetationMap.MapWidth, obj.gridIndex / vegetationMap.MapWidth);
             }
             else
@@ -205,6 +205,17 @@ public class TerrainEditorUICtrl : MonoBehaviour
         lastGridPoint = new Point(-1, -2);
         lineGridPoint = startPoint;
         clickIsRmove = Input.GetMouseButton(1) ? true : false;
+
+        MapUtil.Instance.DrawGridHightLight(new int[] { 1, 1 });
+
+        if (currentSelectVegetationItemData != null)
+        {
+            if(clickIsRmove == false)
+            {
+                MapUtil.Instance.DrawGridHightLight(currentSelectVegetationItemData.area);
+            }
+        }
+
 
         if (brushStyle == BrushStyle.BoxUp)
         {
@@ -314,7 +325,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
                     }
                     break;
             }
-            mapDataList[index].gridIndex = index;
             vegetationMap.SetTileAndUpdateNeighbours(offsetPoint, tmpTile);
         }
         lineGridPoint = new Point(-1, -1);
@@ -425,6 +435,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
         }
 
         mapDataList.Clear();
+        vegetationMap.ResizeMap(mapWidth, mapHeight);
 
         for (int i = 0; i < mapWidth; i++)
         {
@@ -433,6 +444,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
                 MapGridGameData data = new MapGridGameData();
                 data.x = i;
                 data.y = j;
+                data.gridIndex = i + j * mapHeight;
                 mapDataList.Add(data);
             }
         }
@@ -454,7 +466,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
             }
         }
 
-        vegetationMap.ResizeMap(mapWidth, mapHeight);
         MapUtil.Instance.DrawMapGridLine(mapWidth, mapHeight);
 
         LoadMapObject();

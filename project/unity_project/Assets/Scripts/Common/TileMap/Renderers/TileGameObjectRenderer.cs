@@ -30,10 +30,12 @@ namespace Universal.TileMapping
             GameObject current = gameObjectMap[index];
             if (current != null)
             {
-                DestroyImmediate(current);
-
-                gameObjectMap[index] = null;
-                current = null;
+                int tmpIndex = current.GetComponent<MapObject>().gridIndex;
+                if(tmpIndex == index)
+                {
+                    DestroyImmediate(current);
+                    gameObjectMap[index] = null;
+                }
             }
             Point point = new Point(x, y);
             ScriptableTile tile = tileMap.GetTileAt(x, y);

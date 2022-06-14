@@ -14,6 +14,17 @@ public class MapObject : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            if(this.transform.childCount>0)
+            {
+                this.transform.GetChild(0).gameObject.SetActive(true); 
+            }
+        }
+    }
+
     public int gridIndex;
 
     private VegetationData vegetationData = null;
