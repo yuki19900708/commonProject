@@ -95,7 +95,7 @@ namespace Universal.TileMapping
             {
 				if (bitmaskPrefabs [index] != null) 
 				{
-					texture=  AssetPreview.GetAssetPreview(bitmaskPrefabs[index]);
+					//texture=  AssetPreview.GetAssetPreview(bitmaskPrefabs[index]);
 
 				}
             }
