@@ -53,7 +53,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
     private BrushStyle brushStyle = BrushStyle.None;
     
     private List<Point> region = new List<Point>();
-    private List<MapGridGameData> mapDataList = new List<MapGridGameData>();
     private int mapWidth = 100;
 	private int mapHeight = 100;
 	private int mapPhase = 1;
@@ -114,15 +113,14 @@ public class TerrainEditorUICtrl : MonoBehaviour
         Point tmpGridPoint = vegetationMap.WorldPosition2Coordinate(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
 		MapUtil.Instance.tran.position = vegetationMap.Coordinate2WorldPosition(tmpGridPoint);
-		if (vegetationMap.IsInBounds(tmpGridPoint) && mapDataList.Count > 0)
+		if (vegetationMap.IsInBounds(tmpGridPoint))
         {
-            MapGridGameData data = mapDataList[tmpGridPoint.y + tmpGridPoint.x * mapHeight];
             mousePosText.text = string.Format("坐标: {0},{1}\n格子索引{2}", tmpGridPoint.x, tmpGridPoint.y, tmpGridPoint.x + tmpGridPoint.y * vegetationMap.MapHeight);
-            MapObject obj = vegetationRenderer.GetMapObject(data.x, data.y);
+            MapObject obj = vegetationRenderer.GetMapObject(tmpGridPoint.x, tmpGridPoint.y);
             if (obj != null)
             {
                 vegetationText.text = string.Format("地块id: {0}", obj.VegetationId);
-                vegetationText.text += string.Format("\n所属格子索引{0}\n起始格子坐标x:{1},y:{2}:", obj.gridIndex, obj.gridIndex % vegetationMap.MapWidth, obj.gridIndex / vegetationMap.MapWidth);
+                vegetationText.text += string.Format("\n所属格子索引{0}\n起始格子坐标x:{1},y:{2}:", obj.gridIndex, obj.xPos, obj.yPos);
             }
             else
             {
@@ -313,21 +311,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
                 continue;
             }
 
-            int index = offsetPoint.x + offsetPoint.y * mapHeight;
-
-            switch (layoutType)
-            {
-                case EditoryLayoutType.Vegetation:
-                    if (tmpTile == null)
-                    {
-                        mapDataList[index].entityId = 0;
-                    }
-                    else
-                    {
-                        mapDataList[index].entityId = currentSelectVegetationItemData.id;
-                    }
-                    break;
-            }
             vegetationMap.SetTileAndUpdateNeighbours(offsetPoint, tmpTile);
         }
         lineGridPoint = new Point(-1, -1);
@@ -434,7 +417,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
     private void LoadData()
     {
         string currentPath = "";
-        mapDataList.Clear();
         TextAsset ta = null;
         switch (editorType)
         {
@@ -444,46 +426,18 @@ public class TerrainEditorUICtrl : MonoBehaviour
                 break;
         }
 
-        mapDataList.Clear();
         vegetationMap.ResizeMap(mapWidth, mapHeight);
 
-        for (int i = 0; i < mapHeight; i++)
-        {
-            for (int j = 0; j < mapWidth; j++)
-            {
-                MapGridGameData data = new MapGridGameData();
-                data.x = j;
-                data.y = i;
-                data.gridIndex = j + i * mapHeight;
-                mapDataList.Add(data);
-            }
-        }
+        List<MapGridGameData> savedData = new List<MapGridGameData>();
         if (ta != null)
         {
             MapDataCache saveEditor = SimpleJson.SimpleJson.DeserializeObject<MapDataCache>(ta.text);
-            List<MapGridGameData> savedData = saveEditor.playerDataList;
-            
-            for (int j = 0; j < mapDataList.Count; j++)
-            {
-                for (int i = 0; i < savedData.Count; i++)
-                {
-                    if (savedData[i].x == mapDataList[j].x && savedData[i].y == mapDataList[j].y)
-                    {
-                        mapDataList[j] = savedData[i];
-                    }
-                }
-            
-            }
+            savedData = saveEditor.playerDataList;       
         }
 
         MapUtil.Instance.DrawMapGridLine(mapWidth, mapHeight);
 
-        LoadMapObject();
-    }
-
-    private void LoadMapObject()
-    {
-        foreach (MapGridGameData info in mapDataList)
+        foreach (MapGridGameData info in savedData)
         {
             if (info.entityId > 0)
             {
@@ -491,8 +445,8 @@ public class TerrainEditorUICtrl : MonoBehaviour
                 vegetationMap.SetTileAt(info.x, info.y, simpleTile, false);
             }
         }
-    }
 
+    }
     private void ShowTipText(string txt)
     {       
 		tipText.text = txt;
@@ -512,25 +466,42 @@ public class TerrainEditorUICtrl : MonoBehaviour
         {
             case EditorType.Level:
 			textPath = Application.dataPath + "/Resources/MapData/LevelData/" + mapPhase + ".txt";
-                CreatExcel(textPath, mapDataList);
+                CreatExcel(textPath);
                 break;
         }
 #endif
     }
 
-    private void CreatExcel(string textPath1, List<MapGridGameData> mapList, int w = -1, int h = -1)
+    private void CreatExcel(string textPath1, int w = -1, int h = -1)
     {
 #if UNITY_EDITOR
         MapDataCache saveEditor = new MapDataCache();
         saveEditor.width = mapWidth;
         saveEditor.height = mapHeight;
+        saveEditor.playerDataList = new List<MapGridGameData>();
         if (w > 0)
         {
             saveEditor.width = w;
             saveEditor.height = h;
         }
-   
-        saveEditor.playerDataList = mapList;
+        MapObject[] objs = vegetationRenderer.GameObjMap;
+        List<int> recordIndex = new List<int>();
+        foreach(MapObject obj in objs)
+        {
+            if (obj != null)
+            {
+                if(recordIndex.Contains(obj.gridIndex) == false)
+                {
+                    MapGridGameData mgd = new MapGridGameData();
+                    mgd.x = obj.xPos;
+                    mgd.y = obj.yPos;
+                    mgd.gridIndex = obj.gridIndex;
+                    mgd.entityId = obj.VegetationId;
+                    saveEditor.playerDataList.Add(mgd);
+                    recordIndex.Add(obj.gridIndex);
+                }
+            }
+        }
 
         File.WriteAllText(textPath1, SimpleJson.SimpleJson.SerializeObject(saveEditor));
         UnityEditor.AssetDatabase.Refresh();

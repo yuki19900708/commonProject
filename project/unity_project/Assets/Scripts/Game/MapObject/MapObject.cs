@@ -14,6 +14,9 @@ public class MapObject : MonoBehaviour
         }
     }
 
+    public int xPos;
+    public int yPos;
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))

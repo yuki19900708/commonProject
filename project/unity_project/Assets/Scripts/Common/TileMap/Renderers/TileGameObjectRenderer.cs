@@ -9,6 +9,17 @@ namespace Universal.TileMapping
         [SerializeField]
         private MapObject[] gameObjectMap = new MapObject[0];
 
+        public  MapObject[] GameObjMap
+        {
+            get {
+                return gameObjectMap;
+            }
+
+        }
+
+        public override void Start()
+        {
+        }
         public override void Resize(int width, int height)
         {
             if (width * height == gameObjectMap.Length)
@@ -26,11 +37,20 @@ namespace Universal.TileMapping
             if (current != null)
             {
                 int tmpIndex = current.gridIndex;
-                if(tmpIndex == index)
+
+                int[] area = current.GetArea();
+                for (int i = 0; i < area[0]; i++)
                 {
-                    DestroyImmediate(current);
-                    gameObjectMap[index] = null;
+                    for (int j = 0; j < area[1]; j++)
+                    {
+                        index = (current.xPos + i) + (current.yPos + j) * tileMap.MapWidth;
+                        if (tmpIndex == index)
+                        {
+                            DestroyImmediate(current.gameObject);
+                        }
+                    }
                 }
+               
             }
             Point point = new Point(x, y);
             ScriptableTile tile = tileMap.GetTileAt(x, y);
@@ -49,6 +69,8 @@ namespace Universal.TileMapping
 
                 int[] area = current.GetArea();
                 current.gridIndex = index;
+                current.xPos = x;
+                current.yPos = y;
                 for (int i = 0; i < area[0]; i++)
                 {
                     for (int j = 0; j < area[1]; j++)
