@@ -208,18 +208,21 @@ public class TerrainEditorUICtrl : MonoBehaviour
 
         MapUtil.Instance.DrawGridHightLight(new int[] { 1, 1 });
 
-        if (currentSelectVegetationItemData != null)
-        {
-            if(clickIsRmove == false)
-            {
-                MapUtil.Instance.DrawGridHightLight(currentSelectVegetationItemData.area);
-            }
-        }
 
 
         if (brushStyle == BrushStyle.BoxUp)
         {
 			startPoint = vegetationMap.WorldPosition2Coordinate(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        }
+        else
+        {
+            if (currentSelectVegetationItemData != null)
+            {
+                if (clickIsRmove == false)
+                {
+                    MapUtil.Instance.DrawGridHightLight(currentSelectVegetationItemData.area);
+                }
+            }
         }
     }
 
@@ -308,10 +311,11 @@ public class TerrainEditorUICtrl : MonoBehaviour
 
             if(!canBrush)
             {
-                return;
+                continue;
             }
 
-            int index = offsetPoint.y + offsetPoint.x * mapHeight;
+            int index = offsetPoint.x + offsetPoint.y * mapHeight;
+
             switch (layoutType)
             {
                 case EditoryLayoutType.Vegetation:
@@ -345,7 +349,14 @@ public class TerrainEditorUICtrl : MonoBehaviour
         if (item != null)
         {
             currentScriptableTile = GetTile(item.Data.id);
-            MapUtil.Instance.DrawGridHightLight(currentSelectVegetationItemData.area);
+            if (brushStyle == BrushStyle.BoxUp)
+            {
+                MapUtil.Instance.DrawGridHightLight(new int[] { 1, 1 });
+            }
+            else
+            {
+                MapUtil.Instance.DrawGridHightLight(currentSelectVegetationItemData.area);
+            }
         }
     }
 	
@@ -437,14 +448,14 @@ public class TerrainEditorUICtrl : MonoBehaviour
         mapDataList.Clear();
         vegetationMap.ResizeMap(mapWidth, mapHeight);
 
-        for (int i = 0; i < mapWidth; i++)
+        for (int i = 0; i < mapHeight; i++)
         {
-            for (int j = 0; j < mapHeight; j++)
+            for (int j = 0; j < mapWidth; j++)
             {
                 MapGridGameData data = new MapGridGameData();
-                data.x = i;
-                data.y = j;
-                data.gridIndex = i + j * mapHeight;
+                data.x = j;
+                data.y = i;
+                data.gridIndex = j + i * mapHeight;
                 mapDataList.Add(data);
             }
         }
