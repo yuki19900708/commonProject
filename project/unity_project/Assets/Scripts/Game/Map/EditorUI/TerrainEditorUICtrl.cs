@@ -118,10 +118,9 @@ public class TerrainEditorUICtrl : MonoBehaviour
         {
             MapGridGameData data = mapDataList[tmpGridPoint.y + tmpGridPoint.x * mapHeight];
             mousePosText.text = string.Format("坐标: {0},{1}\n格子索引{2}", tmpGridPoint.x, tmpGridPoint.y, tmpGridPoint.x + tmpGridPoint.y * vegetationMap.MapHeight);
-            GameObject go = vegetationRenderer.GetTileGameObject(data.x, data.y);
-            if (go != null)
+            MapObject obj = vegetationRenderer.GetMapObject(data.x, data.y);
+            if (obj != null)
             {
-                MapObject obj = go.GetComponent<MapObject>();
                 vegetationText.text = string.Format("地块id: {0}", obj.VegetationId);
                 vegetationText.text += string.Format("\n所属格子索引{0}\n起始格子坐标x:{1},y:{2}:", obj.gridIndex, obj.gridIndex % vegetationMap.MapWidth, obj.gridIndex / vegetationMap.MapWidth);
             }
@@ -297,7 +296,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
                 {
                     for (int j = 0; j < area[1]; j++)
                     {
-                        if (vegetationRenderer.GetTileGameObject(offsetPoint.x + x, offsetPoint.y + j) != null)
+                        if (vegetationRenderer.GetMapObject(offsetPoint.x + x, offsetPoint.y + j) != null)
                         {
                             canBrush = false;
                         }

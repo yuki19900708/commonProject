@@ -6,13 +6,8 @@ namespace Universal.TileMapping
     [AddComponentMenu("2D/Renderer/TileGameObjectRenderer")]
     public class TileGameObjectRenderer : TileRenderer
     {
-        //public event Action<int, int, GameObject> OnRenderTile;
-//        public event Func<int, int, GameObject, GameObject> OverrideCreateInstance;
-        //public event Action<int, int, GameObject> OverrideDestoryInstance;
-        //public event Action<int, int, SortingOrderTag, Renderer> OverrideReOrder;
-
         [SerializeField]
-        private GameObject[] gameObjectMap = new GameObject[0];
+        private MapObject[] gameObjectMap = new MapObject[0];
 
         public override void Resize(int width, int height)
         {
@@ -21,16 +16,16 @@ namespace Universal.TileMapping
 
             ClearChildren();
 
-            gameObjectMap = new GameObject[width * height];
+            gameObjectMap = new MapObject[width * height];
         }
 
         public override void UpdateTileAt(int x, int y)
         {
             int index = x + y * tileMap.MapWidth;
-            GameObject current = gameObjectMap[index];
+            MapObject current = gameObjectMap[index];
             if (current != null)
             {
-                int tmpIndex = current.GetComponent<MapObject>().gridIndex;
+                int tmpIndex = current.gridIndex;
                 if(tmpIndex == index)
                 {
                     DestroyImmediate(current);
@@ -43,13 +38,17 @@ namespace Universal.TileMapping
 
             if (prefab != null)
             {
-				current = Instantiate(prefab);
-
+				current = Instantiate(prefab).GetComponent<MapObject>();
+                if(current == null)
+                {
+                    Debug.LogError(prefab);
+                    return;
+                }
                 current.name = string.Format("[{0},{1}]_{2}", x, y, prefab.name);
                 current.transform.SetParent(parent);
 
-                int[] area = current.GetComponent<MapObject>().GetArea();
-                current.GetComponent<MapObject>().gridIndex = index;
+                int[] area = current.GetArea();
+                current.gridIndex = index;
                 for (int i = 0; i < area[0]; i++)
                 {
                     for (int j = 0; j < area[1]; j++)
@@ -67,7 +66,7 @@ namespace Universal.TileMapping
 
         public override void CompleteReset()
         {
-            foreach (GameObject go in gameObjectMap)
+            foreach (MapObject go in gameObjectMap)
             {
                 if (go != null)
                 {
@@ -76,15 +75,15 @@ namespace Universal.TileMapping
             }
         }
 
-        public GameObject GetTileGameObject(int x, int y)
+        public MapObject GetMapObject(int x, int y)
         {
             int index = x + y * tileMap.MapWidth;
             if (index < 0 || index >= gameObjectMap.Length)
             {
                 return null;
             }
+
             return gameObjectMap[index];
         }
-
     }
 }
