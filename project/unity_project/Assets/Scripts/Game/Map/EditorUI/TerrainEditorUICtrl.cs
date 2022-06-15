@@ -478,7 +478,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
         string result = SimpleJson.SimpleJson.SerializeObject(saveEditor);
         Debug.Log(result);
         File.WriteAllText(textPath1, result);
-        UnityEditor.AssetDatabase.Refresh();
     }
 
 
