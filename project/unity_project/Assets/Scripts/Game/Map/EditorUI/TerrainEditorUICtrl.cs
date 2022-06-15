@@ -36,6 +36,12 @@ public class TerrainEditorUICtrl : MonoBehaviour
     public Button searchBtn;
     public Button tipPanel;
     public Button helpBtn;
+
+
+    public GameObject ensurePanel;
+    public Button exitBtn;
+    public Button cancelBtn;
+
     private TerrainEditorVegetation currentSelectVegetationItem;
     public TerrainEditorVegetation CurrentSelectVegetationItem
     {
@@ -86,7 +92,12 @@ public class TerrainEditorUICtrl : MonoBehaviour
         editInterface.Event_SaveEditor += SaveEdiotr;
         editInterface.Event_SelectVegetationItem += EventSelectVegetationItem;
         tipPanel.gameObject.SetActive(false);
-        exitButton.onClick.AddListener(OnExitButtonClick);
+        ensurePanel.gameObject.SetActive(false);
+
+        exitButton.onClick.AddListener(() =>
+        {
+            ensurePanel.SetActive(true);
+        });
         helpBtn.onClick.AddListener(() =>
         {
             tipPanel.gameObject.SetActive(true);
@@ -94,6 +105,16 @@ public class TerrainEditorUICtrl : MonoBehaviour
         tipPanel.onClick.AddListener(() =>
         {
             tipPanel.gameObject.SetActive(false);
+        });
+
+        exitBtn.onClick.AddListener(() =>
+        {
+            OnExitButtonClick();
+        });
+
+        cancelBtn.onClick.AddListener(() =>
+        {
+            ensurePanel.SetActive(false);
         });
 
         searchBtn.onClick.AddListener(() =>
@@ -115,7 +136,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
 
     private void Update()
     {
-        if(tipPanel.gameObject.activeSelf)
+        if(tipPanel.gameObject.activeSelf || ensurePanel.activeSelf)
         {
             return;
         }
