@@ -19,7 +19,7 @@ public class MapObject : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
             if(this.transform.childCount>0)
             {

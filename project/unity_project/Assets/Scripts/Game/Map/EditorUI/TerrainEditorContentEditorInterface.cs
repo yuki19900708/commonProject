@@ -32,9 +32,8 @@ public class TerrainEditorContentEditorInterface : MonoBehaviour
 
         List<VegetationData> tmpList = EditorTerrainModel.TerrainEditorModel.AllVegetationElements;
         selectVegetationList = new List<VegetationData>();
-        int character = TerrainEditorModel.LoadCharacter();
 
-        if (character == 0)
+        if (TerrainEditorModel.MapDrawer())
         {
             selectVegetationList.Add(tmpList[0]);
         }
@@ -61,7 +60,7 @@ public class TerrainEditorContentEditorInterface : MonoBehaviour
     {
         TerrainEditorVegetation item = obj.GetComponent<TerrainEditorVegetation>();
         item.Data = selectVegetationList[index];
-		if (item.Data == TerrainEditorUICtrl.Instance.CurrentSelectVegetationItemData)
+		if (item == TerrainEditorUICtrl.Instance.CurrentSelectVegetationItem)
         {
             item.IsSelect = true;
         }

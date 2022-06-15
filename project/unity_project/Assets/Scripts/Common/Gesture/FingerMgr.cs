@@ -147,12 +147,12 @@ public class FingerMgr : MonoBehaviour {
             return;
         }
 
-#if UNITY_EDITOR
+
         if (TerrainEditorUICtrl.Instance)
         {
             if (Input.GetMouseButton(2) == false)
             {
-                if (TerrainEditorUICtrl.Instance.isEditorToggle.isOn)
+                if (TerrainEditorUICtrl.IsEditor)
                 {
                     fingerMgrOperation = FingerMgrOperation.OperationObject;
                 }
@@ -167,7 +167,6 @@ public class FingerMgr : MonoBehaviour {
             }
         }
         else
-#endif
         {
 
             if (e.Selection != null)

@@ -60,7 +60,11 @@ namespace EditorTerrainModel
             return PlayerPrefs.GetInt(CHARACTER_KEY, 0);
         }
 
+        public static bool MapDrawer()
+        {
+            return LoadCharacter() == 0;
 
+        }
         private static bool isRunMapEditor = false;
 
         public static bool IsRunMapEditor
