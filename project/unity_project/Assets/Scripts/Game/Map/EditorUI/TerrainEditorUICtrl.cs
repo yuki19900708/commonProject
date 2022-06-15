@@ -29,8 +29,13 @@ public class TerrainEditorUICtrl : MonoBehaviour
    
     #region 鼠标指向格子信息
     public Text mousePosText;
-    public Text vegetationText;   
+    public Text vegetationText;
     #endregion
+
+    public InputField gridIndexInput;
+    public Button searchBtn;
+    public Button tipPanel;
+    public Button helpBtn;
     private TerrainEditorVegetation currentSelectVegetationItem;
     public TerrainEditorVegetation CurrentSelectVegetationItem
     {
@@ -72,7 +77,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
 	public void Init()
     {
         isEditor = false;
-        CameraGestureMgr.Instance.Init(5, new Rect(-5000, -5000, 10000, 10000));
+        CameraGestureMgr.Instance.Init(5, new Rect(-60, -60, 120, 120));
         Camera.main.fieldOfView = 35;
 
         TableDataEventMgr.BindAllEvent();
@@ -80,14 +85,40 @@ public class TerrainEditorUICtrl : MonoBehaviour
         editInterface.Event_BrushStyleChange += DropDownSelectChange;
         editInterface.Event_SaveEditor += SaveEdiotr;
         editInterface.Event_SelectVegetationItem += EventSelectVegetationItem;
-
+        tipPanel.gameObject.SetActive(false);
         exitButton.onClick.AddListener(OnExitButtonClick);
+        helpBtn.onClick.AddListener(() =>
+        {
+            tipPanel.gameObject.SetActive(true);
+        });
+        tipPanel.onClick.AddListener(() =>
+        {
+            tipPanel.gameObject.SetActive(false);
+        });
 
-		LoadEditor ();
+        searchBtn.onClick.AddListener(() =>
+        {
+            string str = gridIndexInput.text;
+            if(string.IsNullOrEmpty(str) == false)
+            {
+                int index = int.Parse(str);
+                if(index>=1 && index <=10000)
+                {
+                    index = index - 1;
+                    Vector3 point = vegetationMap.Coordinate2WorldPosition(new Point(index % vegetationMap.MapWidth, index / vegetationMap.MapWidth));
+                    CameraGestureMgr.Instance.MoveCameraInstant(point);
+                }
+            }
+        });
+        LoadEditor ();
 	}
 
     private void Update()
     {
+        if(tipPanel.gameObject.activeSelf)
+        {
+            return;
+        }
         if(Input.GetKeyDown(KeyCode.Space))
         {
             layoutType = EditoryLayoutType.Vegetation;
@@ -133,8 +164,11 @@ public class TerrainEditorUICtrl : MonoBehaviour
     {
         editInterface.gameObject.SetActive(!editInterface.gameObject.activeSelf);
         exitButton.gameObject.SetActive(!exitButton.gameObject.activeSelf);
+        searchBtn.gameObject.SetActive(!searchBtn.gameObject.activeSelf);
+        gridIndexInput.gameObject.SetActive(!gridIndexInput.gameObject.activeSelf);
+        helpBtn.gameObject.SetActive(!helpBtn.gameObject.activeSelf);
 
-        if(editInterface.gameObject.activeSelf == false)
+        if (editInterface.gameObject.activeSelf == false)
         {
             IsEditorToggleValueChange(false);
         }
