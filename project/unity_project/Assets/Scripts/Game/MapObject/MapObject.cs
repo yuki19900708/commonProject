@@ -17,13 +17,15 @@ public class MapObject : MonoBehaviour
     public int xPos;
     public int yPos;
 
+    private SpriteRenderer sprite;
+
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(this.transform.childCount>0)
+            if (this.transform.childCount > 0)
             {
-                this.transform.GetChild(0).gameObject.SetActive(true); 
+                this.transform.GetChild(0).gameObject.SetActive(true);
             }
         }
     }
@@ -31,7 +33,7 @@ public class MapObject : MonoBehaviour
     public int gridIndex;
 
     private VegetationData vegetationData = null;
- 
+
     public VegetationData VegetationData
     {
         get
@@ -55,7 +57,23 @@ public class MapObject : MonoBehaviour
         {
             return VegetationData.area;
         }
-        int[] a = new int[2] {1,1 };
+        int[] a = new int[2] { 1, 1 };
         return a;
+    }
+
+    public void ChangeState(TerrainState state)
+    {
+        if(sprite == null)
+        {
+            sprite = this.GetComponent<SpriteRenderer>();
+        }
+        if(state == TerrainState.Locked)
+        {
+            sprite.color = new Color(1, 1, 1, 0.5f);
+        }
+        else
+        {
+            sprite.color = Color.white;
+        }
     }
 }

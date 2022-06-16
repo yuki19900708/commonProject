@@ -32,5 +32,12 @@ namespace Universal.TileMapping
             OnInspectorDisable();
             OnSceneDisable();
         }
+
+        [MenuItem("Custom/OpenFolder")]
+        public static void OpenFolder()
+        {
+            System.Diagnostics.Process.Start(Application.persistentDataPath);
+        }
     }
+
 }

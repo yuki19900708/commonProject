@@ -9,12 +9,7 @@ using DG.Tweening;
 using System;
 using System.Text;
 using UnityEngine.SceneManagement;
-public class MapDataCache
-{
-    public int width;
-    public int height;
-    public List<MapGridGameData> playerDataList;
-}
+
 
 public class TerrainEditorUICtrl : MonoBehaviour
 {
@@ -42,6 +37,10 @@ public class TerrainEditorUICtrl : MonoBehaviour
     public Button exitBtn;
     public Button cancelBtn;
 
+    public Button publishBtn;
+
+    public GameObject savePanel;
+
     private TerrainEditorVegetation currentSelectVegetationItem;
     public TerrainEditorVegetation CurrentSelectVegetationItem
     {
@@ -51,7 +50,6 @@ public class TerrainEditorUICtrl : MonoBehaviour
         }
     }
     private ScriptableTile currentScriptableTile;
-    private EditorType editorType = EditorType.Level;
     private EditoryLayoutType layoutType = EditoryLayoutType.Vegetation;
     private BrushStyle brushStyle = BrushStyle.None;
     
@@ -73,7 +71,18 @@ public class TerrainEditorUICtrl : MonoBehaviour
         get { return isEditor; }
     }
 
-	void Awake()
+    private MapDataCache mapData;
+
+    private bool isInit = false;
+
+    public bool IsInit
+    {
+        get
+        {
+            return isInit;
+        }
+    }
+    void Awake()
 	{
 		TerrainEditorModel.IsRunMapEditor = true;
 
@@ -82,21 +91,26 @@ public class TerrainEditorUICtrl : MonoBehaviour
 			
 	public void Init()
     {
+        isInit = false;
+        mapData = new MapDataCache();
         isEditor = false;
         CameraGestureMgr.Instance.Init(5, new Rect(-60, -60, 120, 120));
         Camera.main.fieldOfView = 35;
-
         TableDataEventMgr.BindAllEvent();
 
         editInterface.Event_BrushStyleChange += DropDownSelectChange;
-        editInterface.Event_SaveEditor += SaveEdiotr;
+        editInterface.Event_SaveEditor += () =>
+        {
+            savePanel.SetActive(true);
+            SaveEdiotr();
+        };
         editInterface.Event_SelectVegetationItem += EventSelectVegetationItem;
         tipPanel.gameObject.SetActive(false);
         ensurePanel.gameObject.SetActive(false);
-
+        savePanel.gameObject.SetActive(false);
         exitButton.onClick.AddListener(() =>
         {
-            ensurePanel.SetActive(true);
+            OnExitButtonClick();
         });
         helpBtn.onClick.AddListener(() =>
         {
@@ -107,9 +121,14 @@ public class TerrainEditorUICtrl : MonoBehaviour
             tipPanel.gameObject.SetActive(false);
         });
 
+        publishBtn.onClick.AddListener(() =>
+        {
+            ensurePanel.SetActive(true);
+        });
         exitBtn.onClick.AddListener(() =>
         {
-            OnExitButtonClick();
+            savePublishData();
+            ensurePanel.SetActive(false);
         });
 
         cancelBtn.onClick.AddListener(() =>
@@ -140,6 +159,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
         {
             return;
         }
+
         if(Input.GetKeyDown(KeyCode.Space))
         {
             layoutType = EditoryLayoutType.Vegetation;
@@ -247,7 +267,7 @@ public class TerrainEditorUICtrl : MonoBehaviour
 		
     private void OnExitButtonClick()
     {
-		SceneManager.LoadScene (0);
+        SceneManager.LoadScene(0);
     }
 
     public void DragStart()
@@ -314,11 +334,21 @@ public class TerrainEditorUICtrl : MonoBehaviour
             region = GetRegion(point, point);
             BrushTile();
             MapUtil.Instance.ClearLineList();
+
+        }
+
+        if(isEditor)
+        {
+            SaveEdiotr();
         }
     }
 
     public void BrushTile()
     {
+        if(DisableDraw())
+        {
+            return;
+        }
         if (clickIsRmove == false)
         {
             if (currentSelectVegetationItem == null || currentSelectVegetationItem.Data == null)
@@ -350,14 +380,46 @@ public class TerrainEditorUICtrl : MonoBehaviour
                 {
                     for (int j = 0; j < area[1]; j++)
                     {
-                        if (vegetationRenderer.GetMapObject(offsetPoint.x + x, offsetPoint.y + j) != null)
+                        int index = (offsetPoint.x + x) + (offsetPoint.y + j) * mapWidth;
+
+                        if (TerrainEditorModel.MapDrawer())
+                        {
+                            if (vegetationRenderer.GetMapObject(offsetPoint.x + x, offsetPoint.y + j) != null)
+                            {
+                                canBrush = false;
+                            }
+                        }
+                        else
+                        {
+                            if (index >= 0 && index < mapData.playerDataList.Count)
+                            {
+                                if (mapData.playerDataList[index].state != TerrainState.Locked)
+                                {
+                                    canBrush = false;
+                                }
+                            }
+                            else
+                            {
+                                canBrush = false;
+                            }
+                                
+                        }
+                        
+                        if(vegetationMap.IsInBounds(offsetPoint.x + x, offsetPoint.y + j) == false)
                         {
                             canBrush = false;
                         }
-                        else if(vegetationMap.IsInBounds(offsetPoint.x + x, offsetPoint.y + j) == false)
+                        else
                         {
-                            canBrush = false;
+                            if (TerrainEditorModel.MapDrawer() == false)
+                            {
+                                if (mapData.playerDataList[index].state != TerrainState.Locked)
+                                {
+                                    canBrush = false;
+                                }
+                            }
                         }
+                      
                     }
                 }
             }
@@ -366,11 +428,45 @@ public class TerrainEditorUICtrl : MonoBehaviour
             {
                 continue;
             }
-
+            
             vegetationMap.SetTileAndUpdateNeighbours(offsetPoint, tmpTile);
         }
         lineGridPoint = new Point(-1, -1);
     }
+
+    public TerrainState ChangeMapData(int id, int index, bool isAdd)
+    {
+        if(TerrainEditorModel.MapDrawer())
+        {
+            if(isAdd)
+            {
+                mapData.playerDataList[index].state = TerrainState.Locked;
+            }
+            else
+            {
+                mapData.playerDataList[index].state = TerrainState.Blank;
+            }
+        }
+        else
+        {
+            if (isAdd)
+            {
+                mapData.playerDataList[index].state = TerrainState.Opened;
+            }
+            else
+            {
+                mapData.playerDataList[index].state = TerrainState.Locked;
+            }
+        }
+        mapData.playerDataList[index].entityId = id;
+        return mapData.playerDataList[index].state;
+    }
+
+    public TerrainState GetTerrainState(int index)
+    {
+        return mapData.playerDataList[index].state;
+    }
+
 
     private void EventSelectVegetationItem(TerrainEditorVegetation item)
     {
@@ -457,83 +553,112 @@ public class TerrainEditorUICtrl : MonoBehaviour
 
     private void LoadData()
     {
-        string currentPath = "";
-        TextAsset ta = null;
-        switch (editorType)
-        {
-            case EditorType.Level:
-			currentPath = "MapData/LevelData/" + mapPhase;
-                ta = Resources.Load(currentPath) as TextAsset;
-                break;
-        }
-
+        string path = mapPhase.ToString();
+      
         vegetationMap.ResizeMap(mapWidth, mapHeight);
-
-        List<MapGridGameData> savedData = new List<MapGridGameData>();
-        if (ta != null)
-        {
-            MapDataCache saveEditor = SimpleJson.SimpleJson.DeserializeObject<MapDataCache>(ta.text);
-            savedData = saveEditor.playerDataList;       
-        }
-
         MapUtil.Instance.DrawMapGridLine(mapWidth, mapHeight);
 
-        foreach (MapGridGameData info in savedData)
+        mapData.playerDataList = new List<MapGridGameData>();
+
+        for(int i = 0; i < mapHeight;i ++)
         {
-            if (info.entityId > 0)
+            for(int j = 0; j< mapWidth;j++)
             {
-                SimpleTile simpleTile = GetTile(info.entityId);
-                vegetationMap.SetTileAt(info.x, info.y, simpleTile, false);
+                int index = j + i * mapWidth;
+                MapGridGameData data = new MapGridGameData();
+                data.x = j;
+                data.y = i;
+                data.gridIndex = index;
+                data.state = TerrainState.Blank;
+                data.entityId = 0;
+                mapData.playerDataList.Add(data);
             }
         }
+     
+        StartCoroutine(DataDownloader.LoadData(path, (ta) => {
 
-    }
-		
-    private void SaveEdiotr()
-    {
-        Debug.Log("将地形保存为文件！！！");
-        switch (editorType)
-        {
-            case EditorType.Level:
-			string textPath = Application.dataPath + "/Resources/MapData/LevelData/" + mapPhase + ".txt";
-                CreatExcel(textPath);
-                break;
-        }
-    }
 
-    private void CreatExcel(string textPath1, int w = -1, int h = -1)
-    {
-        MapDataCache saveEditor = new MapDataCache();
-        saveEditor.width = mapWidth;
-        saveEditor.height = mapHeight;
-        saveEditor.playerDataList = new List<MapGridGameData>();
-        if (w > 0)
-        {
-            saveEditor.width = w;
-            saveEditor.height = h;
-        }
-        MapObject[] objs = vegetationRenderer.GameObjMap;
-        List<int> recordIndex = new List<int>();
-        foreach(MapObject obj in objs)
-        {
-            if (obj != null)
+            if (string.IsNullOrEmpty(ta) == false)
             {
-                if(recordIndex.Contains(obj.gridIndex) == false)
+                MapDataCache saveEditor = SimpleJson.SimpleJson.DeserializeObject<MapDataCache>(ta);
+                List<MapGridGameData> savedData = saveEditor.playerDataList;
+                mapData = saveEditor;
+                for (int j = 0; j < mapData.playerDataList.Count; j++)
                 {
-                    MapGridGameData mgd = new MapGridGameData();
-                    mgd.x = obj.xPos;
-                    mgd.y = obj.yPos;
-                    mgd.gridIndex = obj.gridIndex;
-                    mgd.entityId = obj.VegetationId;
-                    saveEditor.playerDataList.Add(mgd);
-                    recordIndex.Add(obj.gridIndex);
+                    for (int i = 0; i < savedData.Count; i++)
+                    {
+                        if (savedData[i].gridIndex == mapData.playerDataList[j].gridIndex)
+                        {
+                            mapData.playerDataList[j] = savedData[i];
+                        }
+                    }
+
                 }
             }
-        }
-        string result = SimpleJson.SimpleJson.SerializeObject(saveEditor);
-        Debug.Log(result);
-        File.WriteAllText(textPath1, result);
+
+            if(mapData.playerDataList != null)
+            {
+                foreach (MapGridGameData info in mapData.playerDataList)
+                {
+                    if (info.entityId > 0)
+                    {
+                        SimpleTile simpleTile = GetTile(info.entityId);
+                        vegetationMap.SetTileAt(info.x, info.y, simpleTile, false);
+                    }
+                }
+            }
+            isInit = true;
+        }));
+
+
     }
 
+    private void SaveEdiotr(bool returnEnterScene = false)
+    {
+        string savePath = mapPhase.ToString();
+        mapData.state = EditState.Drawer;
 
+
+        string result = SimpleJson.SimpleJson.SerializeObject(mapData);
+        StartCoroutine(DataDownloader.SaveData(savePath, result, ()=> {
+            savePanel.SetActive(false);
+            if(returnEnterScene)
+            {
+                SceneManager.LoadScene(0);
+            }
+        }));
+
+    }
+
+    void savePublishData()
+    {
+        string savePath;
+        mapData.state = EditState.Publish;
+
+        savePath = mapPhase.ToString();
+
+        string result = SimpleJson.SimpleJson.SerializeObject(mapData);
+
+        StartCoroutine(DataDownloader.SaveData(savePath, result, () => {
+            ensurePanel.SetActive(false);
+        }, false));
+    }
+
+    bool DisableDraw()
+    {
+        if(IsEditor == false)
+        {
+            return true;
+        }
+
+        if(TerrainEditorModel.MapDrawer())
+        {
+            if(mapData.state != EditState.Drawer)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

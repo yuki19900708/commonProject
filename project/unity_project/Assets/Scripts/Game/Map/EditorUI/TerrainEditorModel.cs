@@ -17,11 +17,6 @@ namespace EditorTerrainModel
         BrushStyle,
     }
 
-    public enum EditorType
-    {
-        Level,
-    }
-
     public enum EditoryLayoutType
     {
         Vegetation,

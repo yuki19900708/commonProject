@@ -48,6 +48,11 @@ namespace Universal.TileMapping
                         {
                             DestroyImmediate(current.gameObject);
                         }
+
+                        if (TerrainEditorUICtrl.Instance)
+                        {
+                            TerrainEditorUICtrl.Instance.ChangeMapData(0, index, false);
+                        }
                     }
                 }
                
@@ -79,7 +84,18 @@ namespace Universal.TileMapping
                         gameObjectMap[index] = current;
                     }
                 }
-                
+                if (TerrainEditorUICtrl.Instance)
+                {
+                    if(TerrainEditorUICtrl.Instance.IsInit)
+                    {
+                        TerrainEditorUICtrl.Instance.ChangeMapData(current.VegetationId, current.gridIndex, true);
+                    }
+
+                    current.ChangeState(TerrainEditorUICtrl.Instance.GetTerrainState(current.gridIndex));
+
+                }
+
+
                 Vector3 offset = new Vector3((area[0] - 1) * tileMap.GridSize * 0.5f, (area[1] - 1) * tileMap.GridSize * 0.5f, 0);
                 current.transform.localPosition = tileMap.Coordinate2WorldPosition(x, y) + offset;
               

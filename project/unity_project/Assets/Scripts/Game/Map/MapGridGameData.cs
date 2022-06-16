@@ -21,6 +21,7 @@ public class MapGridGameData
 
 public enum TerrainState
 {
-    Locked,
-    Opened
+    Blank = 0, //空格子，即格子上什么也没有，无法进行任何操作；
+    Locked,//锁定的格子，有地块，但无法进行操作，后续根据版本该格子可能开放
+    Opened//开放的格子，有地块，可以进行确权等一系列操作。
 }

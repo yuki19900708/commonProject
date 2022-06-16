@@ -225,7 +225,7 @@ namespace Universal.TileMapping
         }
         private void Update()
         {
-            if (tran != null)
+            if (tran != null && newLine !=null)
             {
                 newLine.rectTransform.transform.position = tran.position;
             }

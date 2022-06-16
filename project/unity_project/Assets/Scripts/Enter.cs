@@ -27,6 +27,7 @@ public class Enter : MonoBehaviour {
 	private string phaseStr = "1";
 	// Use this for initialization
 	void Start () {
+		enterBtn.gameObject.SetActive(true);
 		ShowTipPanel(false);
 		phaseInput.text = phaseStr;
 		dropPanel.onValueChanged.AddListener(BrushStyleDropDownValueChange);

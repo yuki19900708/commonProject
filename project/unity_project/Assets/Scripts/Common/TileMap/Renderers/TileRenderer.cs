@@ -30,7 +30,7 @@ namespace Universal.TileMapping
 
         public virtual void Start()
         {
-            RefreshMap();
+            //RefreshMap();
         }
 
         public virtual void Reset()
