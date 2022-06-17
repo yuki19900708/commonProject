@@ -701,7 +701,8 @@ public class TerrainEditorUICtrl : MonoBehaviour
     private void SaveEdiotr(bool returnEnterScene = false)
     {
         string savePath = mapPhase.ToString();
-
+        mapData.width = mapWidth;
+        mapData.height = mapHeight;
         string result = SimpleJson.SimpleJson.SerializeObject(mapData);
         StartCoroutine(DataDownloader.SaveData(savePath, result, ()=> {
             savePanel.SetActive(false);
