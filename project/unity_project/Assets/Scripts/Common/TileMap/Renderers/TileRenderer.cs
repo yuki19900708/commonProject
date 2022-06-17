@@ -13,7 +13,15 @@ namespace Universal.TileMapping
         }
 
         public Color color;
+        private bool changeColor = false;
 
+        public bool ChangeColor
+        {
+            get
+            {
+                return changeColor;
+            }
+        }
         public SortingMethod sortingMethod = SortingMethod.SortingLayer;
         public int sortingLayer;
         public int orderInLayer;
@@ -119,5 +127,10 @@ namespace Universal.TileMapping
 
         public abstract void UpdateTileAt(int x, int y);
         public virtual void CompleteReset() { }
+
+        public void SetChangeColor(bool result)
+        {
+            changeColor = result;
+        }
     }
 }

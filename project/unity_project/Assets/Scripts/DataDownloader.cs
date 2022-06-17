@@ -84,28 +84,28 @@ public class DataDownloader : MonoBehaviour
 
     public static IEnumerator SaveData(string path, string data, System.Action callback, bool toLocal = true)
     {
-        if (toLocal)
-        {
+        //if (toLocal)
+        //{
             path = Path.Combine(Application.persistentDataPath, path);
             WriteConfigCache(path, data);
             yield return null;
-        }
-        else
-        {
-            //todo:发布到远端
-            UnityWebRequest www = new UnityWebRequest(url + path);
-            yield return www.SendWebRequest();
-            if (www.isDone)
-            {
-                if (string.IsNullOrEmpty(www.error))
-                {
-                }
-                else
-                {
-                    Debug.Log("error:" + www.error);
-                }
-            }
-        }
+        //}
+        //else
+        //{
+        //    //todo:发布到远端
+        //    UnityWebRequest www = new UnityWebRequest(url + path);
+        //    yield return www.SendWebRequest();
+        //    if (www.isDone)
+        //    {
+        //        if (string.IsNullOrEmpty(www.error))
+        //        {
+        //        }
+        //        else
+        //        {
+        //            Debug.Log("error:" + www.error);
+        //        }
+        //    }
+        //}
 
         Debug.Log(path + "-----save:" + data);
 

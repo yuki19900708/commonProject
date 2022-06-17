@@ -61,19 +61,13 @@ public class MapObject : MonoBehaviour
         return a;
     }
 
-    public void ChangeState(TerrainState state)
+    public void ChangeColor()
     {
         if(sprite == null)
         {
             sprite = this.GetComponent<SpriteRenderer>();
         }
-        if(state == TerrainState.Locked)
-        {
-            sprite.color = new Color(1, 1, 1, 0.5f);
-        }
-        else
-        {
-            sprite.color = Color.white;
-        }
+        sprite.color = Color.black;
+
     }
 }

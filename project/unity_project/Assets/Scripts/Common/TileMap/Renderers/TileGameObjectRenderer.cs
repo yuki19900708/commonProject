@@ -16,7 +16,6 @@ namespace Universal.TileMapping
             }
 
         }
-
         public override void Start()
         {
         }
@@ -47,15 +46,14 @@ namespace Universal.TileMapping
                         if (tmpIndex == index)
                         {
                             DestroyImmediate(current.gameObject);
-                        }
-
-                        if (TerrainEditorUICtrl.Instance)
-                        {
-                            TerrainEditorUICtrl.Instance.ChangeMapData(0, index, false);
+                            if (TerrainEditorUICtrl.Instance)
+                            {
+                                TerrainEditorUICtrl.Instance.ChangeMapData(0, index, false);
+                            }
                         }
                     }
                 }
-               
+
             }
             Point point = new Point(x, y);
             ScriptableTile tile = tileMap.GetTileAt(x, y);
@@ -90,8 +88,10 @@ namespace Universal.TileMapping
                     {
                         TerrainEditorUICtrl.Instance.ChangeMapData(current.VegetationId, current.gridIndex, true);
                     }
-
-                    current.ChangeState(TerrainEditorUICtrl.Instance.GetTerrainState(current.gridIndex));
+                    if(ChangeColor)
+                    {
+                        current.ChangeColor();
+                    }
 
                 }
 

@@ -46,7 +46,7 @@ public class TerrainEditorContentEditorInterface : MonoBehaviour
         vegetationContent.Event_OnRefreshWrapContentItem += EventVegetationOnRefreshWrapContent;
         vegetationContent.RefreshWrapContent(selectVegetationList.Count);
         selectVegetationGameObject.SetActive(false);
-
+        this.gameObject.SetActive(true);
     }
 
 	private void BrushStyleDropDownValueChange(int index)
